@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Anaplan Schedule Job" max_length="40" name="x_nriws_coupa_req_anaplan_schedule_job" sizeclass="0" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Clean Porcess Task Status" max_length="40" name="clean_porcess_task_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Fail" value="fail"/>
+                <element inactive_on_update="false" label="Processing" value="processing"/>
+                <element inactive_on_update="false" label="Success" value="success"/>
+            </choice>
+        </element>
+        <element label="Clean Task ID" max_length="100" name="clean_task_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="0" label="Clean Task Status Check Count" max_length="40" name="clean_task_status_check_count" type="integer"/>
+        <element label="Duration" max_length="100" name="duration" type="string"/>
+        <element label="End time" max_length="40" name="end_time" type="glide_date_time"/>
+        <element label="Export Task ID" max_length="100" name="export_task_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Export Task Status" max_length="40" name="export_task_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Fail" value="fail"/>
+                <element inactive_on_update="false" label="Processing" value="processing"/>
+                <element inactive_on_update="false" label="Success" value="success"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Export Task Status Check Count" max_length="40" name="export_task_status_check_count" type="integer"/>
+        <element label="Import Task ID" max_length="100" name="import_task_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Import Task Status" max_length="40" name="import_task_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Fail" value="fail"/>
+                <element inactive_on_update="false" label="Processing" value="processing"/>
+                <element inactive_on_update="false" label="Success" value="success"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Import Task Status Check Count" max_length="40" name="import_task_status_check_count" type="integer"/>
+        <element label="Name" max_length="100" name="name" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Start time" max_length="40" name="start_time" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Start" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Create upload file success" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="Uploading" sequence="2" value="3"/>
+                <element inactive_on_update="false" label="Upload anaplan complete" sequence="3" value="4"/>
+                <element inactive_on_update="false" label="Run anaplan import" sequence="4" value="5"/>
+                <element inactive_on_update="false" label="Run anaplan import task" sequence="5" value="6"/>
+                <element inactive_on_update="false" label="Anaplan import task complete" sequence="6" value="7"/>
+                <element inactive_on_update="false" label="Run anaplan export task" sequence="7" value="8"/>
+                <element inactive_on_update="false" label="Anaplan export task complete" sequence="8" value="9"/>
+                <element inactive_on_update="false" label="Downloading anaplan file" sequence="9" value="10"/>
+                <element inactive_on_update="false" label="Download success" sequence="10" value="11"/>
+                <element inactive_on_update="false" label="Move to data source" sequence="11" value="12"/>
+                <element inactive_on_update="false" label="Completed" sequence="12" value="13"/>
+                <element inactive_on_update="false" label="Fail" sequence="13" value="14"/>
+                <element inactive_on_update="false" label="Run anaplan clean process" sequence="14" value="15"/>
+                <element inactive_on_update="false" label="Anaplan clean process complete" sequence="15" value="16"/>
+            </choice>
+        </element>
+    </element>
+</database>

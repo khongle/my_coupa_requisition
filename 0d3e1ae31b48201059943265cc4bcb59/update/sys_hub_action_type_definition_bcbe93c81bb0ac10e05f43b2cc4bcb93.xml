@@ -1,0 +1,3515 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <ih_action>false</ih_action>
+        <internal_name>run_import</internal_name>
+        <label_cache>[{"name":"{{action.workspace}}","label":"action➛Workspace","type":"action","ref":""},{"name":"{{action.model}}","label":"action➛Model","type":"action","ref":""},{"name":"{{action.import}}","label":"action➛Import","type":"action","ref":""},{"name":"{{action.token}}","label":"action➛Token","type":"action","ref":""},{"name":"{{step[7299c03c-5c22-454b-9552-3cc621ae3225].variable}}","label":"step➛Script step➛variable","type":"step","ref":""},{"name":"{{step[7299c03c-5c22-454b-9552-3cc621ae3225].task_id}}","label":"step➛Script step➛Task ID","type":"step","ref":""}]</label_cache>
+        <latest_snapshot>ef51a74c1bb0ac10e05f43b2cc4bcb9a</latest_snapshot>
+        <master_snapshot>7b51e74c1bb0ac10e05f43b2cc4bcb0a</master_snapshot>
+        <name>Run Import</name>
+        <natlang/>
+        <outputs/>
+        <outputs/>
+        <state>published</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:20:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>bcbe93c81bb0ac10e05f43b2cc4bcb93</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Run Import</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_bcbe93c81bb0ac10e05f43b2cc4bcb93</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:33</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=bcbe93c81bb0ac10e05f43b2cc4bcb93"/>
+    <sys_variable_value action="delete_multiple" query="document_key=bcbe93c81bb0ac10e05f43b2cc4bcb93"/>
+    <sys_element_mapping action="delete_multiple" query="id=bcbe93c81bb0ac10e05f43b2cc4bcb93"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>task_id</field>
+        <id>bcbe93c81bb0ac10e05f43b2cc4bcb93</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:35</sys_created_on>
+        <sys_id>16702f0c1bb0ac10e05f43b2cc4bcbb7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:35</sys_updated_on>
+        <table>var__m_sys_hub_action_output_bcbe93c81bb0ac10e05f43b2cc4bcb93</table>
+        <value>{{step[7299c03c-5c22-454b-9552-3cc621ae3225].task_id}}</value>
+    </sys_element_mapping>
+    <sys_hub_step_instance action="delete_multiple" query="action=bcbe93c81bb0ac10e05f43b2cc4bcb93^sys_idNOT INac0f9fc81bb0ac10e05f43b2cc4bcbb1"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Run Import">bcbe93c81bb0ac10e05f43b2cc4bcb93</action>
+        <cid>7299c03c-5c22-454b-9552-3cc621ae3225</cid>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:22:11</sys_created_on>
+        <sys_id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=ac0f9fc81bb0ac10e05f43b2cc4bcbb1"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:22:11</sys_created_on>
+        <sys_id>600f9fc81bb0ac10e05f43b2cc4bcbba</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+// ... code ...
+  
+   var anaplanApiUitl = new x_nriws_coupa_req.AnaplanAPIUtils();
+  outputs.task_id = anaplanApiUitl.runImportAction(inputs.workspace_id,inputs.model_id,inputs.import_action_id,inputs.token)
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>7350eb0c1bb0ac10e05f43b2cc4bcb3b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <value/>
+        <variable display_value="">2c226939b3101300176b051a16a8dc83</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>bf50eb0c1bb0ac10e05f43b2cc4bcb3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <value/>
+        <variable display_value="">74315b04b3201300176b051a16a8dc2b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>fb50eb0c1bb0ac10e05f43b2cc4bcb3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <value/>
+        <variable display_value="">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=ac0f9fc81bb0ac10e05f43b2cc4bcbb1"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>application</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>6350eb0c1bb0ac10e05f43b2cc4bcb3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>import_action_id</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>bb50eb0c1bb0ac10e05f43b2cc4bcb3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</table>
+        <value>{{action.import}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>mid_selection_type</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>e750eb0c1bb0ac10e05f43b2cc4bcb3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>model_id</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>f750eb0c1bb0ac10e05f43b2cc4bcb3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</table>
+        <value>{{action.model}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>required_run_time</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>2750eb0c1bb0ac10e05f43b2cc4bcb3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:22:11</sys_created_on>
+        <sys_id>ec0f9fc81bb0ac10e05f43b2cc4bcbb9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:22:11</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>token</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>7f50eb0c1bb0ac10e05f43b2cc4bcb3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</table>
+        <value>{{action.token}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>workspace_id</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>3750eb0c1bb0ac10e05f43b2cc4bcb3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</table>
+        <value>{{action.workspace}}</value>
+    </sys_element_mapping>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=ac0f9fc81bb0ac10e05f43b2cc4bcbb1^sys_idNOT IN2350eb0c1bb0ac10e05f43b2cc4bcb2b,a750eb0c1bb0ac10e05f43b2cc4bcb21,e350eb0c1bb0ac10e05f43b2cc4bcb1c,e350eb0c1bb0ac10e05f43b2cc4bcb26"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>token</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model>
+        <model_id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</name>
+        <next_element/>
+        <order>300</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>2350eb0c1bb0ac10e05f43b2cc4bcb2b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>model_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model>
+        <model_id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>a750eb0c1bb0ac10e05f43b2cc4bcb21</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>workspace_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model>
+        <model_id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>e350eb0c1bb0ac10e05f43b2cc4bcb1c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>import_action_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model>
+        <model_id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</name>
+        <next_element/>
+        <order>200</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>e350eb0c1bb0ac10e05f43b2cc4bcb26</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=ac0f9fc81bb0ac10e05f43b2cc4bcbb1^sys_idNOT IN6750eb0c1bb0ac10e05f43b2cc4bcb30"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=28806850-49d7-440e-8dc6-e66848efc16a</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>task_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Task ID</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model>
+        <model_id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>6750eb0c1bb0ac10e05f43b2cc4bcb30</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_action_input action="delete_multiple" query="model=bcbe93c81bb0ac10e05f43b2cc4bcb93^sys_idNOT IN1efe9fc81bb0ac10e05f43b2cc4bcb1b,5afe9fc81bb0ac10e05f43b2cc4bcb14,defe9fc81bb0ac10e05f43b2cc4bcb22,defedf881bb0ac10e05f43b2cc4bcb2e"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=1de0ebb6-2669-4a85-8d6f-57253883c271</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>import</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Import</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Run Import">bcbe93c81bb0ac10e05f43b2cc4bcb93</model>
+        <model_id>bcbe93c81bb0ac10e05f43b2cc4bcb93</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_bcbe93c81bb0ac10e05f43b2cc4bcb93</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:22:02</sys_created_on>
+        <sys_id>1efe9fc81bb0ac10e05f43b2cc4bcb1b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:22:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=67e95465-e251-46ea-9641-8aac8ec6fea9</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>model</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Model</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Run Import">bcbe93c81bb0ac10e05f43b2cc4bcb93</model>
+        <model_id>bcbe93c81bb0ac10e05f43b2cc4bcb93</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_bcbe93c81bb0ac10e05f43b2cc4bcb93</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:22:02</sys_created_on>
+        <sys_id>5afe9fc81bb0ac10e05f43b2cc4bcb14</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:22:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=4fb82c38-3864-4436-99e6-6b4df8ce51b9</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>token</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Token</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Run Import">bcbe93c81bb0ac10e05f43b2cc4bcb93</model>
+        <model_id>bcbe93c81bb0ac10e05f43b2cc4bcb93</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_bcbe93c81bb0ac10e05f43b2cc4bcb93</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:22:02</sys_created_on>
+        <sys_id>defe9fc81bb0ac10e05f43b2cc4bcb22</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:22:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=7ba617be-936c-489d-8e61-3fb1fc78d9e7</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>workspace</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Workspace</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Run Import">bcbe93c81bb0ac10e05f43b2cc4bcb93</model>
+        <model_id>bcbe93c81bb0ac10e05f43b2cc4bcb93</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_bcbe93c81bb0ac10e05f43b2cc4bcb93</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:22:02</sys_created_on>
+        <sys_id>defedf881bb0ac10e05f43b2cc4bcb2e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:22:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_output action="delete_multiple" query="model=bcbe93c81bb0ac10e05f43b2cc4bcb93^sys_idNOT INd2702f0c1bb0ac10e05f43b2cc4bcbae"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=92c24628-31a2-488b-a494-0aa2423171a4</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>task_id</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Task ID</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Run Import">bcbe93c81bb0ac10e05f43b2cc4bcb93</model>
+        <model_id>bcbe93c81bb0ac10e05f43b2cc4bcb93</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_bcbe93c81bb0ac10e05f43b2cc4bcb93</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:35</sys_created_on>
+        <sys_id>d2702f0c1bb0ac10e05f43b2cc4bcbae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:35</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_step_instance action="delete_multiple" query="action=bcbe93c81bb0ac10e05f43b2cc4bcb93^sys_idNOT INac0f9fc81bb0ac10e05f43b2cc4bcbb1"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Run Import">bcbe93c81bb0ac10e05f43b2cc4bcb93</action>
+        <cid>7299c03c-5c22-454b-9552-3cc621ae3225</cid>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:22:11</sys_created_on>
+        <sys_id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=ac0f9fc81bb0ac10e05f43b2cc4bcbb1"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:22:11</sys_created_on>
+        <sys_id>600f9fc81bb0ac10e05f43b2cc4bcbba</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+// ... code ...
+  
+   var anaplanApiUitl = new x_nriws_coupa_req.AnaplanAPIUtils();
+  outputs.task_id = anaplanApiUitl.runImportAction(inputs.workspace_id,inputs.model_id,inputs.import_action_id,inputs.token)
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>7350eb0c1bb0ac10e05f43b2cc4bcb3b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <value/>
+        <variable display_value="">2c226939b3101300176b051a16a8dc83</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>bf50eb0c1bb0ac10e05f43b2cc4bcb3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <value/>
+        <variable display_value="">74315b04b3201300176b051a16a8dc2b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>fb50eb0c1bb0ac10e05f43b2cc4bcb3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <value/>
+        <variable display_value="">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=ac0f9fc81bb0ac10e05f43b2cc4bcbb1"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>application</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>6350eb0c1bb0ac10e05f43b2cc4bcb3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>import_action_id</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>bb50eb0c1bb0ac10e05f43b2cc4bcb3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</table>
+        <value>{{action.import}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>mid_selection_type</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>e750eb0c1bb0ac10e05f43b2cc4bcb3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>model_id</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>f750eb0c1bb0ac10e05f43b2cc4bcb3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</table>
+        <value>{{action.model}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>required_run_time</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>2750eb0c1bb0ac10e05f43b2cc4bcb3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:22:11</sys_created_on>
+        <sys_id>ec0f9fc81bb0ac10e05f43b2cc4bcbb9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:22:11</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>token</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>7f50eb0c1bb0ac10e05f43b2cc4bcb3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</table>
+        <value>{{action.token}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>workspace_id</field>
+        <id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>3750eb0c1bb0ac10e05f43b2cc4bcb3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</table>
+        <value>{{action.workspace}}</value>
+    </sys_element_mapping>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=ac0f9fc81bb0ac10e05f43b2cc4bcbb1^sys_idNOT IN2350eb0c1bb0ac10e05f43b2cc4bcb2b,a750eb0c1bb0ac10e05f43b2cc4bcb21,e350eb0c1bb0ac10e05f43b2cc4bcb1c,e350eb0c1bb0ac10e05f43b2cc4bcb26"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>token</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model>
+        <model_id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</name>
+        <next_element/>
+        <order>300</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>2350eb0c1bb0ac10e05f43b2cc4bcb2b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>model_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model>
+        <model_id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>a750eb0c1bb0ac10e05f43b2cc4bcb21</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>workspace_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model>
+        <model_id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>e350eb0c1bb0ac10e05f43b2cc4bcb1c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>import_action_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model>
+        <model_id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</name>
+        <next_element/>
+        <order>200</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>e350eb0c1bb0ac10e05f43b2cc4bcb26</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=ac0f9fc81bb0ac10e05f43b2cc4bcbb1^sys_idNOT IN6750eb0c1bb0ac10e05f43b2cc4bcb30"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=28806850-49d7-440e-8dc6-e66848efc16a</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>task_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Task ID</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model>
+        <model_id>ac0f9fc81bb0ac10e05f43b2cc4bcbb1</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_ac0f9fc81bb0ac10e05f43b2cc4bcbb1</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:08</sys_created_on>
+        <sys_id>6750eb0c1bb0ac10e05f43b2cc4bcb30</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_input_bcbe93c81bb0ac10e05f43b2cc4bcb93^sys_idNOT IN1afe9fc81bb0ac10e05f43b2cc4bcb21,56fe9fc81bb0ac10e05f43b2cc4bcb1a,92fe9fc81bb0ac10e05f43b2cc4bcb13,dafe9fc81bb0ac10e05f43b2cc4bcb28"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>import</element>
+        <help/>
+        <hint/>
+        <label>Import</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_bcbe93c81bb0ac10e05f43b2cc4bcb93</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:22:02</sys_created_on>
+        <sys_id>1afe9fc81bb0ac10e05f43b2cc4bcb21</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Import</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_bcbe93c81bb0ac10e05f43b2cc4bcb93_import_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:22:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>model</element>
+        <help/>
+        <hint/>
+        <label>Model</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_bcbe93c81bb0ac10e05f43b2cc4bcb93</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:22:02</sys_created_on>
+        <sys_id>56fe9fc81bb0ac10e05f43b2cc4bcb1a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Model</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_bcbe93c81bb0ac10e05f43b2cc4bcb93_model_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:22:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>workspace</element>
+        <help/>
+        <hint/>
+        <label>Workspace</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_bcbe93c81bb0ac10e05f43b2cc4bcb93</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:22:02</sys_created_on>
+        <sys_id>92fe9fc81bb0ac10e05f43b2cc4bcb13</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Workspace</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_bcbe93c81bb0ac10e05f43b2cc4bcb93_workspace_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:22:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>token</element>
+        <help/>
+        <hint/>
+        <label>Token</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_bcbe93c81bb0ac10e05f43b2cc4bcb93</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:22:02</sys_created_on>
+        <sys_id>dafe9fc81bb0ac10e05f43b2cc4bcb28</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Token</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_bcbe93c81bb0ac10e05f43b2cc4bcb93_token_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:22:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_bcbe93c81bb0ac10e05f43b2cc4bcb93^sys_idNOT INd6702f0c1bb0ac10e05f43b2cc4bcbb4"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>task_id</element>
+        <help/>
+        <hint/>
+        <label>Task ID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_bcbe93c81bb0ac10e05f43b2cc4bcb93</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:28:35</sys_created_on>
+        <sys_id>d6702f0c1bb0ac10e05f43b2cc4bcbb4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Task ID</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_bcbe93c81bb0ac10e05f43b2cc4bcb93_task_id_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:28:35</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_template/>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>run_import</internal_name>
+        <label_cache>[{"name":"{{action.workspace}}","label":"action➛Workspace","type":"action","ref":""},{"name":"{{action.model}}","label":"action➛Model","type":"action","ref":""},{"name":"{{action.import}}","label":"action➛Import","type":"action","ref":""},{"name":"{{action.token}}","label":"action➛Token","type":"action","ref":""},{"name":"{{step[7299c03c-5c22-454b-9552-3cc621ae3225].variable}}","label":"step➛Script step➛variable","type":"step","ref":""},{"name":"{{step[7299c03c-5c22-454b-9552-3cc621ae3225].task_id}}","label":"step➛Script step➛Task ID","type":"step","ref":""}]</label_cache>
+        <master>true</master>
+        <name>Run Import</name>
+        <natlang/>
+        <outputs/>
+        <outputs/>
+        <parent_action display_value="Run Import">bcbe93c81bb0ac10e05f43b2cc4bcb93</parent_action>
+        <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:31</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7b51e74c1bb0ac10e05f43b2cc4bcb0a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:31</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=7b51e74c1bb0ac10e05f43b2cc4bcb0a"/>
+    <sys_variable_value action="delete_multiple" query="document_key=7b51e74c1bb0ac10e05f43b2cc4bcb0a"/>
+    <sys_element_mapping action="delete_multiple" query="id=7b51e74c1bb0ac10e05f43b2cc4bcb0a"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>task_id</field>
+        <id>7b51e74c1bb0ac10e05f43b2cc4bcb0a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>9c61e74c1bb0ac10e05f43b2cc4bcb78</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_hub_action_output_7b51e74c1bb0ac10e05f43b2cc4bcb0a</table>
+        <value>{{step[7299c03c-5c22-454b-9552-3cc621ae3225].task_id}}</value>
+    </sys_element_mapping>
+    <sys_hub_step_instance action="delete_multiple" query="action=7b51e74c1bb0ac10e05f43b2cc4bcb0a^sys_idNOT INc861e74c1bb0ac10e05f43b2cc4bcb2a"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Run Import">7b51e74c1bb0ac10e05f43b2cc4bcb0a</action>
+        <cid>7299c03c-5c22-454b-9552-3cc621ae3225</cid>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>c861e74c1bb0ac10e05f43b2cc4bcb2a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=c861e74c1bb0ac10e05f43b2cc4bcb2a"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>c861e74c1bb0ac10e05f43b2cc4bcb2a</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>0861e74c1bb0ac10e05f43b2cc4bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <value/>
+        <variable display_value="">74315b04b3201300176b051a16a8dc2b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>c861e74c1bb0ac10e05f43b2cc4bcb2a</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>4461e74c1bb0ac10e05f43b2cc4bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <value/>
+        <variable display_value="">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>c861e74c1bb0ac10e05f43b2cc4bcb2a</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>8c61e74c1bb0ac10e05f43b2cc4bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+// ... code ...
+  
+   var anaplanApiUitl = new x_nriws_coupa_req.AnaplanAPIUtils();
+  outputs.task_id = anaplanApiUitl.runImportAction(inputs.workspace_id,inputs.model_id,inputs.import_action_id,inputs.token)
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>c861e74c1bb0ac10e05f43b2cc4bcb2a</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>c861e74c1bb0ac10e05f43b2cc4bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <value/>
+        <variable display_value="">2c226939b3101300176b051a16a8dc83</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=c861e74c1bb0ac10e05f43b2cc4bcb2a"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>application</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>8861e74c1bb0ac10e05f43b2cc4bcb6a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>import_action_id</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>8c61e74c1bb0ac10e05f43b2cc4bcb6c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</table>
+        <value>{{action.import}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>mid_selection_type</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>0061e74c1bb0ac10e05f43b2cc4bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>model_id</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>c861e74c1bb0ac10e05f43b2cc4bcb6c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</table>
+        <value>{{action.model}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>required_run_time</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>4c61e74c1bb0ac10e05f43b2cc4bcb6a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>c061e74c1bb0ac10e05f43b2cc4bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>token</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>4061e74c1bb0ac10e05f43b2cc4bcb6d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</table>
+        <value>{{action.token}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>workspace_id</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>0861e74c1bb0ac10e05f43b2cc4bcb6c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</table>
+        <value>{{action.workspace}}</value>
+    </sys_element_mapping>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=c861e74c1bb0ac10e05f43b2cc4bcb2a^sys_idNOT IN4061e74c1bb0ac10e05f43b2cc4bcb41,4c61e74c1bb0ac10e05f43b2cc4bcb4d,c061e74c1bb0ac10e05f43b2cc4bcb3a,c461e74c1bb0ac10e05f43b2cc4bcb47"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>model_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>model_id</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">c861e74c1bb0ac10e05f43b2cc4bcb2a</model>
+        <model_id>c861e74c1bb0ac10e05f43b2cc4bcb2a</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>4061e74c1bb0ac10e05f43b2cc4bcb41</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>token</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>token</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">c861e74c1bb0ac10e05f43b2cc4bcb2a</model>
+        <model_id>c861e74c1bb0ac10e05f43b2cc4bcb2a</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</name>
+        <next_element/>
+        <order>300</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>4c61e74c1bb0ac10e05f43b2cc4bcb4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>workspace_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>workspace_id</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">c861e74c1bb0ac10e05f43b2cc4bcb2a</model>
+        <model_id>c861e74c1bb0ac10e05f43b2cc4bcb2a</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>c061e74c1bb0ac10e05f43b2cc4bcb3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>import_action_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>import_action_id</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">c861e74c1bb0ac10e05f43b2cc4bcb2a</model>
+        <model_id>c861e74c1bb0ac10e05f43b2cc4bcb2a</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</name>
+        <next_element/>
+        <order>200</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>c461e74c1bb0ac10e05f43b2cc4bcb47</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=c861e74c1bb0ac10e05f43b2cc4bcb2a^sys_idNOT INc861e74c1bb0ac10e05f43b2cc4bcb54"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=28806850-49d7-440e-8dc6-e66848efc16a</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>task_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Task ID</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">c861e74c1bb0ac10e05f43b2cc4bcb2a</model>
+        <model_id>c861e74c1bb0ac10e05f43b2cc4bcb2a</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_c861e74c1bb0ac10e05f43b2cc4bcb2a</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>c861e74c1bb0ac10e05f43b2cc4bcb54</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_action_input action="delete_multiple" query="model=7b51e74c1bb0ac10e05f43b2cc4bcb0a^sys_idNOT IN4061e74c1bb0ac10e05f43b2cc4bcb22,bf51e74c1bb0ac10e05f43b2cc4bcb1a,fb51e74c1bb0ac10e05f43b2cc4bcb13,ff51e74c1bb0ac10e05f43b2cc4bcb0b"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=4fb82c38-3864-4436-99e6-6b4df8ce51b9</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>token</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Token</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Run Import">7b51e74c1bb0ac10e05f43b2cc4bcb0a</model>
+        <model_id>7b51e74c1bb0ac10e05f43b2cc4bcb0a</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_input_7b51e74c1bb0ac10e05f43b2cc4bcb0a</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>4061e74c1bb0ac10e05f43b2cc4bcb22</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=1de0ebb6-2669-4a85-8d6f-57253883c271</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>import</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Import</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Run Import">7b51e74c1bb0ac10e05f43b2cc4bcb0a</model>
+        <model_id>7b51e74c1bb0ac10e05f43b2cc4bcb0a</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_input_7b51e74c1bb0ac10e05f43b2cc4bcb0a</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:31</sys_created_on>
+        <sys_id>bf51e74c1bb0ac10e05f43b2cc4bcb1a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:31</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=67e95465-e251-46ea-9641-8aac8ec6fea9</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>model</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Model</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Run Import">7b51e74c1bb0ac10e05f43b2cc4bcb0a</model>
+        <model_id>7b51e74c1bb0ac10e05f43b2cc4bcb0a</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_input_7b51e74c1bb0ac10e05f43b2cc4bcb0a</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:31</sys_created_on>
+        <sys_id>fb51e74c1bb0ac10e05f43b2cc4bcb13</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:31</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=7ba617be-936c-489d-8e61-3fb1fc78d9e7</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>workspace</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Workspace</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Run Import">7b51e74c1bb0ac10e05f43b2cc4bcb0a</model>
+        <model_id>7b51e74c1bb0ac10e05f43b2cc4bcb0a</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_input_7b51e74c1bb0ac10e05f43b2cc4bcb0a</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:31</sys_created_on>
+        <sys_id>ff51e74c1bb0ac10e05f43b2cc4bcb0b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:31</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_output action="delete_multiple" query="model=7b51e74c1bb0ac10e05f43b2cc4bcb0a^sys_idNOT IN0c61e74c1bb0ac10e05f43b2cc4bcb6f"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=92c24628-31a2-488b-a494-0aa2423171a4</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>task_id</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Task ID</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Run Import">7b51e74c1bb0ac10e05f43b2cc4bcb0a</model>
+        <model_id>7b51e74c1bb0ac10e05f43b2cc4bcb0a</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_7b51e74c1bb0ac10e05f43b2cc4bcb0a</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>0c61e74c1bb0ac10e05f43b2cc4bcb6f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_step_instance action="delete_multiple" query="action=7b51e74c1bb0ac10e05f43b2cc4bcb0a^sys_idNOT INc861e74c1bb0ac10e05f43b2cc4bcb2a"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Run Import">7b51e74c1bb0ac10e05f43b2cc4bcb0a</action>
+        <cid>7299c03c-5c22-454b-9552-3cc621ae3225</cid>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>c861e74c1bb0ac10e05f43b2cc4bcb2a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=c861e74c1bb0ac10e05f43b2cc4bcb2a"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>c861e74c1bb0ac10e05f43b2cc4bcb2a</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>0861e74c1bb0ac10e05f43b2cc4bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <value/>
+        <variable display_value="">74315b04b3201300176b051a16a8dc2b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>c861e74c1bb0ac10e05f43b2cc4bcb2a</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>4461e74c1bb0ac10e05f43b2cc4bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <value/>
+        <variable display_value="">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>c861e74c1bb0ac10e05f43b2cc4bcb2a</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>8c61e74c1bb0ac10e05f43b2cc4bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+// ... code ...
+  
+   var anaplanApiUitl = new x_nriws_coupa_req.AnaplanAPIUtils();
+  outputs.task_id = anaplanApiUitl.runImportAction(inputs.workspace_id,inputs.model_id,inputs.import_action_id,inputs.token)
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>c861e74c1bb0ac10e05f43b2cc4bcb2a</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>c861e74c1bb0ac10e05f43b2cc4bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <value/>
+        <variable display_value="">2c226939b3101300176b051a16a8dc83</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=c861e74c1bb0ac10e05f43b2cc4bcb2a"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>application</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>8861e74c1bb0ac10e05f43b2cc4bcb6a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>import_action_id</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>8c61e74c1bb0ac10e05f43b2cc4bcb6c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</table>
+        <value>{{action.import}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>mid_selection_type</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>0061e74c1bb0ac10e05f43b2cc4bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>model_id</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>c861e74c1bb0ac10e05f43b2cc4bcb6c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</table>
+        <value>{{action.model}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>required_run_time</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>4c61e74c1bb0ac10e05f43b2cc4bcb6a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>c061e74c1bb0ac10e05f43b2cc4bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>token</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>4061e74c1bb0ac10e05f43b2cc4bcb6d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</table>
+        <value>{{action.token}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>workspace_id</field>
+        <id>c861e74c1bb0ac10e05f43b2cc4bcb2a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>0861e74c1bb0ac10e05f43b2cc4bcb6c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</table>
+        <value>{{action.workspace}}</value>
+    </sys_element_mapping>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=c861e74c1bb0ac10e05f43b2cc4bcb2a^sys_idNOT IN4061e74c1bb0ac10e05f43b2cc4bcb41,4c61e74c1bb0ac10e05f43b2cc4bcb4d,c061e74c1bb0ac10e05f43b2cc4bcb3a,c461e74c1bb0ac10e05f43b2cc4bcb47"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>model_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>model_id</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">c861e74c1bb0ac10e05f43b2cc4bcb2a</model>
+        <model_id>c861e74c1bb0ac10e05f43b2cc4bcb2a</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>4061e74c1bb0ac10e05f43b2cc4bcb41</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>token</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>token</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">c861e74c1bb0ac10e05f43b2cc4bcb2a</model>
+        <model_id>c861e74c1bb0ac10e05f43b2cc4bcb2a</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</name>
+        <next_element/>
+        <order>300</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>4c61e74c1bb0ac10e05f43b2cc4bcb4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>workspace_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>workspace_id</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">c861e74c1bb0ac10e05f43b2cc4bcb2a</model>
+        <model_id>c861e74c1bb0ac10e05f43b2cc4bcb2a</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>c061e74c1bb0ac10e05f43b2cc4bcb3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>import_action_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>import_action_id</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">c861e74c1bb0ac10e05f43b2cc4bcb2a</model>
+        <model_id>c861e74c1bb0ac10e05f43b2cc4bcb2a</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_c861e74c1bb0ac10e05f43b2cc4bcb2a</name>
+        <next_element/>
+        <order>200</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>c461e74c1bb0ac10e05f43b2cc4bcb47</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=c861e74c1bb0ac10e05f43b2cc4bcb2a^sys_idNOT INc861e74c1bb0ac10e05f43b2cc4bcb54"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=28806850-49d7-440e-8dc6-e66848efc16a</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>task_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Task ID</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">c861e74c1bb0ac10e05f43b2cc4bcb2a</model>
+        <model_id>c861e74c1bb0ac10e05f43b2cc4bcb2a</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_c861e74c1bb0ac10e05f43b2cc4bcb2a</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>c861e74c1bb0ac10e05f43b2cc4bcb54</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_input_7b51e74c1bb0ac10e05f43b2cc4bcb0a^sys_idNOT IN3751e74c1bb0ac10e05f43b2cc4bcb12,4c61e74c1bb0ac10e05f43b2cc4bcb27,8861e74c1bb0ac10e05f43b2cc4bcb20,f751e74c1bb0ac10e05f43b2cc4bcb19"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>workspace</element>
+        <help/>
+        <hint/>
+        <label>Workspace</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_7b51e74c1bb0ac10e05f43b2cc4bcb0a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:31</sys_created_on>
+        <sys_id>3751e74c1bb0ac10e05f43b2cc4bcb12</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Workspace</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_7b51e74c1bb0ac10e05f43b2cc4bcb0a_workspace_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:31</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>token</element>
+        <help/>
+        <hint/>
+        <label>Token</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_7b51e74c1bb0ac10e05f43b2cc4bcb0a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>4c61e74c1bb0ac10e05f43b2cc4bcb27</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Token</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_7b51e74c1bb0ac10e05f43b2cc4bcb0a_token_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>import</element>
+        <help/>
+        <hint/>
+        <label>Import</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_7b51e74c1bb0ac10e05f43b2cc4bcb0a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>8861e74c1bb0ac10e05f43b2cc4bcb20</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Import</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_7b51e74c1bb0ac10e05f43b2cc4bcb0a_import_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>model</element>
+        <help/>
+        <hint/>
+        <label>Model</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_7b51e74c1bb0ac10e05f43b2cc4bcb0a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:31</sys_created_on>
+        <sys_id>f751e74c1bb0ac10e05f43b2cc4bcb19</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Model</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_7b51e74c1bb0ac10e05f43b2cc4bcb0a_model_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:31</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_7b51e74c1bb0ac10e05f43b2cc4bcb0a^sys_idNOT IN0061e74c1bb0ac10e05f43b2cc4bcb76"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>task_id</element>
+        <help/>
+        <hint/>
+        <label>Task ID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_7b51e74c1bb0ac10e05f43b2cc4bcb0a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-26 02:32:32</sys_created_on>
+        <sys_id>0061e74c1bb0ac10e05f43b2cc4bcb76</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Task ID</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_7b51e74c1bb0ac10e05f43b2cc4bcb0a_task_id_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-26 02:32:32</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+</record_update>

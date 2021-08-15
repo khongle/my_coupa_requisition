@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
+    <sp_portal action="INSERT_OR_UPDATE">
+        <css_variables>$brand-primary:#428bca;
+$body-bg:#ffffff;
+$state-success-text:#5cb85c;
+$sp-homepage-bg:#fff;
+$sp-navbar-divider-color:#455464;
+$text-color:#717171;
+$sp-logo-margin-y:8px;
+$navbar-inverse-link-hover-color:#bdc0c4;
+$panel-bg:#ffffff;
+$brand-success:#5cb85c;
+$navbar-inverse-bg:#ffffff;
+$brand-warning:#f0ad4e;
+$brand-danger:#d9534f;
+$sp-tagline-color:#717171;
+$navbar-inverse-link-color:#343d47;
+$brand-info:#5bc0de;
+$link-color:#428bca;
+$sp-logo-margin-x:15px;
+$btn-default-bg:#ccd977;
+$text-muted:#979797;</css_variables>
+        <default>false</default>
+        <hide_portal_name>false</hide_portal_name>
+        <homepage display_value="nrid_homepage">074289ec1b546410e05f43b2cc4bcbf9</homepage>
+        <icon>40d0a56c1bd4a01059943265cc4bcb88</icon>
+        <kb_knowledge_base/>
+        <kb_knowledge_page/>
+        <login_page display_value="nri_login">759bde051bd8a410e05f43b2cc4bcb15</login_page>
+        <logo>0d80216c1bd4a01059943265cc4bcb77</logo>
+        <notfound_page/>
+        <quick_start_config/>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu display_value="Coupa Header Menu">c03051241bd4a01059943265cc4bcb42</sp_rectangle_menu>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-10-30 12:00:30</sys_created_on>
+        <sys_id>0b20e2671b48201059943265cc4bcb76</sys_id>
+        <sys_mod_count>68</sys_mod_count>
+        <sys_name>Coupa Requisition</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_portal_0b20e2671b48201059943265cc4bcb76</sys_update_name>
+        <sys_updated_by>NRIWPS_kuranari</sys_updated_by>
+        <sys_updated_on>2021-06-28 08:03:48</sys_updated_on>
+        <theme display_value="Coupa Req - Theme">48d6e91c1bdc601059943265cc4bcb8a</theme>
+        <title>Coupa Requisition</title>
+        <ts_index_group/>
+        <url_suffix>coupa_req</url_suffix>
+    </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=0b20e2671b48201059943265cc4bcb76"/>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color>#ffffff</average_image_color>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/png</content_type>
+        <file_name>icon</file_name>
+        <hash>689243dedb3e4f57c352d8b1aec284931dad8cbc95e74d82ea30d835e71d352f</hash>
+        <image_height>26</image_height>
+        <image_width>50</image_width>
+        <size_bytes>1501</size_bytes>
+        <size_compressed>1216</size_compressed>
+        <state>available</state>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-11-02 09:56:24</sys_created_on>
+        <sys_id>40d0a56c1bd4a01059943265cc4bcb88</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>dinesh.k.a</sys_updated_by>
+        <sys_updated_on>2020-11-02 09:56:24</sys_updated_on>
+        <table_name>ZZ_YYsp_portal</table_name>
+        <table_sys_id>0b20e2671b48201059943265cc4bcb76</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="icon" sys_id="40d0a56c1bd4a01059943265cc4bcb88">40d0a56c1bd4a01059943265cc4bcb88</sys_attachment>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-11-02 09:56:24</sys_created_on>
+        <sys_id>80d0a56c1bd4a01059943265cc4bcb88</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>6wzwc+flkuJiYGDg9fRwCQLSRkAsxcEGJL8e4H8FpCRLXCNKgvPTSsoTi1IZHFPyk1IVPHMT01ODUhNTKgtPptowMDCrZYZElET4+lgl5+fqJYLU6FXkFjCAgI19RUFicnZqiUJSanpmnq3S+937lRQyU2yVwk19DXwLnFMzMj2qilKDq/xCkquyky1TlOztFGwqrIAG5KaWJCpU5ObkFVtV2CqBzbUCskHC+koKYCUl2bZKEEdF+AYoOOcXpSqY6pnpJhsaWyiYW+oZmlpaGJnoKBgZGJrpG1jqG5roGhhaGVhaGRgqQIES0LailDSrIBc3qF1Anq1SRklJgZW+fnl5uV65sV5+Ubq+oaWlpb6Bkb6RkS5QhW5xZV5JYoVuXrEyzASX1OLkosyCksz8PAUQPzEpv7TEVkkJ5oXcArixecXQYAIGmH5FYoG+oZ6BPpJCX1/8SnNz4aqLS4JS0/CrLg6pLEjVD0otzi8tSgZGXJoySHOBlXNRamJJflFIfn4OLBQDMvJL8osz8gsUnJ1BoWauoBGemZeSX16sCdbj62vlmVdckpiXnOrpYqsEFNHLzEyxMnI1cTFxNLBwNLJ0MzR0NXc0tzR2sXQxMjM2MnByNneF6XXJTy7NTc0rgelNQei1xKkXlBwgulOLMstSU9yK8nMVwN62ysTtFjPcboHoTcHtFnOcevWBjtFHi2yYEDAFgZjwpAvkwBN/ah4wxRcBk/aMbf+7GBiYfD1dHEMqbt2Z4a/h4ihz/LutdqdSoMvCr88fPPK7WTDhW1OzUGdUUXBRwafnDpaLlkzZ8FTh6XnHt46elhrinnxP4oMm2bNHdT7/vXp53PqZle9zjXc/DZ8fZ/252vi99f6Z98+sSZNoe28/g4+HcfWsZT/XHGBj/XdVbH9O+7b/FezqCYwmTGfvLV/q++seZwGX3EHVGyyM8xW3SZzYqnX8vWNj/daj+rc7zvM5aGZfCbx3sjI9vrwjQuqF3wedlawqyzoCxZ/sCV68O2OHfG8Wp1gwxzPJp3V99V3Sik8X2HG+Nm9h5LlxKs9yX/mu026/J0/pmZWzX1PR5sZ0PlWG7U5RBlY/hewL5ixj1mCUZtqv9Zo/ZV11cZtJs9wFPq2AfS/Kbxr+/NrkGel14Se/nLnEAkGb2xZ5rD3fNWLfb/omuP1au18p6+XnUUuuT6vbfEC7mXF/O1+3ZHFY21LuV3aShzZF3G65Lhi28YU0S+lzO/7i+8FeLOJCdnYdLw0S3XaGPhCfqviEe4nRtZDpLIqlakqLP19fON1Z+fy3A8KLbfQZf7PzJklInpqgqMImNnkD56WVZiyC7nH9H4Hqzm1v6t/7fIp9s1FHR1VuQPmNLS9yNi91OGGlvHXS04a+Cv0wP7PFDiekbzy70qu4ONVLvGnFm9nmRje3ndFcbnx3QlfHhLNaAkKm4man2/bKBd3l6mwQn6klkOm1MXvOKx4DrVgOq78Hkj0dQ8JYSxNdlgaVuZx4dsa758wKmceFx3bva9J86XThpaicNdeiTY8KFq6eKDtx/4oT2zqclyy/++fnR+0DDJMf22fLX9T8CCpwPV39XNY5JTQBAHHUQTndBQAA</data>
+        <length>1608</length>
+        <position>1</position>
+        <sys_attachment display_value="icon" sys_id="40d0a56c1bd4a01059943265cc4bcb88">40d0a56c1bd4a01059943265cc4bcb88</sys_attachment>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-11-02 09:56:24</sys_created_on>
+        <sys_id>04d0a56c1bd4a01059943265cc4bcb88</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>logo</file_name>
+        <hash>4d7c5c1508d81f3ff8d972d7db1cf89985b261b39531f6bf6f1c776312260acf</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>1461</size_bytes>
+        <size_compressed>717</size_compressed>
+        <state>available</state>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-11-02 09:55:06</sys_created_on>
+        <sys_id>0d80216c1bd4a01059943265cc4bcb77</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>guest</sys_updated_by>
+        <sys_updated_on>2020-11-02 09:55:07</sys_updated_on>
+        <table_name>ZZ_YYsp_portal</table_name>
+        <table_sys_id>0b20e2671b48201059943265cc4bcb76</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="logo" sys_id="0d80216c1bd4a01059943265cc4bcb77">0d80216c1bd4a01059943265cc4bcb77</sys_attachment>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-11-02 09:55:06</sys_created_on>
+        <sys_id>4d80216c1bd4a01059943265cc4bcb77</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>tVTJbttADP0VQj2LHs4+RZxDTz40V98NZZEBuwkaQw709X2k7Dj5gMIAzaE4XN4j5+59eqGP4+HP+7obT6e3n6vV+Xzmc+DXvy8r75xbwaOj8/7xNK47yamj8Wn/Mp7WXagcc0fT/un86/Vj3TlyBAda7Pd3b7vTSI/r7qFF9pkS17YTTp5MmHcfVH63EWzzsedC3nP1Yy+cy1YgR9XmI8wSeq4yOPKcobpKCW5FqCDTrrJPZGJJkrkGCuzb0EeOjVxfWVpvd1Fr6guHaMEH2OGZMgS0xKVS5hxN22WOQiac/RLHiigpD4IA/dIEUkhdNLi2CQ4yaokoKwUycS0LgQNuDn2ymoLebaZokZGblo1AFdDZTdN2hVMjEwtgyFM1UB2RZuqDthIAoWhnNQGmoKH8ci1qSyUuWuRQEEMNvfVtWgEU6LZo6HLpVlHM+OLKAM/mzZK9obVoij3YwcfSCzrJ39gWdGyo3IxfOP88zw/iI/mKvMZ8MOY3MM7HplncRoLfCvhJ6tCuk9G2SoexOGUWP4YJ8fLYB6tJMrnLKPmkAVMCjjmTiSshhqPyoey7ZTji8tfeMUFGhQcVoZiGELWSiSsVF06Viq9Dq2RUnbD/QUZeyMifZGhbXrHEOt6wLFuM0Aa2+QGXhJqOiwDVsHFbd/BOe8O5NTjGET6T16n7/ek9H6N55HDQHQLPDpyMugTTRYVvsuuZQx48+2qbooWjyQCSg98pEmTi+gwINqwcbDuAmmtATKdoAJbeMPFNNzwuGqjWlUEuRcoXJSwqf2KaVpGsooReU2bnLw2JdiTFypS5o+f94bDufngvRWK3+vJoVc8lWRTgl0FAUgKS3GYl6Llit8U+N8rLSoq+YYwHCZuftygi7JpS0pZJEys8kcaFDbybWJ4U9ekbB2XqVp4rKbdnLU9f4/t/NbgSLLUFAAA=</data>
+        <length>944</length>
+        <position>1</position>
+        <sys_attachment display_value="logo" sys_id="0d80216c1bd4a01059943265cc4bcb77">0d80216c1bd4a01059943265cc4bcb77</sys_attachment>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-11-02 09:55:06</sys_created_on>
+        <sys_id>cd80216c1bd4a01059943265cc4bcb77</sys_id>
+    </sys_attachment_doc>
+</record_update>

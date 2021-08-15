@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_nriws_coupa_req.coupa_invoice.api.key.dev</name>
+        <read_roles/>
+        <suffix>x_nriws_coupa_req.coupa_invoice.api.key.dev</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-05-26 07:02:42</sys_created_on>
+        <sys_id>ced6686e1b1cbc10057498ea234bcb87</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_nriws_coupa_req.coupa_invoice.api.key.dev</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_properties_ced6686e1b1cbc10057498ea234bcb87</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-05-26 07:02:42</sys_updated_on>
+        <type>string</type>
+        <value>5096a4e8c922cd69ec70b68e567d3116c4d616b6</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=ced6686e1b1cbc10057498ea234bcb87"/>
+</record_update>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_email_template">
+    <sysevent_email_template action="INSERT_OR_UPDATE">
+        <collection>sysapproval_approver</collection>
+        <email_layout display_value="Unsubscribe and Preferences">1410041f3b0b2200c869c2c703efc41e</email_layout>
+        <message/>
+        <message_html><![CDATA[<div>こちら</div>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>mailto.rejection.coupa</name>
+        <sms_alternate/>
+        <subject>Re:${sysapproval} - reject</subject>
+        <sys_class_name>sysevent_email_template</sys_class_name>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-12-15 08:16:42</sys_created_on>
+        <sys_id>5b06a6121bcde41059943265cc4bcb25</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>mailto.rejection.coupa</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sysevent_email_template_5b06a6121bcde41059943265cc4bcb25</sys_update_name>
+        <sys_updated_by>tanmyi.m</sys_updated_by>
+        <sys_updated_on>2020-12-20 11:42:59</sys_updated_on>
+        <sys_version>2</sys_version>
+    </sysevent_email_template>
+</record_update>

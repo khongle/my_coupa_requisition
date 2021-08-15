@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
+    <sp_portal action="INSERT_OR_UPDATE">
+        <css_variables>$brand-primary:#428bca;
+$body-bg:#ffffff;
+$state-success-text:#5cb85c;
+$sp-homepage-bg:#fff;
+$sp-navbar-divider-color:#455464;
+$text-color:#717171;
+$sp-logo-margin-y:8px;
+$navbar-inverse-link-hover-color:#bdc0c4;
+$panel-bg:#ffffff;
+$brand-success:#5cb85c;
+$navbar-inverse-bg:#ffffff;
+$brand-warning:#f0ad4e;
+$brand-danger:#d9534f;
+$sp-tagline-color:#717171;
+$navbar-inverse-link-color:#343d47;
+$brand-info:#5bc0de;
+$link-color:#428bca;
+$sp-logo-margin-x:15px;
+$btn-default-bg:#ccd977;
+$text-muted:#979797;</css_variables>
+        <default>false</default>
+        <hide_portal_name>false</hide_portal_name>
+        <homepage display_value="nrid_approval">e410d6691b04b010057498ea234bcbb2</homepage>
+        <icon>40d0a56c1bd4a01059943265cc4bcb88</icon>
+        <kb_knowledge_base/>
+        <kb_knowledge_page/>
+        <login_page display_value="nri_login">759bde051bd8a410e05f43b2cc4bcb15</login_page>
+        <logo>0d80216c1bd4a01059943265cc4bcb77</logo>
+        <notfound_page/>
+        <quick_start_config/>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu display_value="NRID Approval Header Menu">97b6507a1bfbe450057498ea234bcb93</sp_rectangle_menu>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>NRIWPS_kuranari</sys_created_by>
+        <sys_created_on>2021-05-02 03:55:58</sys_created_on>
+        <sys_id>c91694f61bfbe450057498ea234bcb1b</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>NRI Digital Approval Portal</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_portal_c91694f61bfbe450057498ea234bcb1b</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-05-11 02:51:52</sys_updated_on>
+        <theme display_value="Coupa Req - Theme">48d6e91c1bdc601059943265cc4bcb8a</theme>
+        <title>NRI Digital Approval Portal</title>
+        <ts_index_group/>
+        <url_suffix>nrid_approval_portal</url_suffix>
+    </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=c91694f61bfbe450057498ea234bcb1b"/>
+</record_update>

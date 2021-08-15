@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>no_authentication</authentication_type>
+        <basic_auth_password>BiEMFVqbCuh7MaSa+EyjGA==</basic_auth_password>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content/>
+        <function_name>Get_Requisitions_Great_Than</function_name>
+        <http_method>get</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>Coupa [ Get_Requisitions_Great_Than ]</qualified_name>
+        <rest_endpoint>${coupa_endpoint}requisitions?status=pending_approval&amp;id%5Bgt%5D=${id}</rest_endpoint>
+        <rest_message display_value="Coupa">fa34d7591b94e410e05f43b2cc4bcb23</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-05-24 01:26:07</sys_created_on>
+        <sys_id>2cc685f51b9c3c10057498ea234bcb0f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Get_Requisitions_Great_Than</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_fn_2cc685f51b9c3c10057498ea234bcb0f</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-05-28 03:55:40</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

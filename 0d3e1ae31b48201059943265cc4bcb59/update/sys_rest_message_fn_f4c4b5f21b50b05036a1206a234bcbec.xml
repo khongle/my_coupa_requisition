@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content/>
+        <function_name>Get_Purchase_Orders_By_Id</function_name>
+        <http_method>get</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>Coupa Purchase Orders [ Get_Purchase_Orders_By_Id ]</qualified_name>
+        <rest_endpoint>${coupa_endpoint}purchase_orders/${id}</rest_endpoint>
+        <rest_message display_value="Coupa Purchase Orders">b204fdfa1b10b05036a1206a234bcb20</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-05-27 07:24:32</sys_created_on>
+        <sys_id>f4c4b5f21b50b05036a1206a234bcbec</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Get_Purchase_Orders_By_Id</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_fn_f4c4b5f21b50b05036a1206a234bcbec</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-05-28 02:08:40</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

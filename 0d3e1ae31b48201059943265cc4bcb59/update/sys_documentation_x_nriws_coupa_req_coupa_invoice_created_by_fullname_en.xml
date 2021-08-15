@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="created_by_fullname" label="Created By Fullname" language="en" table="x_nriws_coupa_req_coupa_invoice">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>created_by_fullname</element>
+            <help/>
+            <hint/>
+            <label>Created By Fullname</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_invoice</name>
+            <plural>Created By Fullnames</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-06-14 04:31:40</sys_created_on>
+            <sys_id>539abd601b70f41036a1206a234bcbd9</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>Created By Fullname</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_documentation_x_nriws_coupa_req_coupa_invoice_created_by_fullname_en</sys_update_name>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-06-17 02:31:12</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="coupa invoice" section_id="e3d58a111b48701036a1206a234bcbcc" sys_domain="global" table="x_nriws_coupa_req_coupa_invoice" version="3" view="Coupa_invoice">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>due_date</element>
+            <position>0</position>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-05-10 06:33:44</sys_created_on>
+            <sys_id>06e6ca511b48701036a1206a234bcb19</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="coupa invoice" display_value="coupa invoice" name="x_nriws_coupa_req_coupa_invoice" sys_domain="global" view="f866b1411b51b41036a1206a234bcbfd">e3d58a111b48701036a1206a234bcbcc</sys_ui_section>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-05-10 06:33:44</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>calendar_duration</element>
+            <position>1</position>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-05-10 06:33:44</sys_created_on>
+            <sys_id>8ae6ca511b48701036a1206a234bcb19</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="coupa invoice" display_value="coupa invoice" name="x_nriws_coupa_req_coupa_invoice" sys_domain="global" view="f866b1411b51b41036a1206a234bcbfd">e3d58a111b48701036a1206a234bcbcc</sys_ui_section>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-05-10 06:33:44</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>coupa invoice</caption>
+            <header>false</header>
+            <name>x_nriws_coupa_req_coupa_invoice</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-05-10 06:29:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e3d58a111b48701036a1206a234bcbcc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_nriws_coupa_req_coupa_invoice</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_ui_section_e3d58a111b48701036a1206a234bcbcc</sys_update_name>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-05-10 06:29:12</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Coupa invoice" name="Coupa_invoice">f866b1411b51b41036a1206a234bcbfd</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

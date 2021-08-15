@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <business_calendar/>
+        <condition><![CDATA[var answer = false;
+
+var now = new GlideDateTime();
+
+if(now.getDayOfWeekUTC() !=6 && now.getDayOfWeekUTC() !=7 ) // this scheduled job will run only on Weekdays
+{
+      answer = true;
+}
+
+// this scheduled job will run only 9:00 - 18:00
+if(answer){
+	var gdt = new GlideDateTime(); // current time in GMT
+	var userDateTimeZone = gdt.getDisplayValue(); // in local time
+	var userTime = userDateTimeZone.split(' ')[1]; // parsed time field
+
+	var startTime = '09:00:00';
+	var endTime = '20:00:00';
+
+	if (userTime > startTime && userTime < endTime) {
+		// Incident condition to set flag true
+		answer = true;
+
+	}
+	else{
+		answer = false;
+	}
+}]]></condition>
+        <conditional>false</conditional>
+        <entered_time/>
+        <name>Fetch Coupa invoice</name>
+        <offset/>
+        <offset_type/>
+        <run_as display_value="">ae68f6f01b5d6c1059943265cc4bcb09</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period>1970-01-01 00:10:00</run_period>
+        <run_start>2021-05-26 07:10:44</run_start>
+        <run_time>1969-12-31 15:00:00</run_time>
+        <run_type>periodically</run_type>
+        <script><![CDATA[var coupaAPIUtil = new x_nriws_coupa_req.CoupaAPIUtils();
+//coupaAPIUtil.getRequisitionsByStatus('pending_approval');
+gs.info('Fetch Coupa Invoice scheduled job is running');
+coupaAPIUtil.getInvoicesByIdAndStatus();]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-05-26 07:10:44</sys_created_on>
+        <sys_id>ccd820ee1b1cbc10057498ea234bcb4e</sys_id>
+        <sys_mod_count>41</sys_mod_count>
+        <sys_name>Fetch Coupa invoice</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sysauto_script_ccd820ee1b1cbc10057498ea234bcb4e</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-07-11 03:56:34</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

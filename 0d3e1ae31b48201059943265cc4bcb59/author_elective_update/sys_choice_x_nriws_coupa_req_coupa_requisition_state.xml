@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="state" table="x_nriws_coupa_req_coupa_requisition" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>state</element>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-07 06:59:59</sys_created_on>
+            <sys_id>d118c5371bbc601059943265cc4bcbfc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>state</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_choice_x_nriws_coupa_req_coupa_requisition_state</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-07 06:59:59</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>エラー</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sequence/>
+            <sys_created_by>tanmyi.m</sys_created_by>
+            <sys_created_on>2020-12-22 07:36:14</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c1002aa81b1d6c10e05f43b2cc4bcb2d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>tanmyi.m</sys_updated_by>
+            <sys_updated_on>2020-12-22 07:36:14</sys_updated_on>
+            <value>4</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>キャンセル済み</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sequence>0</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-07 06:59:59</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>9918c5371bbc601059943265cc4bcbfb</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>tanmyi.m</sys_updated_by>
+            <sys_updated_on>2020-12-21 08:23:04</sys_updated_on>
+            <value>-5</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>オープン</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sequence>1</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-07 07:00:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>9518c5371bbc601059943265cc4bcbff</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2021-01-12 04:47:49</sys_updated_on>
+            <value>1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>レベル１で承認待ち</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sequence>2</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-07 07:00:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>111809371bbc601059943265cc4bcb02</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>tanmyi.m</sys_updated_by>
+            <sys_updated_on>2020-12-21 08:23:31</sys_updated_on>
+            <value>2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>レベル２で承認待ち</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sequence>3</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-07 07:00:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d91809371bbc601059943265cc4bcb04</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>tanmyi.m</sys_updated_by>
+            <sys_updated_on>2020-12-21 08:23:46</sys_updated_on>
+            <value>8</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>承認済み</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sequence>4</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-07 07:00:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>951809371bbc601059943265cc4bcb07</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>tanmyi.m</sys_updated_by>
+            <sys_updated_on>2020-12-21 08:24:16</sys_updated_on>
+            <value>9</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>否認済み</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sequence>5</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-07 07:00:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>511809371bbc601059943265cc4bcb0a</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>tanmyi.m</sys_updated_by>
+            <sys_updated_on>2020-12-21 08:24:32</sys_updated_on>
+            <value>3</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Coupa上で承認済み</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sequence>6</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-14 02:26:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>868c8c4e1bcda41059943265cc4bcb91</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>tanmyi.m</sys_updated_by>
+            <sys_updated_on>2020-12-21 08:24:50</sys_updated_on>
+            <value>10</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Coupa上で否認済み</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sequence>7</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 00:41:34</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>bf2ef8de1b89e41059943265cc4bcb65</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>tanmyi.m</sys_updated_by>
+            <sys_updated_on>2020-12-21 08:25:04</sys_updated_on>
+            <value>11</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

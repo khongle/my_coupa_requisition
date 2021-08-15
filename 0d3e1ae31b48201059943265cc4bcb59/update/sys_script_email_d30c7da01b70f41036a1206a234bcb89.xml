@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>Requester_Email</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(/* GlideRecord */ current, /* TemplatePrinter */ template, /* Optional EmailOutbound */ email, /* Optional GlideRecord */ email_action,/* Optional GlideRecord */ event) {
+
+	var coupa_id;
+	var mailbody;
+	var sub;
+	var Details;
+
+	var CoupaItem = new GlideRecord('x_nriws_coupa_req_coupa_items');
+	CoupaItem.addQuery('parent',current.sys_id.getDisplayValue());
+	CoupaItem.orderBy('id');
+	CoupaItem.query();
+
+
+	coupa_id = current.id;
+
+	if(current.state=='9'){ //Approved
+		sub = '【ServiceNow】発注申請承認通知　発注申請番号: ＃'+coupa_id+'';
+		mailbody = 'ServiceNowで申請書 #'+coupa_id+' が承認されました。';
+	}
+	else if(current.state=='3'){ //Rejected
+		sub = '【ServiceNow】発注申請否認通知　発注申請番号: ＃'+coupa_id+'';
+		mailbody = 'ServiceNowで申請書 #'+coupa_id+' が否認されました。';
+	}
+/*	else if(current.state=='-5' && current.cancel_reason=='approver_not_exist'){ //Cancelled with approver_not_exist
+		sub = '【ServiceNow】エラー通知　発注申請番号: ＃'+coupa_id+'';
+		mailbody ='Coupaで発注申請承認依頼がありましたが、否認されました。<br>以下の原因と考えられます。<br><br>1)Anaplanに承認者が設定されていない。';
+	}
+	else if(current.state=='-5' && current.cancel_reason=='contract_not_exist'){ //Cancelled with contract_not_exist
+		sub = '【ServiceNow】エラー通知　発注申請番号: ＃'+coupa_id+'';
+		mailbody ='Coupaで発注申請承認依頼がありましたが、否認されました。<br>以下のいずれかが原因と考えられます。<br><br>1)Coupaで指定した委託契約番号（事業部管理番号）がAnaplanに存在しない。<br>2)Coupaで委託契約番号（事業部管理番号）が指定されていない。';
+	}*/
+	else if(current.state=='10'){ //Approved in Coupa
+		sub = '【ServiceNow】発注申請承認通知　発注申請番号: ＃'+coupa_id+'';
+		mailbody = 'ServiceNowで申請書 #'+coupa_id+' が承認されました。';
+	}
+	else if(current.state=='11'){ //Rejected in Coupa 
+		sub = '【ServiceNow】発注申請否認通知　発注申請番号: ＃'+coupa_id+'';
+		mailbody = 'ServiceNowで申請書 #'+coupa_id+' が否認されました。';
+		if(current.cancel_reason=='approver_not_exist'){ //Rejected in Coupa with approver_not_exist
+			sub = '【ServiceNow】エラー通知　発注申請番号: ＃'+coupa_id+'';
+			mailbody = 'ServiceNowで申請書 #'+coupa_id+' が否認されました。<br>以下の原因と考えられます。<br><br>1)Anaplanに承認者が設定されていない。';
+		}
+		else if(current.cancel_reason=='contract_not_exist'){ //Rejected in Coupa with contract_not_exist
+			sub = '【ServiceNow】エラー通知　発注申請番号: ＃'+coupa_id+'';
+			mailbody = 'ServiceNowで申請書 #'+coupa_id+' が否認されました。<br>以下のいずれかが原因と考えられます。<br><br>1)Coupaで指定した委託契約番号（事業部管理番号）がAnaplanに存在しない。<br>2)Coupaで委託契約番号（事業部管理番号）が指定されていない。';
+		}
+	}
+
+	
+	/*if(current.cancel_reason=='approver_not_exist'){
+	    sub = '【ServiceNow】エラー通知　発注申請番号: ＃'+coupa_id+'';
+	    mailbody ='Coupaで発注申請承認依頼がありましたが、否認されました。<br>以下の原因と考えられます。<br><br>1)Anaplanに承認者が設定されていない。';
+	}
+	else if(current.cancel_reason=='contract_not_exist'){
+		sub = '【ServiceNow】エラー通知　発注申請番号: ＃'+coupa_id+'';
+		mailbody ='Coupaで発注申請承認依頼がありましたが、否認されました。<br>以下のいずれかが原因と考えられます。<br><br>1)Coupaで指定した委託契約番号（事業部管理番号）がAnaplanに存在しない。<br>2)Coupaで委託契約番号（事業部管理番号）が指定されていない。';
+	}*/
+	email.setSubject(sub); 
+
+	//var AnaplanCon = new GlideRecord('x_nriws_coupa_req_anaplan_contract')
+	//AnaplanCon.addQuery()
+	//AnaplanCon.query();
+	
+	template.print('<div style="padding-left:5px;padding-right:5px;padding-top:10px;" >');           //#D8D0C1
+	template.print('<h3>'+mailbody+'</h3>');
+	template.print('<hr style="height: 1px; border: none; border-top: 2px solid #3599b6;">');         //#FBDCE2
+	template.print('<table>  '); 
+	template.print('<tr><th style="padding: 5px;text-align:right;"> 申請書 : </th><td>'+current.id+'</td></tr>');
+	template.print('<tr><th style="padding: 5px;text-align:right;"> 委託契約（アイテム) : </th><td>'+current.project_title+'</td></tr>');
+	template.print('<tr><th style="padding: 5px;text-align:right;"> 申請者 : </th><td>'+current.requested_by_fullname+'</td></tr>');
+	template.print('<tr><th style="padding: 5px;text-align:right;"> 合計 : </th><td>'+current.total.getDisplayValue()+ ' ' +current.currency+'</td></tr>');
+    template.print('<tr><th style="padding: 5px;text-align:right;"> 委託契約番号（事業部管理番号）: </th><td>'+current.optional_field+'</td></tr>');
+	
+	template.print('</table>  '); 
+	template.print('<hr style="height: 1px; border: none; border-top: 2px solid #3599b6;">');
+
+	template.print('<h3>アイテム詳細情報</h3>');
+	template.print('<table border="1" style="border-collapse: collapse; border-style: solid; border-color: #b3a8a8;">'); 
+	template.print('<tr>'); 
+	template.print('<th style="padding: 5px;">申請書＃</th>'); 
+	template.print('<th style="padding: 5px;">アイテム</th>');
+	template.print('<th style="padding: 5px;">サプライヤー </th>');
+	template.print('<th style="padding: 5px;">開始日</th>');
+	template.print('<th style="padding: 5px;">終了日</th>');
+	template.print('<th style="padding: 5px;">金額</th>');
+	template.print('<th style="padding: 5px;">Currency</th>');
+	template.print('</tr>'); 
+	template.print('<tr>'); 
+
+	while(CoupaItem.next()){
+		template.print('<tr>'); 
+		template.print('<td style="padding: 5px;">'+current.getValue('id')+'</td>');
+		template.print('<td style="padding: 5px;">'+CoupaItem.getValue('description')+'</td>');
+		template.print('<td style="padding: 5px;">'+CoupaItem.getValue('supplier_name')+'</td>');
+		template.print('<td style="padding: 5px;">'+CoupaItem.getValue('start_date')+'</td>');
+		template.print('<td style="padding: 5px;">'+CoupaItem.getValue('end_date')+'</td>');
+		template.print('<td style="padding: 5px;text-align: right;">'+CoupaItem.getDisplayValue('unit_price')+'</td>');
+		template.print('<td style="padding: 5px;">'+current.currency.getDisplayValue()+'</td>');
+		template.print('</tr>');
+	}
+	template.print('</tr>'); 
+
+	template.print('</table>');	
+
+	var approvalStateTemp = current.state.getDisplayValue();
+	if(approvalStateTemp == 'Requested'){
+		approvalStateTemp = 'Pending Approval';  }
+   
+	if (!(current.cancel_reason=='approver_not_exist') && !(current.cancel_reason=='contract_not_exist')){
+		template.print('<h3>承認詳細情報</h3>');
+		template.print('<table border="1" style="border-collapse: collapse; border-style: solid; border-color: #b3a8a8;">'); 
+		template.print('<tr>'); 
+		template.print('<th style="padding: 5px;">ステータス</th>'); 
+		template.print('<th style="padding: 5px;">承認者</th>'); 
+		template.print('<th style="padding: 5px;">コメント</th>'); 
+		template.print('</tr>'); 
+	
+	var ApprovalGR = new GlideRecord('sysapproval_approver');
+	ApprovalGR.addQuery('sysapproval',current.sys_id);
+	ApprovalGR.query();
+	
+	//template.print(ApprovalGR.getRowCount());
+		var tempApprovalState='';
+		
+		while(ApprovalGR.next()){
+			
+			if(ApprovalGR.getValue('state')=='requested')
+					tempApprovalState='承認待ち';
+			else if(ApprovalGR.getValue('state')=='approved')
+					tempApprovalState='承認済み';
+			else if(ApprovalGR.getValue('state')=='rejected')
+					tempApprovalState='否認済み';
+			else if(ApprovalGR.getValue('state')=='not_required')
+					tempApprovalState='承認不要';
+			else if(ApprovalGR.getValue('state')=='cancelled')
+					tempApprovalState='キャンセル済み';
+			
+			template.print('<tr>'); 
+			template.print('<td style="padding:5px;">'+tempApprovalState+'</td>');
+			template.print('<td style="padding:5px;">'+ApprovalGR.getDisplayValue('approver')+'</td>'); 
+			template.print('<td style="padding:5px;">'+ApprovalGR.getDisplayValue('comments')+'</td>'); 
+			template.print('</tr>'); 
+		}
+	}
+	
+	template.print('</table>');
+	
+	
+	
+	/*
+	
+	 <div ng-switch="req.approval_state">
+          	<div ng-switch-when="req.approval_state=='requested'"><td>承認待ち</td></div>
+            <div ng-switch-when="req.approval_state=='approved'"><td>承認済み</td></div>
+            <div ng-switch-when="req.approval_state=='rejected'"><td>否認済み</td></div>
+            <div ng-switch-when="req.approval_state=='not_required'"><td>承認不要</td></div>
+            <div ng-switch-when="req.approval_state=='cancelled'"><td>キャンセル済み</td></div>
+          </div> 
+		  
+	while(ApprovalGR.next()){
+		template.print('<tr>'); 	
+		//template.print('<td style="padding: 5px;">'+ApprovalGR.getValue('state')+'</td> '); 
+		//template.print('<td style="padding: 5px;">'+ApprovalGR.getDisplayValue('approver')+'</td> '); 
+		//template.print('<td style="padding: 5px;">'+ApprovalGR.getValue('comments').getJournalEntry(1)+'</td> '); 
+		//template.print('</tr>');
+		//template.print(ApprovalGR.getDisplayValue('state'));
+		
+		template.print('<td style="padding: 5px;">'+hello+'</td> '); 
+		//template.print("hello");
+		template.print('</tr>');
+	}
+*/
+
+
+	
+
+
+	template.print('<hr style="height: 1px; border:none; border-top: 2px solid #3599b6;">');
+
+
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-06-14 04:37:58</sys_created_on>
+        <sys_id>d30c7da01b70f41036a1206a234bcb89</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Requester_Email</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_script_email_d30c7da01b70f41036a1206a234bcb89</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-07-08 06:54:05</sys_updated_on>
+    </sys_script_email>
+</record_update>

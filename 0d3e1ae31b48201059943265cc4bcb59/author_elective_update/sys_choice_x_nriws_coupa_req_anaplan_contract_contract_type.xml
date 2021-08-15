@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="contract_type" table="x_nriws_coupa_req_anaplan_contract" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>contract_type</element>
+            <name>x_nriws_coupa_req_anaplan_contract</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 16:05:22</sys_created_on>
+            <sys_id>4ca154221bc1281059943265cc4bcb30</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>contract_type</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_choice_x_nriws_coupa_req_anaplan_contract_contract_type</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 16:05:22</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>contract_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Common Contract</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_anaplan_contract</name>
+            <sequence>1</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 16:05:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>638150ee1b81281059943265cc4bcb71</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 16:06:13</sys_updated_on>
+            <value>common_contract</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>contract_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Sub Contract</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_anaplan_contract</name>
+            <sequence>2</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 16:05:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c8a15cee1b81281059943265cc4bcb53</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 16:06:17</sys_updated_on>
+            <value>sub_contract</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

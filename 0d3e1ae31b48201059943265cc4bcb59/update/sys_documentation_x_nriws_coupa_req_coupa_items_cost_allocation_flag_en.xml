@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="cost_allocation_flag" label="Cost Allocation Flag " language="en" table="x_nriws_coupa_req_coupa_items">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>cost_allocation_flag</element>
+            <help/>
+            <hint/>
+            <label>Cost Allocation Flag </label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_items</name>
+            <plural>Cost Allocation Flag s</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-26 05:39:42</sys_created_on>
+            <sys_id>5aeb26b51b116050e05f43b2cc4bcba2</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>Cost Allocation Flag </sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_documentation_x_nriws_coupa_req_coupa_items_cost_allocation_flag_en</sys_update_name>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-07-11 09:54:20</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="cancel_reason" table="x_nriws_coupa_req_coupa_requisition" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>cancel_reason</element>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 15:35:44</sys_created_on>
+            <sys_id>c2da04ea1b81281059943265cc4bcb4d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>cancel_reason</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_choice_x_nriws_coupa_req_coupa_requisition_cancel_reason</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 15:35:44</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>cancel_reason</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Contract Not Exist</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sequence>1</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 15:35:44</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d68a40ea1b81281059943265cc4bcbff</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 15:38:09</sys_updated_on>
+            <value>contract_not_exist</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>cancel_reason</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Approver Not Exist</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sequence>2</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 15:36:39</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>46da84ea1b81281059943265cc4bcb37</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 15:38:12</sys_updated_on>
+            <value>approver_not_exist</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>cancel_reason</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Contract Status Invalid</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sequence>3</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 15:37:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>570b0caa1b81281059943265cc4bcb3b</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 15:38:16</sys_updated_on>
+            <value>contract_status_invalid</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>cancel_reason</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Cancelled By Coupa</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <sequence>4</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 15:38:47</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>af4b84aa1b81281059943265cc4bcbc0</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 15:39:13</sys_updated_on>
+            <value>cancelled_by_coupa</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

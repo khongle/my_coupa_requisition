@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_headers">
+    <sys_rest_message_fn_headers action="DELETE">
+        <name>ACCEPT</name>
+        <rest_message_function display_value="Update_Requisition_Status">8db898ca1bc1e410e05f43b2cc4bcbd6</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_headers</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-12-14 03:56:49</sys_created_on>
+        <sys_id>a9c0a04a1b01e41059943265cc4bcbb9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ACCEPT</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_fn_headers_a9c0a04a1b01e41059943265cc4bcbb9</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-14 03:56:49</sys_updated_on>
+        <value>application/json</value>
+    </sys_rest_message_fn_headers>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</application>
+        <file_path/>
+        <instance_id>3cadb194db874c140b9d21c40596199c</instance_id>
+        <instance_name>dev100802</instance_name>
+        <name>sys_rest_message_fn_headers_a9c0a04a1b01e41059943265cc4bcbb9</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_headers"><sys_rest_message_fn_headers action="INSERT_OR_UPDATE"><name>ACCEPT</name><rest_message_function display_value="Update_Requisition_Status">8db898ca1bc1e410e05f43b2cc4bcbd6</rest_message_function><sys_class_name>sys_rest_message_fn_headers</sys_class_name><sys_created_by>Sansiro.Ma</sys_created_by><sys_created_on>2020-12-14 03:56:49</sys_created_on><sys_id>a9c0a04a1b01e41059943265cc4bcbb9</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ACCEPT</sys_name><sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package><sys_policy/><sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope><sys_update_name>sys_rest_message_fn_headers_a9c0a04a1b01e41059943265cc4bcbb9</sys_update_name><sys_updated_by>Sansiro.Ma</sys_updated_by><sys_updated_on>2020-12-14 03:56:49</sys_updated_on><value>application/json</value></sys_rest_message_fn_headers></record_update>]]></payload>
+        <payload_hash>-1643664051</payload_hash>
+        <record_name>ACCEPT</record_name>
+        <reverted_from/>
+        <source>02d08e152f91301054cd811df699b698</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-11 09:29:47</sys_created_on>
+        <sys_id>ddc14a592f91301054cd811df699b621</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17a94e6be130000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-11 09:29:47</sys_updated_on>
+        <type>HTTP Headers</type>
+        <update_guid>8a41604ac001e410e8219102ac569508</update_guid>
+        <update_guid_history>8a41604ac001e410e8219102ac569508:-1643664051</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-11 10:02:09</sys_created_on>
+        <sys_db_object display_value="" name="sys_rest_message_fn_headers">sys_rest_message_fn_headers</sys_db_object>
+        <sys_id>16834a4fbb6641409e50a13b5bce6b10</sys_id>
+        <sys_metadata>a9c0a04a1b01e41059943265cc4bcbb9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ACCEPT</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_scope_delete display_value="">140948c683584bb68a6f3aacacc7dd71</sys_scope_delete>
+        <sys_update_name>sys_rest_message_fn_headers_a9c0a04a1b01e41059943265cc4bcbb9</sys_update_name>
+        <sys_update_version display_value="sys_rest_message_fn_headers_a9c0a04a1b01e41059943265cc4bcbb9">ddc14a592f91301054cd811df699b621</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-11 10:02:09</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
+        <name>fields</name>
+        <rest_message_function display_value="Get_Invoice_Greater_than_option_2">e557dea01bb0f41036a1206a234bcb05</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-06-14 07:00:13</sys_created_on>
+        <sys_id>459cd6a41bb0f41036a1206a234bcb6d</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>fields</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_459cd6a41bb0f41036a1206a234bcb6d</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-07-08 06:31:48</sys_updated_on>
+        <type>string</type>
+        <value>%5B%22id%22%2C%22invoice-date%22%2C%22invoice-number%22%2C%22status%22%2C%22payment-date%22%2C%22tax-amount%22%2C%22gross-total%22%2C%22created-at%22%2C%7B%22created_by%22%20%3A%20%5B%22id%22%2C%22fullname%22%2C%22lastname%22%2C%22email%22%5D%7D%2C%7B%22attachments%22%3A%20%5B%22id%22%2C%22created-at%22%2C%22updated-at%22%2C%22type%22%2C%22file%22%2C%22file-url%22%5D%7D%2C%7B%22account_type%22%20%3A%20%5B%22name%22%2C%7B%22currency%22%20%3A%20%5B%22code%22%5D%7D%5D%7D%2C%7B%22custom_fields%22%20%3A%20%5B%22optional-field%22%5D%7D%2C%7B%22approvals%22%20%3A%20%5B%22id%22%5D%7D%2C%7B%22requested_by%22%20%3A%20%5B%22fullname%22%2C%20%22id%22%2C%22email%22%5D%7D%2C%7B%22invoice_lines%22%3A%5B%22accounting-total%22%2C%22order-header-num%22%2C%7B%22period%22%20%3A%20%5B%22name%22%5D%7D%2C%7B%22contract%22%20%3A%20%5B%22name%22%5D%7D%2C%7B%22account%22%20%3A%20%5B%22id%22%2C%22name%22%2C%22code%22%2C%22segment-1%22%2C%22segment-2%22%2C%22segment-3%22%2C%22segment-4%22%2C%22segment-5%22%2C%7B%22account_type%22%20%3A%20%5B%7B%22currency%22%20%3A%20%5B%22code%22%5D%7D%2C%7B%22created_by%22%20%3A%20%5B%22fullname%22%5D%7D%5D%7D%5D%7D%5D%7D%5D</value>
+    </sys_rest_message_fn_parameters>
+</record_update>

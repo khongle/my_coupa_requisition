@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_nriws_coupa_req.expand_all</name>
+        <script><![CDATA[$(document).ready(function() {
+
+  $(".toggle-accordion").on("click", function() {
+    var accordionId = $(this).attr("accordion-id"),
+      numPanelOpen = $(accordionId + ' .collapse.in').length;
+    
+    $(this).toggleClass("active");
+
+    if (numPanelOpen == 0) {
+      openAllPanels(accordionId);
+    } else {
+      closeAllPanels(accordionId);
+    }
+  })
+
+  openAllPanels = function(aId) {
+    console.log("setAllPanelOpen");
+    $(aId + ' .panel-collapse:not(".in")').collapse('show');
+  }
+  closeAllPanels = function(aId) {
+    console.log("setAllPanelclose");
+    $(aId + ' .panel-collapse.in').collapse('hide');
+  }
+     
+});]]></script>
+        <script_name>expand_all</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-11-16 20:15:04</sys_created_on>
+        <sys_id>d444f3c91be8a41059943265cc4bcb91</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_nriws_coupa_req.expand_all</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_ui_script_d444f3c91be8a41059943265cc4bcb91</sys_update_name>
+        <sys_updated_by>dinesh.k.a</sys_updated_by>
+        <sys_updated_on>2020-11-16 20:15:04</sys_updated_on>
+        <ui_type>0</ui_type>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

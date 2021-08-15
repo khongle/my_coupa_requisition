@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="first_level_approvers" label="first Level Approvers" language="en" table="x_nriws_coupa_req_coupa_requisition">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>first_level_approvers</element>
+            <help/>
+            <hint/>
+            <label>first Level Approvers</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <plural>first Level Approvers</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-08 09:21:48</sys_created_on>
+            <sys_id>502276c81bc9a01059943265cc4bcbd2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>first Level Approvers</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_documentation_x_nriws_coupa_req_coupa_requisition_first_level_approvers_en</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-08 09:21:48</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.css2{&#13;
+  color: #404040;&#13;
+  font-size: 32px;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>name_2</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Coupa Invoice With PO Title</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-05-11 03:19:42</sys_created_on>
+        <sys_id>23e3a6e51b44b010057498ea234bcb7d</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Coupa Invoice With PO Title</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_widget_23e3a6e51b44b010057498ea234bcb7d</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-06-28 07:35:08</sys_updated_on>
+        <template><![CDATA[<div>
+<!-- your widget template -->
+<!--<h2><a href="?id=coupa_invoice_approval_homepage" class="css2">発注あり請求申請</a></h2>-->
+<h2 class="css2">発注あり請求承認</h2>  
+</div>]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_map">
+    <sys_transform_map action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copy_empty_fields>true</copy_empty_fields>
+        <create_new_record_on_empty_coalesce_fields>false</create_new_record_on_empty_coalesce_fields>
+        <enforce_mandatory_fields>No</enforce_mandatory_fields>
+        <name>Anaplan Transfrom Map</name>
+        <order>100</order>
+        <run_business_rules>false</run_business_rules>
+        <run_script>false</run_script>
+        <script><![CDATA[(function transformRow(source, target, map, log, isUpdate) {
+
+	// Add your code here
+
+})(source, target, map, log, action==="update");]]></script>
+        <source_table>x_nriws_coupa_req_anaplan_staging_table</source_table>
+        <sys_class_name>sys_transform_map</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:40:22</sys_created_on>
+        <sys_id>d2c6f7c51b7cec1059943265cc4bcbfc</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Anaplan Transfrom Map</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_transform_map_d2c6f7c51b7cec1059943265cc4bcbfc</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-08 02:23:37</sys_updated_on>
+        <target_table>x_nriws_coupa_req_anaplan_contract</target_table>
+    </sys_transform_map>
+</record_update>

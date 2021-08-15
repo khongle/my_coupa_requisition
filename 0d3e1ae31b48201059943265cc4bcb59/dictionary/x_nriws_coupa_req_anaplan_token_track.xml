@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Anaplan Token Track" max_length="40" name="x_nriws_coupa_req_anaplan_token_track" sizeclass="0" type="collection">
+        <element label="Instance" max_length="10" name="instance" type="string"/>
+        <element label="Token Value" max_length="1000" name="token_value" type="string"/>
+    </element>
+</database>

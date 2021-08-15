@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope,$window) {
+  /* widget controller */
+  var c = this;
+	c.value = '';
+	c.sortedOn = 'id';
+	c.sortReverse = true;
+	
+	c.menu = function(val){		
+		c.value = val;
+		//console.log(val);
+	}
+	
+		c.sort = function(val){ 
+		c.sortedOn = val;
+		c.sortReverse=!c.sortReverse;
+			
+	}
+	
+		c.checkDetails=function(req) {		
+		$window.location.href = '?id=' + c.data.detail_page_id + '&table=' + c.data.table + '&sys_id=' + req.sys_id;
+	}
+	
+	c.SummaryPage = function(x){
+		
+		if(x=='pending_approval')
+			{
+				var tem = 'pending_approval'
+				$window.location.href = '?id=' + tem ;
+			}
+		
+		if(x=='my_approval')
+			{
+				var temp = 'pending_approvals'
+				$window.location.href = '?id=' + temp ;
+			}
+		
+	}
+	
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, #fbdfdf, #e52a2a, #fbdfdf);
+}
+
+//-------------------------------------------
+
+
+.graph-layout{
+	height:400px;
+  width:95vw;
+  border-radius:10px;
+  //border:2px solid gray;
+  box-shadow:0 0 5px gray;
+  //overflow-x:scroll;
+  padding:10px;
+  margin:auto;
+  background-color:white;
+}
+
+.tile_count {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: -10px;
+  //margin-right: -60px;
+}
+
+.tile_count .tile_stats_count {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  //border-bottom: 1px solid #D9DEE4;
+  padding: 0 10px 0 20px;
+  text-overflow: ellipsis;
+  //overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+
+.tile_count .tile_stats_count span {
+    font-size: 19px;
+  	text-align:center;
+}
+
+.tile_count .tile_stats_count .count {
+  font-size: 55px;
+  //line-height: 94px;
+  //font-weight: 600;
+  margin-left: 0;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  //font-size: 2.5rem;
+  display: block;
+  line-height: 1;
+  margin: 1rem auto;
+  
+}
+
+.card {
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+  border-width: 0;
+  transition: all .2s;
+  position: relative;
+  //display: -ms-flexbox;
+  display: flex;
+  //-ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(26, 54, 126, 0.125);
+  border-radius: 0.25rem;
+  
+}
+
+.green{
+  color:#90ce70;
+}
+.red{
+  color:#dd5d3d;
+}
+.grey{
+  color:#5e9cd4;
+}
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>requisition_summary</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Requisition Summary</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	data.currentPage = $sp.getParameter("id");
+	data.isAdminPage =false;
+	if(data.currentPage =='nrid_admin_homepage'){
+			data.isAdminPage =true;
+	}
+	data.isAdminUser = gs.hasRole('x_nriws_coupa_req.admin');
+
+	
+	data.table = 'x_nriws_coupa_req_coupa_requisition';
+
+	
+	var coupa_req;
+	var ApprovalGR ;
+
+	// ######  For Approved & Rejected of Current month #######
+	ApprovalGR = new GlideRecord('sysapproval_approver');
+	if(!data.isAdminPage || !data.isAdminUser){
+		ApprovalGR.addQuery('approver',gs.getUserID());
+	}
+	ApprovalGR.addEncodedQuery('sys_updated_onONThis month@javascript:gs.beginningOfThisMonth()@javascript:gs.endOfThisMonth()');
+	ApprovalGR.addQuery('source_table',data.table);
+	ApprovalGR.query(); 
+
+	data.approved_count = 0;
+	data.rejected_count = 0;//sys_created_onONThis month@javascript:gs.beginningOfThisMonth()@javascript:gs.endOfThisMonth()
+
+	while(ApprovalGR.next()){
+
+		if(ApprovalGR.getValue('state')=='approved')
+		{	data.approved_count += 1;	}
+
+		if(ApprovalGR.getValue('state')=='rejected')
+		{	data.rejected_count += 1;	}
+
+	}
+	
+	// ######  For Pending #######
+	if(true){
+		ApprovalGR = new GlideRecord('sysapproval_approver');
+		if(!data.isAdminPage || !data.isAdminUser){
+			ApprovalGR.addQuery('approver',gs.getUserID());
+		}
+		
+		ApprovalGR.addQuery('source_table',data.table);
+		ApprovalGR.query();
+		
+		data.pending_count = 0;
+
+		while(ApprovalGR.next()){
+			if(ApprovalGR.getValue('state')=='requested')
+			{	data.pending_count += 1;	}
+		}
+	}
+
+	// ######  For Approved & Rejected of Last month #######
+	if(true){
+		ApprovalGR = new GlideRecord('sysapproval_approver');
+		if(!data.isAdminPage || !data.isAdminUser){
+			ApprovalGR.addQuery('approver',gs.getUserID());
+		}
+		
+		ApprovalGR.addEncodedQuery('sys_updated_onONLast month@javascript:gs.beginningOfLastMonth()@javascript:gs.endOfLastMonth()');
+		ApprovalGR.addQuery('source_table',data.table);
+		//ApprovalGR.addQuery('sysapproval.sys_class_name',data.table);
+		ApprovalGR.query(); 
+
+		data.approved_count_month = 0;
+		data.rejected_count_month = 0;
+
+		while(ApprovalGR.next()){
+
+			if(ApprovalGR.getValue('state')=='approved')
+			{	data.approved_count_month += 1;	}
+
+			if(ApprovalGR.getValue('state')=='rejected')
+			{	data.rejected_count_month += 1;	}
+
+			/*coupa_req = new GlideRecord('x_nriws_coupa_req_coupa_requisition');
+			coupa_req.addQuery('number',ApprovalGR.getDisplayValue('sysapproval'));
+			coupa_req.query();
+
+			while(coupa_req.next()){
+				data.amount_month += parseInt(coupa_req.getValue('total'));
+			} */
+
+		}
+
+		//data.amount_month = data.amount.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') ;
+	}
+
+
+	data.pendingApprovalLabel = '承認待ち';
+	data.approvedLabel = '当月承認済み';
+	data.rejectedLabel = '当月否認済み';
+	
+	if(data.isAdminPage && data.isAdminUser){
+		data.pendingApprovalLabel = '全員の承認待ち';
+		data.approvedLabel = '全員の当月承認済み';
+		data.rejectedLabel = '全員の当月否認済み';
+	}
+	/*
+	var coupa_req = new GlideRecord('x_nriws_coupa_req_coupa_requisition');
+	coupa_req.addQuery('created_at', '>=', gs.daysAgo(60));
+	coupa_req.query();
+
+	data.count = 0;
+	data.amount = 0;
+	data.items = 0;
+	data.accounts = 0;
+	while(coupa_req.next())
+	{
+		//gs.addInfoMessage(coupa_req.getValue('created_at'));
+		data.count += 1;
+		data.amount += parseInt(coupa_req.getValue('total'));
+		data.items += parseInt(coupa_req.getValue('line_count'));
+
+		//---- Items ---------
+		var items_GR = new GlideRecord('x_nriws_coupa_req_coupa_items');
+		items_GR.addQuery('parent',coupa_req.getUniqueValue());
+		items_GR.query();
+
+		while(items_GR.next()){			
+		// -----  Accounts -------
+
+			var accounts_GR = new GlideRecord('x_nriws_coupa_req_account');
+			accounts_GR.addQuery('parent',items_GR.getUniqueValue());
+			accounts_GR.query(); 
+			while(accounts_GR.next()){
+				data.accounts += 1;
+			}
+		}
+	}	
+	data.amount = data.amount.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') ; */
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-19 00:45:12</sys_created_on>
+        <sys_id>6ba543b51bec2810e05f43b2cc4bcb67</sys_id>
+        <sys_mod_count>180</sys_mod_count>
+        <sys_name>Requisition Summary</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_widget_6ba543b51bec2810e05f43b2cc4bcb67</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-06-28 08:02:53</sys_updated_on>
+        <template><![CDATA[<!--
+<h1>申請書</h1>
+
+<hr>
+-->
+<!--
+<div class="card">
+</div>
+-->
+
+<div class="row">
+  <div class="tile_count">
+
+    <!-- <div class="col-sm-4  tile_stats_count text-warning text-center">
+      <span class="count_top" style="padding-right:0px">{{c.data.pendingApprovalLabel}}</span>
+      <div class="count"><a href="/coupa_req?id=admin_list_page&status=2"><i class="fa fa-clock-o"></i>&nbsp;{{data.pending_count}}&nbsp;件</a></div>
+      <span class="count_bottom"></span>
+    </div>
+    <div class=" col-sm-4  tile_stats_count text-success text-center" >
+      <span class="count_top" style="padding-right:6px">{{c.data.approvedLabel}}</span>
+      <div class="count"><a href="/coupa_req?id=admin_list_page&status=9"><i class="fa fa-check-circle" ></i>&nbsp;{{data.approved_count}}&nbsp;件</a></div>
+      <span class="count_bottom" style="padding-left:13px"><i class="fa fa-check-circle"> </i>&nbsp;前月承認済み：<i style ="font-size: 150%;">{{data.approved_count_month}}</i>&nbsp;&nbsp;件</span>
+    </div>
+    <div class=" col-sm-4  tile_stats_count text-danger text-center" >
+      <span class="count_top" style="padding-right:0px">{{c.data.rejectedLabel}}</span>
+      <div class="count"><a href="/coupa_req?id=admin_list_page&status=3"><i class="fa fa-times-circle" ></i>&nbsp;{{data.rejected_count}}&nbsp;件</a></div>
+      <span class="count_bottom" style="padding-left:13px"><i class="fa fa-times-circle"></i>&nbsp;前月否認済み：<i style ="font-size: 150%;">{{data.rejected_count_month}}</i>&nbsp;&nbsp;件</span>
+    </div> -->
+    <div class="col-sm-4  tile_stats_count text-warning text-center">
+      <span class="count_top" style="padding-right:0px">{{c.data.pendingApprovalLabel}}</span>
+      <div class="count"><a class="text-warning "href="javascript:void(0)"><i class="fa fa-clock-o"></i>&nbsp;{{data.pending_count}}&nbsp;件</a></div>
+      <span class="count_bottom"></span>
+    </div>
+    <div class=" col-sm-4  tile_stats_count text-success text-center" >
+      <span class="count_top" style="padding-right:6px">{{c.data.approvedLabel}}</span>
+      <div class="count"><a class="text-success"href="javascript:void(0)"><i class="fa fa-check-circle" ></i>&nbsp;{{data.approved_count}}&nbsp;件</a></div>
+      <span class="count_bottom" style="padding-left:13px"><i class="fa fa-check-circle"> </i>&nbsp;前月承認済み：<i style ="font-size: 150%;">{{data.approved_count_month}}</i>&nbsp;&nbsp;件</span>
+    </div>
+    <div class=" col-sm-4  tile_stats_count text-danger text-center" >
+      <span class="count_top" style="padding-right:0px">{{c.data.rejectedLabel}}</span>
+      <div class="count"><a class="text-danger" href="javascript:void(0)"><i class="fa fa-times-circle" ></i>&nbsp;{{data.rejected_count}}&nbsp;件</a></div>
+      <span class="count_bottom" style="padding-left:13px"><i class="fa fa-times-circle"></i>&nbsp;前月否認済み：<i style ="font-size: 150%;">{{data.rejected_count_month}}</i>&nbsp;&nbsp;件</span>
+    </div>
+
+   <!-- <div class="col-md-3 col-sm-4  tile_stats_count text-danger">
+      <span class="count_top">合計</span>
+      <div class="count"><i class="fa fa-jpy" aria-hidden="true"></i> {{data.amount}}</div>
+      <span class="count_bottom"><i class="fa fa-jpy" aria-hidden="true"></i><i> {{data.amount_month}}</i>&nbsp; From last Month</span>
+    </div> -->
+  </div>
+</div>
+
+
+]]></template>
+    </sp_widget>
+</record_update>

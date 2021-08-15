@@ -1,0 +1,1796 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope,$window) {
+	/* widget controller */
+	var c = this;
+
+	c.idx = ''; 
+	c.val = '';
+	c.index = 0;
+	c.page_id = 'pending_approvals';
+	c.isExpendedContract = false;
+	$scope.breadcrumbs='';
+	$scope.href='';
+	/*c.onItem = function(id){
+		var url = "https://nrigdev1.service-now.com/coupa_req?id=pending_approval";
+		$window.open (url, "popup", "width=600, height=400");
+		//console.log(id);
+	}*/
+
+	// console.log('------------------------------------');
+	// console.log(JSON.stringify(c.data.items));
+	// console.log('------------------------------------');
+	c.checkStatusBreadcrumbs=function(status)
+	{
+		
+		if(status=='requested')
+		{
+			$scope.breadcrumbs='発注申請承認待ち';
+			$scope.href='?id=pending_approvals&status=requested';
+		}
+		else if(status=='approved') {
+			$scope.breadcrumbs='発注申請承認済み';
+			$scope.href='?id=pending_approvals&status=approved';
+		}
+		else if(status== 'rejected') {
+			$scope.breadcrumbs ='発注申請否認済み';
+			$scope.href='?id=pending_approvals&status=rejected';
+		}
+		else if(status == 'not_required') {
+			$scope.breadcrumbs ='発注申請承認不要';
+			$scope.href='?id=pending_approvals&status=not_required';
+		}
+		else if(status == 'all') {
+			$scope.breadcrumbs= ' 発注申請承認一覧';
+			$scope.href='?id=pending_approvals&status=all';
+		}
+		return true;
+	}
+	if(c.data.isAdminUser && c.data.approver_id  == null){
+		c.page_id = 'admin_list_page';
+	}
+
+	c.contract = function(x){
+		if(c.index==0)
+		{
+			c.index = x-1;
+			c.isExpendedContract = !c.isExpendedContract;
+		}
+		else
+		{
+			c.index=0;
+			c.isExpendedContract = !c.isExpendedContract;
+		}
+	}
+
+	c.Attach = function(x){
+		console.log('---ma---');
+		window.location.href="/sys_attachment.do?sys_id="+x;
+
+	}
+
+	c.Back = function(){
+		if(c.data.isAdminUser && c.data.approver_id  == null){
+			window.location.href ="?id=admin_list_page&status=requested";
+		}
+		else{
+			window.location.href ="?id=pending_approvals&status="+c.data.status;
+		}
+	}
+
+
+
+	//c.isExpendedDetail = false;
+	c.isExpended = false;
+
+	c.All_item = function(){
+
+		c.isExpended =!c.isExpended;
+		c.isExpendedDetail = c.isExpended;
+
+		$('.collapse').collapse(c.isExpended?'show':'hide');
+
+	}
+
+	c.Details = function(idx){
+
+		c.isExpendedDetail = !c.isExpendedDetail;
+	}
+
+	c.Approve = function(x){
+
+		c.server.get({
+			action:"approve",
+			approver_id: x,
+			Appr_comment: c.data.isDelegateApprover?'代理承認 : ' + c.approveCmmt:c.approveCmmt
+		}).then(function() {
+			c.data.approver_id  = undefined;
+			//$window.location.reload();
+			$window.location.href="?id=pending_approvals&status=requested";
+		})
+	};
+
+	c.Reject = function(x){
+
+		c.server.get({
+			action: "reject",
+			approver_id: x,
+			Rej_comment: c.data.isDelegateApprover?'代理否認 : ' + c.approveCmmt:c.approveCmmt
+		}).then(function() {
+			c.data.approver_id  = undefined;
+			//$window.location.reload();
+			$window.location.href="?id=pending_approvals&status=requested";
+
+		})
+	};
+
+
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.date {
+  
+}
+
+.panel.budgetpanelinfo {
+  //border-color: #1977c2;
+  border:5px double #1977c2;
+  //background-color: #e8e8e8;
+  background-color:#fcfcfc
+}
+
+.box {
+  display: flex;
+  width: 100%;
+  height: 5px;
+  margin: 5px 0px 18px 0px;
+}
+
+.box-sm {
+  height: 5px;
+  margin: 0;
+  flex-grow: 1;
+  transition: all .8s ease-in-out;
+  cursor: pointer;
+}
+
+.box-sm:hover {
+  flex-grow: 12;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.red {
+  background-color: #FF5852;
+}
+
+.orange {
+  background-color: #FF9000;
+}
+
+.yellow {
+  background-color: #FFD300;
+}
+
+.green {
+  background-color: #3DCD49;
+}
+
+.blue {
+  background-color: #0089D7;
+}
+/////  HR END  ----------
+
+div.border{
+  background-color:white;
+  height:8px;
+  border-radius:10px;
+}
+hr.new-style {
+  margin: 30px 0px;
+  border: 3px solid white;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 3px black;
+  padding: 0;
+  animation: glow 1.5s ease-in-out infinite;
+  -webkit-animation: glow 1.5s ease-in-out infinite;
+}
+
+
+hr.style-all {
+  border: 0;
+  height: 1px;
+  width:100%;  
+  align:left;
+  //background-image: linear-gradient(to right, #fbdfdf, #e52a2a, #fbdfdf);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0));
+}
+hr.style-blue {
+  border: 0;
+  height: 1px;
+  width:100%;  
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #428bca, rgba(0, 0, 0, 0));
+}
+
+.style-seven {
+  overflow: visible; 
+  height: 30px;
+  border-style: solid;
+  border-color: #8c8b8b;  //#8c8b8b
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+.style-seven:before { 
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: #8c8b8b;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+
+hr.style-close { 
+  overflow: visible; 
+  height: 30px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 20px;
+  border-width: 0 0 4px 0;
+}
+.style-open {
+  overflow: visible; 
+  height: 30px;
+  border-style: solid;
+  border-color: white;
+  border-width: 4px 0 0 0;
+  border-radius: 20px;
+}
+
+// ------- Items ----------
+.input-xs {
+  height: 25px;
+  width:60px;
+}
+
+li{
+  list-style-type: none;
+}
+
+
+///--- Gen --
+
+.bs-callout {
+  padding: 8px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 8px;
+  border-radius: 5px;  
+
+}
+.bs-callout-danger {
+  border-left-color: #ce4844;
+}
+
+td.padd{	padding: 90px;	}
+
+//// ----- items-details ---
+
+.table-borderless td,
+.table-borderless th {
+  border-top: 0;
+}
+
+td.al{
+  float:left;
+  padding:10px;
+}
+/////
+
+.title &gt; a {
+  display: block;
+  position: relative;
+}
+
+.title &gt; a:after {
+  content: "\f054"; /* fa-chevron-right */
+  font-family: 'FontAwesome';
+  position: absolute;
+  right: 0;
+  color: #666666;  //#7f7f7f
+}
+.title &gt; a[aria-expanded="true"]:after {
+  content: "\f078"; /* fa-chevron-down */
+}
+
+// Coupa &amp; Anaplan Side by Side
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.graph-layout{
+  height:auto;
+  width:auto;
+  border-radius:10px;
+  //border:2px solid gray;
+  box-shadow:0 0 5px #154d8d;
+  //overflow-x:scroll;
+  padding:10px;
+  margin-top:10px;
+  background-color:white;
+}
+
+.graph-layout-table{
+  height:auto;
+  width:auto;
+  border-radius:10px;
+  //border:2px solid gray;
+  box-shadow:0 0 5px #f0ad4e;
+  //overflow-x:scroll;
+  padding:10px;
+  margin-top:10px;
+  margin-bottom:10px;
+  //background-color:#d9edf7;
+  background-color:white;
+}
+
+
+
+.snd-Text{
+  border-radius: 10px;
+  //padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  padding-bottom: 1px;
+}
+
+.snd-Text2{
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+// ----------  Approval Info Header Panel ------------
+
+.line {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding-top: 45px;
+  padding-left: 0;
+  width: 100%;
+}
+.line:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  //bottom: 20px;
+  left: 0;
+  right: 50%;
+  border-right: 0px #dee5e7 solid;
+}
+
+.line li {
+  transition: all 200ms ease-in;
+  width: 100%;
+}
+
+.status{
+  //padding-top:12px;
+}
+
+.line .status {
+  //padding: 0px 40px;
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid #d6dce0;
+  position: relative;
+  transition: all 200ms ease-in;
+  cursor: pointer;
+}
+
+.line .status label {
+  font-weight: 600;
+  margin-top: 1rem;
+  text-align: center;
+}
+.line .status:before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  text-align: center;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  position: absolute;
+  top: -15px;
+  transition: all 200ms ease-in;
+}
+
+.line li.complete .status {
+  border-top: 2px solid #428bca;
+  content: "\2713";
+}
+.line li.complete .status:before {
+  background-color: #428bca; //#66dc71;
+  border: none;
+  transition: all 200ms ease-in;
+  content: "\2713";
+  padding-top:3px;
+  color:white;
+}
+.line li.complete .status label {
+  color: #428bca;// #66dc71;
+}
+
+@media (max-width: 768px) {
+  .line .status:before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    position: absolute;
+    top: 25%;
+    left: -13px;
+  }
+  .status{
+    //padding-top:12px;
+    padding-left:25px;
+
+  }
+  .line .status {
+    //padding: 0px 40px;
+    display: flex;
+    justify-content: flex-start;
+    border-top: none;
+    border-left: 2px solid #d6dce0;
+    position: relative;
+    transition: all 200ms ease-in;
+  }
+  .line li.complete .status {
+    border-top: none;
+    border-left: 2px solid #428bca; //#66dc71;
+  }
+  .line {
+    list-style-type: none;
+    display: block;
+    justify-content: center;
+    padding-top: 20px;
+    padding-left: 40px;
+    width: 100%;
+  }
+}
+
+.line .status.clickable label {
+  cursor: pointer;
+}
+.line .status.clickable:before {
+  cursor: pointer;
+}
+
+////
+@media (max-width: 375px) {
+table{
+  display:block;}
+}
+
+
+.badge {
+  padding: 1px 9px 2px;
+  font-size: 12.025px;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #ffffff;
+  background-color: #999999;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+.badge:hover {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.badge-error {
+  background-color: #b94a48;
+}
+.badge-error:hover {
+  background-color: #953b39;
+}
+.badge-warning {
+  background-color: #f89406;
+}
+.badge-warning:hover {
+  background-color: #c67605;
+}
+.badge-success {
+  background-color: #468847;
+}
+.badge-success:hover {
+  background-color: #356635;
+}
+.badge-info {
+  background-color: #3a87ad;
+}
+.badge-info:hover {
+  background-color: #2d6987;
+}
+.badge-inverse {
+  background-color: #333333;
+}
+.badge-inverse:hover {
+  background-color: #1a1a1a;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>coupa_detail</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Coupa Detail</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	data.request = [];
+	data.items = [];
+	data.accounts = [];
+	data.attach = [];
+	data.contract = [];
+	data.exist = 'no';
+	data.table = 'x_nriws_coupa_req_coupa_requisition';
+	data.req = 'no';
+
+	// For Approval Flow
+	data.activeOpen = true;
+	data.activeLevel_1 = false;
+	data.activeLevel_2 = false;
+	data.activeCancel = false;
+	data.activeApproved = false;
+	data.activeApproved_coupa = false;
+	data.activeRejected= false;
+	data.activeRejected_coupa = false;
+	data.showRejectedIcon = false;
+	data.showApprovedIcon = true;
+	data.showApproved_coupaIcon = true;
+	data.showRejected_coupaIcon = false;
+	data.showErrorIcon = false;
+	data.activeError = false;
+	data.status = $sp.getParameter("status");
+
+	data.isAdminUser = gs.hasRole('x_nriws_coupa_req.admin');
+	data.isApprover = false;
+	data.isDelegateApprover = false; // for delefate approval
+
+	data.approveButtonLabel = '承認';
+	data.rejectButtonLabel = '否認';
+
+	var record_id = $sp.getParameter("sys_id");
+	var approval_sys_id =$sp.getParameter("approval_sys_id");
+	data.approver_id = approval_sys_id;
+
+	if(!input){
+		if(record_id){
+
+			var ApprovalGR = new GlideRecord('sysapproval_approver'); 
+			//ApprovalGR.addQuery('sysapproval',record_id);
+			ApprovalGR.addQuery('sys_id',approval_sys_id);
+			ApprovalGR.query();			
+			while(ApprovalGR.next()){	
+				if(ApprovalGR.getValue('approver') == gs.getUserID()){
+					data.isApprover = true;
+					data.exist = 'yes';
+				}		
+
+				if(ApprovalGR.getValue('state')=='requested'){
+					data.req = 'yes';
+				}
+			}
+
+			// If not approver, check if deledate approver
+			if(!data.isApprover){
+				var coupaCommonUtil = new x_nriws_coupa_req.CoupaCommonUtils();
+				data.isDelegateApprover = coupaCommonUtil.isDelegateApprover(gs.getUserID(),approval_sys_id);
+			}
+
+			if(data.isDelegateApprover){
+				data.approveButtonLabel = '代理承認';
+				data.rejectButtonLabel = '代理否認';
+			}
+
+			// Show record for coupa admin user and delegate approver
+			if(data.isDelegateApprover || data.isAdminUser){data.exist = 'yes';}
+
+			// Only continue when user has access to current record
+			if(data.exist =='yes'){
+				data.attachWidget = $sp.getWidget("widget-ticket-attachments");
+				data.approvalInfoWidget = $sp.getWidget("approval_history");	
+				data.conversationWidget = $sp.getWidget("widget-ticket-conversation");
+
+				var record_state = '1';
+				var req_GR = new GlideRecord('x_nriws_coupa_req_coupa_requisition'); 
+				req_GR.addQuery('sys_id',record_id);
+				req_GR.query();
+
+				while(req_GR.next()){
+					var doc_sign = (req_GR.getValue('contract_by_docusign'))==1 ? 'Yes': 'No';
+					record_state = req_GR.getValue('state');
+
+					data.request = {
+						id : req_GR.getValue("id"),
+						created_at : req_GR.getValue('created_at'),
+						updated_at : req_GR.getValue('updated_at'),
+						status : req_GR.getValue('status'),
+						line_count : req_GR.getValue('line_count'),
+						total : req_GR.getDisplayValue('total'),
+						justification : req_GR.getValue('justification'),
+						department : req_GR.getValue('department'),
+						// custom fields
+						project_title : req_GR.getValue('project_title'),
+						contractor_leader : req_GR.getValue('contractor_leader'),
+						contractor_subleader :req_GR.getValue('contractor_subleader'),
+						subcontractor : req_GR.getValue('subcontractor'),
+						optional_field : req_GR.getValue('optional_field'),
+						consignment_start_request : req_GR.getValue('consignment_start_request'),
+						reason_for_submittting_request : req_GR.getValue('reason_for_submittting_request'),
+						scheduled_issue_date : req_GR.getValue('scheduled_issue_date').split(" ")[0],
+						contract_by_docusign : doc_sign,
+						personal_info : req_GR.getValue('personal_info'),
+						export_property : req_GR.getValue('export_property'),
+						basic_contract : req_GR.getValue('basic_contract'),
+						usage_field : req_GR.getValue('usage_field'),
+						resale_company : req_GR.getValue('resale_company'),
+						currency : req_GR.getValue('currency'),
+
+						// requested-by
+						requested_by : req_GR.getValue('requested_by'),
+						requested_by_fullname : req_GR.getValue('requested_by_fullname'),
+						requested_by_id : req_GR.getValue('requested_by_id'),
+
+						// created-by
+						created_by : req_GR.getValue('created_by'),
+						created_by_fullname : req_GR.getValue('created_by_fullname'),
+						created_by_id : req_GR.getValue('created_by_id'),
+
+						// ship to
+						ship_to_attention : req_GR.getValue('ship_to_attention'),
+						postal_code : req_GR.getValue('postal_code'),
+						address_state : req_GR.getValue('address_state'),
+						city : req_GR.getValue('city'),
+						street_2 : req_GR.getValue('street_2'),
+						street_1 : req_GR.getValue('street_1'),
+						location_code : req_GR.getValue('location_code'),
+						location_name : req_GR.getValue('location_name'),
+						country_id : req_GR.getValue('country_id'),
+						country_name : req_GR.getValue('country_name'),
+						country_code : req_GR.getValue('country_code')
+					}
+				}
+
+				if(record_state!='1'){
+
+					if(record_state == '-5'){  //Canceled
+						data.activeCancel = true;
+					}
+					else if(record_state == '2'){ // Level 1
+						data.activeLevel_1 = true;
+					}
+					else if(record_state == '8'){ //Level 2 May be change bcoz of same in lvl1
+						data.activeLevel_1 = true;
+						data.activeLevel_2 = true;
+					}					
+
+					else{
+						var temp_state;
+						var auditGR = new GlideRecord('sys_audit');
+						auditGR.addQuery('tablename',data.table);   //Optional
+						auditGR.addQuery('documentkey', record_id);
+						auditGR.addQuery('fieldname', 'state');
+						auditGR.addEncodedQuery('oldvalueISNOTEMPTY^oldvalue!=1'); //optm
+						auditGR.orderByDesc('sys_created_on');
+						auditGR.query();
+
+						if(record_state == '9'){  //Approved
+							data.activeApproved = true;		
+							while(auditGR.next()){
+								temp_state = auditGR.getValue('oldvalue');
+
+								if(temp_state == '2'){
+									data.activeLevel_1 = true;
+								}
+
+								else if(temp_state == '8'){
+									data.activeLevel_1 = true;
+									data.activeLevel_2 = true;
+								}
+							}
+
+						}
+
+						else if(record_state == '10'){  //Approved_in_coupa
+							data.activeApproved_coupa = true;
+							data.showRejected_coupaIcon = false;
+							while(auditGR.next()){
+								temp_state = auditGR.getValue('oldvalue');
+
+								if(temp_state == '2'){
+									data.activeLevel_1 = true;
+								}
+
+								else if(temp_state == '8'){
+									data.activeLevel_1 = true;
+									data.activeLevel_2 = true;
+								}
+								
+								else if(temp_state == '9'){
+									data.activeApproved = true;	
+								}																		// May add For rejected
+
+							}
+						}
+
+						else if(record_state == '4'){  //Error
+							data.activeError = true;
+							data.showApproved_coupaIcon = false;
+							data.showErrorIcon = true;
+							while(auditGR.next()){
+								temp_state = auditGR.getValue('oldvalue');
+
+								if(temp_state == '2'){
+									data.activeLevel_1 = true;
+								}
+								else if(temp_state == '8'){
+									data.activeLevel_1 = true;
+									data.activeLevel_2 = true;
+								}
+								else if(temp_state == '9'){
+									data.activeApproved = true;	
+								}																		
+							}
+						}
+
+						else if(record_state == '3'){  //Rejected
+							data.activeRejected = true;
+							data.showRejectedIcon = true;
+							data.showApprovedIcon = false;
+							while(auditGR.next()){
+								temp_state = auditGR.getValue('oldvalue');
+
+								if(temp_state == '2'){
+									data.activeLevel_1 = true;
+								}
+								else if(temp_state == '8'){
+									data.activeLevel_1 = true;
+									data.activeLevel_2 = true;
+								}								
+							}
+						}
+
+						else if(record_state == '11'){  //Rejected_in_coupa
+							data.activeRejected_coupa = true;
+							data.showRejected_coupaIcon = true;
+							data.showApproved_coupaIcon = false;
+							while(auditGR.next()){
+								temp_state = auditGR.getValue('oldvalue');
+
+								if(temp_state == '2'){
+									data.activeLevel_1 = true;
+								}
+								else if(temp_state == '8'){
+									data.activeLevel_1 = true;
+									data.activeLevel_2 = true;
+								}	
+								else if(temp_state == '9'){
+									data.activeApproved = true;	
+								}	
+								else if(temp_state == '3'){
+									data.activeApproved = true;	
+									data.activeRejected = true;
+									data.showRejectedIcon = true;
+									data.showApprovedIcon = false;
+								}
+
+							}
+						}
+
+					}
+
+				}
+
+
+				var c1 = 0;
+				var item_sys_id = '';
+				var items_GR = new GlideRecord('x_nriws_coupa_req_coupa_items');
+				items_GR.addQuery('parent',record_id);
+				items_GR.orderBy('id');
+				items_GR.query();
+
+				while(items_GR.next()){
+					c1++;
+					//var nby_date = new GlideDate(items_GR.getValue('need_by_date'));
+					item_sys_id = items_GR.getValue("sys_id");
+					var Obj = {};
+					Obj.count = c1;
+					Obj.id = items_GR.getValue("id");
+					Obj.line_number = items_GR.getValue("line_number");
+					Obj.description = items_GR.getValue("description");
+					Obj.quantity = (items_GR.getValue("quantity")==null)?1:items_GR.getValue("quantity");
+					Obj.unit_price = items_GR.getDisplayValue("unit_price");
+					Obj.total = items_GR.getDisplayValue("total");
+					Obj.source_type = items_GR.getValue("source_type");
+					Obj.line_type = items_GR.getValue("line_type");
+					Obj.service_type = items_GR.getValue("service_type");
+					Obj.need_by_date = (items_GR.getDisplayValue("need_by_date").split(" ")[0] !='')?items_GR.getDisplayValue("need_by_date").split(" ")[0]:'YYYY-MM-DD';
+					Obj.manufacturer_name = (items_GR.getValue("manufacturer_name")==null)?'----':items_GR.getValue("manufacturer_name");
+					Obj.manufacturer_part_number = (items_GR.getValue("manufacturer_part_number")==null)?'----':items_GR.getValue("manufacturer_part_number");
+					Obj.currency = items_GR.getValue("currency");
+					Obj.commodity_name = (items_GR.getValue("commodity_name")==null)?'----':items_GR.getValue("commodity_name");
+					Obj.payment_term = (items_GR.getValue("payment_term")==null)?'----':items_GR.getValue("payment_term");
+					Obj.start_date =  (items_GR.getDisplayValue("start_date").split(" ")[0] !='')?items_GR.getDisplayValue("start_date").split(" ")[0]:'YYYY-MM-DD';
+					//Obj.end_date : items_GR.getValue("end_date").split(" ")[0];
+					Obj.personal_info = (items_GR.getValue("personal_info")==null)?'----':items_GR.getValue("personal_info");
+					Obj.export_property = (items_GR.getValue("export_property")==null)?'----':items_GR.getValue("export_property");
+					Obj.basic_contract = (items_GR.getValue("basic_contract")==null)?'----':items_GR.getValue("basic_contract");
+					Obj.outsourcing_info = (items_GR.getValue("outsourcing_info")==null)?'----':items_GR.getValue("outsourcing_info");
+					Obj.basic_contracted_corp = (items_GR.getValue("basic_contracted_corp")==null)?'----':items_GR.getValue("basic_contracted_corp");
+					Obj.subcontract_personal_info = (items_GR.getValue("subcontract_personal_info")==null)?'----':items_GR.getValue("subcontract_personal_info");
+					Obj.cistec_date = (items_GR.getDisplayValue("cistec_date").split(" ")[0] !='')?items_GR.getDisplayValue("cistec_date").split(" ")[0]:'YYYY-MM-DD';
+					Obj.has_contract =  (items_GR.getValue("has_contract")==1)?'はい':'なし';
+					Obj.cost_allocation_flag = (items_GR.getValue("cost_allocation_method")==null)?'----':items_GR.getValue("cost_allocation_method");
+
+					// 請負基本契約締結会社
+					Obj.contracting_company = (items_GR.getValue("contracting_company")==null)?'----':items_GR.getValue("contracting_company");
+
+					// 費用按分方法
+					Obj.cost_allocation_method = (items_GR.getValue("cost_allocation_method")==null)?'----':items_GR.getValue("cost_allocation_method");
+					Obj.accounting_standards = (items_GR.getValue("accounting_standards")==null)?'----':items_GR.getValue("accounting_standards");
+					Obj.comments = (items_GR.getValue("comments")==null)?'----':items_GR.getValue("comments");
+
+					
+					// サプライヤー supplier
+					Obj.supplier_id = items_GR.getValue("supplier_id");
+					Obj.supplier_display_name = items_GR.getValue("supplier_display_name");
+					Obj.supplier_name = items_GR.getValue("supplier_name");
+
+					Obj.it_sys_id = items_GR.getValue("sys_id");
+					
+					data.attach = [];
+					var att_obj = {};
+
+					var SysAttach_GR = new GlideRecord('sys_attachment');
+					SysAttach_GR.addQuery('table_sys_id',Obj.it_sys_id);
+					SysAttach_GR.query();
+
+					while(SysAttach_GR.next()){
+						att_obj = {
+							itemattach : SysAttach_GR.getDisplayValue('sys_id'),
+							file_name : SysAttach_GR.getValue('file_name')
+						};
+						data.attach.push(att_obj);
+					}
+
+					Obj.attach = data.attach; 
+					var c2=1;
+					var Obj2 = {};
+					var consign_contract_no = '';
+					data.accounts = [];
+					var accounts_GR = new GlideRecord('x_nriws_coupa_req_account');
+					accounts_GR.addQuery('parent',item_sys_id);
+					accounts_GR.query(); 
+
+					while(accounts_GR.next()){
+						Obj2 = {		
+							count : c2,
+							account_allocation_id : accounts_GR.getValue('account_allocation_id'),
+							account_allocation_amount : accounts_GR.getDisplayValue("account_allocation_amount"),
+							account_allocation_percent : accounts_GR.getValue("account_allocation_percent"),
+							account_id : accounts_GR.getValue("account_id"),
+							account_name : accounts_GR.getValue("account_name"),
+							account_type : accounts_GR.getValue("account_type"),
+							account_type_currency : accounts_GR.getValue("account_type_currency"),
+							account_code : accounts_GR.getValue("account_code"),
+							segment_1 : accounts_GR.getValue("segment_1"), 
+							segment_2 : accounts_GR.getValue("segment_2"),
+							segment_3 : accounts_GR.getValue("segment_3"),
+							segment_4 : accounts_GR.getValue("segment_4"),
+							segment_5 : accounts_GR.getValue("segment_5"),
+							period : accounts_GR.getValue("period"),
+							parent : accounts_GR.getDisplayValue("parent"),
+							consign_contract_number : accounts_GR.getValue('consignment_contract_number')
+						};  
+
+						consign_contract_no = accounts_GR.getValue('consignment_contract_number');
+						c2+=1;
+						data.accounts.push(Obj2);
+
+						data.contract = [];
+						var Obj3 = {};
+						var contract_GR = new GlideRecord('x_nriws_coupa_req_anaplan_contract');
+						contract_GR.addQuery('representation_contract_number',consign_contract_no);	
+						contract_GR.query();
+
+						if(contract_GR.next()){
+							Obj3 = {
+								consign_contract_number : (contract_GR.getValue('representation_contract_number')==null)?'----':contract_GR.getValue('representation_contract_number'),
+								accounting_item : (contract_GR.getValue('accounting_item')==null)?'----':contract_GR.getValue('accounting_item'),
+								accounting_standard : (contract_GR.getValue('accounting_standard')==null)?'----':contract_GR.getValue('accounting_standard'),
+								accounting_unit : (contract_GR.getValue('accounting_unit')==null)?'----':contract_GR.getValue('accounting_unit'),
+								accuracy : (contract_GR.getValue('accuracy')==null)?'----':contract_GR.getValue('accuracy'),
+								authorizer : (contract_GR.getValue('authorizer')==null)?'----':contract_GR.getValue('authorizer'),
+								base_profit : (contract_GR.getValue('base_profit')==null)?'----':contract_GR.getValue('base_profit'),
+								company_wide_contribution : (contract_GR.getValue('company_wide_contribution')==null)?'----':contract_GR.getValue('company_wide_contribution'),
+								conditions : (contract_GR.getValue('conditions')==null)?'----':contract_GR.getValue('conditions'),
+								contract_amount : (contract_GR.getDisplayValue('contract_amount')==null)?'----':contract_GR.getDisplayValue('contract_amount'),
+								contract_name : (contract_GR.getValue('contract_name')==null)?'----':contract_GR.getValue('contract_name'),
+								contract_number : (contract_GR.getValue('contract_number')==null)?'----':contract_GR.getValue('contract_number'),
+								contract_status : (contract_GR.getValue('contract_status')==null)?'----':contract_GR.getValue('contract_status'),
+								contractor : (contract_GR.getValue('contractor')==null)?'----':contract_GR.getValue('contractor'),
+								department_name : (contract_GR.getValue('department_name')==null)?'----':contract_GR.getValue('department_name'),
+								end_customer : contract_GR.getValue('end_customer'),
+								contract_start_date : (contract_GR.getValue('contract_start_date').split(" ")[0] !='')?contract_GR.getValue('contract_start_date'):'YYYY-MM-DD',
+								contract_end_date : (contract_GR.getValue('contract_end_date').split(" ")[0] !='')?contract_GR.getValue('contract_end_date'):'YYYY-MM-DD',
+								start_date : (contract_GR.getValue('start_date').split(" ")[0] !='')?contract_GR.getValue('start_date'):'YYYY-MM-DD',
+								end_date : (contract_GR.getValue('end_date').split(" ")[0] !='')?contract_GR.getValue('end_date'):'YYYY-MM-DD',
+								execution_pic : contract_GR.getValue('execution_pic'),
+								expected_order_month : contract_GR.getValue('expected_order_month'),
+								external_procurement : (contract_GR.getDisplayValue('external_procurement')==null)?'----':contract_GR.getDisplayValue('external_procurement'),
+								name : contract_GR.getValue('name'),
+								not_status_x : contract_GR.getValue('not_status_x'),
+								order_amount : contract_GR.getValue('order_amount'),
+								period : contract_GR.getValue('period'),
+								person_in_charge : contract_GR.getValue('person_in_charge'), 
+								personnel_charges : contract_GR.getValue('personnel_charges'),  
+								process : contract_GR.getValue('process'),
+								profit : contract_GR.getDisplayValue('profit'),
+								profit_rate : (parseFloat(contract_GR.getValue('profit_rate'))==null)?'----':(parseFloat(contract_GR.getValue('profit_rate') * 100)).toFixed(1),
+								project_code : (contract_GR.getValue('project_code')==null)?'----':contract_GR.getValue('project_code'),
+								project_name : (contract_GR.getValue('project_name')==null)?'----':contract_GR.getValue('project_name'),
+								rent_billing : (contract_GR.getValue('rent_billing')==null)?'----':contract_GR.getValue('rent_billing'),
+								revenue_recording_standard : contract_GR.getValue('revenue_recording_standard'),
+								sales_total : (contract_GR.getDisplayValue('sales_total')==null)?'----':contract_GR.getDisplayValue('sales_total'),
+								store_management_fee : (contract_GR.getValue('store_management_fee')==null)?'----':contract_GR.getValue('store_management_fee'),
+								sub_theme : contract_GR.getValue('sub_theme'),
+								suppliers : (contract_GR.getValue('suppliers')==null)?'----':contract_GR.getValue('suppliers'),
+								theme_classification_1 : contract_GR.getValue('theme_classification_1'),
+								theme_classification_2 : contract_GR.getValue('theme_classification_2'),
+								theme_classification_3 : contract_GR.getValue('theme_classification_3'),
+								transaction_classification : contract_GR.getValue('transaction_classification'),
+								total_input_sum : (parseInt(contract_GR.getValue('personnel_charges')) + parseInt(contract_GR.getValue('rent_billing')) + parseInt(contract_GR.getValue('store_management_fee')) + parseInt(contract_GR.getValue('company_wide_contribution'))).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'),								
+								total_of_two : (parseInt(contract_GR.getValue('personnel_charges')) + parseInt(contract_GR.getValue('rent_billing')) + parseInt(contract_GR.getValue('store_management_fee')) + parseInt(contract_GR.getValue('company_wide_contribution')) + parseInt(contract_GR.getValue('external_procurement'))).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+							};					
+
+							data.temp_common_contract_number = contract_GR.getValue('common_contract_number');
+							var temp_common_contract_name = contract_GR.getValue('common_contract_name');
+							var temp_contract_number = contract_GR.getValue('contract_number');
+							var temp_representation_contract_number = contract_GR.getValue('representation_contract_number');
+							var temp_project_code = contract_GR.getValue('project_code');
+
+							if(data.temp_common_contract_number!=null){
+								Obj3.common_contract_number = (contract_GR.getValue('common_contract_number')==null)?'----':contract_GR.getValue('common_contract_number');
+								Obj3.common_contract_name = (contract_GR.getValue('common_contract_name')==null)?'----':contract_GR.getValue('common_contract_name');
+								Obj3.common_contract_pic = (contract_GR.getValue('common_contract_pic')==null)?'----':contract_GR.getValue('common_contract_pic');
+								Obj3.common_contract_supplier  = (contract_GR.getValue('common_contract_supplier')==null)?'----':contract_GR.getValue('common_contract_supplier');
+								Obj3.common_contract_dept = (contract_GR.getValue('common_contract_dept')==null)?'----':contract_GR.getValue('common_contract_dept');
+								Obj3.common_contract_amount = (contract_GR.getDisplayValue('common_contract_amount')==null)?'----':contract_GR.getDisplayValue('common_contract_amount');
+								Obj3.common_contract_temp_amount = (contract_GR.getDisplayValue('common_contract_temp_amount')==null)?'----':contract_GR.getDisplayValue('common_contract_temp_amount');
+								Obj3.common_contract_receive_amount = (contract_GR.getDisplayValue('common_contract_receive_amount')==null)?'----':contract_GR.getDisplayValue('common_contract_receive_amount');
+								Obj3.common_contract_start_date = (contract_GR.getDisplayValue('common_contract_start_date').split(" ")[0] !='')?contract_GR.getDisplayValue('common_contract_start_date').split(" ")[0]:'YYYY-MM-DD';
+								Obj3.common_contract_end_date = (contract_GR.getDisplayValue('common_contract_end_date').split(" ")[0] !='')?contract_GR.getDisplayValue('common_contract_end_date').split(" ")[0]:'YYYY-MM-DD';
+							}
+							data.contract.push(Obj3);
+							var Multi_ContractGR;
+
+							if(data.temp_common_contract_number==null){
+								Multi_ContractGR = new GlideRecord('x_nriws_coupa_req_anaplan_contract');
+								Multi_ContractGR.addEncodedQuery("representation_contract_number!="+ consign_contract_no);
+								Multi_ContractGR.addQuery('project_code',temp_project_code);
+								Multi_ContractGR.addQuery('common_contract_name',null);
+								Multi_ContractGR.orderBy('contract_number');
+								Multi_ContractGR.query();
+
+								while(Multi_ContractGR.next()){ 
+									Obj3 = {
+										consign_contract_number : (Multi_ContractGR.getValue('representation_contract_number')==null)?'----':Multi_ContractGR.getValue('representation_contract_number'),
+										contract_amount : Multi_ContractGR.getDisplayValue('contract_amount'),
+										contract_name : (Multi_ContractGR.getValue('contract_name')==null)?'----':Multi_ContractGR.getValue('contract_name'),
+										contract_number : (Multi_ContractGR.getValue('contract_number')==null)?'----':Multi_ContractGR.getValue('contract_number'),
+										contract_status : Multi_ContractGR.getValue('contract_status'),
+										department_name : (Multi_ContractGR.getValue('department_name')==null)?'----':Multi_ContractGR.getValue('department_name'),
+										contractor : (Multi_ContractGR.getValue('contractor')==null)?'----':Multi_ContractGR.getValue('contractor'),
+										contract_start_date : (Multi_ContractGR.getValue('contract_start_date').split(" ")[0] !='')?Multi_ContractGR.getValue('contract_start_date'):'YYYY-MM-DD',
+										contract_end_date : (Multi_ContractGR.getValue('contract_end_date').split(" ")[0] !='')?Multi_ContractGR.getValue('contract_end_date'):'YYYY-MM-DD',
+										start_date : (Multi_ContractGR.getValue('start_date').split(" ")[0] !='')?Multi_ContractGR.getValue('start_date'):'YYYY-MM-DD',
+										end_date : (Multi_ContractGR.getValue('end_date').split(" ")[0] !='')?Multi_ContractGR.getValue('end_date'):'YYYY-MM-DD',
+										external_procurement : Multi_ContractGR.getDisplayValue('external_procurement'),
+										profit : Multi_ContractGR.getDisplayValue('profit'),
+										profit_rate : (parseFloat(Multi_ContractGR.getValue('profit_rate')* 100)).toFixed(1),
+										project_code : Multi_ContractGR.getValue('project_code'),
+										project_name : Multi_ContractGR.getValue('project_name'),
+										sales_total : Multi_ContractGR.getDisplayValue('sales_total'),
+										suppliers : (Multi_ContractGR.getValue('suppliers')==null)?'----':Multi_ContractGR.getValue('suppliers')
+										//total_of_two : (parseInt(Multi_ContractGR.getValue('personnel_charges')) + parseInt(Multi_ContractGR.getValue('rent_billing')) + parseInt(Multi_ContractGR.getValue('store_management_fee')) + parseInt(Multi_ContractGR.getValue('company_wide_contribution')) + parseInt(Multi_ContractGR.getValue('external_procurement'))).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+									};
+									data.contract.push(Obj3);
+								}
+							}
+
+							if(data.temp_common_contract_number!=null){
+								Multi_ContractGR = new GlideRecord('x_nriws_coupa_req_anaplan_contract');
+								Multi_ContractGR.addEncodedQuery("contract_number!="+ temp_contract_number);
+								Multi_ContractGR.addQuery('representation_contract_number',temp_representation_contract_number);
+								Multi_ContractGR.addQuery('common_contract_number',data.temp_common_contract_number);	
+								Multi_ContractGR.addQuery('common_contract_name',temp_common_contract_name);
+								Multi_ContractGR.orderBy('contract_number');
+								Multi_ContractGR.query();
+
+								while(Multi_ContractGR.next()){ 
+
+									Obj3 = {
+										consign_contract_number : (Multi_ContractGR.getValue('representation_contract_number')==null)?'----':Multi_ContractGR.getValue('representation_contract_number'),
+										contract_amount : Multi_ContractGR.getDisplayValue('contract_amount'),
+										contract_name : (Multi_ContractGR.getValue('contract_name')==null)?'----':Multi_ContractGR.getValue('contract_name'),
+										contract_number : (Multi_ContractGR.getValue('contract_number')==null)?'----':Multi_ContractGR.getValue('contract_number'),
+										contract_status : Multi_ContractGR.getValue('contract_status'),
+										department_name : (Multi_ContractGR.getValue('department_name')==null)?'----':Multi_ContractGR.getValue('department_name'),
+										contractor : (Multi_ContractGR.getValue('contractor')==null)?'----':Multi_ContractGR.getValue('contractor'),
+										contract_start_date : (Multi_ContractGR.getValue('contract_start_date').split(" ")[0] !='')?Multi_ContractGR.getValue('contract_start_date'):'YYYY-MM-DD',
+										contract_end_date : (Multi_ContractGR.getValue('contract_end_date').split(" ")[0] !='')?Multi_ContractGR.getValue('contract_end_date'):'YYYY-MM-DD',
+										start_date : (Multi_ContractGR.getValue('start_date').split(" ")[0] !='')?Multi_ContractGR.getValue('start_date'):'YYYY-MM-DD',
+										end_date : (Multi_ContractGR.getValue('end_date').split(" ")[0] !='')?Multi_ContractGR.getValue('end_date'):'YYYY-MM-DD',
+										external_procurement : Multi_ContractGR.getDisplayValue('external_procurement'),
+										profit : Multi_ContractGR.getDisplayValue('profit'),
+										profit_rate : (parseFloat(Multi_ContractGR.getValue('profit_rate')* 100)).toFixed(1),
+										project_code : Multi_ContractGR.getValue('project_code'),
+										project_name : Multi_ContractGR.getValue('project_name'),
+										sales_total : Multi_ContractGR.getDisplayValue('sales_total'),
+										suppliers : (Multi_ContractGR.getValue('suppliers')==null)?'----':Multi_ContractGR.getValue('suppliers'),
+										total_input_sum : (parseInt(Multi_ContractGR.getValue('personnel_charges')) + parseInt(Multi_ContractGR.getValue('rent_billing')) + parseInt(Multi_ContractGR.getValue('store_management_fee')) + parseInt(Multi_ContractGR.getValue('company_wide_contribution'))).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'),								
+										total_of_two : (parseInt(Multi_ContractGR.getValue('personnel_charges')) + parseInt(Multi_ContractGR.getValue('rent_billing')) + parseInt(Multi_ContractGR.getValue('store_management_fee')) + parseInt(Multi_ContractGR.getValue('company_wide_contribution')) + parseInt(Multi_ContractGR.getValue('external_procurement'))).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+
+									};
+									data.contract.push(Obj3);
+								}
+							}
+						}
+						Obj.contract = data.contract;
+					}
+
+					Obj.accounts = data.accounts;
+
+					// All Data Push
+					data.items.push(Obj);
+				}
+			}
+		}
+	}
+	else if(input){
+		var rec;
+		var CoupaGR;
+
+		if(input.action=="approve"){
+			// Update Approval Comments and state
+			rec = new GlideRecord('sysapproval_approver');
+			rec.addQuery('sys_id',input.approver_id);
+			rec.query();
+
+			if(rec.next()){
+				rec.setValue('state','approved');		
+				rec.comments = input.Appr_comment;
+				rec.update();
+				gs.addInfoMessage('Request Approved ...!');
+			}
+
+			// Update Coupa Req Comments
+			CoupaGR = new GlideRecord(data.table);
+			CoupaGR.addQuery('sys_id',record_id);
+			CoupaGR.query();
+
+			if(CoupaGR.next()){
+				CoupaGR.comments	= input.Appr_comment;
+				CoupaGR.update();
+			}
+			return;
+		}
+		else if(input.action=="reject"){
+
+			// Update Approval Comments and state
+			rec = new GlideRecord('sysapproval_approver');
+			rec.addQuery('sys_id',input.approver_id);
+			rec.query();
+
+			if(rec.next()){
+				rec.setValue('state','rejected');		
+				rec.comments = input.Rej_comment;
+				rec.update();
+				gs.addInfoMessage('Request Rejected ...!');
+			}
+
+			// Update Coupa Req Comments
+			CoupaGR = new GlideRecord(data.table);
+			CoupaGR.addQuery('sys_id',record_id);
+			CoupaGR.query();
+
+			if(CoupaGR.next()){
+				CoupaGR.comments	= input.Rej_comment;
+				CoupaGR.update();
+			}
+			return;
+		}
+	}
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-11-09 11:39:10</sys_created_on>
+        <sys_id>e97b3d3a1b10a010e05f43b2cc4bcb7f</sys_id>
+        <sys_mod_count>4604</sys_mod_count>
+        <sys_name>Coupa Detail</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_widget_e97b3d3a1b10a010e05f43b2cc4bcb7f</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-06-22 07:12:48</sys_updated_on>
+        <template><![CDATA[<div class="btn-group" style="float:right;padding-right:60px;">
+  <button type="button" class="btn btn-danger" ng-click="c.Back()"><i class="fa fa-arrow-circle-left" >&nbsp;</i>戻る</button>
+  <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">
+    <span class="caret"></span></button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="?id={{c.page_id}}&status=approved">承認済み</a></li>
+    <li><a href="?id={{c.page_id}}&status=rejected">否認済み</a></li>
+    <li><a href="?id={{c.page_id}}&status=not_required">承認不要</a></li>
+    <li><a href="?id={{c.page_id}}&status=all">全て</a></li>
+  </ul>
+</div>
+
+<div ng-if="data.exist=='no'">  <br><br>
+  <div class="alert alert-danger" >
+    本ページを表示する権限がありません!
+  </div>
+</div>
+
+<div ng-if="data.exist=='yes'">
+  <h2 style="font-size: 18px;" ng-if="c.checkStatusBreadcrumbs(c.data.status)">
+    <a href="/nrid_approval_portal">ホーム</a> <i style="font-size: 18px;" class="fa fa-angle-right">&nbsp;</i>
+    <a href={{href}}>{{breadcrumbs}}</a> <i style="font-size: 18px;" class="fa fa-angle-right">&nbsp;</i>
+    発注申請書#{{data.request.id}}
+  </h2> 
+ <hr class="style-blue">
+
+  <!-- Approval Status Flow -->
+  <ul class="line" >
+    <li ng-class="{'complete open': c.data.activeOpen,'open': !c.data.activeOpen} " >
+      <div class="status">
+        <label>作成済み</label>
+      </div>
+    </li>
+    <li ng-class="{'complete level-1': c.data.activeLevel_1,'level-1': !c.data.activeLevel_1} " >
+      <div class="status ">
+        <label>レベル１で承認待ち</label>
+      </div>
+    </li>
+    <li ng-class="{'complete level-2': c.data.activeLevel_2,'level-2': !c.data.activeLevel_2} ">
+      <div class="status ">
+        <label>レベル２で承認待ち</label>
+      </div>
+    </li>
+    <li ng-class="{'complete cancel': c.data.activeCancel,'cancel': !c.data.activeCancel} ">
+      <div class="status">
+        <label>キャンセル済み</label>
+      </div>
+    </li>
+    <li ng-if="c.data.showApprovedIcon" ng-class="{'complete approved': c.data.activeApproved,'approved': !c.data.activeApproved} ">
+      <div class="status ">
+        <label>承認済み</label>
+      </div>
+    </li>
+    <li ng-if="c.data.showRejectedIcon" ng-class="{'complete rejected': c.data.activeRejected,'rejected': !c.data.activeRejected} ">
+      <div class="status ">
+        <label>否認済み</label>
+      </div>
+    </li>
+    <li ng-if="c.data.showErrorIcon" ng-class="{'complete error': c.data.activeError,'error': !c.data.activeError} ">
+      <div class="status ">
+        <label>エラー</label>
+      </div>
+    </li>
+    <li ng-if="c.data.showApproved_coupaIcon" ng-class="{'complete approved-coupa': c.data.activeApproved_coupa,'approved-coupa': !c.data.activeApproved_coupa} ">
+      <div class="status ">
+        <label>Coupa上で承認済み</label>
+      </div>
+    </li>
+    <li ng-if="c.data.showRejected_coupaIcon" ng-class="{'complete rejected-coupa': c.data.activeRejected_coupa,'rejected-coupa': !c.data.activeRejected_coupa} ">
+      <div class="status ">
+        <label>Coupa上で否認済み</label>
+      </div>
+    </li>
+
+  </ul><br>
+
+
+  <hr class="style-blue">
+  <!-- start -->
+  <ul class="nav nav-pills ">
+    <li class="active">
+      <a data-toggle="tab" href="#ShoppingCart">
+        ショッピングカートのアイテム
+      </a>
+    </li>
+    <li>
+      <a data-toggle="tab" href="#GeneralInfo">
+        一般情報
+      </a>
+    </li>
+    <li><a data-toggle="tab" href="#ApprovalHistory">承認履歴</a></li>
+    <li><a data-toggle="tab" href="#Conversation">カンバセーション</a></li>
+  </ul>
+
+
+  <div class="tab-content">
+    <div id="GeneralInfo" class="tab-pane fade">        
+      <div class="panel panel-danger">
+        <div class="panel-body" >	  
+
+          <h4>一般情報</h4><hr>
+
+          <div class="bs-callout bs-callout-danger"><br>
+
+            <div class="row" >
+              <div class="col-sm-4" style="padding:5px;"><ul ><b>作成者</b><li> {{data.request.created_by_fullname}} </li></ul></div>  
+              <div class="col-sm-3" style="padding:5px;"><ul ><b>申請者</b><li> {{data.request.requested_by_fullname}} </li></ul></div> 
+              <div class="col-sm-5" style="padding:5px;"><ul ><b>部署</b><li ng-if="data.request.department!=null"> {{data.request.department}} </li><li ng-if="data.request.department==null"> ---- </li></ul></div> 
+            </div>
+
+            <div class="row ">
+              <div class="col-sm-7" style="padding:5px;"><ul ><b>案件名</b><li ng-if="data.request.project_title!=null"> {{data.request.project_title}} </li><li ng-if="data.request.project_title==null">----</li></ul></div> 
+              <div class="col-sm-5" style="padding:5px;"><ul ><b>本注文日</b><li ng-if="data.request.scheduled_issue_date!=''"> {{data.request.scheduled_issue_date}} </li> <li ng-if="data.request.scheduled_issue_date==''">----</li></ul></div>
+            </div>
+
+
+            <div class="row ">
+              <div class="col-sm-4" style="padding:5px;"><ul ><b>委託先リーダー</b><li ng-if="data.request.contractor_leader!=null"> {{data.request.contractor_leader}} </li> <li ng-if="data.request.contractor_leader==null">----</li></ul></div> 
+              <div class="col-sm-3" style="padding:5px;"><ul ><b>委託先サブリーダー</b><li ng-if="data.request.contractor_subleader!=null"> {{data.request.contractor_subleader}} </li><li ng-if="data.request.contractor_subleader==null">----</li></ul></div> 
+              <div class="col-sm-5" style="padding:5px;"><ul ><b>再委託先</b><li ng-if="data.request.subcontractor!=null"> {{data.request.subcontractor}} </li> <li ng-if="data.request.subcontractor==null">----</li></ul></div> 
+            </div >
+
+            <div class="row">
+              <div class="col-sm-4" style="padding:5px;"><ul ><b>事業部管理番号</b><li ng-if="data.request.optional_field!=null"> {{data.request.optional_field}} </li> <li ng-if="data.request.optional_field==null">----</li></ul></div> 
+              <div class="col-sm-3" style="padding:5px;"><ul ><b>委託開始依頼に該当</b><li ng-if="data.request.consignment_start_request!=null"> {{data.request.consignment_start_request}} </li> <li ng-if="data.request.consignment_start_request==null">----</li></ul></div>
+              <div class="col-sm-5" style="padding:5px;"><ul ><b>Docusignでの契約</b><li ng-if="data.request.contract_by_docusign!=null"> {{data.request.contract_by_docusign}} </li> <li ng-if="data.request.contract_by_docusign==null">----</li></ul></div> 
+            </div>
+
+            <div class="row ">
+              <div class="col-sm-4" style="padding:5px;"><ul ><b>輸出区分</b><li ng-if="data.request.export_property!=null"> {{data.request.export_property}} </li> <li ng-if="data.request.export_property==null">----</li></ul></div> 
+              <div class="col-sm-3" style="padding:5px;"><ul ><b>基本契約関連区分</b><li ng-if="data.request.basic_contract!=null"> {{data.request.basic_contract}} </li> <li ng-if="data.request.basic_contract==null">----</li></ul></div> 
+              <div class="col-sm-5" style="padding:5px;"><ul ><b>個人情報</b><li ng-if="data.request.personal_info!=null"> {{data.request.personal_info}} </li> <li ng-if="data.request.personal_info==null">----</li></ul></div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-7"  style="padding:5px;"><ul ><b>理由</b><li ng-if="data.request.justification!=null"> {{data.request.justification}} </li> <li ng-if="data.request.justification==null">----</li></ul></div> 
+              <div class="col-sm-5"  style="padding:5px;"><ul ><b>利用用途</b><li ng-if="data.request.usage_field!=null"> {{data.request.usage_field}} </li> <li ng-if="data.request.usage_field==null">----</li></ul></div> 
+            </div>
+
+            <div class="row"> 
+              <div class="col-sm-7"  style="padding:5px;"><ul ><b>委託開始依頼を出す理由 </b><li ng-if="data.request.reason_for_submittting_request!=null"> {{data.request.reason_for_submittting_request}} </li> <li ng-if="data.request.reason_for_submittting_request==null">----</li></ul></div> 
+              <div class="col-sm-5"  style="padding:5px;"><ul ><b>再販先会社名</b><li ng-if="data.request.resale_company!=null"> {{data.request.resale_company}} </li> <li ng-if="data.request.resale_company==null">----</li></ul></div> 
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="panel panel-danger" id="for-ship-add">
+        <div class="panel-body">
+          <h4>発送先住所</h4>
+          <hr>
+          <div class="bs-callout bs-callout-danger" >
+            <h4 style="padding-left:5px;"><b>住所</b></h4>
+            <div class="row" style="padding-left:10px;"><div class="col-sm-12"><li> {{data.request.postal_code}}, {{data.request.city}} {{data.request.street_1}} {{data.request.street_2}}</li></div> </div>
+            <div class="row" style="padding-left:10px;"><div class="col-sm-12"><li>{{data.request.country_code}}</li></div> </div>
+            <div class="row" style="padding-left:10px;"><div class="col-sm-12"><li>ロケーション コード： {{data.request.location_code}}</li></div> </div>
+            <div class="row" style="padding-left:10px;"><div class="col-sm-12"><li>宛先： {{data.request.ship_to_attention}}</li></div> </div>
+          </div>
+        </div>
+      </div>
+      <sp-widget widget="c.data.attachWidget"></sp-widget> 
+    </div>
+
+    <div id="ShoppingCart" class="tab-pane fade in active">
+      <div class="panel panel-danger">   
+        <div class="panel-body">
+          <div class="container-fluid" style="padding-right:15px;padding-top:10px;">
+            <p class="pull-right">
+              <span ng-click="c.All_item()"><i ng-class="{'fa fa-chevron-right' : !c.isExpended,'fa fa-chevron-down' : c.isExpended}"></i></span>
+            </p> 
+          </div> 
+          <hr>
+          <div  >     
+            <div class="graph-layout" ng-repeat="i in data.items" >
+              <div class="panel-body">
+                <!--
+<div class="row">
+<div class="col-sm-12 bg-success snd-Text" >  
+<h2 style="color:black; font-size:20px">&nbsp;<img src="coupa_icon.png" width="24" height="22"/>&nbsp;&nbsp;ユニット</h2>
+<div class="panel panel-info" style="padding-top:5px;">
+<div class="row">
+<div class="col-sm-1"> 
+<h4>&nbsp;&nbsp;
+<span class="label label-info"><strong>{{i.count}}</strong></span>
+</h4>  
+</div>
+<div class="col-sm-4"> <h4 ><strong>{{i.description}}</strong></h4>
+<div class="alert alert-success" style='margin-left : 0px'>
+<strong>{{i.supplier_display_name}}</strong>
+</div>
+
+</div>        
+<div class="col-sm-3"> 
+<h4 ng-if="i.unit_price!='0'">
+<span class="label label-primary">{{i.unit_price}}</span>
+&nbsp;x 
+<span class="label label-primary">{{i.quantity}}</span>
+</h4>
+<span class="badge badge-warning">{{i.start_date}}</span>
+<span class="badge badge-warning">{{i.need_by_date}}</span>
+</div>
+<div class="col-sm-3" > 
+<h4 style="font-size:28px;">
+<strong>
+<span class="label label-warning">{{i.total}}</span> 
+<span class="label label-warning">{{i.currency}}</span>
+</strong>
+</h4>		
+</div>
+<div class="col-sm-1"> 
+<div class="title" id="accordion" role="tablist" aria-multiselectable="true">	
+<a href="#collapse{{$index}}" class="collapsed" data-toggle="collapse" ></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+-->
+                <div class="row">
+                  <div class="col-sm-1"> 
+                    <h4>&nbsp;&nbsp;
+                      <span class="label label-primary"><strong>{{i.count}}</strong></span>
+                    </h4>  
+                  </div>
+                  <div class="col-sm-4"> <h4 ><strong>{{i.description}}</strong></h4>
+                    <div class="alert alert-info" style='margin-left : 0px;font-size:18px'>
+                      <strong>{{i.supplier_display_name}}</strong>
+                    </div>
+                  </div>        
+                  <div class="col-sm-3"> 
+                    <h4 ng-if="i.unit_price!='0'" style="padding-bottom:12px;font-size:22px">
+                   <!--   <span class="label label-warning">{{i.unit_price}}</span>
+                      &nbsp;x 
+                      <span class="label label-warning">{{i.quantity}}</span>
+                    </h4>-->
+                    <!--  <div class="alert alert-info" style='margin-left : 0px;'>-->
+                    <div class="date badge badge-success" style='margin-left : 0px;font-size:20px'>
+                      <strong>{{i.start_date}} - {{i.need_by_date}}</strong>
+                    </div>
+                    <!--
+<span class="badge badge-warning">{{i.start_date}}</span>
+<span class="badge badge-warning">{{i.need_by_date}}</span>
+-->
+                  </div>
+
+                  <div class="col-sm-3" > 
+                    <h4 style="font-size:28px;">
+                      <strong>
+                        <span class="label badge-success">{{i.total}}</span> 
+                        <span class="label badge-success">{{i.currency}}</span>
+                      </strong>
+                    </h4>		
+                  </div>
+                  <div class="col-sm-1"> 
+                    <div class="title" id="accordion" role="tablist" aria-multiselectable="true">	
+                      <a href="#collapse{{$index}}" class="collapsed" data-toggle="collapse" ></a>
+                    </div>
+                  </div>
+                </div> 
+
+                <div id="collapse{{$index}}" class="collapse" >
+                  <hr>
+                  <div class="row" ng-repeat="j in i.accounts">
+                    <div  class="col-md-4 ">
+                      <div class="col-xs-12 bg-success snd-Text" style="margin-left: -15px;">
+                        <h2 style="color:black; font-size:20px">&nbsp;<img src="coupa_icon.png" width="24" height="22"/>&nbsp;&nbsp;ユニット</h2>
+                        <div class="panel panel-success " style="padding-top:5px;">   
+                          <ul class="text-left">
+                            <li><b>{{$index + 1}}.&nbsp;{{j.account_type}}</b></li><br>
+                            <li ng-if="j.account_name!=null">{{j.account_name}}</li>
+                            <li ng-if="j.account_code!=null">{{j.account_code}}</li>
+                            <li>{{j.segement_1}} {{j.segment_2}} {{j.segment_3}} {{j.segment_4}} {{j.segment_5}}</li>
+                            <li  ng-if="j.period!=null"><b>period </b> {{j.period}}</li>
+                            <br>
+                            <li ng-if="j.consign_contract_number!=null"><b ng-if="data.temp_common_contract_number==null">委託契約番号</b> <b ng-if="data.temp_common_contract_number!=null">統合契約番</b></li>
+                            <li>{{j.consign_contract_number}}</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div ng-if="i.contract.length!=0 && j.consign_contract_number!=null">
+                      <!-- for Sub Contract -->
+                      <div ng-if="data.temp_common_contract_number==null">
+
+                        <div class="col-md-8 col-xs-12 bg-info snd-Text pull-right" ng-if="j.consign_contract_number!=null">
+                          <div class="row" style="padding-bottom:8px;padding-top:15px;">
+                            <div class="col-sm-6" style="color:black; font-size:20px;"> &nbsp;<img src="anaplan_icon.png" width="24" height="22"/>&nbsp;&nbsp;&nbsp;契約情報</div>
+                          </div>
+
+                          <div class="panel panel-info" style="padding-top:5px;">    
+
+                            <div class="row">
+                              <div class="col-sm-4"><ul><b>委託契約番号</b><li>{{i.contract[0].consign_contract_number}}</li></ul></div>
+                              <div class="col-sm-4"><ul><b>契約名</b><li>{{i.contract[0].contract_name}}</li></ul></div>
+                              <div class="col-sm-4"><ul><b>契約担当者</b><li>{{i.contract[0].contractor}}</li></ul></div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-4"><ul><b>取引先</b><li>{{i.contract[0].suppliers}}</li></ul></div>
+                              <div class="col-sm-4"><ul><b>部署名</b><li>{{i.contract[0].department_name}}</li></ul></div>
+                              <div class="col-sm-4"><ul><b></b><li></li></ul></div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-4"><ul><b>契約開始日</b><li>{{i.contract[0].contract_start_date}}</li></ul></div>
+                              <div class="col-sm-4"><ul><b>契約完了日</b><li>{{i.contract[0].contract_end_date}}</li></ul></div>
+                              <div class="col-sm-4" style='color:black;'><ul><b>契約金額</b><li><b>{{i.contract[0].contract_amount}}</b></li></ul></div>
+                            </div>
+
+                          </div>
+
+                          <!-- <hr> -->
+                          <div class="row">
+                            <h4>
+                              <text style="color:black;" class="col-sm-4">&nbsp;<img src="anaplan_icon.png" width="24" height="22"/>&nbsp;&nbsp;&nbsp;実行予算書</text>
+                              <text class="text-info col-sm-4">{{i.contract[0].project_name + '(' + i.contract[0].project_code + ')' }}</text>
+                              <!--(<text class="text-primary">{{log.length}} &nbsp;委託契約</text>)-->
+                              <text class="text-info col-sm-4">{{i.contract[0].start_date}}&nbsp; - &nbsp;{{i.contract[0].end_date}}&nbsp;</text>
+                            </h4> 
+                          </div>
+                          <!--<div class='panel panel-info snd-Text'>-->
+                          <div class='panel budgetpanelinfo snd-Text'>
+                            <!-- <table class="table table-hover "> -->
+                            <table class="table">	
+                              <tr  >
+                                <td  style='text-align:center;vertical-align:middle;'><b>売上</b></td>
+                                <!-- <td colspan="3" style='text-align:center;vertical-align:middle'><b>費用</b></td>-->
+                                <td style='text-align:center;vertical-align:middle;'><b>外部調達</b></td>
+                                <td style='text-align:center;vertical-align:middle;'><b>インプット</b></td>
+                                <td style='text-align:center;vertical-align:middle;'><b>利益</b></td>
+                                <td style='text-align:center;vertical-align:middle;'><b>利益率</b></td>
+                              </tr>
+
+                              <tr  >
+                                <td style='text-align:center;vertical-align:middle'>{{i.contract[0].sales_total}}</td>
+                                <!-- <td style='text-align:center;vertical-align:middle'>{{i.contract[0].external_procurement + i.contract[0].total_input_sum}}</td>	-->
+                                <td style='text-align:center;vertical-align:middle;'>{{i.contract[0].external_procurement}}</td>
+                                <td style='text-align:center;vertical-align:middle'>{{i.contract[0].total_input_sum}}</td>
+                                <td style='text-align:center;vertical-align:middle'>{{i.contract[0].profit}}</td>
+                                <td style='text-align:center;vertical-align:middle'>{{i.contract[0].profit_rate}} %</td>
+                              </tr>
+
+                            </table>
+                          </div>
+                          <div class="bg-info snd-Text " >
+
+                            <br>
+                          </div> 
+                          <div class="row">
+                            <div class="col-sm-6" style="padding-right:20px;"><p class="pull-right"> <span ng-click="c.contract(i.contract.length)" ng-if="i.contract.length>1"><i ng-class="{'fa fa-chevron-up' : !c.isExpendedContract,'fa fa-chevron-down' : c.isExpendedContract}"></i></span></p></div>
+                          </div>
+                        </div>
+                        <!-- For Sub-contract not common contract --->
+                        <div class="col-md-8 col-xs-12 bg-info snd-Text" style="float:right;padding-top:15px;" ng-if="c.index>0 && j.consign_contract_number!=null">
+
+                          <div class="panel panel-info" style="padding-top:5px;" ng-repeat="k in i.contract" ng-if="j.consign_contract_number!=null&&$index<=c.index&&$index>0">     
+
+                            <div class="row">
+                              <div class="col-sm-4"><ul><b>委託契約番号</b><li>{{k.consign_contract_number}}</li></ul></div>
+                              <div class="col-sm-4"><ul><b>契約名</b><li>{{k.contract_name}}</li></ul></div>
+                              <div class="col-sm-4"><ul><b>契約担当者</b><li>{{k.contractor}}</li></ul></div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-4"><ul><b>取引先</b><li>{{k.suppliers}}</li></ul></div>
+                              <div class="col-sm-4"><ul><b>部署名</b><li>{{k.department_name}}</li></ul></div>
+                              <div class="col-sm-4"><ul><b></b><li></li></ul></div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-4"><ul><b>契約開始日</b><li>{{k.contract_start_date}}</li></ul></div>
+                              <div class="col-sm-4"><ul><b>契約完了日</b><li>{{k.contract_end_date}}</li></ul></div>
+                              <div class="col-sm-4" style='color:black;'><ul><b>契約金額</b><li><b>{{k.contract_amount}}</b></li></ul></div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <!--- For Commom Contracts  ---->
+                      <div ng-if="data.temp_common_contract_number!=null" class="col-md-8 col-xs-12" >
+
+                        <div class="row">
+                          <div class="bg-info snd-Text ">
+
+                            <div class="row" style="padding-bottom:8px;padding-top:15px;">
+                              <h4>
+                                <text style="color:black;" class="col-sm-5">&nbsp;<img src="anaplan_icon.png" width="24" height="22"/>&nbsp;&nbsp;&nbsp;統合契約情報</text>
+                              </h4>
+                            </div>
+
+                            <div class="panel panel-info" style="padding-top:5px;">
+
+                              <div class="row">
+                                <div class="col-sm-4"><ul><b >統合契約番号</b><li>{{i.contract[0].common_contract_number}}</li></ul></div>
+                                <div class="col-sm-4"><ul><b >統合契約名</b><li>{{i.contract[0].common_contract_name}}</li></ul></div>
+                                <div class="col-sm-4"><ul><b >統合契約担当者</b><li>{{i.contract[0].common_contract_pic}}</li></ul></div>
+                              </div>
+                              <div class="row">
+                                <div class="col-sm-4"><ul><b >統合契約取引先</b><li>{{i.contract[0].common_contract_supplier}}</li></ul></div>
+                                <div class="col-sm-4"><ul><b >統合契約部署名</b><li>{{i.contract[0].common_contract_dept}}</li></ul></div>
+                                <div class="col-sm-4"><ul><b ></b><li></li></ul></div>
+                              </div>
+                              <div class="row">
+                                <div class="col-sm-4"><ul><b >統合契約開始日</b><li>{{i.contract[0].common_contract_start_date}}</li></ul></div>
+                                <div class="col-sm-4"><ul><b >統合契約終了日</b><li>{{i.contract[0].common_contract_end_date}}</li></ul></div>
+                                <div class="col-sm-4"><ul><b >契約金額</b><li>{{i.contract[0].common_contract_receive_amount}}</li></ul></div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                        <!--Ma Start -->
+                        <div class="row" ng-repeat="(key, log) in i.contract | groupBy: 'project_code'">
+
+                          <div class="bg-info snd-Text " >
+                            <div class="row">
+                              <h4>
+                                <text style="color:black;" class="col-sm-4">&nbsp;<img src="anaplan_icon.png" width="24" height="22"/>&nbsp;&nbsp;&nbsp;実行予算書(個別)</text>
+                                <text class="text-info col-sm-4">{{key?log[0].project_name + '(' + log[0].project_code + ')' :'--- ---'}}</text>
+                                <!--(<text class="text-primary">{{log.length}} &nbsp;委託契約</text>)-->
+                                <text class="text-info col-sm-4">{{log[0].start_date}}&nbsp; - &nbsp;{{log[0].end_date}}&nbsp;</text>
+                              </h4> 
+                            </div>
+
+                            <!--<div class='panel panel-info snd-Text'>-->
+                            <div class='panel budgetpanelinfo snd-Text'>
+                              <!-- <table class="table table-hover "> -->
+                              <table class="table">
+
+                                <tr >
+                                  <td style='text-align:center;vertical-align:middle;'><b>売上</b></td>
+                                  <!--<td colspan="3" style='text-align:center;vertical-align:middle'><b>費用</b></td>-->
+                                  <td style='text-align:center;vertical-align:middle;color:black;'><b>外部調達</b></td>
+                                  <td style='text-align:center;vertical-align:middle;'><b>インプット</b></td>
+                                  <td style='text-align:center;vertical-align:middle;'><b>利益</b></td>
+                                  <td style='text-align:center;vertical-align:middle;'><b>利益率</b></td>
+                                </tr>
+
+                                <tr >
+                                  <td style='text-align:center;vertical-align:middle'>{{log[0].sales_total}}</td>
+                                  <!--<td style='text-align:center;vertical-align:middle'>{{log[0].total_of_two}}</td>	-->
+                                  <td style='text-align:center;vertical-align:middle;color:black;'><b>{{log[0].external_procurement}}</b></td>
+                                  <td style='text-align:center;vertical-align:middle'>{{log[0].total_input_sum}}</td>
+                                  <td style='text-align:center;vertical-align:middle'>{{log[0].profit}}</td>
+                                  <td style='text-align:center;vertical-align:middle'>{{log[0].profit_rate}} %</td>
+                                </tr>
+
+                              </table>
+                            </div>
+                            <br>
+
+                            <div ng-repeat='req in log'>
+                              <div class="panel panel-info" style="padding-top:3px;">    
+                                <div class="row">
+                                  <div class="col-sm-4"><ul><b>委託契約番号</b><li>{{req.consign_contract_number}}</li></ul></div>
+                                  <div class="col-sm-4"><ul><b>契約名</b><li>{{req.contract_name}}</li></ul></div>
+                                  <div class="col-sm-4"><ul><b>契約担当者</b><li>{{req.contractor}}</li></ul></div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-sm-4"><ul><b>取引先</b><li>{{req.suppliers}}</li></ul></div>
+                                  <div class="col-sm-4"><ul><b>部署名</b><li>{{req.department_name}}</li></ul></div>
+                                  <div class="col-sm-4"><ul><b></b><li></li></ul></div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-sm-4"><ul><b>契約開始日</b><li>{{req.contract_start_date}}</li></ul></div>
+                                  <div class="col-sm-4"><ul><b>契約完了日</b><li>{{req.contract_end_date}}</li></ul></div>
+                                  <div class="col-sm-4"><ul><b>契約金額</b><li>{{req.contract_amount}}</li></ul></div>
+                                </div>
+                              </div>                     
+                              <hr ng-if="log.length>1">                      
+                            </div>
+                          </div>  
+                        </div>
+                        <!--Ma End -->
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <!--- Coupa Items -->
+                  <div class="row bg-success snd-Text">
+                    <h2 style="color:black; font-size:20px">&nbsp;<img src="coupa_icon.png" width="24" height="22"/>&nbsp;&nbsp;ショッピングカートのアイテム</h2>
+                    <div class="panel panel-warning" style="padding-top:5px;">
+                      <div class="row"> 
+                        <div class="col-sm-4"><ul><b>商品</b><li> {{i.commodity_name}}</li></ul></div>  
+                        <div class="col-sm-4"><ul><b>支払条件</b><li> {{i.payment_term}}</li></ul></div>
+                        <div class="col-sm-4"><ul><b>契約</b><li> {{i.has_contract}}</li></ul></div>                    
+                      </div>
+                      <br>
+                      <div class="row">
+                        <div class="col-sm-4"><ul><b>個人情報</b><li> {{i.personal_info}}</li></ul></div> 
+                        <div class="col-sm-4"><ul><b>輸出区分</b><li> {{i.export_property}}</li></ul></div> 
+                        <div class="col-sm-4"><ul><b>基本契約関連区分</b><li> {{i.basic_contract}}</li></ul></div>   
+                      </div>
+                      <br>
+                      <div class="row">
+                        <div class="col-sm-4"><ul><b>委託先：審査日・ステータス・利用期間</b><li> {{i.outsourcing_info}}</li></ul></div>
+                        <div class="col-sm-4"><ul><b>個人情報に関する業務委託可否</b><li> {{i.subcontract_personal_info}}</li></ul></div>   
+                        <div class="col-sm-4"><ul><b>費用按分方法</b><li> {{i.cost_allocation_flag}}</li></ul></div>
+                      </div>
+                      <br>
+                      <div class="row">
+                        <div class="col-sm-4"><ul><b>請負基本契約締結会社</b><li> {{i.contracting_company}}</li></ul></div>
+                        <div class="col-sm-4"><ul><b>会計基準</b><li> {{i.accounting_standards}}</li></ul></div>
+                        <div class="col-sm-4"><ul><b>備考</b><li> {{i.comments}}</li></ul></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Coupa Attachments -->
+                  <div class="row bg-success snd-Text" ng-if="i.attach.length > 0">
+                    <h2 style="color:black; font-size:20px">&nbsp;<img src="coupa_icon.png" width="24" height="22"/>&nbsp;&nbsp;添付ファイル</h2>
+                    <div class="panel panel-success " style="padding-top:5px;padding-left:5px;padding-bottom:5px;">   
+                      <div ng-repeat="k in i.attach" >
+                        <div ng-if="k.itemattach!=null"> <a href="/sys_attachment.do?sys_id={{k.itemattach}}" data-toggle="tooltip" title="{{k.file_name}}"><i class="fa fa-paperclip">&nbsp;</i>{{k.file_name}}</a> </div>                              
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="box" >
+        <div class="box-sm red"></div>
+        <div class="box-sm orange"></div>
+        <div class="box-sm yellow "></div>
+        <div class="box-sm green "></div>
+        <div class="box-sm blue "></div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-xs-12">
+          <h4 class="text-right">Total&nbsp; <strong>{{data.request.total}}  {{data.request.currency}}</strong></h4>
+        </div>
+      </div>
+    </div>
+
+    <div id="ApprovalHistory" class="tab-pane fade">
+      <!--Approval History-->
+      <div class="container-fluid ">
+        <h4>
+          ${承認履歴詳細}
+        </h4>          
+        <sp-widget widget="c.data.approvalInfoWidget"></sp-widget>
+      </div>
+    </div>
+    <div id="Conversation" class="tab-pane fade">
+      <!--Conversation-->
+      <div class="container-fluid">
+        <h4>
+          ${カンバセーション}
+        </h4>
+        <sp-widget widget="c.data.conversationWidget"></sp-widget>
+      </div>     
+    </div>
+  </div>
+
+  <!-- {{c.data.req}} -->
+  <div ng-if="(c.data.isDelegateApprover || c.data.isApprover) && c.data.req == 'yes'" class="col-sm-12" style="padding-bottom:20px;"><br>
+
+    <div style="float:right;"><button type="button" data-toggle="modal" data-target="#Modal-reject" class="btn btn-danger" >{{c.data.rejectButtonLabel}}</button></div>
+    <div style="float:right;">&nbsp;&nbsp;&nbsp; </div>
+    <div style="float:right;"><button type="button" data-toggle="modal" data-target="#Modal-approve" class="btn btn-success" >{{c.data.approveButtonLabel}}</button></div>
+
+  </div>
+
+  <!--{{data.approver_id}} - {{data.current_userID}} -->
+
+  <!-- For Approve comment -->
+    <div class="modal fade" id="Modal-approve" role="dialog" data-backdrop="false" >
+      <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">コメント</h4>
+          </div>
+          <div class="modal-body col-sm-12">
+            <textarea ng-model="c.approveCmmt" id="approveCmmt" placeholder="ここにコメントを記載してください。" style="width:100%;padding:10px;resize:vertical;" ></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="c.Approve(data.approver_id)" data-dismiss="modal">{{c.data.approveButtonLabel}}</button>
+            <button type="button" class="btn btn-warning" data-dismiss="modal">キャンセル</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  <!-- For Reject comment -->
+    <div class="modal fade" id="Modal-reject" role="dialog" data-backdrop="false">
+    <div class="modal-dialog modal-lg">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+          <h4 class="modal-title">コメント</h4>
+        </div>
+        <div class="modal-body col-sm-12">
+          <textarea ng-model="c.rejectCmmt" id="rejectCmmt" placeholder="ここにコメントを記載してください。" style="width: 100%;padding:10px; ;resize:vertical;" ></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" ng-click="c.Reject(data.approver_id)" data-dismiss="modal">{{c.data.rejectButtonLabel}}</button>
+          <button type="button" class="btn btn-warning" data-dismiss="modal">キャンセル</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <br>
+</div>
+
+
+
+
+<!--               
+at last add -- value for empty or null
+-->
+]]></template>
+    </sp_widget>
+</record_update>

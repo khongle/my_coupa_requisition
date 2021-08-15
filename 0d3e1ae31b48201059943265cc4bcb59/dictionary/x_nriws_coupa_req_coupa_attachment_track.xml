@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Coupa Attachment Track" max_length="40" name="x_nriws_coupa_req_coupa_attachment_track" sizeclass="0" type="collection">
+        <element label="Created in coupa" max_length="40" name="created_in_coupa" type="glide_date_time"/>
+        <element label="File endpoint" max_length="1024" name="file_endpoint" type="url"/>
+        <element label="File id" max_length="10" name="file_id" type="string"/>
+        <element label="File intent" max_length="40" name="file_intent" type="string"/>
+        <element label="File name" max_length="200" name="file_name" type="string"/>
+        <element label="File path" max_length="1024" name="file_path" type="url"/>
+        <element label="File type" max_length="40" name="file_type" type="string"/>
+        <element label="Parent" max_length="100" name="parent" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Parent id" max_length="40" name="parent_id" type="integer"/>
+        <element label="Parent table" max_length="100" name="parent_table" type="string"/>
+        <element label="Parent Type" max_length="40" name="parent_type" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Sync Status" max_length="40" name="sync_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Ready" sequence="1" value="ready"/>
+                <element inactive_on_update="false" label="Success" sequence="2" value="success"/>
+                <element inactive_on_update="false" label="Error" sequence="3" value="error"/>
+                <element inactive_on_update="false" label="Ignore" sequence="4" value="ignore"/>
+            </choice>
+        </element>
+        <element label="Updated in coupa" max_length="40" name="updated_in_coupa" type="glide_date_time"/>
+    </element>
+</database>

@@ -1,0 +1,1163 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="f78650d11bfcec1059943265cc4bcb2c" sys_domain="global" table="x_nriws_coupa_req_anaplan_contract" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>contract_number</element>
+            <position>0</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b386d0d11bfcec1059943265cc4bcbad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sub_theme</element>
+            <position>1</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3b86d0d11bfcec1059943265cc4bcbad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>2</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bf86d0d11bfcec1059943265cc4bcbad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>process</element>
+            <position>3</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3786d0d11bfcec1059943265cc4bcbae</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>4</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bb86d0d11bfcec1059943265cc4bcbae</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>accuracy</element>
+            <position>5</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3386d0d11bfcec1059943265cc4bcbaf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>6</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b786d0d11bfcec1059943265cc4bcbaf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>end_customer</element>
+            <position>7</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3f86d0d11bfcec1059943265cc4bcbaf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>transaction_classification</element>
+            <position>8</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b386d0d11bfcec1059943265cc4bcbb0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>order_amount</element>
+            <position>9</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3b86d0d11bfcec1059943265cc4bcbb0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>base_profit</element>
+            <position>10</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bf86d0d11bfcec1059943265cc4bcbb0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>11</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3786d0d11bfcec1059943265cc4bcbb1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>expected_order_month</element>
+            <position>12</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bb86d0d11bfcec1059943265cc4bcbb1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>start_date</element>
+            <position>13</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3386d0d11bfcec1059943265cc4bcbb2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>14</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b786d0d11bfcec1059943265cc4bcbb2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>end_date</element>
+            <position>15</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3f86d0d11bfcec1059943265cc4bcbb2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>16</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b386d0d11bfcec1059943265cc4bcbb3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>authorizer</element>
+            <position>17</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3b86d0d11bfcec1059943265cc4bcbb3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>execution_pic</element>
+            <position>18</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bf86d0d11bfcec1059943265cc4bcbb3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>19</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3786d0d11bfcec1059943265cc4bcbb4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>revenue_recording_standard</element>
+            <position>20</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bb86d0d11bfcec1059943265cc4bcbb4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>theme_classification_1</element>
+            <position>21</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3386d0d11bfcec1059943265cc4bcbb5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>22</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b786d0d11bfcec1059943265cc4bcbb5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>theme_classification_2</element>
+            <position>23</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3f86d0d11bfcec1059943265cc4bcbb5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>theme_classification_3</element>
+            <position>24</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b386d0d11bfcec1059943265cc4bcbb6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>25</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3b86d0d11bfcec1059943265cc4bcbb6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>accounting_unit</element>
+            <position>26</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bf86d0d11bfcec1059943265cc4bcbb6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>not_status_x</element>
+            <position>27</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3786d0d11bfcec1059943265cc4bcbb7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>approver_name</element>
+            <position>28</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bb86d0d11bfcec1059943265cc4bcbb7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>approver_email</element>
+            <position>29</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3386d0d11bfcec1059943265cc4bcbb8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>30</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b786d0d11bfcec1059943265cc4bcbb8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sales_total</element>
+            <position>31</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3f86d0d11bfcec1059943265cc4bcbb8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>external_procurement</element>
+            <position>32</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b386d0d11bfcec1059943265cc4bcbb9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>personnel_charges</element>
+            <position>33</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3b86d0d11bfcec1059943265cc4bcbb9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>rent_billing</element>
+            <position>34</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bf86d0d11bfcec1059943265cc4bcbb9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>35</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3786d0d11bfcec1059943265cc4bcbba</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>store_management_fee</element>
+            <position>36</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bb86d0d11bfcec1059943265cc4bcbba</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>company_wide_contribution</element>
+            <position>37</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3386d0d11bfcec1059943265cc4bcbbb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>profit</element>
+            <position>38</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b786d0d11bfcec1059943265cc4bcbbb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>profit_rate</element>
+            <position>39</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3f86d0d11bfcec1059943265cc4bcbbb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>40</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b386d0d11bfcec1059943265cc4bcbbc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>accounting_item</element>
+            <position>41</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3b86d0d11bfcec1059943265cc4bcbbc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>contract_status</element>
+            <position>42</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bf86d0d11bfcec1059943265cc4bcbbc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>suppliers</element>
+            <position>43</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3786d0d11bfcec1059943265cc4bcbbd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>department_name</element>
+            <position>44</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bb86d0d11bfcec1059943265cc4bcbbd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>person_in_charge</element>
+            <position>45</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3386d0d11bfcec1059943265cc4bcbbe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>conditions</element>
+            <position>46</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b786d0d11bfcec1059943265cc4bcbbe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>contract_name</element>
+            <position>47</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3f86d0d11bfcec1059943265cc4bcbbe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>contract_amount</element>
+            <position>48</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b386d0d11bfcec1059943265cc4bcbbf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>accounting_standard</element>
+            <position>49</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3b86d0d11bfcec1059943265cc4bcbbf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>50</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bf86d0d11bfcec1059943265cc4bcbbf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>contract_start_date</element>
+            <position>51</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3786d0d11bfcec1059943265cc4bcbc0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>contract_end_date</element>
+            <position>52</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bb86d0d11bfcec1059943265cc4bcbc0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>53</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3386d0d11bfcec1059943265cc4bcbc1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>period</element>
+            <position>54</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b786d0d11bfcec1059943265cc4bcbc1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>55</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3f86d0d11bfcec1059943265cc4bcbc1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>contractor</element>
+            <position>56</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>b386d0d11bfcec1059943265cc4bcbc2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>remarks</element>
+            <position>57</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3b86d0d11bfcec1059943265cc4bcbc2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>project_name</element>
+            <position>58</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bf86d0d11bfcec1059943265cc4bcbc2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>project_code</element>
+            <position>59</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3786d0d11bfcec1059943265cc4bcbc3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>name</element>
+            <position>60</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>bb86d0d11bfcec1059943265cc4bcbc3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>attachment</element>
+            <position>61</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_id>3386d0d11bfcec1059943265cc4bcbc4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_contract_number</element>
+            <position>62</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 09:18:52</sys_created_on>
+            <sys_id>e12bd8551bfcec1059943265cc4bcbf5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 09:18:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>approver</element>
+            <position>63</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-07 05:26:13</sys_created_on>
+            <sys_id>2b927c371b7c601059943265cc4bcb8a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-07 05:26:13</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>common_contract_number</element>
+            <position>64</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 07:39:10</sys_created_on>
+            <sys_id>c5cd1a1a1b8de41059943265cc4bcbf0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 07:39:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>common_contract_name</element>
+            <position>65</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 07:39:41</sys_created_on>
+            <sys_id>e4ed9a1a1b8de41059943265cc4bcbd4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 07:39:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>common_contract_pic</element>
+            <position>66</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 07:40:23</sys_created_on>
+            <sys_id>be0e5e1a1b8de41059943265cc4bcb6b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 07:40:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>common_contract_status</element>
+            <position>67</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 07:40:55</sys_created_on>
+            <sys_id>6a2ede1a1b8de41059943265cc4bcb8e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 07:40:55</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>common_contract_supplier</element>
+            <position>68</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 07:41:28</sys_created_on>
+            <sys_id>fa4e925a1b8de41059943265cc4bcb15</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 07:41:28</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>common_contract_dept</element>
+            <position>69</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 07:42:07</sys_created_on>
+            <sys_id>dc7e165a1b8de41059943265cc4bcb8c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 07:42:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>common_contract_sub_theme</element>
+            <position>70</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 07:43:49</sys_created_on>
+            <sys_id>01de125a1b8de41059943265cc4bcb99</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 07:43:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>common_contract_amount</element>
+            <position>71</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 07:46:38</sys_created_on>
+            <sys_id>527f129a1b8de41059943265cc4bcb8c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 07:46:38</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>common_contract_temp_amount</element>
+            <position>72</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 07:47:49</sys_created_on>
+            <sys_id>bbbf129a1b8de41059943265cc4bcba2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 07:47:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>common_contract_receive_amount</element>
+            <position>73</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 07:48:44</sys_created_on>
+            <sys_id>01ffd69a1b8de41059943265cc4bcb66</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 07:48:44</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>common_contract_start_date</element>
+            <position>74</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 07:49:31</sys_created_on>
+            <sys_id>7420669a1b8de41059943265cc4bcbe1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 07:49:31</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>common_contract_end_date</element>
+            <position>75</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 07:50:00</sys_created_on>
+            <sys_id>3f30ee9a1b8de41059943265cc4bcb22</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 07:50:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>common_contract_condition</element>
+            <position>76</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 07:50:29</sys_created_on>
+            <sys_id>b25022da1b8de41059943265cc4bcbfb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 07:50:29</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>common_contract_period</element>
+            <position>77</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 07:51:15</sys_created_on>
+            <sys_id>c68062da1b8de41059943265cc4bcb59</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 07:51:15</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>representation_contract_number</element>
+            <position>78</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 09:06:02</sys_created_on>
+            <sys_id>dda13ed61bcde41059943265cc4bcb81</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 09:06:02</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>contract_type</element>
+            <position>79</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 16:04:59</sys_created_on>
+            <sys_id>6a8114221bc1281059943265cc4bcb2a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 16:04:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>representation_contract_status</element>
+            <position>80</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-15 16:17:43</sys_created_on>
+            <sys_id>c57410a21bc1281059943265cc4bcb90</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_contract" sys_domain="global" view="Default view">f78650d11bfcec1059943265cc4bcb2c</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-15 16:17:43</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_nriws_coupa_req_anaplan_contract</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 08:58:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f78650d11bfcec1059943265cc4bcb2c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_nriws_coupa_req_anaplan_contract</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_ui_section_f78650d11bfcec1059943265cc4bcb2c</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 08:58:49</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

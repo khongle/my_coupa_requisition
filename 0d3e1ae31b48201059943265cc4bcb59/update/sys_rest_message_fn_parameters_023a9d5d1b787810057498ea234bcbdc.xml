@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
+        <name>coupa_endpoint</name>
+        <rest_message_function display_value="Get_Purchase_Orders_Without_Invoice">c83adddd1b787810057498ea234bcbea</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-06-16 10:05:35</sys_created_on>
+        <sys_id>023a9d5d1b787810057498ea234bcbdc</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>coupa_endpoint</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_023a9d5d1b787810057498ea234bcbdc</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-06-16 10:07:54</sys_updated_on>
+        <type>string</type>
+        <value>https://nri-dev.coupahost.com/api/</value>
+    </sys_rest_message_fn_parameters>
+</record_update>

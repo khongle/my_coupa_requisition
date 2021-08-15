@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_nriws_coupa_req.anaplan.api.workspaces.dev</name>
+        <read_roles/>
+        <suffix>anaplan.api.workspaces.dev</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-24 23:59:43</sys_created_on>
+        <sys_id>56b475f71b646c10e05f43b2cc4bcbf1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_nriws_coupa_req.anaplan.api.workspaces.dev</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_properties_56b475f71b646c10e05f43b2cc4bcbf1</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-24 23:59:43</sys_updated_on>
+        <type>string</type>
+        <value>8a81b00f7122e7630171352296ec4703</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=56b475f71b646c10e05f43b2cc4bcbf1"/>
+</record_update>

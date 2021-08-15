@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_nriws_coupa_req.AnaplanAPIUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>AnaplanAPIUtils</name>
+        <script><![CDATA[var AnaplanAPIUtils = Class.create();
+AnaplanAPIUtils.prototype = {
+    initialize: function() {
+    },
+
+	getEndpoint : function(){
+		
+		var endpointObj = {};
+		var instance = gs.getProperty("instance_name");
+		
+		var username = '';
+		var password = '';
+		var workspace = '';
+		var model = '';
+		var upload_file = '';
+		var import_action = '';
+		var export_file = '';
+		var export_action = '';
+		var process_id = '';
+		
+		if(instance == 'nrigdev1') {
+			username =  gs.getProperty('x_nriws_coupa_req.anaplan.api.username.dev');
+			password =  gs.getProperty('x_nriws_coupa_req.anaplan.api.password.dev');
+			
+			workspace = gs.getProperty('x_nriws_coupa_req.anaplan.api.workspaces.dev');
+			model = gs.getProperty('x_nriws_coupa_req.anaplan.api.models.dev');
+			upload_file = gs.getProperty('x_nriws_coupa_req.anaplan.api.files.dev');
+			import_action = gs.getProperty('x_nriws_coupa_req.anaplan.api.import.id.dev');
+			
+			export_action = gs.getProperty('x_nriws_coupa_req.anaplan.api.export.id.dev');
+			export_file = gs.getProperty('x_nriws_coupa_req.anaplan.api.files.export.dev');
+			
+			process_id = gs.getProperty('x_nriws_coupa_req.anaplan.api.process.id.dev');
+		}
+		else if(instance == 'nriguat1'){
+			username =  gs.getProperty('x_nriws_coupa_req.anaplan.api.username.uat');
+			password =  gs.getProperty('x_nriws_coupa_req.anaplan.api.password.uat');
+			
+			workspace = gs.getProperty('x_nriws_coupa_req.anaplan.api.workspaces.uat');
+			model = gs.getProperty('x_nriws_coupa_req.anaplan.api.models.uat');
+			upload_file = gs.getProperty('x_nriws_coupa_req.anaplan.api.files.uat');
+			import_action = gs.getProperty('x_nriws_coupa_req.anaplan.api.import.id.uat');
+			export_action = gs.getProperty('x_nriws_coupa_req.anaplan.api.export.id.uat');
+			export_file = gs.getProperty('x_nriws_coupa_req.anaplan.api.files.export.uat');
+			
+			process_id = gs.getProperty('x_nriws_coupa_req.anaplan.api.process.id.uat');
+		}
+		else if(instance == 'nrigprod'){
+			username =  gs.getProperty('x_nriws_coupa_req.anaplan.api.username.prd');
+			password =  gs.getProperty('x_nriws_coupa_req.anaplan.api.password.prd');
+			
+			workspace = gs.getProperty('x_nriws_coupa_req.anaplan.api.workspaces.prd');
+			model = gs.getProperty('x_nriws_coupa_req.anaplan.api.models.prd');
+			upload_file = gs.getProperty('x_nriws_coupa_req.anaplan.api.files.prd');
+			import_action = gs.getProperty('x_nriws_coupa_req.anaplan.api.import.id.prd');
+			export_action = gs.getProperty('x_nriws_coupa_req.anaplan.api.export.id.prd');
+			export_file = gs.getProperty('x_nriws_coupa_req.anaplan.api.files.export.prd');
+			
+			process_id = gs.getProperty('x_nriws_coupa_req.anaplan.api.process.id.prd');
+		}
+		
+		endpointObj.instance = instance;
+		endpointObj.username = username;
+		endpointObj.password = password;
+		
+		endpointObj.workspace = workspace;
+		endpointObj.model = model;
+		endpointObj.import_action = import_action;
+		endpointObj.upload_file = upload_file;
+		endpointObj.export_action = export_action;
+		endpointObj.export_file = export_file;
+		endpointObj.process_id =process_id;
+		
+		return endpointObj;
+	},
+	
+	getExistingToken : function(){
+		var token = '';
+		var instance = this.getEndpoint().instance;
+		
+		var grToken = new GlideRecord('x_nriws_coupa_req_anaplan_token_track');
+		grToken.addQuery('instance',instance);
+		grToken.query();
+		
+		if(grToken.next()){
+			token = grToken.getValue('token_value');
+		}
+		else{
+			token = this.generateNewToken();
+		}	
+		return token;	
+	},
+	
+	validateToken : function(token){
+		
+		var isValidated = false;
+		
+		var restMsgAnaplan = new sn_ws.RESTMessageV2("Anaplan","1_Validate_Token");
+		restMsgAnaplan.setStringParameterNoEscape('token',token);
+		var response = restMsgAnaplan.execute();
+		var responseBody = response.getBody();
+		var status = response.getStatusCode();
+		
+		//gs.info('--validateToken : response' + response);
+		//gs.info('--validateToken : responseBody -- ' + responseBody);
+		//gs.info('--validateToken : status -- ' + status);
+		
+		if(status=='401'){
+			//Unauthorized
+			//this.generateNewToken();
+			isValidated = false;
+		}
+		else if(status =='200'){
+			isValidated = true;
+		}
+		
+		return isValidated;
+	},
+		
+	generateNewToken : function(){
+		var token = '';
+		
+		var endPointObj = this.getEndpoint();
+		var instance = endPointObj.instance;
+		
+		var restMsgAnaplan = new sn_ws.RESTMessageV2("Anaplan","2_Get_Token");
+		//override authentication profile 
+		//authentication type ='basic'/ 'oauth2'
+		
+		var user = endPointObj.username;
+		var password = endPointObj.password;
+
+		restMsgAnaplan.setBasicAuth(user,password);
+		
+		//var profile_name = 'nrigdev1';
+		//if(instance == 'nrigdev1'){
+		//	profile_name = 'Anaplan Dev';
+		//}
+		//else if(instance == 'nriguat1'){
+		//	profile_name = 'Anaplan Dev';
+		//}
+		//else if(instance == 'nrig'){
+		//	profile_name = 'Anaplan Dev';
+		//}
+		//	
+		//restMsgAnaplan.setAuthenticationProfile('basic', profile_name);
+		var response = restMsgAnaplan.execute();
+		var responseBody = response.getBody();
+		var status = response.getStatusCode();
+		
+		if(status=='201'){
+			var jsonData = JSON.parse(responseBody);
+			token =  jsonData.tokenInfo.tokenValue;
+			
+			var grToken = new GlideRecord('x_nriws_coupa_req_anaplan_token_track');
+			grToken.addQuery('instance',instance);
+			grToken.query();
+			
+			if(grToken.next()){
+				grToken.token_value = token;
+				grToken.update();
+				
+				result = true;
+			}
+			else{
+				grToken.initialize();
+				grToken.instance = instance;
+				grToken.token_value = token;
+				grToken.insert();		
+				result = true;
+			}	
+		}
+		
+		return token;
+	},
+	
+	getValidToken : function(){
+		var validToken = '';
+		var existingToken = this.getExistingToken();
+		var validateResult = this.validateToken(existingToken);
+		
+		if(validateResult==true){
+			validToken = existingToken;
+		}
+		else{
+			validToken = this.generateNewToken();
+		}
+		
+		return validToken;
+		
+	},
+	
+	uploadFile: function(attachment_sysid,workspace_id,model_id,file_id,token){
+		
+		var upload_result = false;
+		
+		try{
+			var restMsgAnaplan = new sn_ws.RESTMessageV2("Anaplan","3_Upload_File_As_Single_Chunk");
+			restMsgAnaplan.setStringParameterNoEscape('workspace_id',workspace_id);
+			restMsgAnaplan.setStringParameterNoEscape('model_id',model_id);
+			restMsgAnaplan.setStringParameterNoEscape('file_id',file_id);
+			restMsgAnaplan.setStringParameterNoEscape('token',token);
+			
+			restMsgAnaplan.setRequestBodyFromAttachment(attachment_sysid);
+			var response = restMsgAnaplan.execute();
+			var responseBody = response.getBody();
+			var status = response.getStatusCode();
+
+			if(status =='204'){
+				//gs.info('upload success');
+				upload_result = true;
+			}
+		}
+		catch(ex){
+			//gs.info('uploadFile : ' + attachment_sysid + ' ' + ex);
+		}
+		
+		
+		/*
+		var sys_id_dummy = '85c43f9b1b10e01059943265cc4bcb7d';
+		var grAttach = new GlideRecord('sys_attachment');
+		
+		grAttach.addQuery('table_sys_id',sys_id_dummy);
+		grAttach.query();
+		
+		while(grAttach.next()){
+			var restMsgAnaplan = new sn_ws.RESTMessageV2("Anaplan","Upload_File_As_Single_Chunk");
+			restMsgAnaplan.setRequestBodyFromAttachment(grAttach.getUniqueValue());
+			var response = restMsgAnaplan.execute();
+			var responseBody = response.getBody();
+			var status = response.getStatusCode();
+			
+			//gs.info('status : ' + status);
+			
+			if(status =='204'){
+				//gs.info('upload success');
+				upload_result = true;
+			}
+		}
+		*/
+		return upload_result;
+	},
+	
+	completeUpload : function(workspace_id,model_id,file_id,token){
+		
+		var completeUploadResult = false;
+		
+		try{
+			var restMsgAnaplan = new sn_ws.RESTMessageV2("Anaplan","4_Set_Upload_Complete");
+			restMsgAnaplan.setStringParameterNoEscape('workspace_id',workspace_id);
+			restMsgAnaplan.setStringParameterNoEscape('model_id',model_id);
+			restMsgAnaplan.setStringParameterNoEscape('file_id',file_id);
+			restMsgAnaplan.setStringParameterNoEscape('token',token);
+
+			var response = restMsgAnaplan.execute();
+			var responseBody = response.getBody();
+			var status = response.getStatusCode();
+
+			if(status =='200'){
+				//gs.info('complete upload success');
+				completeUploadResult = true;
+			}
+		}
+		catch(ex){
+			
+		}	
+		return completeUploadResult;
+	},
+	
+	runImportAction : function(workspace_id,model_id,import_action_id,token){
+	
+		var importTaskID = '';
+		
+		try{
+			var restMsgAnaplan = new sn_ws.RESTMessageV2("Anaplan","5_Run_Import");
+			restMsgAnaplan.setStringParameterNoEscape('workspace_id',workspace_id);
+			restMsgAnaplan.setStringParameterNoEscape('model_id',model_id);
+			restMsgAnaplan.setStringParameterNoEscape('import_action_id',import_action_id);
+			restMsgAnaplan.setStringParameterNoEscape('token',token);
+
+			var response = restMsgAnaplan.execute();
+			var responseBody = response.getBody();
+			var status = response.getStatusCode();
+
+			if(status =='200'){
+				var jsonData = JSON.parse(responseBody);
+				importTaskID = jsonData.task.taskId;
+			}
+		}
+		catch(ex){
+			
+		}
+
+		
+		return importTaskID;
+	},
+	
+	checkTaskStatus : function(workspace_id,model_id,import_action_id,task_id,token){
+		
+		var taskCompleted = false;
+
+		try{
+			var restMsgAnaplan = new sn_ws.RESTMessageV2("Anaplan","6_Review_Task");
+
+			restMsgAnaplan.setStringParameterNoEscape('workspace_id',workspace_id);
+			restMsgAnaplan.setStringParameterNoEscape('model_id',model_id);
+			restMsgAnaplan.setStringParameterNoEscape('import_action_id',import_action_id);
+			restMsgAnaplan.setStringParameterNoEscape('task_id',task_id);
+			restMsgAnaplan.setStringParameterNoEscape('token',token);
+
+			var response = restMsgAnaplan.execute();
+			var responseBody = response.getBody();
+			var status = response.getStatusCode();
+
+			if(status =='200'){
+				var jsonData = JSON.parse(responseBody);
+				var taskState = jsonData.task.taskState;
+				if(taskState=='COMPLETE'){
+					taskCompleted = true;
+				}
+			}
+		}
+		catch(ex){
+			
+		}
+		
+		return taskCompleted;
+	},
+	
+	runProcess : function(workspace_id,model_id,process_id,token){
+		//Run the process
+		var processTaskID = '';
+		
+		try{
+			var restMsgAnaplan = new sn_ws.RESTMessageV2("Anaplan","11_Run_Process");
+			restMsgAnaplan.setStringParameterNoEscape('workspace_id',workspace_id);
+			restMsgAnaplan.setStringParameterNoEscape('model_id',model_id);
+			restMsgAnaplan.setStringParameterNoEscape('process_id',process_id);
+			restMsgAnaplan.setStringParameterNoEscape('token',token);
+
+			var response = restMsgAnaplan.execute();
+			var responseBody = response.getBody();
+			var status = response.getStatusCode();
+
+			//gs.info('response :' + JSON.stringify(response));
+			//gs.info('responseBody :' + responseBody);
+			//gs.info('status :' + status);
+			
+			if(status =='200'){
+				var jsonData = JSON.parse(responseBody);
+				processTaskID = jsonData.task.taskId;
+			}
+		}
+		catch(ex){
+			
+		}
+
+		return processTaskID;
+		
+	},
+	
+	checkProcessTaskStatus : function(workspace_id,model_id,process_id,task_id,token){
+		
+		var taskCompleted = false;
+
+		try{
+			var restMsgAnaplan = new sn_ws.RESTMessageV2("Anaplan","12_Review_Process_Task");
+
+			restMsgAnaplan.setStringParameterNoEscape('workspace_id',workspace_id);
+			restMsgAnaplan.setStringParameterNoEscape('model_id',model_id);
+			restMsgAnaplan.setStringParameterNoEscape('process_id',process_id);
+			restMsgAnaplan.setStringParameterNoEscape('task_id',task_id);
+			restMsgAnaplan.setStringParameterNoEscape('token',token);
+
+			var response = restMsgAnaplan.execute();
+			var responseBody = response.getBody();
+			var status = response.getStatusCode();
+
+			//gs.info('response :' + JSON.stringify(response));
+			//gs.info('responseBody :' + responseBody);
+			//gs.info('status :' + status);
+			
+			if(status =='200'){
+				var jsonData = JSON.parse(responseBody);
+				var taskState = jsonData.task.taskState;
+				if(taskState=='COMPLETE'){
+					taskCompleted = true;
+				}
+			}
+		}
+		catch(ex){
+			
+		}
+		
+		return taskCompleted;
+	},
+	
+	runExportAction : function(workspace_id,model_id,export_action_id,token){
+		//Run the export
+		var exportTaskID = '';
+		
+		try{
+			var restMsgAnaplan = new sn_ws.RESTMessageV2("Anaplan","7_Run_Export");
+			restMsgAnaplan.setStringParameterNoEscape('workspace_id',workspace_id);
+			restMsgAnaplan.setStringParameterNoEscape('model_id',model_id);
+			restMsgAnaplan.setStringParameterNoEscape('export_action_id',export_action_id);
+			restMsgAnaplan.setStringParameterNoEscape('token',token);
+
+			var response = restMsgAnaplan.execute();
+			var responseBody = response.getBody();
+			var status = response.getStatusCode();
+
+			if(status =='200'){
+				var jsonData = JSON.parse(responseBody);
+				exportTaskID = jsonData.task.taskId;
+			}
+		}
+		catch(ex){
+			
+		}
+
+		return exportTaskID;
+		
+	},
+	
+	checkExportTaskStatus : function(workspace_id,model_id,export_action_id,task_id,token){
+		
+		var taskCompleted = false;
+
+		try{
+			var restMsgAnaplan = new sn_ws.RESTMessageV2("Anaplan","8_Review_Export_Task");
+
+			restMsgAnaplan.setStringParameterNoEscape('workspace_id',workspace_id);
+			restMsgAnaplan.setStringParameterNoEscape('model_id',model_id);
+			restMsgAnaplan.setStringParameterNoEscape('export_action_id',export_action_id);
+			restMsgAnaplan.setStringParameterNoEscape('task_id',task_id);
+			restMsgAnaplan.setStringParameterNoEscape('token',token);
+
+			var response = restMsgAnaplan.execute();
+			var responseBody = response.getBody();
+			var status = response.getStatusCode();
+
+			if(status =='200'){
+				var jsonData = JSON.parse(responseBody);
+				var taskState = jsonData.task.taskState;
+				if(taskState=='COMPLETE'){
+					taskCompleted = true;
+				}
+			}
+		}
+		catch(ex){
+			
+		}
+		
+		return taskCompleted;
+	},
+	
+	getExportFileChunks : function(workspace_id,model_id,export_file_id,token){
+		
+		var chunkList = [];
+
+		try{
+			var restMsgAnaplan = new sn_ws.RESTMessageV2("Anaplan","9_Get_File_Chunks");
+
+			restMsgAnaplan.setStringParameterNoEscape('workspace_id',workspace_id);
+			restMsgAnaplan.setStringParameterNoEscape('model_id',model_id);
+			restMsgAnaplan.setStringParameterNoEscape('export_file_id',export_file_id);
+			restMsgAnaplan.setStringParameterNoEscape('token',token);
+
+			var response = restMsgAnaplan.execute();
+			var responseBody = response.getBody();
+			var status = response.getStatusCode();
+
+			if(status =='200'){
+				var jsonData = JSON.parse(responseBody);
+				var chunkObjList = jsonData.chunks;
+				
+				for(var tempNum =0; tempNum < chunkObjList.length;tempNum++){
+					chunkList.push(chunkObjList[tempNum].id);
+				}
+			}		
+		}
+		catch(ex){
+			
+		}
+		
+		return chunkList;
+	},
+	
+	downloadFileChunk : function(workspace_id,model_id,export_file_id,chunk_id,token,record_sys_id,contract_number){
+		var fileName = 'export_' + contract_number + '_' + chunk_id + '.csv';
+		//var table_name = 'x_nriws_coupa_req_account';
+		var table_name = 'x_nriws_coupa_req_anaplan_schedule_job';
+		
+		var newAttachmentSysId = this.downloadFileChunkAndSaveToTable(workspace_id,model_id,export_file_id,chunk_id,token,table_name,record_sys_id,fileName);
+		
+		return newAttachmentSysId;
+	},
+		
+	downloadFileChunkAndSaveToTable : function(workspace_id,model_id,export_file_id,chunk_id,token,table_name,record_sys_id,fileName){
+		
+		var newAttachmentSysId ='';
+		
+		try{
+			var restMsgAnaplan = new sn_ws.RESTMessageV2("Anaplan","10_Download_File_Chunk");
+			restMsgAnaplan.setStringParameterNoEscape('workspace_id',workspace_id);
+			restMsgAnaplan.setStringParameterNoEscape('model_id',model_id);
+			restMsgAnaplan.setStringParameterNoEscape('export_file_id',export_file_id);
+			restMsgAnaplan.setStringParameterNoEscape('chunk_id',chunk_id);
+			restMsgAnaplan.setStringParameterNoEscape('token',token);
+			restMsgAnaplan.saveResponseBodyAsAttachment(table_name,record_sys_id,fileName);
+			
+			var response = restMsgAnaplan.execute();
+			var responseBody = response.getBody();
+			var status = response.getStatusCode();
+			
+			if(status =='200'){
+				//var fileName = 'export_' + contract_number + '_' + chunk_id + '.csv';
+				//restMsgAnaplan.saveResponseBodyAsAttachment(table_name,record_sys_id,fileName);
+				newAttachmentSysId= response.getResponseAttachmentSysid();
+			}
+		}
+		catch(ex){
+			
+		}
+		
+		return newAttachmentSysId;
+	},
+	
+    type: 'AnaplanAPIUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-17 02:32:39</sys_created_on>
+        <sys_id>d1fa81d51baca41059943265cc4bcb34</sys_id>
+        <sys_mod_count>72</sys_mod_count>
+        <sys_name>AnaplanAPIUtils</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_script_include_d1fa81d51baca41059943265cc4bcb34</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-06-02 01:04:33</sys_updated_on>
+    </sys_script_include>
+</record_update>

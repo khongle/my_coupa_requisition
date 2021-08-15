@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function test($scope, $window) {
+  /* widget controller */
+  var c = this;
+
+  c.current_page = c.data.page;
+  c.search = "";
+  c.invoiceStatus = c.data.invoiceStatus;
+	c.itemsPerPageOptions = [10,20,30,40,50,100];
+	c.itemsPerPage = c.itemsPerPageOptions[4];
+  
+  c.itemsPerPageHandler = function() {
+    c.data.action="item_per_page";
+    c.data.itemsPerPage=c.itemsPerPage;
+    c.server.update();
+  }
+  
+  c.goToPage = function(page) {
+    if (page == c.data.page) 
+      return;
+    c.data.page = page;
+    c.data.action = 'go_to_page';
+    c.server.update();
+  }
+
+  c.nextPage = function() {
+    if (c.data.page == c.data.totalPage)
+      return;
+    c.data.action = 'next_page';
+    c.current_page++;
+    c.data.page = c.current_page;
+   
+    c.server.update();
+  }
+
+  c.prevPage = function() {
+    if (c.data.page == 1)
+      return;
+    c.data.action = 'prev_page';
+    c.current_page--;
+    c.data.page = c.current_page;
+   
+    c.server.update();
+  }
+
+  c.sort = function(orderBy) {
+    c.data.action = 'sort';
+    c.data.orderBy = orderBy;
+    c.data.sort == 'ASC' ? c.data.sort = 'DESC' : c.data.sort = 'ASC';
+    c.server.update();
+  }
+
+  c.goHome = function(){
+		$window.location.href="?id=" + c.data.home_page_id;
+	}
+
+  c.statusSelected = function() {
+    c.data.statusSelected = c.invoiceStatus;
+    c.server.update();
+  }
+
+  c.searchRecord = function () {
+    c.data.search = c.search;
+    c.server.update();
+  }
+
+  jQuery('table.table-hover th').click(function(e){
+    jQuery('table.table-hover th').removeClass('active');
+    jQuery(this).addClass('active');
+  })
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.break-line {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, #fbdfdf, #e52a2a, #fbdfdf);
+}
+.coupa-invoice-page {
+  height:auto;
+  width:auto;
+  border-radius:10px;
+  box-shadow:0 0 5px #154d8d;
+  padding:10px;
+  margin:auto;
+  margin-bottom:20px;
+  background-color:white;
+
+  .nav-pagination{
+    display: flex;
+    align-items: center;
+    .pagination {
+      align-items: center;
+      flex: 1;
+      display: flex;
+
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+    }
+  }
+
+  .primary-color {
+    color: #154d8d;
+  }
+
+  .admin-list-layout {
+    .panel-body {
+      .active-layout {
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        border-radius: 5px;
+        width: 200px;
+        background-color: white;
+        box-shadow: 0 0 10px #428bca;
+
+        .left-side {
+          padding: 0px 5px;
+          font-size: 30px;
+        }
+        .right-side {
+          font-size: 40px;
+          margin: auto;
+          text-align: center;
+        }
+      }
+    }
+    
+  }
+
+  
+
+  .table-hover{
+    td {
+      padding: 10px;
+      line-height: 1.4;
+    }
+  }
+  
+}
+ 
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}
+]]></link>
+        <name>Coupa invoice admin approval list</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+  data.home_page_id = 'coupa_invoice_approval_homepage';
+  data.page = 1;
+  data.limit = 50;
+  data.invoices = [];
+  data.totalRecord = 0; 
+  data.pageItems = [];
+  data.totalPage = 0;
+  data.sort = 'ASC';
+  data.orderBy = 'id';
+//  $sp.getParameter('status');
+  data.invoiceStatus = "";
+  data.search = "";
+
+  if (input) {
+    data.sort = input.sort;
+    data.orderBy = input.orderBy;
+    data.invoiceStatus = input.statusSelected;
+    data.search = input.search;
+   
+    if(input.action == 'go_to_page') {
+      data.page = input.page;
+    }
+    else if(input.action == 'next_page') {
+      data.page = input.page;
+    }
+    else if(input.action == 'prev_page') {
+      data.page = input.page;
+    }
+    else if(input.action == 'sort') {
+      data.orderBy = input.orderBy;
+      data.sort = input.sort;
+    }
+    else if(input.action == 'item_per_page') {
+      data.limit = input.itemsPerPage;
+    }
+    
+  }
+  
+  
+  var invoiceAggr = new GlideAggregate('x_nriws_coupa_req_coupa_invoice'); 
+  //&& data.invoiceStatus != 'all'
+  if (data.invoiceStatus ) {
+    invoiceAggr.addQuery('state', data.invoiceStatus );
+  }
+  if (data.search) {
+    invoiceAggr.addEncodedQuery('invoice_noLIKE' + data.search);
+  }
+  invoiceAggr.addEncodedQuery('sys_updated_onONThis month@javascript:gs.beginningOfThisMonth()@javascript:gs.endOfThisMonth()');
+  invoiceAggr.addAggregate('COUNT'); 
+  invoiceAggr.query(); 
+  if (invoiceAggr.next()){ 
+    data.totalRecord = invoiceAggr.getAggregate('COUNT');
+  }
+  data.totalPage = Math.ceil(data.totalRecord / data.limit);
+  if (data.page < 10) {
+    for(var i = 1; i <= data.totalPage ; i++) {
+      data.pageItems.push(i);
+    }
+  }
+
+ 
+
+  var invoiceGr = new GlideRecord('x_nriws_coupa_req_coupa_invoice');
+  if(data.orderBy) {
+    if(data.sort == 'ASC') {
+      invoiceGr.orderBy(data.orderBy);
+    }
+    else {
+      invoiceGr.orderByDesc(data.orderBy);
+    }
+  }
+  //&&  data.invoiceStatus != 'all'
+  if(data.invoiceStatus ) {
+    invoiceGr.addQuery('state',data.invoiceStatus);
+  }
+
+  invoiceGr.chooseWindow((data.page - 1)* data.limit, data.page * data.limit);
+  invoiceGr.addEncodedQuery('invoice_noLIKE' + data.search);
+  invoiceGr.addEncodedQuery('sys_updated_onONThis month@javascript:gs.beginningOfThisMonth()@javascript:gs.endOfThisMonth()');
+  invoiceGr.query();
+  data.invoices = [];
+  while(invoiceGr.next()) {
+    data.invoices.push({
+      sys_id : invoiceGr.getValue('sys_id'),
+      id: invoiceGr.getValue('id'),
+      currency: invoiceGr.getValue('currency'),
+      state : invoiceGr.state.getDisplayValue(),
+      status: invoiceGr.status.getDisplayValue(),
+      invoice_no: invoiceGr.getValue('invoice_no'),
+      po_line: invoiceGr.getValue('po_line'),
+      start_date: invoiceGr.getValue('start_date'),
+      end_date: invoiceGr.getValue('end_date'),
+      tax_amount: invoiceGr.getValue('tax_amount'),
+      amount_include_tax: invoiceGr.getValue('amount_include_tax'),
+      amount_exclude_tax: invoiceGr.getValue('amount_exclude_tax'),
+      business_number: invoiceGr.getValue('invoice_business_number'),
+      invoice_date: invoiceGr.getValue('invoice_date'),
+      payment_due_date: invoiceGr.getValue('payment_due_date'),
+    })
+  }
+ 
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-06-01 02:44:49</sys_created_on>
+        <sys_id>5f756e101ba4b85036a1206a234bcb5a</sys_id>
+        <sys_mod_count>30</sys_mod_count>
+        <sys_name>Coupa invoice admin approval list</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_widget_5f756e101ba4b85036a1206a234bcb5a</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-07-09 07:09:51</sys_updated_on>
+        <template><![CDATA[<h2>
+  <span style="font-size: 18px;">
+    <a href="/nrid_approval_portal">ホーム</a> 
+    <!--承認一覧  <i style="font-size: 12px;" class="fa fa-arrow-right">&nbsp;</i>-->
+    <i style="font-size: 18px;" class="fa fa-angle-right">&nbsp;</i>
+    管理者請求承認一覧
+  </span>
+  <p class="pull-right">
+     <button class="btn btn-danger" ng-click="c.goHome()"><i class="fa fa-home" style="font-size:18px;">&nbsp;</i>
+     <b>${管理者ページへ戻る}</b>
+     </button>
+  </p>
+</h2>
+<hr class="break-line" />
+<div class="coupa-invoice-page">
+  <div class="admin-list-layout">
+    <div class="" style="padding-left:20px;border-color:white;">
+       <div class="panel-body" style="padding: 30px;">
+          <div class="row">
+            <div class="col-sm-5">
+                <div class="primary-color">
+                   <div class ="active-layout">
+                      <div class="left-side">
+                         <b>{{ c.data.totalRecord }}</b>
+                         <p>合計</p>
+                      </div>
+                      <div class="right-side">
+                         <i class="fa fa-list" aria-hidden="true"></i>
+                      </div>
+                   </div>
+                </div>
+             </div>
+            <div class="col-sm-6">
+                <form class="form-horizontal ng-pristine ng-valid " role="form">
+                   <div class="form-group">
+                      <label class="label-layout col-sm-3">請求書＃</label> 
+                      <div class="col-sm-7">
+                       <input ng-change = "c.searchRecord()" id="filterTitle2" class="form-control" value="" ng-model="c.search" placeholder="請求書＃を記入してください。" > 
+                      </div>
+                   </div>
+                </form>
+             </div>
+            <div class="col-sm-6" style="padding-top:20px">
+                <form class="form-horizontal ng-pristine ng-valid" role="form">
+                   <div class="form-group">
+                      <label class="label-layout col-sm-3">状態:</label> 
+                      <div class="col-sm-7">
+                         <select ng-change = "c.statusSelected()" class="form-control" ng-model="c.invoiceStatus">
+                            <option value="" selected>-- 全て --</option>
+                            <option value="-5" >キャンセル済み</option>
+                            <!-- <option value="1" >承認待ち</option>-->
+                            <option value="2" >レベル１で承認待ち</option>
+                            <option value="8" >レベル２で承認待ち</option>
+                            <option value="9" >承認済み</option>
+                            <option value="3" >否認済み</option>
+                            <option value="10" >Coupa上で承認済み</option>
+                            <option value="11"　>Coupa上で否認済み</option>
+                            <option value="4"　>エラー</option>
+                            <!--<option value="pending_approval" selected>Pending approval</option>
+                            <option value="approved" selected>Approved</option>
+                            <option value="rejected" selected>Rejected</option>
+                            <option value="rejected" selected>Rejected</option>
+                            <option value="rejected" selected>Rejected</option>-->
+                            
+                            
+                         </select>
+                      </div>
+                   </div>
+                </form>
+             </div>
+          </div>
+       </div>
+    </div>
+  </div>
+
+  <nav class="nav-pagination" aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      <li ng-click = "c.prevPage()" class="page-item {{c.data.page == 1 ? 'disabled' : ''}}">
+        <a class="page-link" href="javascript:void(0)" tabindex="-1">‹</a>
+      </li>
+      <li ng-click = "c.goToPage(item)" ng-if = "data.totalPage <10" ng-repeat = "item in c.data.pageItems" class="page-item {{c.data.page == item ? 'active' : ''}}">
+        <a class="page-link" href="javascript:void(0)">{{ item }}</a>
+      </li>
+      <li ng-if = "data.totalPage >= 10" style = "display: flex;">
+        <input  style="width: 40px;text-align: center;height: 32px; border:solid 1px #ccc; margin: 3px;" ng-change = "c.goToPage(c.current_page)" min="1" type="number" ng-model = "c.current_page" />
+        <span style="border: none;color: #aaa; display: flex; align-items: center;"> of {{ data.totalPage }}</span>
+      </li>
+      <li ng-click = "c.nextPage()" class="page-item {{ c.data.page == c.data.totalPage ? 'disabled' : '' }}">
+        <a class="page-link" href="javascript:void(0)">›</a>
+      </li>
+    </ul>
+    <div class = "" style = "width: 175px;" >
+      <label>${ページ内件数:}</label>
+      <select ng-change="c.itemsPerPageHandler()" ng-model="c.itemsPerPage" ng-options="x for x in c.itemsPerPageOptions">
+      </select>
+   </div>
+  </nav>
+
+  <table id="invoice-table" class=" table table-hover table-sm">
+    <thead >
+      <tr>
+        <th ng-click = "c.sort('id')" class="th-sm"  scope="col">
+          ID
+          <i ng-if = "c.data.orderBy == 'id' " class="fa fa-angle-double-{{c.data.sort == 'ASC' ? 'up' : 'down'}}"></i>
+        </th>
+
+        <th ng-click = "c.sort('invoice_no')" class="th-sm" scope="col">
+          請求書＃
+          <i ng-if = "c.data.orderBy == 'invoice_no' " class="fa fa-angle-double-{{c.data.sort == 'ASC' ? 'up' : 'down'}}"></i>
+        </th>
+
+        <th ng-click = "c.sort('status')" class="th-sm" scope="col">
+          状態
+          <i ng-if = "c.data.orderBy == 'status' " class="fa fa-angle-double-{{c.data.sort == 'ASC' ? 'up' : 'down'}}"></i>
+        </th>
+
+        <th ng-click = "c.sort('start_date')" class="th-sm" scope="col">
+          開始日
+          <i ng-if = "c.data.orderBy == 'start_date' " class="fa fa-angle-double-{{c.data.sort == 'ASC' ? 'up' : 'down'}}"></i>
+        </th>
+        <th ng-click = "c.sort('end_date')" class="th-sm" scope="col">
+          終了日
+          <i ng-if = "c.data.orderBy == 'end_date' " class="fa fa-angle-double-{{c.data.sort == 'ASC' ? 'up' : 'down'}}"></i>
+        </th>
+
+        <th ng-click = "c.sort('po_line')" class="th-sm" scope="col">
+          PO番号
+          <i ng-if = "c.data.orderBy == 'po_line' " class="fa fa-angle-double-{{c.data.sort == 'ASC' ? 'up' : 'down'}}"></i>
+        </th>
+
+        <th ng-click = "c.sort('currency')" class="th-sm" scope="col">
+          通貨
+          <i ng-if = "c.data.orderBy == 'currency' " class="fa fa-angle-double-{{c.data.sort == 'ASC' ? 'up' : 'down'}}"></i>
+        </th> 
+        <th ng-click = "c.sort('amount_exclude_tax')" class="th-sm" scope="col">
+         税抜価格
+          <i ng-if = "c.data.orderBy == 'amount_exclude_tax' " class="fa fa-angle-double-{{c.data.sort == 'ASC' ? 'up' : 'down'}}"></i>
+        </th>
+        <th ng-click = "c.sort('amount_include_tax')" class="th-sm" scope="col">
+          税込価格
+          <i ng-if = "c.data.orderBy == 'amount_include_tax' " class="fa fa-angle-double-{{c.data.sort == 'ASC' ? 'up' : 'down'}}"></i>
+        </th>
+        <th ng-click = "c.sort('tax_amount')" class="th-sm" scope="col">
+          税額
+          <i ng-if = "c.data.orderBy == 'tax_amount' " class="fa fa-angle-double-{{c.data.sort == 'ASC' ? 'up' : 'down'}}"></i>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="invoice-item" ng-repeat = "item in c.data.invoices">      
+        <td style="font-weight: bold;"><a href="nrid_approval_portal?id=coupa_invoice_detail&sys_id={{item.sys_id}}">{{ item.id }}</a></td>
+        <td>{{ item.invoice_no}}</td>
+        <td>{{ item.state }}</td>
+        <td>{{ item.start_date}}</td>
+        <td>{{ item.end_date}}</td>
+        <td>{{ item.po_line}}</td>
+        <td>{{ item.currency }}</td>
+        <td>{{ item.amount_exclude_tax}}</td>
+        <td>{{ item.amount_include_tax}}</td>
+        <td>{{ item.tax_amount}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

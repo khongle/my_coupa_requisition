@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
+        <name>file_id</name>
+        <rest_message_function display_value="3_Upload_File_As_Single_Chunk">aa78ac961b2c6810e05f43b2cc4bcb6e</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-25 07:09:57</sys_created_on>
+        <sys_id>0e4713b31b686c10e05f43b2cc4bcb82</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>file_id</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_0e4713b31b686c10e05f43b2cc4bcb82</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-06-02 03:10:44</sys_updated_on>
+        <type>string</type>
+        <value>113000000263</value>
+    </sys_rest_message_fn_parameters>
+</record_update>

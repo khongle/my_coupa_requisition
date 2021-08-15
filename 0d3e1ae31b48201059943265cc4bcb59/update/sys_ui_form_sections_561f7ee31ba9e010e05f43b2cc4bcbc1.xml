@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="561f7ee31ba9e010e05f43b2cc4bcbc1" sys_domain="global" table="x_nriws_coupa_req_anaplan_staging_table" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2021-01-13 03:48:36</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>921f7ee31ba9e010e05f43b2cc4bcbc5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_nriws_coupa_req_anaplan_staging_table" name="x_nriws_coupa_req_anaplan_staging_table" sys_domain="global" view="Default view">561f7ee31ba9e010e05f43b2cc4bcbc1</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_nriws_coupa_req_anaplan_staging_table" sys_domain="global" view="Default view">e22b4c991bbcec1059943265cc4bcb22</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2021-01-13 03:48:36</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2021-01-13 03:48:36</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>921f7ee31ba9e010e05f43b2cc4bcbc6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_nriws_coupa_req_anaplan_staging_table" name="x_nriws_coupa_req_anaplan_staging_table" sys_domain="global" view="Default view">561f7ee31ba9e010e05f43b2cc4bcbc1</sys_ui_form>
+            <sys_ui_section caption="New Section" display_value="New Section" name="x_nriws_coupa_req_anaplan_staging_table" sys_domain="global" view="Default view">521f7ee31ba9e010e05f43b2cc4bcbbf</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2021-01-13 03:48:36</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_nriws_coupa_req_anaplan_staging_table</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2021-01-13 03:48:36</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>561f7ee31ba9e010e05f43b2cc4bcbc1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_nriws_coupa_req_anaplan_staging_table</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_ui_form_sections_561f7ee31ba9e010e05f43b2cc4bcbc1</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2021-01-13 03:48:36</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="11f88ad11b48701036a1206a234bcbab" sys_domain="global" table="x_nriws_coupa_req_coupa_invoice" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-05-10 06:42:42</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>99f88ad11b48701036a1206a234bcbae</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_nriws_coupa_req_coupa_invoice" name="x_nriws_coupa_req_coupa_invoice" sys_domain="global" view="Default view">11f88ad11b48701036a1206a234bcbab</sys_ui_form>
+            <sys_ui_section caption="New Section" display_value="New Section" name="x_nriws_coupa_req_coupa_invoice" sys_domain="global" view="Default view">3cb28a9d1b08701036a1206a234bcb10</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-07-11 10:02:19</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-06-08 06:12:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4d289baa1b28b01036a1206a234bcbea</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_nriws_coupa_req_coupa_invoice" name="x_nriws_coupa_req_coupa_invoice" sys_domain="global" view="Default view">11f88ad11b48701036a1206a234bcbab</sys_ui_form>
+            <sys_ui_section caption="New Section" display_value="New Section" name="x_nriws_coupa_req_coupa_invoice" sys_domain="global" view="Default view">3cb28a9d1b08701036a1206a234bcb10</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-07-11 10:02:19</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_nriws_coupa_req_coupa_invoice</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-05-10 06:42:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>11f88ad11b48701036a1206a234bcbab</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_nriws_coupa_req_coupa_invoice</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_ui_form_sections_11f88ad11b48701036a1206a234bcbab</sys_update_name>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-05-10 06:42:41</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

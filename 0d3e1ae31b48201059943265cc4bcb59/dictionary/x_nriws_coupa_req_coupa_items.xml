@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Coupa Items" max_length="40" name="x_nriws_coupa_req_coupa_items" sizeclass="0" type="collection">
+        <element label="Accounting Standards" max_length="200" name="accounting_standards" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Amount exclude tax" max_length="40" name="amount_exclude_tax" type="float"/>
+        <element attributes="edge_encryption_enabled=true" label="Amount include tax" max_length="40" name="amount_include_tax" type="float"/>
+        <element label="attachment comments" max_length="1000" name="attachment_comments" type="string"/>
+        <element label="Basic Contract" max_length="200" name="basic_contract" type="string"/>
+        <element label="Basic Contracted Corp" max_length="100" name="basic_contracted_corp" type="string"/>
+        <element label="Cistec date" max_length="40" name="cistec_date" type="glide_date_time"/>
+        <element label="comments" max_length="1000" name="comments" type="string"/>
+        <element label="Commodity Name" max_length="200" name="commodity_name" type="string"/>
+        <element label="Contracting Company" max_length="200" name="contracting_company" type="string"/>
+        <element label="Cost Allocation Flag" max_length="20" name="cost_allocation_flag" type="string"/>
+        <element label="Cost Allocation Method" max_length="200" name="cost_allocation_method" type="string"/>
+        <element label="Currency" max_length="10" name="currency" type="string"/>
+        <element label="Description" max_length="500" name="description" type="string"/>
+        <element label=" End Date" max_length="40" name="end_date" type="glide_date_time"/>
+        <element label="Export Property" max_length="50" name="export_property" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Has contract" max_length="40" name="has_contract" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" display="true" label="ID" max_length="10" name="id" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Line Number" max_length="10" name="line_number" type="integer"/>
+        <element label="Line type" max_length="100" name="line_type" type="string"/>
+        <element label="Manufacturer Name" max_length="200" name="manufacturer_name" type="string"/>
+        <element label="Manufacturer Part Number" max_length="20" name="manufacturer_part_number" type="string"/>
+        <element label="Need by Date" max_length="40" name="need_by_date" type="glide_date_time"/>
+        <element label="   &#9;&#9;  Outsourcing Info" max_length="400" name="outsourcing_info" type="string"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Parent" max_length="32" name="parent" reference="x_nriws_coupa_req_coupa_requisition" type="reference"/>
+        <element label="Payment Term" max_length="100" name="payment_term" type="string"/>
+        <element label="Period" max_length="100" name="period" type="string"/>
+        <element label="Personal Info" max_length="100" name="personal_info" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Quality" max_length="15" name="quality" type="decimal"/>
+        <element attributes="edge_encryption_enabled=true" label="Quantity" max_length="10" name="quantity" type="integer"/>
+        <element label="Service type" max_length="100" name="service_type" type="string"/>
+        <element label="Source type" max_length="100" name="source_type" type="string"/>
+        <element label=" Start Date" max_length="40" name="start_date" type="glide_date_time"/>
+        <element label="Status" max_length="100" name="status" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Subcontract for Personal Info" max_length="40" name="subcontract_for_personal_info" type="boolean"/>
+        <element label="Subcontract Personal Info" max_length="100" name="subcontract_personal_info" type="string"/>
+        <element label="Supplier display name" max_length="500" name="supplier_display_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Supplier id" max_length="10" name="supplier_id" type="integer"/>
+        <element label="Supplier name" max_length="400" name="supplier_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Tax amount" max_length="40" name="tax_amount" type="float"/>
+        <element attributes="edge_encryption_enabled=true" label=" Total" max_length="15" name="total" type="decimal"/>
+        <element label="Unit" max_length="10" name="unit" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Unit Price" max_length="20" name="unit_price" type="decimal"/>
+        <element label="Uom code" max_length="10" name="uom_code" type="string"/>
+        <element label="Uom name" max_length="10" name="uom_name" type="string"/>
+        <index name="index">
+            <element name="parent"/>
+        </index>
+    </element>
+</database>

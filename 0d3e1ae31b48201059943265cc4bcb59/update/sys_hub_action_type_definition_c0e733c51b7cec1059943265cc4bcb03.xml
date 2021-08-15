@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <ih_action>false</ih_action>
+        <internal_name>execute_scheduled_import_set</internal_name>
+        <label_cache>[]</label_cache>
+        <latest_snapshot>e6c9f3491b7cec1059943265cc4bcbe9</latest_snapshot>
+        <master_snapshot>66c9f3491b7cec1059943265cc4bcbf5</master_snapshot>
+        <name>Execute Scheduled Import Set</name>
+        <natlang/>
+        <outputs/>
+        <state>published</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:44:46</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c0e733c51b7cec1059943265cc4bcb03</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Execute Scheduled Import Set</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_c0e733c51b7cec1059943265cc4bcb03</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=c0e733c51b7cec1059943265cc4bcb03"/>
+    <sys_variable_value action="delete_multiple" query="document_key=c0e733c51b7cec1059943265cc4bcb03"/>
+    <sys_hub_step_instance action="delete_multiple" query="action=c0e733c51b7cec1059943265cc4bcb03^sys_idNOT IN31c9f3491b7cec1059943265cc4bcb8e"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Execute Scheduled Import Set">c0e733c51b7cec1059943265cc4bcb03</action>
+        <cid>755da0d9-3ce0-467f-b671-351f905db24b</cid>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:04</sys_created_on>
+        <sys_id>31c9f3491b7cec1059943265cc4bcb8e</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=31c9f3491b7cec1059943265cc4bcb8e"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>31c9f3491b7cec1059943265cc4bcb8e</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>52c9f3091b7cec1059943265cc4bcb8d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <value/>
+        <variable display_value="">2c226939b3101300176b051a16a8dc83</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>31c9f3491b7cec1059943265cc4bcb8e</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:05</sys_created_on>
+        <sys_id>79c9f3491b7cec1059943265cc4bcba3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:05</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+// ... code ...
+  
+  var attachmentUitl = new x_nriws_coupa_req.AttachmentUtils();
+  
+  attachmentUitl.runScheduledImportSet();
+  
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>31c9f3491b7cec1059943265cc4bcb8e</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>9ec9f3091b7cec1059943265cc4bcb8c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <value/>
+        <variable display_value="">74315b04b3201300176b051a16a8dc2b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>31c9f3491b7cec1059943265cc4bcb8e</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>dac9f3091b7cec1059943265cc4bcb8c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <value/>
+        <variable display_value="">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_hub_step_instance action="delete_multiple" query="action=c0e733c51b7cec1059943265cc4bcb03^sys_idNOT IN31c9f3491b7cec1059943265cc4bcb8e"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Execute Scheduled Import Set">c0e733c51b7cec1059943265cc4bcb03</action>
+        <cid>755da0d9-3ce0-467f-b671-351f905db24b</cid>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:04</sys_created_on>
+        <sys_id>31c9f3491b7cec1059943265cc4bcb8e</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=31c9f3491b7cec1059943265cc4bcb8e"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>31c9f3491b7cec1059943265cc4bcb8e</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>52c9f3091b7cec1059943265cc4bcb8d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <value/>
+        <variable display_value="">2c226939b3101300176b051a16a8dc83</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>31c9f3491b7cec1059943265cc4bcb8e</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:05</sys_created_on>
+        <sys_id>79c9f3491b7cec1059943265cc4bcba3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:05</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+// ... code ...
+  
+  var attachmentUitl = new x_nriws_coupa_req.AttachmentUtils();
+  
+  attachmentUitl.runScheduledImportSet();
+  
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>31c9f3491b7cec1059943265cc4bcb8e</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>9ec9f3091b7cec1059943265cc4bcb8c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <value/>
+        <variable display_value="">74315b04b3201300176b051a16a8dc2b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>31c9f3491b7cec1059943265cc4bcb8e</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>dac9f3091b7cec1059943265cc4bcb8c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <value/>
+        <variable display_value="">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_template/>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>execute_scheduled_import_set</internal_name>
+        <label_cache>[]</label_cache>
+        <master>true</master>
+        <name>Execute Scheduled Import Set</name>
+        <natlang/>
+        <outputs/>
+        <parent_action display_value="Execute Scheduled Import Set">c0e733c51b7cec1059943265cc4bcb03</parent_action>
+        <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>66c9f3491b7cec1059943265cc4bcbf5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=66c9f3491b7cec1059943265cc4bcbf5"/>
+    <sys_variable_value action="delete_multiple" query="document_key=66c9f3491b7cec1059943265cc4bcbf5"/>
+    <sys_hub_step_instance action="delete_multiple" query="action=66c9f3491b7cec1059943265cc4bcbf5^sys_idNOT INaec9f3491b7cec1059943265cc4bcbf6"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Execute Scheduled Import Set">66c9f3491b7cec1059943265cc4bcbf5</action>
+        <cid>755da0d9-3ce0-467f-b671-351f905db24b</cid>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>aec9f3491b7cec1059943265cc4bcbf6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=aec9f3491b7cec1059943265cc4bcbf6"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>aec9f3491b7cec1059943265cc4bcbf6</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>2ac937491b7cec1059943265cc4bcb09</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <value/>
+        <variable display_value="">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>aec9f3491b7cec1059943265cc4bcbf6</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>62c937491b7cec1059943265cc4bcb0a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+// ... code ...
+  
+  var attachmentUitl = new x_nriws_coupa_req.AttachmentUtils();
+  
+  attachmentUitl.runScheduledImportSet();
+  
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>aec9f3491b7cec1059943265cc4bcbf6</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>aec937491b7cec1059943265cc4bcb09</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <value/>
+        <variable display_value="">2c226939b3101300176b051a16a8dc83</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>aec9f3491b7cec1059943265cc4bcbf6</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>eac937491b7cec1059943265cc4bcb09</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <value/>
+        <variable display_value="">74315b04b3201300176b051a16a8dc2b</variable>
+    </sys_variable_value>
+    <sys_hub_step_instance action="delete_multiple" query="action=66c9f3491b7cec1059943265cc4bcbf5^sys_idNOT INaec9f3491b7cec1059943265cc4bcbf6"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Execute Scheduled Import Set">66c9f3491b7cec1059943265cc4bcbf5</action>
+        <cid>755da0d9-3ce0-467f-b671-351f905db24b</cid>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>aec9f3491b7cec1059943265cc4bcbf6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=aec9f3491b7cec1059943265cc4bcbf6"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>aec9f3491b7cec1059943265cc4bcbf6</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>2ac937491b7cec1059943265cc4bcb09</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <value/>
+        <variable display_value="">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>aec9f3491b7cec1059943265cc4bcbf6</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>62c937491b7cec1059943265cc4bcb0a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+// ... code ...
+  
+  var attachmentUitl = new x_nriws_coupa_req.AttachmentUtils();
+  
+  attachmentUitl.runScheduledImportSet();
+  
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>aec9f3491b7cec1059943265cc4bcbf6</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>aec937491b7cec1059943265cc4bcb09</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <value/>
+        <variable display_value="">2c226939b3101300176b051a16a8dc83</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>aec9f3491b7cec1059943265cc4bcbf6</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:53:07</sys_created_on>
+        <sys_id>eac937491b7cec1059943265cc4bcb09</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:53:07</sys_updated_on>
+        <value/>
+        <variable display_value="">74315b04b3201300176b051a16a8dc2b</variable>
+    </sys_variable_value>
+</record_update>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <format>png</format>
+        <height>256</height>
+        <image/>
+        <name>Logo.png</name>
+        <size_bytes>1102</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-12-14 18:22:34</sys_created_on>
+        <sys_id>c077eb4e1bc5e41059943265cc4bcbef</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Logo.png</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>db_image_c077eb4e1bc5e41059943265cc4bcbef</sys_update_name>
+        <sys_updated_by>dinesh.k.a</sys_updated_by>
+        <sys_updated_on>2020-12-14 18:22:34</sys_updated_on>
+        <thumbnail/>
+        <width>256</width>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/png</content_type>
+        <file_name>image</file_name>
+        <hash>99856833fe302847c9c102a144c680d5bb4b0e33925cdd0cd377f6270b48ee37</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>1102</size_bytes>
+        <size_compressed>1097</size_compressed>
+        <state>pending</state>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-12-14 18:22:34</sys_created_on>
+        <sys_id>0877eb4e1bc5e41059943265cc4bcbf1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>dinesh.k.a</sys_updated_by>
+        <sys_updated_on>2020-12-14 18:22:34</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>c077eb4e1bc5e41059943265cc4bcbef</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="0877eb4e1bc5e41059943265cc4bcbf1">0877eb4e1bc5e41059943265cc4bcbf1</sys_attachment>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-12-14 18:22:34</sys_created_on>
+        <sys_id>4877eb4e1bc5e41059943265cc4bcbf1</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>6wzwc+flkuJiYGDg9fRwCWJgYGQAYRZmILUuZmsokDII8AlxdS/wURITVhQXYQubryAiIi1noCgmrCAqDCSBiC10HkvIfDlJadbQ+UBlSuIi/yZ7XgPq5S8J8gtmqD/w10HseuTSD3vcDRomLKuxPcTAwLzP08UxpOLW2xn3vYMTJY7fPxl3PuvynAdfAz0WrmZlz+dJbLvLaT3J5/UxLqOWB2usd89yu/lUq0OoifMfc9P1gy/Wzebas5rlP3PxjVsKNdX1c+ZbJc9bHH3we/Hjj7bV3+sqzn3e877YjYOBEPjQf+l5nO+SzS1HLs3RNF2wlH3P+Ytzz07b5//aeqnD3b2XJOdXd3Lem5W0oFu2Yr631Gvd2vjr/cFcG56qMb0Jl2Z9dZblSOpuljsCN5iaW/QMd34pbLzplfBu+aGZHFf6uQQmpV9dxrRUvHHnzPlK5crcG9KPs2TMnHmW5cvTAzEvF7uLr5jpzurRmRp9onFHpRnTm3+GjJV3o4TcxFZMeyMwR2fCnZ9185g4rVnqGm3/K+/IlTj2y5JLAMhlXP0w1PFSAeuyzUkJVUt+zfH5rGn4772Lmu43ntythilduRY9DcduHF7g4HRtme6G3J63ORqNcyK0w/aZH2orrvnoXZsk9tj72NpXwt+CdOTcGkQiFz8SX6D67baoh1Tyn2fL1AN2+ZyIWZvBvcI94I75Tpf6CEa5pvJ1B+6WWD2+35W/qv0915dTvaszfrK+mHVD6blUImsIx5/0gwvLJXL7JzYc+CP7Mb/nJ6vQpw+LwjIYJZnmO+i+5pRY7Ng4aY87k+CM6TO9ixaypnDkNIaHz1kbyGXx9DmXzo2rz8U1VgW/dKpoDJm5t3CSwbmIhymMVSuesU4KWL+j2sGD8dNEw9MrmWKXPPFk+lhrqi8uEJC8V5ClgmOG8oQN8xtFFhwL/dko9/h0PMuZE4ICigXSQt6mmmVCcZO/60vN1mJ/5VvkEN55U9bVoeXAzQ67zX+TU3ekzmhU0fnJWrS7KMeuq4GjUfnAaqPXtztc7P14HyqylMxcaLKBv2S1n2e/ioPuex2NjdfXOfQb5nUx9Nxi2v7k4kwOjiMpmReKVBjvcZi95XzZZtHDI8muuOAkj24aU7qjW4vqfgHfhqh1DP4dsd9NRN42LAwKlHP7xTw5Zj37qoYnq0WNdn9TnMVwsvqvQ+CeWRa8J8Xi6++UsJqsTjPlOnh5wqucibztWodPar7/2n/c0E7TfOsUCT/fewHm9+r/LuOqdft38Vc716ZPKcFWi5/ZRUkqaNpNO7Xt5dKw/OtO7gvLQr6d4ePMKFueU/rqe8sUK97Mvcn7M3RO3VDns1KbMNn64b2E4yxbohxLjqYdZznx+NapVZ/d7s50itG6Pu/RdVuCeea/Yj1DYOmbKSeezK4D8T1d/VzWOSU0AQBVaIsXTgQAAA==</data>
+        <length>1452</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="0877eb4e1bc5e41059943265cc4bcbf1">0877eb4e1bc5e41059943265cc4bcbf1</sys_attachment>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-12-14 18:22:34</sys_created_on>
+        <sys_id>08772f8e1bc5e41059943265cc4bcbcd</sys_id>
+    </sys_attachment_doc>
+</record_update>

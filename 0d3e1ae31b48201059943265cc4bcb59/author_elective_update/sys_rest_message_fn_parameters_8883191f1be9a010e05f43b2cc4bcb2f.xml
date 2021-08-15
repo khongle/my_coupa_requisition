@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="DELETE">
+        <name>id</name>
+        <rest_message_function display_value="Get_Requisitions_By_Status_Requester">165291db1be9a010e05f43b2cc4bcb53</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2021-01-12 01:20:01</sys_created_on>
+        <sys_id>8883191f1be9a010e05f43b2cc4bcb2f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>id</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_8883191f1be9a010e05f43b2cc4bcb2f</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2021-01-12 01:31:36</sys_updated_on>
+        <type>string</type>
+        <value>1000</value>
+    </sys_rest_message_fn_parameters>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</application>
+        <file_path/>
+        <instance_id>3cadb194db874c140b9d21c40596199c</instance_id>
+        <instance_name>dev100802</instance_name>
+        <name>sys_rest_message_fn_parameters_8883191f1be9a010e05f43b2cc4bcb2f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters"><sys_rest_message_fn_parameters action="INSERT_OR_UPDATE"><name>id</name><rest_message_function display_value="Get_Requisitions_By_Status_Requester">165291db1be9a010e05f43b2cc4bcb53</rest_message_function><sys_class_name>sys_rest_message_fn_parameters</sys_class_name><sys_created_by>Sansiro.Ma</sys_created_by><sys_created_on>2021-01-12 01:20:01</sys_created_on><sys_id>8883191f1be9a010e05f43b2cc4bcb2f</sys_id><sys_mod_count>2</sys_mod_count><sys_name>id</sys_name><sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package><sys_policy/><sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope><sys_update_name>sys_rest_message_fn_parameters_8883191f1be9a010e05f43b2cc4bcb2f</sys_update_name><sys_updated_by>Sansiro.Ma</sys_updated_by><sys_updated_on>2021-01-12 01:31:36</sys_updated_on><type>string</type><value>1000</value></sys_rest_message_fn_parameters></record_update>]]></payload>
+        <payload_hash>-138821933</payload_hash>
+        <record_name>id</record_name>
+        <reverted_from/>
+        <source>02d08e152f91301054cd811df699b698</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-11 09:29:49</sys_created_on>
+        <sys_id>f1c14a592f91301054cd811df699b684</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17a94e6c3b10000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-11 09:29:49</sys_updated_on>
+        <type>Variable Substitutions</type>
+        <update_guid>f126d19feae9a0109bd11beb06e0e1f8</update_guid>
+        <update_guid_history>f126d19feae9a0109bd11beb06e0e1f8:-138821933,3293191fece9a010c00e7ecb2cac734a:506524973,4883191f28e9a010da050579257b2d30:-1737600181</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-11 10:02:07</sys_created_on>
+        <sys_db_object display_value="" name="sys_rest_message_fn_parameters">sys_rest_message_fn_parameters</sys_db_object>
+        <sys_id>30cb450ce0ba45c0a2708e93904a3100</sys_id>
+        <sys_metadata>8883191f1be9a010e05f43b2cc4bcb2f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>id</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_scope_delete display_value="">140948c683584bb68a6f3aacacc7dd71</sys_scope_delete>
+        <sys_update_name>sys_rest_message_fn_parameters_8883191f1be9a010e05f43b2cc4bcb2f</sys_update_name>
+        <sys_update_version display_value="sys_rest_message_fn_parameters_8883191f1be9a010e05f43b2cc4bcb2f">f1c14a592f91301054cd811df699b684</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-11 10:02:07</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

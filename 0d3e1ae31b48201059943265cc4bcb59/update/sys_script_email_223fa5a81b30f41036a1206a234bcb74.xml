@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>Approval_invoice_details</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(/* GlideRecord */ current, /* TemplatePrinter */ template, /* Optional EmailOutbound */ email, /* Optional GlideRecord */ email_action,/* Optional GlideRecord */ event) {
+
+	var coupa_id;
+	var mailbody;
+	var sub;
+	var Details;
+	var PO;
+	// var CoupaGR = new GlideRecord('x_nriws_coupa_req_coupa_requisition');
+	// var CoupaItem = new GlideRecord('x_nriws_coupa_req_coupa_items');
+	// CoupaItem.addQuery('parent',current.sysapproval.sys_id.getDisplayValue());
+	// CoupaItem.orderBy('id');
+	// CoupaItem.query();
+
+		coupa_id = current.sysapproval.id;
+		PO=current.sysapproval.po_line;
+		gs.info(PO);
+		if(PO=='')
+		{
+			Details = '詳しい情報は <a href="nrid_approval_portal?id=coupa_invoice_without_po&status=requested">こちら</a>をクリックしてください。';
+		}
+		else{
+			Details = '詳しい情報は <a href="nrid_approval_portal?id=coupa_invoice_approval_list&status=requested">こちら</a>をクリックしてください。';			
+		}
+
+		
+
+		if(current.getValue('state')=='requested'){
+			sub = '【ServiceNow】請求書承認依頼　請求書番号：＃'+coupa_id+'';
+			mailbody = 'Coupa invoice 請求書承認依頼きました。ServiceNowで承認を行ってください。';
+		}
+		/*if(current.getValue('state')=='approved'){
+			sub = '【ServiceNow】発注申請承認通知　発注申請番号: ＃'+coupa_id+'';
+			mailbody = 'ServiceNowで申請書 #'+coupa_id+' が承認されました';
+		}*/
+		
+		email.setSubject(sub); 
+
+		template.print('<div style="padding-left:5px;padding-right:5px;padding-top:10px;" >');//#D8D0C1
+		template.print('<h3>'+mailbody+'</h3>');
+		template.print('<hr style="height: 1px; border: none; border-top: 2px solid #3599b6;">');         //#FBDCE2
+		
+	template.print('<table>  '); 
+		template.print('<tr><th style="padding: 5px;text-align:right;"> 申請書  : </th><td>'+current.sysapproval.id+'</td></tr>');
+		template.print('<tr><th style="padding: 5px;text-align:right;"> Invoice number  : </th><td>'+current.sysapproval.invoice_no+'</td></tr>');
+		template.print('<tr><th style="padding: 5px;text-align:right;"> 申請者  : </th><td>'+current.sysapproval.requested_by_fullname+'</td></tr>');
+		template.print('<tr><th style="padding: 5px;text-align:right;"> 代理  : </th><td>'+current.sysapproval.created_by_fullname+'</td></tr>');
+		template.print('<tr><th style="padding: 5px;text-align:right;"> 合計  : </th><td>'+current.sysapproval.amount_include_tax.getDisplayValue()+' ' +current.sysapproval.currency+'</td></tr>');
+		template.print('<tr><th style="padding: 5px;text-align:right;"> 委託契約番号（事業部管理番号）: </th><td>'+current.sysapproval.representation_contract_number+'</td></tr>');
+		
+template.print(' </table> '); 
+	
+	// template.print('<h3>アイテム詳細情報</h3>');
+	// template.print('<table border="1" style="border-collapse: collapse; border-style: solid; border-color: #b3a8a8;">'); 
+	// template.print('<tr>'); 
+	// template.print('<th style="padding: 5px;">申請書＃</th>'); 
+	// template.print('<th style="padding: 5px;">アイテム</th>');
+	// template.print('<th style="padding: 5px;">サプライヤー </th>');
+	// template.print('<th style="padding: 5px;">開始日</th>');
+	// template.print('<th style="padding: 5px;">終了日</th>');
+	// template.print('<th style="padding: 5px;">金額</th>');
+	// template.print('<th style="padding: 5px;">Currency</th>');
+	// template.print('</tr>'); 
+	
+	// template.print('<tr>'); 
+	
+	// while(CoupaItem.next()){
+	// 	template.print('<tr>');
+	// 	template.print('<td style="padding: 5px;">'+current.sysapproval.id+'</td>');
+	// 	template.print('<td style="padding: 5px;">'+CoupaItem.getValue('description')+'</td>');
+	// 	template.print('<td style="padding: 5px;">'+CoupaItem.getValue('supplier_name')+'</td>');
+	// 	template.print('<td style="padding: 5px;">'+CoupaItem.getValue('start_date')+'</td>');
+	// 	template.print('<td style="padding: 5px;">'+CoupaItem.getValue('end_date')+'</td>');
+	// 	template.print('<td style="padding: 5px;">'+CoupaItem.getDisplayValue('unit_price')+'</td>');
+	// 	template.print('<td style="padding: 5px;">'+current.sysapproval.currency+'</td>');
+	// 	template.print('</tr>');
+	// }
+	// template.print('</tr>'); 
+	
+	// template.print('</table>');	
+	
+	var approvalStateTemp = current.state.getDisplayValue();
+	if(approvalStateTemp == 'Requested'){
+		approvalStateTemp = 'Pending Approval';  }
+	
+	template.print('<h3>承認詳細情報</h3>');
+	template.print('<table border="1" style="border-collapse: collapse; border-style: solid; border-color: #b3a8a8;">'); 
+	template.print('<tr>'); 
+	template.print('<th style="padding: 5px;">ステータス</td>'); 
+	template.print('<th style="padding: 5px;">承認者</td>'); 
+	template.print('<th style="padding: 5px;">コメント</td>'); 
+	template.print('</tr>'); 
+	
+	var ApprovalGR = new GlideRecord('sysapproval_approver');
+	ApprovalGR.addQuery('sysapproval',current.sysapproval.toString());
+	ApprovalGR.query();
+	
+	var tempApprovalState='';
+		
+		while(ApprovalGR.next()){
+			
+		if(ApprovalGR.getValue('state')=='requested')
+					tempApprovalState='承認待ち';
+			else if(ApprovalGR.getValue('state')=='approved')
+					tempApprovalState='承認済み';
+			else if(ApprovalGR.getValue('state')=='rejected')
+					tempApprovalState='否認済み';
+			else if(ApprovalGR.getValue('state')=='not_required')
+					tempApprovalState='承認不要';
+			else if(ApprovalGR.getValue('state')=='cancelled')
+					tempApprovalState='キャンセル済み';
+		
+	template.print('<tr>'); 
+	template.print('<td style="padding: 5px;">'+tempApprovalState+'</td>');
+	template.print('<td style="padding: 5px;">'+ApprovalGR.approver.getDisplayValue()+'</td>');
+	template.print('<td style="padding: 5px;">'+ApprovalGR.comments.getDisplayValue()+'</td>');
+	template.print('</tr>'); 
+		}
+	
+template.print('</table>');	
+
+	
+	template.print('<hr style="height: 1px; border:none; border-top: 2px solid #3599b6;">');
+
+	if(current.state.getDisplayValue()=='Requested'){
+// template.print('<div>承認する場合、${mailto:mailto.approval.coupa}をクリックしてください。</div>');
+// template.print('<div>否認する場合、${mailto:mailto.rejection.coupa}をクリックしてください。</div>');
+	}
+template.print('<div>'+Details+'</div>');
+
+
+	
+	
+/*	template.print('<h3>承認詳細情報</h3>');
+	template.print('<table border="1" style="border-collapse: collapse; border-style: solid; border-color: #b3a8a8;">  '); 
+	template.print(' <tr> '); 
+	template.print(' <th style="padding: 5px;">ステータス</td>   '); 
+	template.print(' <th style="padding: 5px;">承認者</td> '); 
+	template.print(' <th style="padding: 5px;">コメント</td>  '); 
+	template.print(' </tr> '); 
+
+
+	var approvalStateTemp = current.state.getDisplayValue();
+	if(approvalStateTemp == 'Requested'){
+		approvalStateTemp = 'Pending Approval';  }
+
+	template.print(' <tr > '); 
+	template.print(' <td style="padding: 5px;">'+approvalStateTemp+'</td> '); 
+	template.print(' <td style="padding: 5px;">'+current.approver.getDisplayValue()+'</td> '); 
+	template.print(' <td style="padding: 5px;">'+current.comments.getJournalEntry(1)+'</td> ');
+	template.print(' </tr> ');*/
+
+	
+	
+ 
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-06-14 03:41:56</sys_created_on>
+        <sys_id>223fa5a81b30f41036a1206a234bcb74</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Approval_invoice_details</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_script_email_223fa5a81b30f41036a1206a234bcb74</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-07-08 06:51:52</sys_updated_on>
+    </sys_script_email>
+</record_update>

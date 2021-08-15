@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($window) {
+  /* widget controller */
+  var c = this;
+	
+		c.goAdminHome = function(){
+		$window.location.href="?id=nrid_admin_homepage";
+	}
+
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.border {
+  height: 2px;
+  background: #333;
+  margin: 10px 0;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>admin_button</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Admin Button</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+	data.isAdminPage =false;
+	data.isAdminUser = gs.hasRole('x_nriws_coupa_req.admin');
+	data.title = '管理者ページへ';
+
+	data.portal = $sp.getPortalRecord().getDisplayValue("url_suffix");
+
+	if(data.isAdminUser){
+
+		//data.currentPage = $sp.getParameter("id");
+		//if(data.currentPage =='nrid_admin_homepage'){
+		//	data.isAdminPage =true;
+		//	data.title = '承認者ページへ';
+		//}
+	}
+	
+	
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-12-16 06:56:30</sys_created_on>
+        <sys_id>fd9ddb661b89281059943265cc4bcbde</sys_id>
+        <sys_mod_count>117</sys_mod_count>
+        <sys_name>Admin Button</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_widget_fd9ddb661b89281059943265cc4bcbde</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-07-09 01:45:40</sys_updated_on>
+        <template><![CDATA[<div class="row" style = "margin-left:2px; margin-top:6px;" ng-if="c.data.isAdminUser">
+  <!-- your widget template -->
+  <div class='vcenter'>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" style ='padding-top:10px; padding-bottom:10px;margin-right:30px;background-color: #c3f6c3;border-color: yellow; border-radius: 10px;border: solid .1em;'>{{c.data.title}}</a>
+        <ul class="dropdown-menu dropdown-menu-right alerts-dropdown menu-custom" style = "min-width:100px">
+         	
+           <li ng-if="!c.data.isAdminPage && c.data.portal == 'nrid_approval_portal'"><a href="{{'?id=nrid_admin_homepage'}}"> 管理者ホームページへ（発注申請） </a></li>    
+          <li ng-if="!c.data.isAdminPage && c.data.portal == 'nrid_approval_portal'" class="divider"></li> 
+          <li ng-if="!c.data.isAdminPage && c.data.portal == 'nrid_approval_portal'"><a href="{{'?id=admin_list_page'}}" > 管理者一覧ページへ（発注申請） </a></li> 
+          <li ng-if="!c.data.isAdminPage && c.data.portal == 'nrid_approval_portal'" class="divider"></li> 
+          <li ng-if="!c.data.isAdminPage && c.data.portal == 'nrid_approval_portal'"><a href="{{'?id=admin_dashboard'}}"> 管理者ダッシュボードへ（発注申請） </a></li> 
+           <div class="border"></div> 
+          
+          <li ng-if='!c.data.isAdminPage'><a href="{{data.portal == 'nrid_approval_portal' ? '?id=coupa_admin_invoice_approval_homepage' : '?id=nrid_admin_homepage' }}">{{data.portal == 'nrid_approval_portal' ? '管理者ホームページへ（請求申請）' : '管理者ホームページへ'}}</a></li>    
+          <li ng-if='!c.data.isAdminPage' class="divider"></li> 
+          <li ng-if='!c.data.isAdminPage'><a href="{{ data.portal == 'nrid_approval_portal' ? '?id=coupa_admin_invoice_approval_list' : '?id=admin_list_page' }}" >{{data.portal == 'nrid_approval_portal' ? '管理者一覧ページへ（請求申請）' : '管理者一覧ページへ'}}</a></li> 
+          <li ng-if='!c.data.isAdminPage' class="divider"></li> 
+          <li ng-if='!c.data.isAdminPage'><a href="{{ data.portal == 'nrid_approval_portal' ? '?id=invoice_admin_dashboard' : '?id=admin_dashboard' }}">{{data.portal == 'nrid_approval_portal' ? '管理者ダッシュボード（請求申請）' : '管理者ダッシュボード'}}</a></li> 
+          
+          <li ng-if='c.data.isAdminPage'><a href="?id=nrid_homepage">承認者ホームページへ</a></li>    
+          <li ng-if='c.data.isAdminPage' class="divider"></li> 
+          <li ng-if='c.data.isAdminPage'><a href="?id=pending_approvals">承認者一覧ページへ</a></li> 
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+</div>
+
+<!--
+<div class="row">
+  <div class='vcenter'>
+    <button type="button" class="btn btn-default"　 ng-click="c.goAdminHome()">管理者ページ</button>
+  </div>
+</div>
+-->]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope,$window,$uibModal) {
+	/* widget controller */
+	var c = this;
+
+	c.pageSize = 1;
+	c.curPage = 0;
+	c.itemsPerPageOptions = [10,20,30,40,50,100];
+	c.itemsPerPage = c.itemsPerPageOptions[0];
+	c.sortedOn = 'id';
+	c.sortReverse = true;
+	c.isId = false;
+	c.state = false;
+	c.isProj = false;
+	c.isReq = false;
+	c.isCreated = false;
+	c.isStatus = false;
+	c.isItem = false;
+	c.isApprovals = false;
+	c.isTotal = false;
+
+	c.selectAllFlag = false;
+	
+
+	c.checkDetails=function(req) {		
+		$window.location.href = '?id=' + c.data.detail_page_id + '&table=' + c.data.table + '&sys_id=' + req.sys_id;
+	}
+
+
+	c.goHome = function(){
+		$window.location.href="?id=" + c.data.home_page_id;
+	}
+
+
+	c.sortClick = function(name){ 
+		console.log(name);
+		c.sortedOn = name;
+		c.sortReverse=!c.sortReverse;
+		
+		if(name== 'id'){
+			c.isId= !c.isId; }
+		
+		if(name== 'state'){
+			c.state= !c.state; }		
+		
+		if(name== 'total'){
+			c.isTotal = !c.isTotal;  }
+
+		if(name== 'proj_title'){
+			c.isProj = !c.isProj;  }
+
+		if(name== 'requested_by_fullname'){
+			c.isReq = !c.isReq;  }
+
+		if(name== 'created_at'){
+			c.isCreated= !c.isCreated;  }
+
+		if(name== 'status'){		
+			c.isStatus = !c.isStatus;  }
+
+		if(name== 'item'){
+			c.isItem = !c.isItem;  }  
+
+			if(name== 'approvals'){
+				c.isApprovals = !c.isApprovals;  }
+		
+	}
+
+	c.redirect = function(status){
+		//var tem = 'pending_approvals'
+
+		if(status){
+			$window.location.href = '?id=pending_approvals&status=' + status;
+		}
+		else{
+			$window.location.href = '?id=pending_approvals';
+		}
+
+	}
+
+	c.selectAll= function(){
+		//c.selectAllFlag  =!c.selectAllFlag;
+
+		for(var tempInt=0;tempInt<c.data.details.length; tempInt++){
+			c.data.details[tempInt].checked = c.selectAllFlag ;
+		}
+	}
+
+	/*c.pageSize = 1;
+	c.curPage = 0;
+	c.itemsPerPageOptions = [5,10,20,30,40,50,100];
+	c.itemsPerPage = c.itemsPerPageOptions[0];
+	c.sortedOn = 'number';
+	c.sortReverse = true;
+ */
+
+	//--->>>--->>>--->>>--->>>--->>>--->>>--->>>--->>>--->>>--->>>
+	// Modal start
+	//--->>>--->>>--->>>--->>>--->>>--->>>--->>>--->>>--->>>--->>>
+	c.openModal = function(action) {
+		c.action = action;
+		console.log("client script modal action"+action)
+		c.modalInstance = $uibModal.open({
+			templateUrl: 'modalTemplate',
+			//size: 'lg',
+			scope: $scope
+		});
+	}
+
+	c.closeModal = function() {
+		c.modalInstance.close();
+	}
+	//<<<---<<<---<<<---<<<---<<<---<<<---<<<---<<<---<<<---<<<---
+	// Modal end
+	//<<<---<<<---<<<---<<<---<<<---<<<---<<<---<<<---<<<---<<<---
+
+
+		/*$scope.data.bulkApprovalId= [];
+		$scope.data.bulkCoupaId= [];
+		$scope.selectedList = function (approval_sys_id,coupa_sys_id) {
+			//console.log(y);
+			//console.log("Length"+$scope.data.selection.length);	
+			if (approval_sys_id && coupa_sys_id ) {
+				var index = $scope.data.bulkApprovalId.indexOf(approval_sys_id);
+				if (index === -1) {
+					$scope.data.bulkApprovalId.push(approval_sys_id);
+					$scope.data.bulkCoupaId.push(coupa_sys_id);					
+					}else{
+				$scope.data.bulkApprovalId.splice(index, 1);
+				}
+			}
+	}*/
+	
+	//get the list of multiple approvers id
+	
+	
+	//For bulk approval
+	c.bulkApprove = function(){
+
+		c.closeModal()
+
+		c.bulkList = _.filter(c.data.details, 'checked');
+		c.approvalSysIDStr = _.map(c.bulkList, 'approval_sys_id').join(',');
+		c.sysIDStr = _.map(c.bulkList, 'sys_id').join(',');
+		c.server.get({
+			action: 'Approval_Action',
+			state: c.action=='Approve'?'approved':'rejected',
+			sysIDStr: c.sysIDStr,
+			approvalSysIDStr:c.approvalSysIDStr,
+			actionComment : c.approveCmmt			
+
+		}).then(function(r){
+			$window.location.reload();
+		});	
+
+	}
+	
+	/*
+		//For bulk reject
+		c.bulkReject = function(){
+		c.bulkList = _.filter(c.data.details, 'checked');
+		c.approvalSysIDStr = _.map(c.bulkList, 'approval_sys_id').join(',');
+		c.sysIDStr = _.map(c.bulkList, 'sys_id').join(',');
+		c.server.get({
+			action: 'reject',
+			sysIDStr: c.sysIDStr,
+			approvalSysIDStr:c.approvalSysIDStr,
+			actionComment : c.rejectCmmt			
+
+		}).then(function(r){
+			//$window.location.reload();
+
+		});	
+
+	}
+	
+	*/
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.admin-list-layout{
+	height:auto;
+  width:auto;
+  border-radius:10px;
+  box-shadow:0 0 5px #154d8d;
+  padding:10px;
+  margin:auto;
+  margin-bottom:20px;
+  background-color:white;
+}
+
+.primary-color
+{
+  color: #154d8d;
+}
+
+.label-layout
+{
+  	font-weight: bold;
+    padding-top: 10px;
+    text-align: right;
+    font-size: 15px;
+}
+}
+
+hr.style-two {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, #fbdfdf, #e52a2a, #fbdfdf);
+}
+
+
+.space{
+  height:50px;
+}
+
+.right {
+  align: right;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.li-class{
+  display:inline-block;
+  margin-right:20px;
+  list-style-type:none;
+}
+.layout{
+  padding:0 5px;
+  display:flex;
+  //border:2px solid black;
+  border-radius:5px;
+  width:180px;
+  background-color:white;
+  box-shadow:0 0 10px gray;
+}
+
+.active-layout{
+ 	  padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    border-radius: 5px;
+    width: 200px;
+    background-color: white;
+    box-shadow: 0 0 10px #428bca;
+}
+
+.left-side,.right-side{
+  //flex: 50%;
+  padding: 0px 5px;
+  font-size:16px;
+}
+.left-side &gt; b{
+	font-size:40px;
+}
+.right-side{
+  font-size:40px;
+  margin:auto;
+  text-align:center;
+  //color:#eae3f0;
+}
+.SumCount-layout{
+	padding:10px;
+  border-radius:10px;
+  //border:2px solid gray;
+}
+
+
+
+//ul li{
+//  list-style-type:none;
+//  display:inline-block;
+//  margin-left:25px;
+//}
+.butn-layout{
+  padding:15px;
+  background-color: #f8f7f7;
+  text-align:center;
+  width:300px;
+  border-radius:10px;
+  box-shadow:0 0 10px gray;
+}
+.butn-layout:hover{
+  opacity:.6;
+}
+.butn-icon{
+  //height:75px;
+  //width:75px;
+  font-size:50px;
+  margin:auto;
+}
+.butn-layout h3{
+  font-size:20px;
+}
+.butn-layout p{
+  color:gray;
+  font-size:16px;
+}
+.green{
+  color:#90ce70;
+}
+.red{
+  color:#dd5d3d;
+}
+.grey{
+  color:#5e9cd4;
+}
+
+//table {
+//  width: 100%;
+//}
+//
+//table, td {
+//  /*border-collapse: collapse;*/
+//  /*border: 1px solid #000;*/
+//}
+//
+//thead {
+//  display: table; /* to take the same width as tr */
+//  width: calc(100% - 17px); /* - 17px because of the scrollbar width */
+//}
+//
+//tbody {
+//  display: block; /* to enable vertical scrolling */
+//  max-height: 500px; /* e.g. */
+//  //overflow-y: scroll; /* keeps the scrollbar even if it doesn't need it; display purpose */
+//}
+
+//th, td {
+//  width: 10%; /* to enable "word-break: break-all" */
+//  padding: 5px;
+//  word-break: break-all; /* 4. */
+//}
+//
+//tr {
+//  display: table; /* display purpose; th's border */
+//  width: 100%;
+//  box-sizing: border-box; /* because of the border (Chrome needs this line, but not FF) */
+//}
+//
+//td {
+//  text-align: center;
+//  border-bottom: none;
+//  border-left: none;
+//  border-right: none;
+//}
+
+//th{
+//  text-align: center;
+//}
+
+.right{
+  text-align: right;
+  right-padding: 10px;
+  ]
+
+.project-list {
+    background-color: transparent;
+    margin-bottom: 29px;
+}
+
+.project-list-title {
+    font-size: 1.38462rem;
+    margin-bottom: 28px;
+}
+.project-item-header {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  //background-color: #f2f4f9;
+  //padding: 5px;
+  margin-bottom: .923077rem;
+  border-radius: .35rem;
+  border: 1px solid transparent;
+}
+.project-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  //background-color: #f2f4f9;
+  padding: 23px;
+  margin-bottom: .923077rem;
+  border-radius: .35rem;
+  border: 1px solid transparent;
+}
+
+.btn-outline-primary {
+    color: #06794f;
+    border-color: #06794f;
+}
+
+.btn-outline-success {
+    color: #3ac97c;
+    border-color: #3ac97c;
+}
+
+.btn-outline-danger {
+    color: #d73f30;
+    border-color: #d73f30;
+}
+
+.project-item-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 20%;
+    flex: 0 1 20%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-right: 5px;
+}
+
+.project-item-user {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 25%;
+    flex: 0 1 25%;
+  -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+    padding-right: 5px;
+}
+
+.project-item-user .user-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.project-item-state {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 20%;
+    flex: 0 1 20%;
+    padding-right: 5px;
+}
+
+.description {
+    font-size: 1rem;
+    color: black;
+}
+
+.project-item-date {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 15%;
+    flex: 0 1 15%;
+    padding-right: 5px;
+}
+
+.project-item-progress {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 15%;
+    flex: 0 1 15%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+  .project-item-actions {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 5%;
+    flex: 0 1 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding-left: 20px;
+  }
+  
+  .card {
+    box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+    border-width: 0;
+    transition: all .2s;
+    position: relative;
+    //display: -ms-flexbox;
+    display: flex;
+    //-ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(26, 54, 126, 0.125);
+    border-radius: 0.25rem;
+
+  }
+  
+ 
+/* ---------------------------------------------------
+
+Project : CSS Checkbox Switch
+Author : Partha Kar (https://www.facebook.com/partha.creativemind)
+Version : 1.0
+Release Dtae : 15 November, 2017
+
+---------------------------------------------------- */
+
+
+  .checkbox.checbox-switch {
+    padding-left: 0;
+  }
+
+  .checkbox.checbox-switch label,
+  .checkbox-inline.checbox-switch {
+    display: inline-block;
+    position: relative;
+    padding-left: 0;
+  }
+  .checkbox.checbox-switch label input,
+  .checkbox-inline.checbox-switch input {
+    display: none;
+  }
+  .checkbox.checbox-switch label span,
+  .checkbox-inline.checbox-switch span {
+    width: 35px;
+    border-radius: 20px;
+    height: 18px;
+    border: 1px solid #dbdbdb;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(223, 223, 223);
+    box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  .checkbox.checbox-switch label span:before,
+  .checkbox-inline.checbox-switch span:before {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgb(255,255,255);
+    content: " ";
+    top: 0;
+    position: relative;
+    left: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  }
+  .checkbox.checbox-switch label &gt; input:checked + span:before,
+  .checkbox-inline.checbox-switch &gt; input:checked + span:before {
+    left: 17px;
+  }
+
+
+  /* Switch Default */
+  .checkbox.checbox-switch label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch &gt; input:checked + span {
+    background-color: rgb(180, 182, 183);
+    border-color: rgb(180, 182, 183);
+    box-shadow: rgb(180, 182, 183) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch label &gt; input:checked:disabled + span,
+  .checkbox-inline.checbox-switch &gt; input:checked:disabled + span {
+    background-color: rgb(220, 220, 220);
+    border-color: rgb(220, 220, 220);
+    box-shadow: rgb(220, 220, 220) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch label &gt; input:disabled + span,
+  .checkbox-inline.checbox-switch &gt; input:disabled + span {
+    background-color: rgb(232,235,238);
+    border-color: rgb(255,255,255);
+  }
+  .checkbox.checbox-switch label &gt; input:disabled + span:before,
+  .checkbox-inline.checbox-switch &gt; input:disabled + span:before {
+    background-color: rgb(248,249,250);
+    border-color: rgb(243, 243, 243);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+
+  /* Switch Light */
+  .checkbox.checbox-switch.switch-light label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch.switch-light &gt; input:checked + span {
+    background-color: rgb(248,249,250);
+    border-color: rgb(248,249,250);
+    box-shadow: rgb(248,249,250) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+
+  /* Switch Dark */
+  .checkbox.checbox-switch.switch-dark label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch.switch-dark &gt; input:checked + span {
+    background-color: rgb(52,58,64);
+    border-color: rgb(52,58,64);
+    box-shadow: rgb(52,58,64) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch.switch-dark label &gt; input:checked:disabled + span,
+  .checkbox-inline.checbox-switch.switch-dark &gt; input:checked:disabled + span {
+    background-color: rgb(100, 102, 104);
+    border-color: rgb(100, 102, 104);
+    box-shadow: rgb(100, 102, 104) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+
+  /* Switch Success */
+  .checkbox.checbox-switch.switch-success label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch.switch-success &gt; input:checked + span {
+    background-color: rgb(40, 167, 69);
+    border-color: rgb(40, 167, 69);
+    box-shadow: rgb(40, 167, 69) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch.switch-success label &gt; input:checked:disabled + span,
+  .checkbox-inline.checbox-switch.switch-success &gt; input:checked:disabled + span {
+    background-color: rgb(153, 217, 168);
+    border-color: rgb(153, 217, 168);
+    box-shadow: rgb(153, 217, 168) 0px 0px 0px 8px inset;
+  }
+
+  /* Switch Danger */
+  .checkbox.checbox-switch.switch-danger label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch.switch-danger &gt; input:checked + span {
+    background-color: rgb(200, 35, 51);
+    border-color: rgb(200, 35, 51);
+    box-shadow: rgb(200, 35, 51) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch.switch-danger label &gt; input:checked:disabled + span,
+  .checkbox-inline.checbox-switch.switch-danger &gt; input:checked:disabled + span {
+    background-color: rgb(216, 119, 129);
+    border-color: rgb(216, 119, 129);
+    box-shadow: rgb(216, 119, 129) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+
+  /* Switch Primary */
+  .checkbox.checbox-switch.switch-primary label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch.switch-primary &gt; input:checked + span {
+    background-color: rgb(0, 105, 217);
+    border-color: rgb(0, 105, 217);
+    box-shadow: rgb(0, 105, 217) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch.switch-primary label &gt; input:checked:disabled + span,
+  .checkbox-inline.checbox-switch.switch-primary &gt; input:checked:disabled + span {
+    background-color: rgb(109, 163, 221);
+    border-color: rgb(109, 163, 221);
+    box-shadow: rgb(109, 163, 221) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+
+  /* Switch Info */
+  .checkbox.checbox-switch.switch-info label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch.switch-info &gt; input:checked + span {
+    background-color: rgb(23, 162, 184);
+    border-color: rgb(23, 162, 184);
+    box-shadow: rgb(23, 162, 184) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch.switch-info label &gt; input:checked:disabled + span,
+  .checkbox-inline.checbox-switch.switch-info &gt; input:checked:disabled + span {
+    background-color: rgb(102, 192, 206);
+    border-color: rgb(102, 192, 206);
+    box-shadow: rgb(102, 192, 206) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+
+  /* Switch Warning */
+  .checkbox.checbox-switch.switch-warning label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch.switch-warning &gt; input:checked + span {
+    background-color: rgb(255, 193, 7);
+    border-color: rgb(255, 193, 7);
+    box-shadow: rgb(255, 193, 7) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch.switch-warning label &gt; input:checked:disabled + span,
+  .checkbox-inline.checbox-switch.switch-warning &gt; input:checked:disabled + span {
+    background-color: rgb(226, 195, 102);
+    border-color: rgb(226, 195, 102);
+    box-shadow: rgb(226, 195, 102) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>coupa_admin_invoice_list_page</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Coupa Admin Invoice List Page</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+	data.approval_table = "sysapproval_approver";
+	data.table = "x_nriws_coupa_req_coupa_requisition";
+	data.userId = gs.getUserID();
+	data.status = $sp.getParameter("status");
+	data.details = [];
+	data.approvals = [];
+	
+	data.home_page_id='nrid_admin_homepage';
+	data.detail_page_id = "coupa_details";
+
+	var coupa_req = new GlideRecord("x_nriws_coupa_req_coupa_requisition");	
+	var temp;
+	coupa_req.query();
+	while(coupa_req.next()){
+		
+		var tempObj ={					
+
+			// Requisition Detail
+			sys_id: coupa_req.getUniqueValue(),
+			id : parseInt(coupa_req.getValue('id')),
+			proj_title : coupa_req.getDisplayValue('project_title'),
+			created_at: coupa_req.getValue('created_at').split(" ")[0],
+			req_by: coupa_req.getValue('requested_by_fullname'),
+			requested_by_id: coupa_req.getValue('requested_by_id'),
+			currency: coupa_req.getValue('currency'),
+			line_count : parseInt(coupa_req.getDisplayValue('line_count')),
+			total : coupa_req.getDisplayValue('total'),
+			state: coupa_req.getDisplayValue('state'),
+			coupa_state_value: coupa_req.getValue('state')
+			};
+		
+		if(!tempObj.coupa_state_value){
+			tempObj.coupa_state_value = '';
+		}
+		
+		data.details.push(tempObj);
+		
+
+	}
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>NRIWPS_kuranari</sys_created_by>
+        <sys_created_on>2021-05-02 04:58:24</sys_created_on>
+        <sys_id>2754ac721b3fe450057498ea234bcb55</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Coupa Admin Invoice List Page</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_widget_2754ac721b3fe450057498ea234bcb55</sys_update_name>
+        <sys_updated_by>NRIWPS_kuranari</sys_updated_by>
+        <sys_updated_on>2021-05-02 04:58:24</sys_updated_on>
+        <template><![CDATA[<h2>
+   管理者承認一覧
+   <p class="pull-right">
+      <button class="btn btn-danger" ng-click="c.goHome()"><i class="fa fa-home" style="font-size:18px;">&nbsp;</i>
+      <b>${管理者ページへ戻る}</b>
+      </button>
+   </p>
+</h2>
+<hr class = "style-two">
+<div class="admin-list-layout">
+   <div class="" style="padding-left:20px;border-color:white;">
+      <div class="panel-body" style="padding: 30px;">
+         <div class="row">
+           <div class="col-sm-5">
+               <div class="primary-color">
+                  <div class ="active-layout">
+                     <div class="left-side">
+                        <b>{{(c.data.details|filter: {coupa_state_value:coupaState}).length}}</b>
+                        <p>合計</p>
+                     </div>
+                     <div class="right-side">
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+           <div class="col-sm-6">
+               <form class="form-horizontal ng-pristine ng-valid " role="form">
+                  <div class="form-group">
+                     <label class="label-layout col-sm-3">申請書 #:</label> 
+                     <div class="col-sm-7">
+											<input id="filterTitle2" class="form-control" value="" ng-model="filterid" placeholder="申請書#を記入してください。" > 
+                     </div>
+                  </div>
+               </form>
+            </div>
+           <div class="col-sm-6" style="padding-top:20px">
+               <form class="form-horizontal ng-pristine ng-valid" role="form">
+                  <div class="form-group">
+                     <label class="label-layout col-sm-3">状態:</label> 
+                     <div class="col-sm-7">
+                        <select class="form-control" ng-model="coupaState">
+                           <option value="" selected>-- 全て --</option>
+                           <option value="-5" >キャンセル済み</option>
+                           <!-- <option value="1" >承認待ち</option>-->
+                           <option value="2" >レベル１で承認待ち</option>
+                           <option value="8" >レベル２で承認待ち</option>
+                           <option value="9" >承認済み</option>
+                           <option value="3" >否認済み</option>
+                           <option value="10" >Coupa上で承認済み</option>
+                           <option value="11"　>Coupa上で否認済み</option>
+                          <option value="4"　>エラー</option>
+                        </select>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row" ng-if = "c.data.details.length > c.itemsPerPageOptions[0]">
+      <div class = "col-xs-10 vcenter">
+         <dir-pagination-controls pagination-id="paginate2"></dir-pagination-controls>
+      </div>
+      <div class = "col-xs-2 vcenter text-right align-middle" style = "width: 175px;" ng-hide = "c.data.details.length < c.itemsPerPageOptions[0]">
+         <label>${ページ内件数:}</label>
+         <select ng-model="c.itemsPerPage" ng-options="x for x in c.itemsPerPageOptions">
+         </select>
+      </div>
+   </div>
+   <div  class="container cus-container" >
+      <table class="table table-hover "  ng-if="c.data.details.length > 0">
+         <tr>
+            <th class="col-xs-1" ng-click="c.sortClick('id')">申請書 #  &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.isId,'fa fa-angle-double-up' : c.isId }"></i></th>
+            <th class="col-xs-1" ng-click="c.sortClick('state')">状態 &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.state,'fa fa-angle-double-up' : c.state }"></i></th>
+            <th class="col-xs-2 hidden-xs" ng-click="c.sortClick('proj_title')">委託契約名(アイテム)  &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.isProj,'fa fa-angle-double-up' : c.isProj }"></i></th>
+            <th class="col-xs-3 hidden-xs" ng-click="c.sortClick('requested_by_fullname')">申請者  &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.isReq,'fa fa-angle-double-up' : c.isReq }"></i></th>
+            <th class="col-xs-2 hidden-xs" ng-click="c.sortClick('created_at')">承認依頼日  &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.isCreated,'fa fa-angle-double-up' : c.isCreated }"></i></th>
+            <th class="col-xs-1 hidden-xs" ng-click="c.sortClick('item')" >アイテム  &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.isItem,'fa fa-angle-double-up' : c.isItem }"></i></th>
+            <div>
+               <th class="col-xs-1" ng-click="c.sortClick('total')" >合計  &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.isTotal,'fa fa-angle-double-up' : c.isTotal }"></i></th>
+            </div>
+         </tr>
+         <tbody>
+            <div></div>
+            <tr dir-paginate="req in c.data.details | filter: {id:filterid,coupa_state_value:coupaState}:false|orderBy: c.sortedOn : c.sortReverse| itemsPerPage: c.itemsPerPage" pagination-id="paginate2">
+               <td>
+                  <div class="project-item-title">
+                     <span class="name" style="color:#275b96"><a href="#" ng-click="c.checkDetails(req)"><b>{{req.id}}</b></a></span>
+                  </div>
+               </td>
+               <td>
+                  <div class="project-item-title"><span class="name" style="color: black">{{req.state}}</span>
+                  </div>
+               </td>
+               <td class="hidden-xs">
+                  <div class="project-item-title"><span class="name" style="color: black">{{req.proj_title}}</span>
+                  </div>
+               </td>
+               <td class="hidden-xs">
+                  <div class="project-item-user">
+                     <div class="user-avatar">
+                        <sn-avatar class="avatar-small-medium" primary="req.opened_by_sysid" />
+                     </div>
+                     <div class="user-info">
+                        <span class="name">&nbsp;&nbsp;&nbsp;{{req.req_by}}</span>
+                        <span class="position description">&nbsp;&nbsp;&nbsp;{{req.requested_by_id}}</span>
+                     </div>
+                  </div>
+               </td>
+               <td class="hidden-xs">
+                  <div class="project-item-date">
+                     <span class="date">{{req.created_at}} </span>
+                     <span class="time">
+                        <span class="label label-primary" >
+                           <sn-time-ago timestamp="::req.created_at" class="ng-isolate-scope"></sn-time-ago>
+                        </span>
+                     </span>
+                  </div>
+               </td>
+               <td class="hidden-xs">{{req.line_count}}</td>
+               <td>{{req.total}} {{req.currency}}</td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <div class="alert alert-info" ng-if="c.data.details.length === 0">
+      No Data Found!
+   </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

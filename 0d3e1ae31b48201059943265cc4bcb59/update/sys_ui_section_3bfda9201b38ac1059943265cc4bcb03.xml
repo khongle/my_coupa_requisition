@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Anaplan Connection" section_id="3bfda9201b38ac1059943265cc4bcb03" sys_domain="global" table="x_nriws_coupa_req_account" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>anaplan_connection_status</element>
+            <position>0</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-27 07:25:24</sys_created_on>
+            <sys_id>f7fda9201b38ac1059943265cc4bcb2e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Anaplan Connection" display_value="Anaplan Connection" name="x_nriws_coupa_req_account" sys_domain="global" view="Default view">3bfda9201b38ac1059943265cc4bcb03</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-27 07:25:24</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>1</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-27 07:25:24</sys_created_on>
+            <sys_id>7ffda9201b38ac1059943265cc4bcb2e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Anaplan Connection" display_value="Anaplan Connection" name="x_nriws_coupa_req_account" sys_domain="global" view="Default view">3bfda9201b38ac1059943265cc4bcb03</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-27 07:25:24</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Anaplan Connection</caption>
+            <header>false</header>
+            <name>x_nriws_coupa_req_account</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-27 07:25:23</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3bfda9201b38ac1059943265cc4bcb03</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_nriws_coupa_req_account</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_ui_section_3bfda9201b38ac1059943265cc4bcb03</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-27 07:25:23</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>5</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">758037ee1bcd2810e05f43b2cc4bcb41</sp_column>
+        <sp_widget display_value="Space widget">a89f44631b18e010e05f43b2cc4bcb41</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>tanmyi.m</sys_created_by>
+        <sys_created_on>2020-12-21 11:15:18</sys_created_on>
+        <sys_id>edc8021c1b516c10e05f43b2cc4bcbee</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_instance_edc8021c1b516c10e05f43b2cc4bcbee</sys_update_name>
+        <sys_updated_by>tanmyi.m</sys_updated_by>
+        <sys_updated_on>2020-12-21 11:15:23</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=edc8021c1b516c10e05f43b2cc4bcbee"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</application>
+        <file_path/>
+        <instance_id>3cadb194db874c140b9d21c40596199c</instance_id>
+        <instance_name>dev100802</instance_name>
+        <name>sp_instance_edc8021c1b516c10e05f43b2cc4bcbee</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>5</order><roles/><short_description/><size>md</size><sp_column display_value="1">758037ee1bcd2810e05f43b2cc4bcb41</sp_column><sp_widget display_value="Space widget">a89f44631b18e010e05f43b2cc4bcb41</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>tanmyi.m</sys_created_by><sys_created_on>2020-12-21 11:15:18</sys_created_on><sys_id>edc8021c1b516c10e05f43b2cc4bcbee</sys_id><sys_mod_count>2</sys_mod_count><sys_name/><sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package><sys_policy/><sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope><sys_update_name>sp_instance_edc8021c1b516c10e05f43b2cc4bcbee</sys_update_name><sys_updated_by>tanmyi.m</sys_updated_by><sys_updated_on>2020-12-21 11:15:23</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=edc8021c1b516c10e05f43b2cc4bcbee"/></record_update>]]></payload>
+        <payload_hash>-359768189</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>02d08e152f91301054cd811df699b698</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-11 09:27:55</sys_created_on>
+        <sys_id>f95102d52f91301054cd811df699b6b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17a94e505850000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-11 09:27:55</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>7ac84a1c48516c10b93be10194370939</update_guid>
+        <update_guid_history>7ac84a1c48516c10b93be10194370939:-359768189,86c84a1cdd516c106770cae9b1d19b19:717332964,a9c8021ccf516c10c5a6446efa31fff0:1794434117</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">55e80e112fd1301054cd811df699b682</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-11 10:00:55</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>0e94c99c7f3e4bd88fed8b9e5e6a0344</sys_id>
+        <sys_metadata>edc8021c1b516c10e05f43b2cc4bcbee</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_scope_delete display_value="">140948c683584bb68a6f3aacacc7dd71</sys_scope_delete>
+        <sys_update_name>sp_instance_edc8021c1b516c10e05f43b2cc4bcbee</sys_update_name>
+        <sys_update_version display_value="sp_instance_edc8021c1b516c10e05f43b2cc4bcbee">f95102d52f91301054cd811df699b6b3</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-11 10:00:55</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

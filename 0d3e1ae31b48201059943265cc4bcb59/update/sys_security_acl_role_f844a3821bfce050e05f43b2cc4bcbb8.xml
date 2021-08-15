@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-12-02 07:53:00</sys_created_on>
+        <sys_id>f844a3821bfce050e05f43b2cc4bcbb8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_nriws_coupa_req_anaplan_schedule_job.x_nriws_coupa_req.anaplan_schedule_job_user</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_security_acl display_value="x_nriws_coupa_req_anaplan_schedule_job">7c44a3821bfce050e05f43b2cc4bcbb5</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_f844a3821bfce050e05f43b2cc4bcbb8</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-02 07:53:00</sys_updated_on>
+        <sys_user_role display_value="x_nriws_coupa_req.anaplan_schedule_job_user" name="x_nriws_coupa_req.anaplan_schedule_job_user">a0446f421bfce050e05f43b2cc4bcbde</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

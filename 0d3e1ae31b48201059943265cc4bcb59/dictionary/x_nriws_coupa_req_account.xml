@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Account" max_length="40" name="x_nriws_coupa_req_account" sizeclass="0" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Account allocation amount" max_length="20" name="account_allocation_amount" type="decimal"/>
+        <element attributes="edge_encryption_enabled=true" label="Account allocation id" max_length="10" name="account_allocation_id" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Account allocation percent" max_length="20" name="account_allocation_percent" type="decimal"/>
+        <element label="Account code" max_length="100" name="account_code" type="string"/>
+        <element label="Account company" max_length="100" name="account_company" type="string"/>
+        <element label="Account deployment" max_length="100" name="account_deployment" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Account id" max_length="40" name="account_id" type="integer"/>
+        <element label="Account name" max_length="100" name="account_name" type="string"/>
+        <element label="Account type" max_length="100" name="account_type" type="string"/>
+        <element label="Account type currency" max_length="10" name="account_type_currency" type="string"/>
+        <element label="Account unit" max_length="10" name="account_unit" type="string"/>
+        <element label="Account year" max_length="10" name="account_year" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Anaplan Connection Status" max_length="40" name="anaplan_connection_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Start" sequence="1" value="start"/>
+                <element inactive_on_update="false" label="Import File Created" sequence="2" value="import_file_created"/>
+                <element inactive_on_update="false" label="Uploading File" sequence="3" value="uploading_file"/>
+                <element inactive_on_update="false" label="Upload File Completed" sequence="4" value="upload_file_completed"/>
+                <element inactive_on_update="false" label="Run Import" sequence="5" value="run_import"/>
+                <element inactive_on_update="false" label="Import Task Completed" sequence="6" value="import_task_completed"/>
+                <element inactive_on_update="false" label="Downloading" sequence="7" value="downloading"/>
+                <element inactive_on_update="false" label="Download Success" sequence="8" value="download_success"/>
+                <element inactive_on_update="false" label="Run Transform Map" sequence="9" value="run_tranform_map"/>
+                <element inactive_on_update="false" label="Success" sequence="10" value="success"/>
+                <element inactive_on_update="false" label="Fail" sequence="11" value="fail"/>
+            </choice>
+        </element>
+        <element label="委託契約番号" max_length="100" name="consignment_contract_number" type="string"/>
+        <element label="Export Task ID" max_length="40" name="export_task_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Export Task Status" max_length="40" name="export_task_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Fail" value="fail"/>
+                <element inactive_on_update="false" label="Processing" value="processing"/>
+                <element inactive_on_update="false" label="Success" value="success"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" default="0" label="Export Task Status Check Count" max_length="40" name="export_task_status_check_count" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Import File Generated" max_length="40" name="import_file_generated" type="boolean"/>
+        <element label="Import Task ID" max_length="40" name="import_task_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Import Task Status" max_length="40" name="import_task_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Processing" sequence="1" value="processing"/>
+                <element inactive_on_update="false" label="Success" sequence="2" value="success"/>
+                <element inactive_on_update="false" label="Fail" sequence="3" value="fail"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" default="0" label="Import Task Status Check Count" max_length="40" name="import_task_status_check_count" type="integer"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Parent" max_length="32" name="parent" reference="x_nriws_coupa_req_coupa_items" type="reference"/>
+        <element label="Period" max_length="10" name="period" type="string"/>
+        <element label="segment-1" max_length="40" name="segment_1" type="string"/>
+        <element label="segment-2" max_length="40" name="segment_2" type="string"/>
+        <element label="segment-3" max_length="40" name="segment_3" type="string"/>
+        <element label="segment-4" max_length="40" name="segment_4" type="string"/>
+        <element label="segment-5" max_length="40" name="segment_5" type="string"/>
+        <element label="Type" max_length="10" name="type" type="string"/>
+        <index name="index">
+            <element name="parent"/>
+        </index>
+    </element>
+</database>

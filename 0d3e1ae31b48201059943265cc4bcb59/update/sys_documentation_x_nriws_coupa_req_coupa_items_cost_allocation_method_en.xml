@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="cost_allocation_method" label="Cost Allocation Method" language="en" table="x_nriws_coupa_req_coupa_items">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>cost_allocation_method</element>
+            <help/>
+            <hint/>
+            <label>Cost Allocation Method</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_items</name>
+            <plural>Cost Allocation Methods</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>tanmyi.m</sys_created_by>
+            <sys_created_on>2020-11-05 01:55:09</sys_created_on>
+            <sys_id>2b6f87951b94e410e05f43b2cc4bcb72</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Cost Allocation Method</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_documentation_x_nriws_coupa_req_coupa_items_cost_allocation_method_en</sys_update_name>
+            <sys_updated_by>tanmyi.m</sys_updated_by>
+            <sys_updated_on>2020-11-05 01:55:09</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

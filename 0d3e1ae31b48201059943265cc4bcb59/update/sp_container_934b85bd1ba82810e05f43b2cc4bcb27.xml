@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="INSERT_OR_UPDATE">
+        <background_color/>
+        <background_image/>
+        <background_style>cover</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>NRID Homepage - Container 2</name>
+        <order>2</order>
+        <sp_page display_value="nrid_homepage">074289ec1b546410e05f43b2cc4bcbf9</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-18 15:50:31</sys_created_on>
+        <sys_id>934b85bd1ba82810e05f43b2cc4bcb27</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>NRID Homepage - Container 2</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_container_934b85bd1ba82810e05f43b2cc4bcb27</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-19 01:09:22</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+</record_update>

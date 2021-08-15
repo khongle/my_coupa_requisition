@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_dictionary_override">
+    <sys_dictionary_override action="DELETE">
+        <attributes/>
+        <attributes_override>false</attributes_override>
+        <base_table>task</base_table>
+        <calculation/>
+        <calculation_override>false</calculation_override>
+        <default_value/>
+        <default_value_override>true</default_value_override>
+        <dependent/>
+        <dependent_override>false</dependent_override>
+        <display_override>false</display_override>
+        <element>state</element>
+        <mandatory>false</mandatory>
+        <mandatory_override>false</mandatory_override>
+        <name>x_nriws_coupa_req_coupa_invoice</name>
+        <read_only>false</read_only>
+        <read_only_override>false</read_only_override>
+        <reference_qual/>
+        <reference_qual_override>false</reference_qual_override>
+        <sys_class_name>sys_dictionary_override</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-21 07:14:21</sys_created_on>
+        <sys_id>7e82c5642fa1301054cd811df699b6d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>state</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_dictionary_override_7e82c5642fa1301054cd811df699b6d3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-21 07:14:21</sys_updated_on>
+    </sys_dictionary_override>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</application>
+        <file_path/>
+        <instance_id>3cadb194db874c140b9d21c40596199c</instance_id>
+        <instance_name>dev100802</instance_name>
+        <name>sys_dictionary_override_7e82c5642fa1301054cd811df699b6d3</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_dictionary_override"><sys_dictionary_override action="INSERT_OR_UPDATE"><attributes/><attributes_override>false</attributes_override><base_table>task</base_table><calculation/><calculation_override>false</calculation_override><default_value/><default_value_override>true</default_value_override><dependent/><dependent_override>false</dependent_override><display_override>false</display_override><element>state</element><mandatory>false</mandatory><mandatory_override>false</mandatory_override><name>x_nriws_coupa_req_coupa_invoice</name><read_only>false</read_only><read_only_override>false</read_only_override><reference_qual/><reference_qual_override>false</reference_qual_override><sys_class_name>sys_dictionary_override</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-07-21 07:14:21</sys_created_on><sys_id>7e82c5642fa1301054cd811df699b6d3</sys_id><sys_mod_count>0</sys_mod_count><sys_name>state</sys_name><sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package><sys_policy/><sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope><sys_update_name>sys_dictionary_override_7e82c5642fa1301054cd811df699b6d3</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-07-21 07:14:21</sys_updated_on></sys_dictionary_override></record_update>]]></payload>
+        <payload_hash>-1389878673</payload_hash>
+        <record_name>state</record_name>
+        <reverted_from/>
+        <source>b3328a952f91301054cd811df699b6f0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-21 07:14:21</sys_created_on>
+        <sys_id>c3a249642fa1301054cd811df699b640</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17ac7ea57a10000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-21 07:14:21</sys_updated_on>
+        <type>Dictionary Entry Override</type>
+        <update_guid>8ba24964a2a13010e242142166ccfb3f</update_guid>
+        <update_guid_history>8ba24964a2a13010e242142166ccfb3f:-1389878673</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-21 07:17:27</sys_created_on>
+        <sys_db_object display_value="" name="sys_dictionary_override">sys_dictionary_override</sys_db_object>
+        <sys_id>83b9b6307be64ea192b35dc64385f749</sys_id>
+        <sys_metadata>7e82c5642fa1301054cd811df699b6d3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>state</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_parent display_value="x_nriws_coupa_req_coupa_invoice">8f0f25911b08701036a1206a234bcbe0</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_scope_delete display_value="">140948c683584bb68a6f3aacacc7dd71</sys_scope_delete>
+        <sys_update_name>sys_dictionary_override_7e82c5642fa1301054cd811df699b6d3</sys_update_name>
+        <sys_update_version display_value="sys_dictionary_override_7e82c5642fa1301054cd811df699b6d3">c3a249642fa1301054cd811df699b640</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-21 07:17:27</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_headers">
+    <sys_rest_message_headers action="INSERT_OR_UPDATE">
+        <name>X-COUPA-API-KEY</name>
+        <rest_message display_value="Coupa">fa34d7591b94e410e05f43b2cc4bcb23</rest_message>
+        <sys_class_name>sys_rest_message_headers</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-05 02:17:47</sys_created_on>
+        <sys_id>5a541b591b94e410e05f43b2cc4bcbb2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>X-COUPA-API-KEY</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_headers_5a541b591b94e410e05f43b2cc4bcbb2</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-05-24 04:18:45</sys_updated_on>
+        <value>5096a4e8c922cd69ec70b68e567d3116c4d616b6</value>
+    </sys_rest_message_headers>
+</record_update>

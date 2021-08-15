@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="newattachmentsysid" label="newAttachmentSysId" language="en" table="var__m_sys_hub_action_output_59bb843e1bb06450e05f43b2cc4bcba7">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>newattachmentsysid</element>
+            <help/>
+            <hint/>
+            <label>newAttachmentSysId</label>
+            <language>en</language>
+            <name>var__m_sys_hub_action_output_59bb843e1bb06450e05f43b2cc4bcba7</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-04 00:02:19</sys_created_on>
+            <sys_id>25bb843e1bb06450e05f43b2cc4bcbfe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>newAttachmentSysId</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_documentation_var__m_sys_hub_action_output_59bb843e1bb06450e05f43b2cc4bcba7_newattachmentsysid_en</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-04 00:02:19</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

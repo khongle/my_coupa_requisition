@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="state" table="x_nriws_coupa_req_coupa_invoice" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>state</element>
+            <name>x_nriws_coupa_req_coupa_invoice</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-06-02 08:54:10</sys_created_on>
+            <sys_id>1f93853c1bacf85036a1206a234bcb27</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>state</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_choice_x_nriws_coupa_req_coupa_invoice_state</sys_update_name>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-06-02 08:54:10</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>エラー</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_invoice</name>
+            <sequence/>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-06-02 08:55:39</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>89f34d3c1bacf85036a1206a234bcb66</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-06-02 08:55:39</sys_updated_on>
+            <value>4</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>キャンセル済み</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_invoice</name>
+            <sequence>0</sequence>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-06-02 09:03:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>59a5c9bc1bacf85036a1206a234bcb3b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-06-02 09:03:03</sys_updated_on>
+            <value>-5</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>オープン</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_invoice</name>
+            <sequence>1</sequence>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-06-02 08:54:10</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5f93853c1bacf85036a1206a234bcb26</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-06-02 08:54:10</sys_updated_on>
+            <value>1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>レベル１で承認待ち</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_invoice</name>
+            <sequence>2</sequence>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-06-02 08:55:06</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b8d3893c1bacf85036a1206a234bcbf3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-06-02 08:55:06</sys_updated_on>
+            <value>2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>レベル２で承認待ち</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_invoice</name>
+            <sequence>3</sequence>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-06-02 08:55:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d404093c1bacf85036a1206a234bcbc8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-06-02 08:55:52</sys_updated_on>
+            <value>8</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>承認済み</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_invoice</name>
+            <sequence>4</sequence>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-06-02 08:56:02</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7e04813c1bacf85036a1206a234bcba9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-06-02 08:56:02</sys_updated_on>
+            <value>9</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>否認済み</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_invoice</name>
+            <sequence>5</sequence>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-06-02 08:55:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>86e30d3c1bacf85036a1206a234bcb43</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-06-02 08:55:26</sys_updated_on>
+            <value>3</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Coupa上で承認済み</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_invoice</name>
+            <sequence>6</sequence>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-06-02 08:54:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>58b3013c1bacf85036a1206a234bcb77</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-06-02 08:54:31</sys_updated_on>
+            <value>10</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Coupa上で否認済み</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_invoice</name>
+            <sequence>7</sequence>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-06-02 08:54:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fbb3053c1bacf85036a1206a234bcbac</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-06-02 08:54:45</sys_updated_on>
+            <value>11</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

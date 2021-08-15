@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
+        <name>coupa_endpoint</name>
+        <rest_message_function display_value="Reject_Approval_Request">bc9de0891be8f850057498ea234bcbbf</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-06-03 02:00:08</sys_created_on>
+        <sys_id>547e2c891be8f850057498ea234bcb37</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>coupa_endpoint</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_547e2c891be8f850057498ea234bcb37</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-06-03 02:00:43</sys_updated_on>
+        <type>string</type>
+        <value>https://nri-dev.coupahost.com/api/</value>
+    </sys_rest_message_fn_parameters>
+</record_update>

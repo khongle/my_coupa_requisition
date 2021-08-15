@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="created_in_coupa" label="Created in coupa" language="en" table="x_nriws_coupa_req_coupa_attachment_track">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>created_in_coupa</element>
+            <help/>
+            <hint/>
+            <label>Created in coupa</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_coupa_attachment_track</name>
+            <plural>Created in coupas</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 07:00:42</sys_created_on>
+            <sys_id>4b886a8e1b942010e05f43b2cc4bcb11</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Created in coupa</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_documentation_x_nriws_coupa_req_coupa_attachment_track_created_in_coupa_en</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 07:00:42</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

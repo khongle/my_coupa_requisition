@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_nriws_coupa_req.AttachmentUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>AttachmentUtils</name>
+        <script><![CDATA[var AttachmentUtils = Class.create();
+AttachmentUtils.prototype = {
+    initialize: function() {
+    },
+
+	attachPDF: function(table,sys_id,fileName){
+		try{
+			var rm = new sn_ws.RESTMessageV2();
+			rm.setHttpMethod('GET');
+			var url = gs.getProperty('glide.servlet.uri') + table + '.do?PDF&sys_id=' + sys_id;
+			rm.setEndpoint(url);
+			//rm.setBasicAuth(gs.getProperty('glide.user.userid'), gs.getProperty('glide.user.password'));
+			rm.setBasicAuth('Sansiro.Ma', 'Long12345');
+			rm.saveResponseBodyAsAttachment(table ,sys_id,fileName);
+			var response = rm.execute();
+
+			gs.info("attachPDF response :" + JSON.stringify(response));
+		}
+		catch(ex){
+			gs.info('attachPDF ex :' + ex);
+		}
+	},
+	
+	attachCSV: function(table,sys_id,fileName){
+		
+		var newAttachmentSysId  = '';
+		
+		try{
+			var rm = new sn_ws.RESTMessageV2();
+			rm.setHttpMethod('GET');
+			var url = gs.getProperty('glide.servlet.uri') + table + '_list.do?CSV&sysparm_view=anaplan_view&sys_id=' + sys_id;
+			rm.setEndpoint(url);
+			//rm.setBasicAuth(gs.getProperty('glide.user.userid'), gs.getProperty('glide.user.password'));
+			rm.setBasicAuth('anaplan.api.user', 'anaplan');
+			rm.saveResponseBodyAsAttachment(table ,sys_id,fileName);
+			var response = rm.execute();
+
+			newAttachmentSysId= response.getResponseAttachmentSysid();
+			
+			//gs.info("attachPDF response :" + JSON.stringify(response));
+		}
+		catch(ex){
+			//gs.info('attachPDF ex :' + ex);
+		}
+		
+		return newAttachmentSysId;
+	},
+	
+	attachCSVMutipleRecords: function(target_table,sys_id,fileName,tableName){
+		
+		//gs.info(target_table + ' ' + sys_id + ' ' + fileName);
+		var newAttachmentSysId  = '';
+		try{
+			var fieldQuery = 'optional_field';
+			var sysparm_view = 'contract_view';
+
+			if(tableName =='x_nriws_coupa_req_coupa_invoice') {
+				fieldQuery = 'representation_contract_number';
+				sysparm_view = 'invoice_contract_view'
+			}
+			else {
+				tableName='x_nriws_coupa_req_coupa_requisition';
+			}
+			var rm = new sn_ws.RESTMessageV2();
+			rm.setHttpMethod('GET');
+			var url = gs.getProperty('glide.servlet.uri') + tableName+'.do?CSV&sysparm_query='+fieldQuery+'!=NULL%5Estatus%3Dpending_approval&sysparm_view=' + sysparm_view;
+			gs.info('URL------: ' + url);
+			//var url = gs.getProperty('glide.servlet.uri') + 'x_nriws_coupa_req_account_list.do?CSV&sysparm_query=consignment_contract_number!=NULL%5Eparent.parent.status=pending_approval&sysparm_view=anaplan_view';
+			//var url = gs.getProperty('glide.servlet.uri') + 'x_nriws_coupa_req_account_list.do?CSV&sysparm_query=consignment_contract_number!=NULL%5Eparent.parent.status=pending_approval%5Econsignment_contract_number%3DS20-0412-G0001&sysparm_view=anaplan_view';
+			
+			
+			
+			//gs.info(url);
+			
+			rm.setEndpoint(url);
+			//rm.setBasicAuth(gs.getProperty('glide.user.userid'), gs.getProperty('glide.user.password'));
+			// rm.setBasicAuth('anaplan.api.user', 'anaplan');
+			var instance_Name = gs.getProperty("instance_name");
+		
+			var username = '';
+			var password = '';
+			if(instance_Name == 'nrigdev1'){
+				username =  gs.getProperty('x_nriws_coupa_req.dev.username');
+				password =  gs.getProperty('x_nriws_coupa_req.dev.password');
+			}
+			else if(instance_Name == 'nriguat1'){
+				username =  gs.getProperty('x_nriws_coupa_req.uat.username');
+				password =  gs.getProperty('x_nriws_coupa_req.uat.password');
+			}
+			else if(instance_Name == 'nrigprod'){
+				username =  gs.getProperty('x_nriws_coupa_req.prod.username');
+				password =  gs.getProperty('x_nriws_coupa_req.prod.password');
+			}
+			
+			rm.setBasicAuth(username, password);
+			rm.setRequestHeader();
+			rm.saveResponseBodyAsAttachment(target_table,sys_id,fileName);
+			var response = rm.execute();
+			newAttachmentSysId= response.getResponseAttachmentSysid();
+			//gs.info("attachPDF response :" + JSON.stringify(response));
+		}
+		catch(ex){
+			gs.info('attachPDF ex :' + ex);
+			gs.error('Can not export CSV file');
+		}
+		
+		return newAttachmentSysId;
+	},
+	
+	
+	runScheduledImportSet : function(){
+		var schImp_GR = new GlideRecord('scheduled_import_set');
+		schImp_GR.addQuery('name','Anaplan Data Import');
+		schImp_GR.query();
+		if(schImp_GR.next()){
+			//SncTriggerSynchronizer.executeNow(schImp_GR); // this will work in global scope
+
+			gs.executeNow(schImp_GR); // this will work in scoped app
+
+		}
+		
+	},
+	
+    type: 'AttachmentUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-25 04:27:04</sys_created_on>
+        <sys_id>dbd1fabb1be46c10e05f43b2cc4bcb7e</sys_id>
+        <sys_mod_count>34</sys_mod_count>
+        <sys_name>AttachmentUtils</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_script_include_dbd1fabb1be46c10e05f43b2cc4bcb7e</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-07-09 07:24:02</sys_updated_on>
+    </sys_script_include>
+</record_update>

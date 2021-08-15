@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_headers">
+    <sys_rest_message_fn_headers action="INSERT_OR_UPDATE">
+        <name>X-COUPA-API-KEY</name>
+        <rest_message_function display_value="Reject_Approval_Request">8b9f097d1bdcf81036a1206a234bcbbf</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_headers</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-05-24 02:06:04</sys_created_on>
+        <sys_id>0ccf4d3d1bdcf81036a1206a234bcbdd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>X-COUPA-API-KEY</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_fn_headers_0ccf4d3d1bdcf81036a1206a234bcbdd</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-05-24 02:06:04</sys_updated_on>
+        <value>${apiKey}</value>
+    </sys_rest_message_fn_headers>
+</record_update>

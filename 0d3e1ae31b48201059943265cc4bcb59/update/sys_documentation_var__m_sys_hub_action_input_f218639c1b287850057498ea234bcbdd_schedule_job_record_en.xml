@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="schedule_job_record" label="Schedule Job Record" language="en" table="var__m_sys_hub_action_input_f218639c1b287850057498ea234bcbdd">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>schedule_job_record</element>
+            <help/>
+            <hint/>
+            <label>Schedule Job Record</label>
+            <language>en</language>
+            <name>var__m_sys_hub_action_input_f218639c1b287850057498ea234bcbdd</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+            <sys_created_on>2021-06-01 07:35:52</sys_created_on>
+            <sys_id>7e18a39c1b287850057498ea234bcb05</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Schedule Job Record</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_documentation_var__m_sys_hub_action_input_f218639c1b287850057498ea234bcbdd_schedule_job_record_en</sys_update_name>
+            <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+            <sys_updated_on>2021-06-01 07:35:52</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

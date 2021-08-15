@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="DELETE">
+        <name>apiKey</name>
+        <rest_message_function display_value="Get_Requisitions_By_Status">e716df991b94e410e05f43b2cc4bcbfc</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-05 02:51:23</sys_created_on>
+        <sys_id>1b4c9f9d1b94e410e05f43b2cc4bcb37</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>apiKey</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_1b4c9f9d1b94e410e05f43b2cc4bcb37</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2021-01-29 01:36:49</sys_updated_on>
+        <type>string</type>
+        <value>31a6aefd17eb071a18011364b58999a405f74753</value>
+    </sys_rest_message_fn_parameters>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</application>
+        <file_path/>
+        <instance_id>3cadb194db874c140b9d21c40596199c</instance_id>
+        <instance_name>dev100802</instance_name>
+        <name>sys_rest_message_fn_parameters_1b4c9f9d1b94e410e05f43b2cc4bcb37</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters"><sys_rest_message_fn_parameters action="INSERT_OR_UPDATE"><name>apiKey</name><rest_message_function display_value="Get_Requisitions_By_Status">e716df991b94e410e05f43b2cc4bcbfc</rest_message_function><sys_class_name>sys_rest_message_fn_parameters</sys_class_name><sys_created_by>Sansiro.Ma</sys_created_by><sys_created_on>2020-11-05 02:51:23</sys_created_on><sys_id>1b4c9f9d1b94e410e05f43b2cc4bcb37</sys_id><sys_mod_count>1</sys_mod_count><sys_name>apiKey</sys_name><sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package><sys_policy/><sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope><sys_update_name>sys_rest_message_fn_parameters_1b4c9f9d1b94e410e05f43b2cc4bcb37</sys_update_name><sys_updated_by>Sansiro.Ma</sys_updated_by><sys_updated_on>2021-01-29 01:36:49</sys_updated_on><type>string</type><value>31a6aefd17eb071a18011364b58999a405f74753</value></sys_rest_message_fn_parameters></record_update>]]></payload>
+        <payload_hash>-1517328121</payload_hash>
+        <record_name>apiKey</record_name>
+        <reverted_from/>
+        <source>02d08e152f91301054cd811df699b698</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-11 09:29:48</sys_created_on>
+        <sys_id>edc14a592f91301054cd811df699b648</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17a94e6c0130000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-11 09:29:48</sys_updated_on>
+        <type>Variable Substitutions</type>
+        <update_guid>7b5a7cf4078ea410b3a2e9baea49b871</update_guid>
+        <update_guid_history>7b5a7cf4078ea410b3a2e9baea49b871:-1517328121,5b4c9f9d6e94e4103b9d7ce3a2e12e38:1484539265</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-11 10:02:11</sys_created_on>
+        <sys_db_object display_value="" name="sys_rest_message_fn_parameters">sys_rest_message_fn_parameters</sys_db_object>
+        <sys_id>0abdd5b3733a434385f633d0c501ca59</sys_id>
+        <sys_metadata>1b4c9f9d1b94e410e05f43b2cc4bcb37</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>apiKey</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_scope_delete display_value="">140948c683584bb68a6f3aacacc7dd71</sys_scope_delete>
+        <sys_update_name>sys_rest_message_fn_parameters_1b4c9f9d1b94e410e05f43b2cc4bcb37</sys_update_name>
+        <sys_update_version display_value="sys_rest_message_fn_parameters_1b4c9f9d1b94e410e05f43b2cc4bcb37">edc14a592f91301054cd811df699b648</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-11 10:02:11</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

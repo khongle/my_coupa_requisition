@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="theme_classification_1" label="テーマ分類1" language="en" table="x_nriws_coupa_req_anaplan_contract">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>theme_classification_1</element>
+            <help/>
+            <hint/>
+            <label>テーマ分類1</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_anaplan_contract</name>
+            <plural>テーマ分類1s</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 07:02:12</sys_created_on>
+            <sys_id>dbdb77c91b7cec1059943265cc4bcbbb</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>テーマ分類1</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_documentation_x_nriws_coupa_req_anaplan_contract_theme_classification_1_en</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 07:14:41</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

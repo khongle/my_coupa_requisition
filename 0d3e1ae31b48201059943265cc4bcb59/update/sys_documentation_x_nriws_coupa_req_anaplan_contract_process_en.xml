@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="process" label="プロセス" language="en" table="x_nriws_coupa_req_anaplan_contract">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>process</element>
+            <help/>
+            <hint/>
+            <label>プロセス</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_anaplan_contract</name>
+            <plural>プロセスs</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-29 06:58:45</sys_created_on>
+            <sys_id>451bb3891b7cec1059943265cc4bcbea</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>プロセス</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_documentation_x_nriws_coupa_req_anaplan_contract_process_en</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-29 07:12:24</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_js_include">
+    <sp_js_include action="INSERT_OR_UPDATE">
+        <display_name>dirPagination.js</display_name>
+        <source>local</source>
+        <sys_class_name>sp_js_include</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-16 05:24:03</sys_created_on>
+        <sys_id>7ba8e8091b24a41059943265cc4bcbf8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dirPagination.js</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_ui_script display_value="x_nriws_coupa_req.dirPagination.js">5a9664c51b24a41059943265cc4bcb90</sys_ui_script>
+        <sys_update_name>sp_js_include_7ba8e8091b24a41059943265cc4bcbf8</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-16 05:24:03</sys_updated_on>
+        <url/>
+    </sp_js_include>
+</record_update>

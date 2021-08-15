@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
+        <sp_dependency display_value="angular.dirpagination">99b6a4c51b24a41059943265cc4bcbd7</sp_dependency>
+        <sp_widget display_value="Coupa Admin Invoice List Page">2754ac721b3fe450057498ea234bcb55</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>NRIWPS_kuranari</sys_created_by>
+        <sys_created_on>2021-05-02 04:58:24</sys_created_on>
+        <sys_id>6b54ac721b3fe450057498ea234bcb57</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>angular.dirpagination.Coupa Admin Invoice List Page</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_6b54ac721b3fe450057498ea234bcb57</sys_update_name>
+        <sys_updated_by>NRIWPS_kuranari</sys_updated_by>
+        <sys_updated_on>2021-05-02 04:58:24</sys_updated_on>
+    </m2m_sp_widget_dependency>
+</record_update>

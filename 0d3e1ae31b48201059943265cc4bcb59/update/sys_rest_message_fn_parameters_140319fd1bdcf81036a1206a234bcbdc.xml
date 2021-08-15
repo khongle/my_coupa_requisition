@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
+        <name>reqid</name>
+        <rest_message_function display_value="Update_Requisition_Status">593251fd1bdcf81036a1206a234bcb8f</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-05-24 02:19:38</sys_created_on>
+        <sys_id>140319fd1bdcf81036a1206a234bcbdc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>reqid</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_140319fd1bdcf81036a1206a234bcbdc</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-05-24 02:20:43</sys_updated_on>
+        <type>string</type>
+        <value>646</value>
+    </sys_rest_message_fn_parameters>
+</record_update>

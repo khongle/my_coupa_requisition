@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>Service Portal</category>
+        <format/>
+        <height/>
+        <image>e6bd41981b7c6c1059943265cc4bcb92</image>
+        <name>na.svg</name>
+        <size_bytes>1365</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-11-26 10:25:34</sys_created_on>
+        <sys_id>fe7d0d981b7c6c1059943265cc4bcb01</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>na.svg</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>db_image_fe7d0d981b7c6c1059943265cc4bcb01</sys_update_name>
+        <sys_updated_by>dinesh.k.a</sys_updated_by>
+        <sys_updated_on>2020-11-26 10:25:55</sys_updated_on>
+        <thumbnail/>
+        <width/>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>image</file_name>
+        <hash>0bd28bd267e13a404122104651501a88d7c92c10f4102b3d1423047bfacdba53</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>1365</size_bytes>
+        <size_compressed>711</size_compressed>
+        <state>pending</state>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-11-26 10:25:55</sys_created_on>
+        <sys_id>e6bd41981b7c6c1059943265cc4bcb92</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>dinesh.k.a</sys_updated_by>
+        <sys_updated_on>2020-11-26 10:25:55</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>fe7d0d981b7c6c1059943265cc4bcb01</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="e6bd41981b7c6c1059943265cc4bcb92">e6bd41981b7c6c1059943265cc4bcb92</sys_attachment>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-11-26 10:25:55</sys_created_on>
+        <sys_id>2abd41981b7c6c1059943265cc4bcb92</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>zVTbattAEH1OIP+wVZ8Ku+OdvWrcuKEJJQ4kUCj4tTi2apuokrF8S76+s5IcmpIP6It353rOnB358ur4uxT7YtOs6mqUIehMFNWsnq+qxShbNbXKc08Ks6svF+eXH5QSt0VVbKbbejMUX+f1YyHuynLXbFuXwBwQUIofk1vx7biuN1vxvdwt1F0loHVOOqShCKC1uN6tyrnQn4RQKvVv9ou/uWAmVvNRdjNdT3/ynZlWzShbbrfr4WBwOBzgYKHeLAZGaz3g2j5leCxX1dN7iUhEgzbKqaNMr4+ZeO7Oi/MzsV8Vh+s6BYQWhnKIOj+dmWi2z2Uxyopq+lgW6nE6e1ps6l01H1bFQbxT8bmlM2zW0xmXrTdFU2z2RZbmXPDP2eV6ul2euv5aleXwo0aexHAhT/2AjsD6KDUrZW9CACLbGVLL1gx86bLcTMvc8MV2kbz3ozx16W3GPWv6u3qbqvrzpud/wjAWIWKP/IbUi3hA9BCNkUgeDJkxachLZfjtCJUliAlwpjzwGinUEDTjGPDoldGAVmEEBlA2gHNxqTT43Mw09ySJASxGhWCdlVaD0dQbjrM17g33d2FscggUJxTB5rRMTqQEWzJCQCe5t7duxhyI9dDgvJOIEKzj2Zh1SEhIRloHGN2SkYhmCcow+omE90Exkn41nAVt8ldYFsmHSa/DS8JndRy2/XlBIVoco2Hi5h59BHKSEMgv0UHu3f0/qSytYU9I5LqWpYoQvFUmMle/TFwcUvLq4OWr1wKaVvSSFeOhFPMjbZMszobkJGtk5xz3EAkMibVizdHy24f0EFb7JIKLTnquJWWYNG8Lr5lD5cAHTmdBoiu792WmvDCt9EkOYjjFwkZ+tTZwY4yB3LH4xjM8SsNZOufd5Dg6HuItiZdskD6WweL0yfz31/QnxOcfs1kEq1UFAAA=</data>
+        <length>936</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="e6bd41981b7c6c1059943265cc4bcb92">e6bd41981b7c6c1059943265cc4bcb92</sys_attachment>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-11-26 10:25:55</sys_created_on>
+        <sys_id>aabd41981b7c6c1059943265cc4bcb92</sys_id>
+    </sys_attachment_doc>
+</record_update>

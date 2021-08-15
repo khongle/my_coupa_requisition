@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script/>
+        <controller_as>c</controller_as>
+        <css>//.parent {
+  position: relative
+  width: 700px;
+  border: 5px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+
+.child1{
+ position:absolute
+ right: 0px  
+ border: 2px double red  
+}
+
+.child2{
+ position:absolute
+ right: 30px  
+ border: 2px double red  
+ font-size: 35px;
+}
+
+.child3{
+  position:absolute
+ left: 0px  
+ border: 2px double red  
+}
+
+.b {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;    
+  background-color: yellow; 
+  font-size: 35px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>homepagebanner</id>
+        <internal>false</internal>
+        <link/>
+        <name>homepageBanner</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[data.slides = $sp.getRelatedList('sp_carousel_slide','carousel');]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>tanmyi.m</sys_created_by>
+        <sys_created_on>2020-11-11 11:36:42</sys_created_on>
+        <sys_id>491e40231b18e010e05f43b2cc4bcb99</sys_id>
+        <sys_mod_count>182</sys_mod_count>
+        <sys_name>homepageBanner</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_widget_491e40231b18e010e05f43b2cc4bcb99</sys_update_name>
+        <sys_updated_by>tanmyi.m</sys_updated_by>
+        <sys_updated_on>2020-12-28 04:31:05</sys_updated_on>
+        <template><![CDATA[<div class=parent>
+  <span><strong>1</strong></span>
+
+  <div class="child1"> <h4><strong>パソコン</strong></h4>
+    <div style='margin-left : 0px'>
+      <strong>野村総合研究所 産シス事一部</strong>
+    </div>
+  </div>  
+  
+  <div class="child2"> 
+    <h4 ng-if="i.unit_price!='0'">
+      <span class=b>10,000&nbsp;x&nbsp;3</span>
+    </h4>
+    <span class=b>yyyymmdd</span>
+    &nbsp;~&nbsp;
+    <span class=b>yyyymmdd</span>
+  </div>
+
+  <div class="child3" > 
+    <h4 style="font-size:28px;">
+      <strong>
+        <span class=b>15,000</span> 
+        <span class=b>JPY</span>
+      </strong>
+    </h4>		
+  </div>
+</div>
+
+
+  <head>
+    <style>
+      .mailintro {
+        width:100%;
+        padding: auto;
+        background-color: white;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template-columns: 30% 70%
+      }
+      .icon{
+        margin-left : 100px;
+        padding
+      }
+
+      .mailintro > div {
+        background: white;
+        padding:1em;
+      }
+      .mailintro > div:nth-child(odd) {
+        background: white;
+      }
+
+      .footer {
+        background: red; 
+      }
+
+    </style>
+  </head>
+
+  <div class="mailintro">
+    <div class="logo">
+      <img src="NRI_LOGO_latest.png" width="235" height="93"/>
+      <!--<img src="Servicenowlogo.png" width="295" height="113"/>-->
+    </div>   
+    <div class="icon">
+      <img src="mail.png" width="72" height="72"/>
+    </div>
+  </div>
+
+
+  <table role="presentation" border="1" cellpadding="0" cellspacing="0" width="100%" background-color="#64a8c3" >
+
+    <tr>
+      <td style="padding: 20px 0 30px 0;">
+        <span>Hi there</span>
+        <div><code>${mail_script:Approval_details}</code></div>
+        <p><br /></p>
+
+      </td>
+    </tr>
+
+    <div class=footer border="0" width="100%" border-collapse="collapse;">
+      <tr>
+        <td font-family="Arial, sans-serif; font-size: 14px;">
+          <p style="margin: 0;">&reg; You are receiving this mail as you are assigned the approver in ServiceNow<br/>
+            click <a href="#" color="#ee4c50;">here</a> to see the details</p>
+        </td>
+      </tr>
+    </div>
+
+  </table> 
+
+
+
+  <!-- <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse; border: 1px solid #cccccc;">
+<tr>
+<td align="center" bgcolor="#70bbd9" style="padding: 40px 0 30px 0;">
+<img src="https://assets.codepen.io/210284/h1_1.gif" alt="ServiceNow Email Notification" width="300" height="230" style="display: block;" />
+</td>
+</tr>
+<tr>
+<td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;">-->
+  <!--  <table border="1" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+<tr>
+<td style="color: #153643; font-family: Arial, sans-serif;">-->
+  <!--  <h1 style="font-size: 24px; margin: 0;">
+こんにちは
+Coupaから \新</h1>-->
+
+
+
+
+  <!--  <tr>
+<td style="color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; padding: 20px 0 30px 0;">
+<p style="margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor, eget accumsan dictum, nisi libero ultricies ipsum, in posuere mauris neque at erat.</p>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+<tr>
+<td width="260" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+<tr>
+<td>
+<img src="https://assets.codepen.io/210284/left_1.gif" alt="" width="100%" height="140" style="display: block;" />
+</td>
+</tr>
+<tr>
+<td style="color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; padding: 25px 0 0 0;">
+<p style="margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor, eget accumsan dictum, nisi libero ultricies ipsum, in posuere mauris neque at erat.</p>
+</td>
+</tr>
+</table>
+</td>
+<td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
+<td width="260" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+<tr>
+<td>
+<img src="https://assets.codepen.io/210284/right_1.gif" alt="" width="100%" height="140" style="display: block;" />
+</td>
+</tr>
+<tr>
+<td style="color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; padding: 25px 0 0 0;">
+<p style="margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor, eget accumsan dictum, nisi libero ultricies ipsum, in posuere mauris neque at erat.</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+
+<td class=footer padding="30px 30px;">
+<table border="1" cellpadding="1" cellspacing="10" width="100%" border-collapse="collapse;">
+<tr>
+<td color="#ee4c50;" background="#ee4c50;" font-family="Arial, sans-serif; font-size: 14px;">
+<p style="margin: 0;">&reg; Someone, somewhere 2025<br/>
+<a href="#" color="#ee4c50;">Unsubscribe</a> to this newsletter instantly</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<td align="right">
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+<tr>
+<td>
+<a href="http://www.twitter.com/">
+<img src="https://assets.codepen.io/210284/tw.gif" alt="Twitter." width="38" height="38" style="display: block;" border="0" />
+</a>
+</td>
+<td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
+<td>
+<a href="http://www.twitter.com/">
+<img src="https://assets.codepen.io/210284/fb.gif" alt="Facebook." width="38" height="38" style="display: block;" border="0" />
+</a>
+</td>
+</tr>
+</table>
+
+
+
+Resources1×0.5×0.25×Rerun-->]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Address" section_id="1b2ee1111b50241059943265cc4bcb76" sys_domain="global" table="x_nriws_coupa_req_coupa_requisition" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>postal_code</element>
+            <position>0</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-08 04:23:52</sys_created_on>
+            <sys_id>c4fded841b09a010e05f43b2cc4bcb9a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_nriws_coupa_req_coupa_requisition" sys_domain="global" view="Default view">1b2ee1111b50241059943265cc4bcb76</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-08 04:23:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>address_state</element>
+            <position>1</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-08 04:23:52</sys_created_on>
+            <sys_id>80fded841b09a010e05f43b2cc4bcb9b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_nriws_coupa_req_coupa_requisition" sys_domain="global" view="Default view">1b2ee1111b50241059943265cc4bcb76</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-08 04:23:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-08 04:23:52</sys_created_on>
+            <sys_id>08fded841b09a010e05f43b2cc4bcb9b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_nriws_coupa_req_coupa_requisition" sys_domain="global" view="Default view">1b2ee1111b50241059943265cc4bcb76</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-08 04:23:52</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>location_code</element>
+            <position>3</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-08 04:23:52</sys_created_on>
+            <sys_id>8cfded841b09a010e05f43b2cc4bcb9b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_nriws_coupa_req_coupa_requisition" sys_domain="global" view="Default view">1b2ee1111b50241059943265cc4bcb76</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-08 04:23:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>city</element>
+            <position>4</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-08 04:23:52</sys_created_on>
+            <sys_id>04fded841b09a010e05f43b2cc4bcb9c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_nriws_coupa_req_coupa_requisition" sys_domain="global" view="Default view">1b2ee1111b50241059943265cc4bcb76</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-08 04:23:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>5</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-08 04:23:52</sys_created_on>
+            <sys_id>88fded841b09a010e05f43b2cc4bcb9c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_nriws_coupa_req_coupa_requisition" sys_domain="global" view="Default view">1b2ee1111b50241059943265cc4bcb76</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-08 04:23:52</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>6</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-08 04:23:52</sys_created_on>
+            <sys_id>00fded841b09a010e05f43b2cc4bcb9d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_nriws_coupa_req_coupa_requisition" sys_domain="global" view="Default view">1b2ee1111b50241059943265cc4bcb76</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-08 04:23:52</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>location_name</element>
+            <position>7</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-08 04:23:52</sys_created_on>
+            <sys_id>84fded841b09a010e05f43b2cc4bcb9d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_nriws_coupa_req_coupa_requisition" sys_domain="global" view="Default view">1b2ee1111b50241059943265cc4bcb76</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-08 04:23:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>country_id</element>
+            <position>8</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-08 04:23:52</sys_created_on>
+            <sys_id>0cfded841b09a010e05f43b2cc4bcb9d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_nriws_coupa_req_coupa_requisition" sys_domain="global" view="Default view">1b2ee1111b50241059943265cc4bcb76</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-08 04:23:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>9</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-08 04:23:52</sys_created_on>
+            <sys_id>80fded841b09a010e05f43b2cc4bcb9e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_nriws_coupa_req_coupa_requisition" sys_domain="global" view="Default view">1b2ee1111b50241059943265cc4bcb76</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-08 04:23:52</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>country_name</element>
+            <position>10</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-08 04:23:52</sys_created_on>
+            <sys_id>08fded841b09a010e05f43b2cc4bcb9e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_nriws_coupa_req_coupa_requisition" sys_domain="global" view="Default view">1b2ee1111b50241059943265cc4bcb76</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-08 04:23:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>country_code</element>
+            <position>11</position>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-12-08 04:23:52</sys_created_on>
+            <sys_id>8cfded841b09a010e05f43b2cc4bcb9e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Address" display_value="Address" name="x_nriws_coupa_req_coupa_requisition" sys_domain="global" view="Default view">1b2ee1111b50241059943265cc4bcb76</sys_ui_section>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-12-08 04:23:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Address</caption>
+            <header>false</header>
+            <name>x_nriws_coupa_req_coupa_requisition</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>dinesh.k.a</sys_created_by>
+            <sys_created_on>2020-11-04 18:50:13</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1b2ee1111b50241059943265cc4bcb76</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_nriws_coupa_req_coupa_requisition</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_ui_section_1b2ee1111b50241059943265cc4bcb76</sys_update_name>
+            <sys_updated_by>dinesh.k.a</sys_updated_by>
+            <sys_updated_on>2020-11-04 18:50:13</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

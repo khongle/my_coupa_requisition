@@ -1,0 +1,2376 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build>glide-paris-06-24-2020__patch1-hotfix3a-10-13-2020</compiler_build>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>flow__process_anaplan_csv</internal_name>
+        <label_cache>[{"name":"588f7512-0d18-4ad6-8741-ba9a93a73c1d.data_source","label":"1➛Data Source","reference":"sys_data_source","reference_display":"Data Source","type":"reference","base_type":"reference","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"08abd954-0388-4611-9c4d-441753bda38a"}},{"name":"4b4678d2-3949-4920-8bea-17cedf0f92f7.table_name","label":"4➛Data Source Table","reference":"sys_data_source","reference_display":"Data Source","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"4b4678d2-3949-4920-8bea-17cedf0f92f7.record","label":"4➛Data Source Record","reference":"sys_data_source","reference_display":"Data Source","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"a9137bfa-ffc9-404b-a1ea-46db90162e65.Count","label":"2➛Count","reference_display":"Count","type":"integer","base_type":"integer","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"a9137bfa-ffc9-404b-a1ea-46db90162e65.Table","label":"2➛Table","reference_display":"Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"a9137bfa-ffc9-404b-a1ea-46db90162e65.Records","label":"2➛Records","reference_display":"Records","type":"records","base_type":"records","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"adc7306a-e8d0-466f-b4f9-171eabea81e3.error_message","label":"2➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"87687532-9e3d-4497-a88e-90f45bfb9adb"}},{"name":"adc7306a-e8d0-466f-b4f9-171eabea81e3.status","label":"2➛Status","reference_display":"Status","type":"choice","base_type":"choice","attributes":{"uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"choice","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"adc7306a-e8d0-466f-b4f9-171eabea81e3.Table","label":"2➛Data Source Table","reference":"sys_data_source","reference_display":"Data Source","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"adc7306a-e8d0-466f-b4f9-171eabea81e3.Record","label":"2➛Data Source Record","reference":"sys_data_source","reference_display":"Data Source","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"180a4d66-31ff-4e35-8e61-3f276389219f.parameter","label":"2➛Attachment Records","reference":"sys_attachment","reference_display":"Attachment Records","type":"records","base_type":"records","attributes":{"uiType":"records","uiTypeLabel":"Records","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"180a4d66-31ff-4e35-8e61-3f276389219f.parameter1","label":"2➛Count","reference_display":"Count","type":"integer","base_type":"integer","attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Updated_1.current","label":"Trigger➛Account Record","reference":"x_nriws_coupa_req_account","reference_display":"Account","type":"reference","base_type":"reference","attributes":{}},{"name":"b0e073b7-82a8-4e29-b82d-66b5de813399.item.file_name","label":"3➛Attachment Record➛File name","reference":"","reference_display":"File name","type":"string","base_type":"string","parent_table_name":"sys_attachment","column_name":"file_name"},{"name":"b0e073b7-82a8-4e29-b82d-66b5de813399.item","label":"3➛Attachment Record","reference":"sys_attachment","reference_display":"Attachment Record","type":"reference","base_type":"reference","attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"3e4d2119-ffca-402a-9f5d-488098d5d683.record","label":"5➛Data Source Record","reference":"sys_data_source","reference_display":"Data Source","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"3e4d2119-ffca-402a-9f5d-488098d5d683.table_name","label":"5➛Data Source Table","reference":"sys_data_source","reference_display":"Data Source","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot>853040511bbcec1059943265cc4bcb1c</master_snapshot>
+        <name>(inactive)Flow - Process Anaplan CSV</name>
+        <natlang/>
+        <outputs/>
+        <remote_trigger_id>5b3004511bbcec1059943265cc4bcbd2</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:38:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9678e00d1bb4ec1059943265cc4bcb6d</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>(inactive)Flow - Process Anaplan CSV</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_hub_flow_9678e00d1bb4ec1059943265cc4bcb6d</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=9678e00d1bb4ec1059943265cc4bcb6d"/>
+    <sys_variable_value action="delete_multiple" query="document_key=9678e00d1bb4ec1059943265cc4bcb6d"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_nriws_coupa_req_account">anaplan_connection_statusCHANGESTOdownload_success<item display_value="Download Success" endquery="false" field="anaplan_connection_status" goto="false" newquery="false" operator="CHANGESTO" or="false" value="download_success"/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>false</on_insert>
+        <on_update>true</on_update>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:18</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5b3004511bbcec1059943265cc4bcbd2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:18</sys_updated_on>
+        <table>x_nriws_coupa_req_account</table>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <data>{"table":"sys_trigger_runner_mapping","id":"d33004511bbcec1059943265cc4bcbd3","name":"trigger_runner","type":"java.util.Collections$UnmodifiableMap"}</data>
+        <identifier>9678e00d1bb4ec1059943265cc4bcb6d</identifier>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:18</sys_created_on>
+        <sys_id>d33004511bbcec1059943265cc4bcbd3</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:04:31</sys_updated_on>
+        <trigger display_value="">5b3004511bbcec1059943265cc4bcbd2</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_json_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAGXLWwqAIBBA0b3MdytwKxGD5fggGUFHLKK99yAo6Pce7ga5MtqYGgYGBaOeZpdTZQPdTc0TYy2UMYYioPrh0wuJBHbXl8T/jpc1r48mRlqE2JA5u9WxEOwH5v2lw4YAAAA=</data>
+        <document_id>d33004511bbcec1059943265cc4bcbd3</document_id>
+        <field>trigger_runner</field>
+        <length>144</length>
+        <position>0</position>
+        <source_table>sys_trigger_runner_mapping</source_table>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:18</sys_created_on>
+        <sys_id>5b3004511bbcec1059943265cc4bcbd3</sys_id>
+    </sys_json_chunk>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=9678e00d1bb4ec1059943265cc4bcb6d^sys_idNOT INd33004511bbcec1059943265cc4bcbd3"/>
+    <sys_hub_flow_component action="delete_multiple" query="flow=9678e00d1bb4ec1059943265cc4bcb6d^sys_idNOT IN129bec4d1bb4ec1059943265cc4bcbcb,169bec4d1bb4ec1059943265cc4bcbc7,529bec4d1bb4ec1059943265cc4bcbc4,5a9bec4d1bb4ec1059943265cc4bcbda,672a7b491b7cec1059943265cc4bcb94,7312f3051b7cec1059943265cc4bcbe7,fb2a7b491b7cec1059943265cc4bcb9b"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">5a9bec4d1bb4ec1059943265cc4bcbca</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>b0e073b7-82a8-4e29-b82d-66b5de813399</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>129bec4d1bb4ec1059943265cc4bcbcb</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=129bec4d1bb4ec1059943265cc4bcbcb"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>129bec4d1bb4ec1059943265cc4bcbcb</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>529bec4d1bb4ec1059943265cc4bcbce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <value>Anaplan Export File</value>
+        <variable display_value="">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=129bec4d1bb4ec1059943265cc4bcbcb"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>129bec4d1bb4ec1059943265cc4bcbcb</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>de9bec4d1bb4ec1059943265cc4bcbcd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{b0e073b7-82a8-4e29-b82d-66b5de813399.item.file_name}}LIKEexport_</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>129bec4d1bb4ec1059943265cc4bcbcb</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>1e9bec4d1bb4ec1059943265cc4bcbcd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">5a9bec4d1bb4ec1059943265cc4bcbc6</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>169bec4d1bb4ec1059943265cc4bcbc7</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <ui_id>b0e073b7-82a8-4e29-b82d-66b5de813399</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=169bec4d1bb4ec1059943265cc4bcbc7"/>
+    <sys_element_mapping action="delete_multiple" query="id=169bec4d1bb4ec1059943265cc4bcbc7"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>items</field>
+        <id>169bec4d1bb4ec1059943265cc4bcbc7</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>929bec4d1bb4ec1059943265cc4bcbca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_098e1dc5c3e232002841b63b12d3ae33</table>
+        <value>{{180a4d66-31ff-4e35-8e61-3f276389219f.parameter}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Get Attachments on Record">082e70db0f4273003788001ea8767e02</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot>082e70db0f4273003788001ea8767e02</compiled_snapshot>
+        <display_text/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>529bec4d1bb4ec1059943265cc4bcbc4</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <ui_id>180a4d66-31ff-4e35-8e61-3f276389219f</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=529bec4d1bb4ec1059943265cc4bcbc4"/>
+    <sys_element_mapping action="delete_multiple" query="id=529bec4d1bb4ec1059943265cc4bcbc4"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>source_record</field>
+        <id>529bec4d1bb4ec1059943265cc4bcbc4</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>129bec4d1bb4ec1059943265cc4bcbc6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <table>var__m_sys_hub_action_input_082e70db0f4273003788001ea8767e02</table>
+        <value>{{Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Move Attachment">7159823353cc10103a33ddeeff7b1216</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot>7159823353cc10103a33ddeeff7b1216</compiled_snapshot>
+        <display_text/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <order>6</order>
+        <parent_ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:16</sys_created_on>
+        <sys_id>5a9bec4d1bb4ec1059943265cc4bcbda</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <ui_id>fadb5210-609b-4534-a39f-a4e03e456fb7</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=5a9bec4d1bb4ec1059943265cc4bcbda"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5a9bec4d1bb4ec1059943265cc4bcbda</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:16</sys_created_on>
+        <sys_id>5a9bec4d1bb4ec1059943265cc4bcbdc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:16</sys_updated_on>
+        <value>sys_data_source</value>
+        <variable display_value="">4a59823353cc10103a33ddeeff7b1222</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=5a9bec4d1bb4ec1059943265cc4bcbda"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>source_attachment_record</field>
+        <id>5a9bec4d1bb4ec1059943265cc4bcbda</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:16</sys_created_on>
+        <sys_id>529bec4d1bb4ec1059943265cc4bcbdc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:16</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7159823353cc10103a33ddeeff7b1216</table>
+        <value>{{b0e073b7-82a8-4e29-b82d-66b5de813399.item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>5a9bec4d1bb4ec1059943265cc4bcbda</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:16</sys_created_on>
+        <sys_id>169bec4d1bb4ec1059943265cc4bcbdc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:16</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7159823353cc10103a33ddeeff7b1216</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>target_record</field>
+        <id>5a9bec4d1bb4ec1059943265cc4bcbda</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:16</sys_created_on>
+        <sys_id>d69bec4d1bb4ec1059943265cc4bcbdc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:19:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7159823353cc10103a33ddeeff7b1216</table>
+        <value>{{588f7512-0d18-4ad6-8741-ba9a93a73c1d.data_source}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Delete Attachment">bdc2a0170f973300dfd3694e68767e47</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot>bdc2a0170f973300dfd3694e68767e47</compiled_snapshot>
+        <display_text/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <order>5</order>
+        <parent_ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>672a7b491b7cec1059943265cc4bcb94</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <ui_id>d5a044b4-3f6f-40f1-814d-6a9015b24488</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=672a7b491b7cec1059943265cc4bcb94"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>672a7b491b7cec1059943265cc4bcb94</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>2b2a7b491b7cec1059943265cc4bcb96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:54:50</sys_updated_on>
+        <value/>
+        <variable display_value="">7dc2a0170f973300dfd3694e68767e48</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>672a7b491b7cec1059943265cc4bcb94</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>af2a7b491b7cec1059943265cc4bcb96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:54:50</sys_updated_on>
+        <value>sys_data_source</value>
+        <variable display_value="">79c2a0170f973300dfd3694e68767e50</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>672a7b491b7cec1059943265cc4bcb94</document_key>
+        <order>4</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>eb2a7b491b7cec1059943265cc4bcb96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:54:50</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">b1c2a0170f973300dfd3694e68767e5a</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=672a7b491b7cec1059943265cc4bcb94"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>delete_all_</field>
+        <id>672a7b491b7cec1059943265cc4bcb94</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>232a7b491b7cec1059943265cc4bcb96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:54:50</sys_updated_on>
+        <table>var__m_sys_hub_action_input_bdc2a0170f973300dfd3694e68767e47</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>672a7b491b7cec1059943265cc4bcb94</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>a72a7b491b7cec1059943265cc4bcb96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:54:50</sys_updated_on>
+        <table>var__m_sys_hub_action_input_bdc2a0170f973300dfd3694e68767e47</table>
+        <value>{{588f7512-0d18-4ad6-8741-ba9a93a73c1d.data_source}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>672a7b491b7cec1059943265cc4bcb94</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>e32a7b491b7cec1059943265cc4bcb96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:54:50</sys_updated_on>
+        <table>var__m_sys_hub_action_input_bdc2a0170f973300dfd3694e68767e47</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_sub_flow_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <inputs/>
+        <order>1</order>
+        <parent_ui_id/>
+        <subflow display_value="Subflow-Get Data Source">7091f7c11b7cec1059943265cc4bcb34</subflow>
+        <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:19:38</sys_created_on>
+        <sys_id>7312f3051b7cec1059943265cc4bcbe7</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <ui_id>588f7512-0d18-4ad6-8741-ba9a93a73c1d</ui_id>
+    </sys_hub_sub_flow_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=7312f3051b7cec1059943265cc4bcbe7"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_type display_value="Execute Scheduled Import Set">66c9f3491b7cec1059943265cc4bcbf5</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot>66c9f3491b7cec1059943265cc4bcbf5</compiled_snapshot>
+        <display_text/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <order>7</order>
+        <parent_ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>fb2a7b491b7cec1059943265cc4bcb9b</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <ui_id>76bc25b1-0534-4d17-9fae-84951c90b124</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=fb2a7b491b7cec1059943265cc4bcb9b"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=9678e00d1bb4ec1059943265cc4bcb6d^sys_idNOT INc69bec4d1bb4ec1059943265cc4bcbbc"/>
+    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <name>Updated</name>
+        <remote_sys_id/>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>c69bec4d1bb4ec1059943265cc4bcbbc</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>record_update</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=c69bec4d1bb4ec1059943265cc4bcbbc"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>c69bec4d1bb4ec1059943265cc4bcbbc</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>029bec4d1bb4ec1059943265cc4bcbbe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <value>anaplan_connection_statusCHANGESTOdownload_success</value>
+        <variable display_value="">bb9adea0c31322002841b63b12d3ae67</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>c69bec4d1bb4ec1059943265cc4bcbbc</document_key>
+        <order>101</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>0a9bec4d1bb4ec1059943265cc4bcbbd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <value>every</value>
+        <variable display_value="">c19523d8c31932002841b63b12d3aea1</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>c69bec4d1bb4ec1059943265cc4bcbbc</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>c29bec4d1bb4ec1059943265cc4bcbbe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <value>x_nriws_coupa_req_account</value>
+        <variable display_value="">1dda12e0c31322002841b63b12d3aea8</variable>
+    </sys_variable_value>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=9678e00d1bb4ec1059943265cc4bcb6d^sys_idNOT IN1a78e00d1bb4ec1059943265cc4bcb6e"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>9678e00d1bb4ec1059943265cc4bcb6d</id>
+        <name>Flow - Process Anaplan CSV</name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:38:36</sys_created_on>
+        <sys_id>1a78e00d1bb4ec1059943265cc4bcb6e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:38:36</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_hub_flow_input action="delete_multiple" query="model=9678e00d1bb4ec1059943265cc4bcb6d^sys_idNOT IN029bec4d1bb4ec1059943265cc4bcba2,ca9bec4d1bb4ec1059943265cc4bcbb4,ce9bec4d1bb4ec1059943265cc4bcb9a"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDa35cf83f647c60100ceb0b960f81f821,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</model>
+        <model_id>9678e00d1bb4ec1059943265cc4bcb6d</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_9678e00d1bb4ec1059943265cc4bcb6d</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>029bec4d1bb4ec1059943265cc4bcba2</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</model>
+        <model_id>9678e00d1bb4ec1059943265cc4bcb6d</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_9678e00d1bb4ec1059943265cc4bcb6d</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>ca9bec4d1bb4ec1059943265cc4bcbb4</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</model>
+        <model_id>9678e00d1bb4ec1059943265cc4bcb6d</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_9678e00d1bb4ec1059943265cc4bcb6d</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>ce9bec4d1bb4ec1059943265cc4bcb9a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_instance action="delete_multiple" query="flow=9678e00d1bb4ec1059943265cc4bcb6d^sys_idNOT IN529bec4d1bb4ec1059943265cc4bcbc4,5a9bec4d1bb4ec1059943265cc4bcbda,672a7b491b7cec1059943265cc4bcb94,fb2a7b491b7cec1059943265cc4bcb9b"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Get Attachments on Record">082e70db0f4273003788001ea8767e02</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot>082e70db0f4273003788001ea8767e02</compiled_snapshot>
+        <display_text/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>529bec4d1bb4ec1059943265cc4bcbc4</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <ui_id>180a4d66-31ff-4e35-8e61-3f276389219f</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=529bec4d1bb4ec1059943265cc4bcbc4"/>
+    <sys_element_mapping action="delete_multiple" query="id=529bec4d1bb4ec1059943265cc4bcbc4"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>source_record</field>
+        <id>529bec4d1bb4ec1059943265cc4bcbc4</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>129bec4d1bb4ec1059943265cc4bcbc6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <table>var__m_sys_hub_action_input_082e70db0f4273003788001ea8767e02</table>
+        <value>{{Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Move Attachment">7159823353cc10103a33ddeeff7b1216</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot>7159823353cc10103a33ddeeff7b1216</compiled_snapshot>
+        <display_text/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <order>6</order>
+        <parent_ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:16</sys_created_on>
+        <sys_id>5a9bec4d1bb4ec1059943265cc4bcbda</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <ui_id>fadb5210-609b-4534-a39f-a4e03e456fb7</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=5a9bec4d1bb4ec1059943265cc4bcbda"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5a9bec4d1bb4ec1059943265cc4bcbda</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:16</sys_created_on>
+        <sys_id>5a9bec4d1bb4ec1059943265cc4bcbdc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:16</sys_updated_on>
+        <value>sys_data_source</value>
+        <variable display_value="">4a59823353cc10103a33ddeeff7b1222</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=5a9bec4d1bb4ec1059943265cc4bcbda"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>source_attachment_record</field>
+        <id>5a9bec4d1bb4ec1059943265cc4bcbda</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:16</sys_created_on>
+        <sys_id>529bec4d1bb4ec1059943265cc4bcbdc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:16</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7159823353cc10103a33ddeeff7b1216</table>
+        <value>{{b0e073b7-82a8-4e29-b82d-66b5de813399.item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>5a9bec4d1bb4ec1059943265cc4bcbda</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:16</sys_created_on>
+        <sys_id>169bec4d1bb4ec1059943265cc4bcbdc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:16</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7159823353cc10103a33ddeeff7b1216</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>target_record</field>
+        <id>5a9bec4d1bb4ec1059943265cc4bcbda</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:16</sys_created_on>
+        <sys_id>d69bec4d1bb4ec1059943265cc4bcbdc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:19:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7159823353cc10103a33ddeeff7b1216</table>
+        <value>{{588f7512-0d18-4ad6-8741-ba9a93a73c1d.data_source}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Delete Attachment">bdc2a0170f973300dfd3694e68767e47</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot>bdc2a0170f973300dfd3694e68767e47</compiled_snapshot>
+        <display_text/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <order>5</order>
+        <parent_ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>672a7b491b7cec1059943265cc4bcb94</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <ui_id>d5a044b4-3f6f-40f1-814d-6a9015b24488</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=672a7b491b7cec1059943265cc4bcb94"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>672a7b491b7cec1059943265cc4bcb94</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>2b2a7b491b7cec1059943265cc4bcb96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:54:50</sys_updated_on>
+        <value/>
+        <variable display_value="">7dc2a0170f973300dfd3694e68767e48</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>672a7b491b7cec1059943265cc4bcb94</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>af2a7b491b7cec1059943265cc4bcb96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:54:50</sys_updated_on>
+        <value>sys_data_source</value>
+        <variable display_value="">79c2a0170f973300dfd3694e68767e50</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>672a7b491b7cec1059943265cc4bcb94</document_key>
+        <order>4</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>eb2a7b491b7cec1059943265cc4bcb96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:54:50</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">b1c2a0170f973300dfd3694e68767e5a</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=672a7b491b7cec1059943265cc4bcb94"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>delete_all_</field>
+        <id>672a7b491b7cec1059943265cc4bcb94</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>232a7b491b7cec1059943265cc4bcb96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:54:50</sys_updated_on>
+        <table>var__m_sys_hub_action_input_bdc2a0170f973300dfd3694e68767e47</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>672a7b491b7cec1059943265cc4bcb94</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>a72a7b491b7cec1059943265cc4bcb96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:54:50</sys_updated_on>
+        <table>var__m_sys_hub_action_input_bdc2a0170f973300dfd3694e68767e47</table>
+        <value>{{588f7512-0d18-4ad6-8741-ba9a93a73c1d.data_source}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>672a7b491b7cec1059943265cc4bcb94</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>e32a7b491b7cec1059943265cc4bcb96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 06:54:50</sys_updated_on>
+        <table>var__m_sys_hub_action_input_bdc2a0170f973300dfd3694e68767e47</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_type display_value="Execute Scheduled Import Set">66c9f3491b7cec1059943265cc4bcbf5</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot>66c9f3491b7cec1059943265cc4bcbf5</compiled_snapshot>
+        <display_text/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <order>7</order>
+        <parent_ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:54:50</sys_created_on>
+        <sys_id>fb2a7b491b7cec1059943265cc4bcb9b</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <ui_id>76bc25b1-0534-4d17-9fae-84951c90b124</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=fb2a7b491b7cec1059943265cc4bcb9b"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=9678e00d1bb4ec1059943265cc4bcb6d^sys_idNOT IN7312f3051b7cec1059943265cc4bcbe7"/>
+    <sys_hub_sub_flow_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <inputs/>
+        <order>1</order>
+        <parent_ui_id/>
+        <subflow display_value="Subflow-Get Data Source">7091f7c11b7cec1059943265cc4bcb34</subflow>
+        <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 06:19:38</sys_created_on>
+        <sys_id>7312f3051b7cec1059943265cc4bcbe7</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <ui_id>588f7512-0d18-4ad6-8741-ba9a93a73c1d</ui_id>
+    </sys_hub_sub_flow_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=7312f3051b7cec1059943265cc4bcbe7"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=9678e00d1bb4ec1059943265cc4bcb6d^sys_idNOT IN129bec4d1bb4ec1059943265cc4bcbcb,169bec4d1bb4ec1059943265cc4bcbc7"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">5a9bec4d1bb4ec1059943265cc4bcbca</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>b0e073b7-82a8-4e29-b82d-66b5de813399</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>129bec4d1bb4ec1059943265cc4bcbcb</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=129bec4d1bb4ec1059943265cc4bcbcb"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>129bec4d1bb4ec1059943265cc4bcbcb</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>529bec4d1bb4ec1059943265cc4bcbce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <value>Anaplan Export File</value>
+        <variable display_value="">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=129bec4d1bb4ec1059943265cc4bcbcb"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>129bec4d1bb4ec1059943265cc4bcbcb</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>de9bec4d1bb4ec1059943265cc4bcbcd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{b0e073b7-82a8-4e29-b82d-66b5de813399.item.file_name}}LIKEexport_</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>129bec4d1bb4ec1059943265cc4bcbcb</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>1e9bec4d1bb4ec1059943265cc4bcbcd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">5a9bec4d1bb4ec1059943265cc4bcbc6</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</flow>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>169bec4d1bb4ec1059943265cc4bcbc7</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-07 06:08:50</sys_updated_on>
+        <ui_id>b0e073b7-82a8-4e29-b82d-66b5de813399</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=169bec4d1bb4ec1059943265cc4bcbc7"/>
+    <sys_element_mapping action="delete_multiple" query="id=169bec4d1bb4ec1059943265cc4bcbc7"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>items</field>
+        <id>169bec4d1bb4ec1059943265cc4bcbc7</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>929bec4d1bb4ec1059943265cc4bcbca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_098e1dc5c3e232002841b63b12d3ae33</table>
+        <value>{{180a4d66-31ff-4e35-8e61-3f276389219f.parameter}}</value>
+    </sys_element_mapping>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_9678e00d1bb4ec1059943265cc4bcb6d^sys_idNOT IN029bec4d1bb4ec1059943265cc4bcbb3,ce9bec4d1bb4ec1059943265cc4bcb9f,ce9bec4d1bb4ec1059943265cc4bcbb8"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_9678e00d1bb4ec1059943265cc4bcb6d</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>029bec4d1bb4ec1059943265cc4bcbb3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Changed Fields</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_9678e00d1bb4ec1059943265cc4bcb6d_changed_fields_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_9678e00d1bb4ec1059943265cc4bcb6d</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>ce9bec4d1bb4ec1059943265cc4bcb9f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Record</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_9678e00d1bb4ec1059943265cc4bcb6d_current_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_9678e00d1bb4ec1059943265cc4bcb6d</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-28 15:52:15</sys_created_on>
+        <sys_id>ce9bec4d1bb4ec1059943265cc4bcbb8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Table Name</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_9678e00d1bb4ec1059943265cc4bcb6d_table_name_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:52:15</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=9678e00d1bb4ec1059943265cc4bcb6d^sys_idNOT INd33004511bbcec1059943265cc4bcbd4"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.Every</binding_strategy>
+        <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"d33004511bbcec1059943265cc4bcbd4","name":"plan"}}</plan>
+        <plan_id>9678e00d1bb4ec1059943265cc4bcb6d</plan_id>
+        <snapshot>a6c008911b3c6050e05f43b2cc4bcb51</snapshot>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:18</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d33004511bbcec1059943265cc4bcbd4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:18</sys_updated_on>
+        <trigger display_value="">5b3004511bbcec1059943265cc4bcbd2</trigger>
+    </sys_flow_trigger_plan>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>flow__process_anaplan_csv</internal_name>
+        <label_cache>[{"name":"3e4d2119-ffca-402a-9f5d-488098d5d683.table_name","label":"5➛Data Source Table","reference":"sys_data_source","reference_display":"Data Source","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"3e4d2119-ffca-402a-9f5d-488098d5d683.record","label":"5➛Data Source Record","reference":"sys_data_source","reference_display":"Data Source","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"b0e073b7-82a8-4e29-b82d-66b5de813399.item","label":"3➛Attachment Record","reference":"sys_attachment","reference_display":"Attachment","type":"reference","base_type":"reference","attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"b0e073b7-82a8-4e29-b82d-66b5de813399.item.file_name","label":"3➛Attachment Record➛File name","reference":"","reference_display":"File name","type":"string","base_type":"string","parent_table_name":"sys_attachment","column_name":"file_name"},{"name":"Updated_1.current","label":"Trigger➛Account Record","reference":"x_nriws_coupa_req_account","reference_display":"Account","type":"reference","base_type":"reference","attributes":{}},{"name":"180a4d66-31ff-4e35-8e61-3f276389219f.parameter1","label":"2➛Count","reference_display":"Count","type":"integer","base_type":"integer","attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"180a4d66-31ff-4e35-8e61-3f276389219f.parameter","label":"2➛Attachment Records","reference":"sys_attachment","reference_display":"Attachment","type":"records","base_type":"records","attributes":{"uiType":"records","uiTypeLabel":"Records","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"adc7306a-e8d0-466f-b4f9-171eabea81e3.Record","label":"2➛Data Source Record","reference":"sys_data_source","reference_display":"Data Source","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"adc7306a-e8d0-466f-b4f9-171eabea81e3.Table","label":"2➛Data Source Table","reference":"sys_data_source","reference_display":"Data Source","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"adc7306a-e8d0-466f-b4f9-171eabea81e3.status","label":"2➛Status","reference_display":"Status","type":"choice","base_type":"choice","attributes":{"uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"choice","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"adc7306a-e8d0-466f-b4f9-171eabea81e3.error_message","label":"2➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"87687532-9e3d-4497-a88e-90f45bfb9adb"}},{"name":"a9137bfa-ffc9-404b-a1ea-46db90162e65.Records","label":"2➛Records","reference_display":"Records","type":"records","base_type":"records","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"a9137bfa-ffc9-404b-a1ea-46db90162e65.Table","label":"2➛Table","reference_display":"Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"a9137bfa-ffc9-404b-a1ea-46db90162e65.Count","label":"2➛Count","reference_display":"Count","type":"integer","base_type":"integer","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"4b4678d2-3949-4920-8bea-17cedf0f92f7.record","label":"4➛Data Source Record","reference":"sys_data_source","reference_display":"Data Source","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"4b4678d2-3949-4920-8bea-17cedf0f92f7.table_name","label":"4➛Data Source Table","reference":"sys_data_source","reference_display":"Data Source","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"588f7512-0d18-4ad6-8741-ba9a93a73c1d.data_source","label":"1➛Data Source","reference":"sys_data_source","reference_display":"Data Source","type":"reference","base_type":"reference","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"08abd954-0388-4611-9c4d-441753bda38a"}}]</label_cache>
+        <master>true</master>
+        <name>Flow - Process Anaplan CSV</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="(inactive)Flow - Process Anaplan CSV">9678e00d1bb4ec1059943265cc4bcb6d</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>853040511bbcec1059943265cc4bcb1c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:08</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=853040511bbcec1059943265cc4bcb1c"/>
+    <sys_variable_value action="delete_multiple" query="document_key=853040511bbcec1059943265cc4bcb1c"/>
+    <sys_hub_flow_component action="delete_multiple" query="flow=853040511bbcec1059943265cc4bcb1c^sys_idNOT IN053040511bbcec1059943265cc4bcb75,0d3040511bbcec1059943265cc4bcb80,453040511bbcec1059943265cc4bcb5e,513040511bbcec1059943265cc4bcb87,5d3040511bbcec1059943265cc4bcb89,853040511bbcec1059943265cc4bcb5a,853040511bbcec1059943265cc4bcb69"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Delete Attachment">bdc2a0170f973300dfd3694e68767e47</action_type>
+        <action_type_parent display_value="Delete Attachment">6672502a9353130079b5925cf67ffbc6</action_type_parent>
+        <comment/>
+        <compiled_snapshot>bdc2a0170f973300dfd3694e68767e47</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <order>5</order>
+        <parent_ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>053040511bbcec1059943265cc4bcb75</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <ui_id>d5a044b4-3f6f-40f1-814d-6a9015b24488</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=053040511bbcec1059943265cc4bcb75"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>053040511bbcec1059943265cc4bcb75</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>493040511bbcec1059943265cc4bcb77</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <value>sys_data_source</value>
+        <variable display_value="">79c2a0170f973300dfd3694e68767e50</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>053040511bbcec1059943265cc4bcb75</document_key>
+        <order>4</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>853040511bbcec1059943265cc4bcb77</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">b1c2a0170f973300dfd3694e68767e5a</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>053040511bbcec1059943265cc4bcb75</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>c13040511bbcec1059943265cc4bcb77</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <value/>
+        <variable display_value="">7dc2a0170f973300dfd3694e68767e48</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=053040511bbcec1059943265cc4bcb75"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>delete_all_</field>
+        <id>053040511bbcec1059943265cc4bcb75</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>c93040511bbcec1059943265cc4bcb76</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_action_input_bdc2a0170f973300dfd3694e68767e47</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>053040511bbcec1059943265cc4bcb75</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>413040511bbcec1059943265cc4bcb77</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_action_input_bdc2a0170f973300dfd3694e68767e47</table>
+        <value>{{588f7512-0d18-4ad6-8741-ba9a93a73c1d.data_source}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>053040511bbcec1059943265cc4bcb75</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>8d3040511bbcec1059943265cc4bcb76</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_action_input_bdc2a0170f973300dfd3694e68767e47</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Move Attachment">7159823353cc10103a33ddeeff7b1216</action_type>
+        <action_type_parent display_value="Move Attachment">8445146a9353130079b5925cf67ffb61</action_type_parent>
+        <comment/>
+        <compiled_snapshot>7159823353cc10103a33ddeeff7b1216</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <order>6</order>
+        <parent_ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>0d3040511bbcec1059943265cc4bcb80</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <ui_id>fadb5210-609b-4534-a39f-a4e03e456fb7</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=0d3040511bbcec1059943265cc4bcb80"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>0d3040511bbcec1059943265cc4bcb80</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>493040511bbcec1059943265cc4bcb82</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <value>sys_data_source</value>
+        <variable display_value="">4a59823353cc10103a33ddeeff7b1222</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=0d3040511bbcec1059943265cc4bcb80"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>source_attachment_record</field>
+        <id>0d3040511bbcec1059943265cc4bcb80</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>413040511bbcec1059943265cc4bcb82</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7159823353cc10103a33ddeeff7b1216</table>
+        <value>{{b0e073b7-82a8-4e29-b82d-66b5de813399.item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>0d3040511bbcec1059943265cc4bcb80</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>053040511bbcec1059943265cc4bcb82</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7159823353cc10103a33ddeeff7b1216</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>target_record</field>
+        <id>0d3040511bbcec1059943265cc4bcb80</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>c53040511bbcec1059943265cc4bcb82</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7159823353cc10103a33ddeeff7b1216</table>
+        <value>{{588f7512-0d18-4ad6-8741-ba9a93a73c1d.data_source}}</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">5a9bec4d1bb4ec1059943265cc4bcbca</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>b0e073b7-82a8-4e29-b82d-66b5de813399</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>453040511bbcec1059943265cc4bcb5e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=453040511bbcec1059943265cc4bcb5e"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>453040511bbcec1059943265cc4bcb5e</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>093040511bbcec1059943265cc4bcb61</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <value>Anaplan Export File</value>
+        <variable display_value="">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=453040511bbcec1059943265cc4bcb5e"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>453040511bbcec1059943265cc4bcb5e</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>853040511bbcec1059943265cc4bcb61</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{b0e073b7-82a8-4e29-b82d-66b5de813399.item.file_name}}LIKEexport_</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>453040511bbcec1059943265cc4bcb5e</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>c13040511bbcec1059943265cc4bcb61</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_type display_value="Execute Scheduled Import Set">66c9f3491b7cec1059943265cc4bcbf5</action_type>
+        <action_type_parent display_value="Execute Scheduled Import Set">c0e733c51b7cec1059943265cc4bcb03</action_type_parent>
+        <comment/>
+        <compiled_snapshot>66c9f3491b7cec1059943265cc4bcbf5</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <order>7</order>
+        <parent_ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>513040511bbcec1059943265cc4bcb87</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <ui_id>76bc25b1-0534-4d17-9fae-84951c90b124</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=513040511bbcec1059943265cc4bcb87"/>
+    <sys_hub_sub_flow_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <inputs/>
+        <order>1</order>
+        <parent_ui_id/>
+        <subflow display_value="Subflow-Get Data Source">7091f7c11b7cec1059943265cc4bcb34</subflow>
+        <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>5d3040511bbcec1059943265cc4bcb89</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <ui_id>588f7512-0d18-4ad6-8741-ba9a93a73c1d</ui_id>
+    </sys_hub_sub_flow_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=5d3040511bbcec1059943265cc4bcb89"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">5a9bec4d1bb4ec1059943265cc4bcbc6</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>853040511bbcec1059943265cc4bcb5a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <ui_id>b0e073b7-82a8-4e29-b82d-66b5de813399</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=853040511bbcec1059943265cc4bcb5a"/>
+    <sys_element_mapping action="delete_multiple" query="id=853040511bbcec1059943265cc4bcb5a"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>items</field>
+        <id>853040511bbcec1059943265cc4bcb5a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>053040511bbcec1059943265cc4bcb5d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_098e1dc5c3e232002841b63b12d3ae33</table>
+        <value>{{180a4d66-31ff-4e35-8e61-3f276389219f.parameter}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Get Attachments on Record">082e70db0f4273003788001ea8767e02</action_type>
+        <action_type_parent display_value="Get Attachments on Record">31de959973c93300a3942ea3c4f6a774</action_type_parent>
+        <comment/>
+        <compiled_snapshot>082e70db0f4273003788001ea8767e02</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>853040511bbcec1059943265cc4bcb69</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <ui_id>180a4d66-31ff-4e35-8e61-3f276389219f</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=853040511bbcec1059943265cc4bcb69"/>
+    <sys_element_mapping action="delete_multiple" query="id=853040511bbcec1059943265cc4bcb69"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>source_record</field>
+        <id>853040511bbcec1059943265cc4bcb69</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>4d3040511bbcec1059943265cc4bcb6a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_action_input_082e70db0f4273003788001ea8767e02</table>
+        <value>{{Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=853040511bbcec1059943265cc4bcb1c^sys_idNOT IN593040511bbcec1059943265cc4bcb87"/>
+    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <name>Updated</name>
+        <remote_sys_id/>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>593040511bbcec1059943265cc4bcb87</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:18</sys_updated_on>
+        <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>record_update</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=593040511bbcec1059943265cc4bcb87"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>593040511bbcec1059943265cc4bcb87</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>193040511bbcec1059943265cc4bcb89</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <value>x_nriws_coupa_req_account</value>
+        <variable display_value="">1dda12e0c31322002841b63b12d3aea8</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>593040511bbcec1059943265cc4bcb87</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>553040511bbcec1059943265cc4bcb89</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <value>anaplan_connection_statusCHANGESTOdownload_success</value>
+        <variable display_value="">bb9adea0c31322002841b63b12d3ae67</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>593040511bbcec1059943265cc4bcb87</document_key>
+        <order>101</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>913040511bbcec1059943265cc4bcb89</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <value>every</value>
+        <variable display_value="">c19523d8c31932002841b63b12d3aea1</variable>
+    </sys_variable_value>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=853040511bbcec1059943265cc4bcb1c^sys_idNOT IN053040511bbcec1059943265cc4bcb1d"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>853040511bbcec1059943265cc4bcb1c</id>
+        <name>Flow - Process Anaplan CSV</name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:08</sys_created_on>
+        <sys_id>053040511bbcec1059943265cc4bcb1d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:08</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_hub_flow_input action="delete_multiple" query="model=853040511bbcec1059943265cc4bcb1c^sys_idNOT IN093040511bbcec1059943265cc4bcb4c,0d3040511bbcec1059943265cc4bcb41,c53040511bbcec1059943265cc4bcb20"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</model>
+        <model_id>853040511bbcec1059943265cc4bcb1c</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_853040511bbcec1059943265cc4bcb1c</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>093040511bbcec1059943265cc4bcb4c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FD05304051e5bcec10e8c945575cbe651e,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</model>
+        <model_id>853040511bbcec1059943265cc4bcb1c</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_853040511bbcec1059943265cc4bcb1c</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>0d3040511bbcec1059943265cc4bcb41</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</model>
+        <model_id>853040511bbcec1059943265cc4bcb1c</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_853040511bbcec1059943265cc4bcb1c</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:08</sys_created_on>
+        <sys_id>c53040511bbcec1059943265cc4bcb20</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_instance action="delete_multiple" query="flow=853040511bbcec1059943265cc4bcb1c^sys_idNOT IN053040511bbcec1059943265cc4bcb75,0d3040511bbcec1059943265cc4bcb80,513040511bbcec1059943265cc4bcb87,853040511bbcec1059943265cc4bcb69"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Delete Attachment">bdc2a0170f973300dfd3694e68767e47</action_type>
+        <action_type_parent display_value="Delete Attachment">6672502a9353130079b5925cf67ffbc6</action_type_parent>
+        <comment/>
+        <compiled_snapshot>bdc2a0170f973300dfd3694e68767e47</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <order>5</order>
+        <parent_ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>053040511bbcec1059943265cc4bcb75</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <ui_id>d5a044b4-3f6f-40f1-814d-6a9015b24488</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=053040511bbcec1059943265cc4bcb75"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>053040511bbcec1059943265cc4bcb75</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>493040511bbcec1059943265cc4bcb77</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <value>sys_data_source</value>
+        <variable display_value="">79c2a0170f973300dfd3694e68767e50</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>053040511bbcec1059943265cc4bcb75</document_key>
+        <order>4</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>853040511bbcec1059943265cc4bcb77</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">b1c2a0170f973300dfd3694e68767e5a</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>053040511bbcec1059943265cc4bcb75</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>c13040511bbcec1059943265cc4bcb77</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <value/>
+        <variable display_value="">7dc2a0170f973300dfd3694e68767e48</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=053040511bbcec1059943265cc4bcb75"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>delete_all_</field>
+        <id>053040511bbcec1059943265cc4bcb75</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>c93040511bbcec1059943265cc4bcb76</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_action_input_bdc2a0170f973300dfd3694e68767e47</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>053040511bbcec1059943265cc4bcb75</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>413040511bbcec1059943265cc4bcb77</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_action_input_bdc2a0170f973300dfd3694e68767e47</table>
+        <value>{{588f7512-0d18-4ad6-8741-ba9a93a73c1d.data_source}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>053040511bbcec1059943265cc4bcb75</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>8d3040511bbcec1059943265cc4bcb76</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_action_input_bdc2a0170f973300dfd3694e68767e47</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Move Attachment">7159823353cc10103a33ddeeff7b1216</action_type>
+        <action_type_parent display_value="Move Attachment">8445146a9353130079b5925cf67ffb61</action_type_parent>
+        <comment/>
+        <compiled_snapshot>7159823353cc10103a33ddeeff7b1216</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <order>6</order>
+        <parent_ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>0d3040511bbcec1059943265cc4bcb80</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <ui_id>fadb5210-609b-4534-a39f-a4e03e456fb7</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=0d3040511bbcec1059943265cc4bcb80"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>0d3040511bbcec1059943265cc4bcb80</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>493040511bbcec1059943265cc4bcb82</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <value>sys_data_source</value>
+        <variable display_value="">4a59823353cc10103a33ddeeff7b1222</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=0d3040511bbcec1059943265cc4bcb80"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>source_attachment_record</field>
+        <id>0d3040511bbcec1059943265cc4bcb80</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>413040511bbcec1059943265cc4bcb82</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7159823353cc10103a33ddeeff7b1216</table>
+        <value>{{b0e073b7-82a8-4e29-b82d-66b5de813399.item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>0d3040511bbcec1059943265cc4bcb80</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>053040511bbcec1059943265cc4bcb82</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7159823353cc10103a33ddeeff7b1216</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>target_record</field>
+        <id>0d3040511bbcec1059943265cc4bcb80</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>c53040511bbcec1059943265cc4bcb82</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7159823353cc10103a33ddeeff7b1216</table>
+        <value>{{588f7512-0d18-4ad6-8741-ba9a93a73c1d.data_source}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_type display_value="Execute Scheduled Import Set">66c9f3491b7cec1059943265cc4bcbf5</action_type>
+        <action_type_parent display_value="Execute Scheduled Import Set">c0e733c51b7cec1059943265cc4bcb03</action_type_parent>
+        <comment/>
+        <compiled_snapshot>66c9f3491b7cec1059943265cc4bcbf5</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <order>7</order>
+        <parent_ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>513040511bbcec1059943265cc4bcb87</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <ui_id>76bc25b1-0534-4d17-9fae-84951c90b124</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=513040511bbcec1059943265cc4bcb87"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Get Attachments on Record">082e70db0f4273003788001ea8767e02</action_type>
+        <action_type_parent display_value="Get Attachments on Record">31de959973c93300a3942ea3c4f6a774</action_type_parent>
+        <comment/>
+        <compiled_snapshot>082e70db0f4273003788001ea8767e02</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>853040511bbcec1059943265cc4bcb69</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <ui_id>180a4d66-31ff-4e35-8e61-3f276389219f</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=853040511bbcec1059943265cc4bcb69"/>
+    <sys_element_mapping action="delete_multiple" query="id=853040511bbcec1059943265cc4bcb69"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>source_record</field>
+        <id>853040511bbcec1059943265cc4bcb69</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>4d3040511bbcec1059943265cc4bcb6a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_action_input_082e70db0f4273003788001ea8767e02</table>
+        <value>{{Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=853040511bbcec1059943265cc4bcb1c^sys_idNOT IN5d3040511bbcec1059943265cc4bcb89"/>
+    <sys_hub_sub_flow_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <inputs/>
+        <order>1</order>
+        <parent_ui_id/>
+        <subflow display_value="Subflow-Get Data Source">7091f7c11b7cec1059943265cc4bcb34</subflow>
+        <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>5d3040511bbcec1059943265cc4bcb89</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <ui_id>588f7512-0d18-4ad6-8741-ba9a93a73c1d</ui_id>
+    </sys_hub_sub_flow_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=5d3040511bbcec1059943265cc4bcb89"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=853040511bbcec1059943265cc4bcb1c^sys_idNOT IN453040511bbcec1059943265cc4bcb5e,853040511bbcec1059943265cc4bcb5a"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">5a9bec4d1bb4ec1059943265cc4bcbca</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>b0e073b7-82a8-4e29-b82d-66b5de813399</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>453040511bbcec1059943265cc4bcb5e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <ui_id>88db9b0f-8be8-4720-9b05-36c0e9de80f0</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=453040511bbcec1059943265cc4bcb5e"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>453040511bbcec1059943265cc4bcb5e</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>093040511bbcec1059943265cc4bcb61</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <value>Anaplan Export File</value>
+        <variable display_value="">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=453040511bbcec1059943265cc4bcb5e"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>453040511bbcec1059943265cc4bcb5e</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>853040511bbcec1059943265cc4bcb61</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{b0e073b7-82a8-4e29-b82d-66b5de813399.item.file_name}}LIKEexport_</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>453040511bbcec1059943265cc4bcb5e</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>c13040511bbcec1059943265cc4bcb61</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">5a9bec4d1bb4ec1059943265cc4bcbc6</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Flow - Process Anaplan CSV">853040511bbcec1059943265cc4bcb1c</flow>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>853040511bbcec1059943265cc4bcb5a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <ui_id>b0e073b7-82a8-4e29-b82d-66b5de813399</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=853040511bbcec1059943265cc4bcb5a"/>
+    <sys_element_mapping action="delete_multiple" query="id=853040511bbcec1059943265cc4bcb5a"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>items</field>
+        <id>853040511bbcec1059943265cc4bcb5a</id>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>053040511bbcec1059943265cc4bcb5d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_098e1dc5c3e232002841b63b12d3ae33</table>
+        <value>{{180a4d66-31ff-4e35-8e61-3f276389219f.parameter}}</value>
+    </sys_element_mapping>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_853040511bbcec1059943265cc4bcb1c^sys_idNOT INc13040511bbcec1059943265cc4bcb48,c53040511bbcec1059943265cc4bcb3d,c93040511bbcec1059943265cc4bcb52"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_853040511bbcec1059943265cc4bcb1c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>c13040511bbcec1059943265cc4bcb48</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Changed Fields</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_853040511bbcec1059943265cc4bcb1c_changed_fields_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_853040511bbcec1059943265cc4bcb1c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>c53040511bbcec1059943265cc4bcb3d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Record</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_853040511bbcec1059943265cc4bcb1c_current_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_853040511bbcec1059943265cc4bcb1c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-29 07:21:09</sys_created_on>
+        <sys_id>c93040511bbcec1059943265cc4bcb52</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Table Name</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_853040511bbcec1059943265cc4bcb1c_table_name_en</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-29 07:21:09</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+</record_update>

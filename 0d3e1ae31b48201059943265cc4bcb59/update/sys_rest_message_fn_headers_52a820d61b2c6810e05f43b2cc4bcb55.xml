@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_headers">
+    <sys_rest_message_fn_headers action="INSERT_OR_UPDATE">
+        <name>Authorization</name>
+        <rest_message_function display_value="3_Upload_File_As_Single_Chunk">aa78ac961b2c6810e05f43b2cc4bcb6e</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_headers</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-20 02:36:30</sys_created_on>
+        <sys_id>52a820d61b2c6810e05f43b2cc4bcb55</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Authorization</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_fn_headers_52a820d61b2c6810e05f43b2cc4bcb55</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-25 07:09:54</sys_updated_on>
+        <value>AnaplanAuthToken ${token}</value>
+    </sys_rest_message_fn_headers>
+</record_update>

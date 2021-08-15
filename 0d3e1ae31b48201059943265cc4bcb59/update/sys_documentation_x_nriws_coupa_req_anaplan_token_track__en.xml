@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="" label="Anaplan Token Track" language="en" table="x_nriws_coupa_req_anaplan_token_track">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>Anaplan Token Track</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_anaplan_token_track</name>
+            <plural>Anaplan Token Tracks</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-17 02:30:01</sys_created_on>
+            <sys_id>237ac9951baca41059943265cc4bcbda</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Anaplan Token Track</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_documentation_x_nriws_coupa_req_anaplan_token_track__en</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-17 02:30:01</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="Coupa Invoice" max_length="40" name="x_nriws_coupa_req_coupa_invoice" sizeclass="0" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Account Code" max_length="40" name="account_code" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Account Id" max_length="40" name="account_id" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Account Name" max_length="40" name="account_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Account type" max_length="40" name="account_type" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Account type currency" max_length="40" name="account_type_currency" type="string"/>
+        <element attributes="edge_encryption_enabled=true,omit_sys_original=true,serializer=com.glide.script.PriceXMLSerializer" label="Amount" max_length="20" name="amount" type="price"/>
+        <element attributes="edge_encryption_enabled=true" label="Amount (Exclude tax)" max_length="40" name="amount_exclude_tax" type="float"/>
+        <element attributes="edge_encryption_enabled=true" label="Amount (Include tax)" max_length="40" name="amount_include_tax" type="float"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Cancel reason" max_length="40" name="cancel_reason" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Contract Not Exist" sequence="1" value="contract_not_exist"/>
+                <element inactive_on_update="false" label="Approver Not Exist" sequence="2" value="approver_not_exist"/>
+                <element inactive_on_update="false" label="Contract Status Invalid" sequence="3" value="contract_status_invalid"/>
+                <element inactive_on_update="false" label="Cancelled By Coupa" sequence="4" value="cancelled_by_coupa"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="contract" max_length="40" name="contract_name" type="string"/>
+        <element label="Contract status" max_length="1000" name="contract_status" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Coupa Approval ID" max_length="40" name="coupa_approval_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="created at" max_length="40" name="created_at" type="glide_date_time"/>
+        <element label="Created by email" max_length="100" name="created_by" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Created By Fullname" max_length="40" name="created_by_fullname" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Currency" max_length="40" name="currency" type="string"/>
+        <element label="End date" max_length="40" name="end_date" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true,no_sort=true,slushbucket_ref_no_expand=true" label="first Level Approvers" max_length="1024" name="first_level_approvers" reference="sys_user" type="glide_list"/>
+        <element attributes="edge_encryption_enabled=true" label="ID" max_length="40" name="id" type="integer"/>
+        <element label="Invoice date" max_length="40" name="invoice_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Invoice No" max_length="40" name="invoice_no" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Line count" max_length="40" name="line_count" type="integer"/>
+        <element label="Payment due date" max_length="40" name="payment_due_date" type="glide_date"/>
+        <element label="Period" max_length="100" name="period" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="PO line" max_length="40" name="po_line" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Project title" max_length="40" name="project_title" type="string"/>
+        <element label="委託契約番号" max_length="200" name="representation_contract_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Requested By Fullname" max_length="40" name="requested_by_fullname" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Requested By Id" max_length="40" name="requested_by_id" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Requisition NO" max_length="40" name="requisition_no" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="segment-1" max_length="40" name="segment_1" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="segment-2" max_length="40" name="segment_2" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="segment-3" max_length="40" name="segment_3" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="segment-4" max_length="40" name="segment_4" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="segment-5" max_length="40" name="segment_5" type="string"/>
+        <element label="Start date" max_length="40" name="start_date" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" label="Status" max_length="40" name="status" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Approved" value="approved"/>
+                <element inactive_on_update="false" label="Pending approval" value="pending_approval"/>
+                <element inactive_on_update="false" label="Rejected" value="rejected"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Tax amount" max_length="20" name="tax_amount" type="decimal"/>
+        <element attributes="edge_encryption_enabled=true" label="Total" max_length="15" name="total" type="decimal"/>
+    </element>
+</database>

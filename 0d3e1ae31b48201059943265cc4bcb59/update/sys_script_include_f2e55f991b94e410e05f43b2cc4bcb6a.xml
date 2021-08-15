@@ -1,0 +1,1976 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_nriws_coupa_req.CoupaAPIUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CoupaAPIUtils</name>
+        <script><![CDATA[var CoupaAPIUtils = Class.create();
+CoupaAPIUtils.prototype = {
+    initialize: function() {
+    },
+
+	test : function(){
+		return 'test';
+	},
+	
+	
+	endpointObj : function(){
+		
+		var coupaUtil = new x_nriws_coupa_req.CoupaCommonUtils();
+		return coupaUtil.getEndpoint();
+	},
+	approveInvoiceApprovalRequest : function(sys_id,id){
+		
+		var returnObj = {};
+		returnObj.errorMsg = '';
+		returnObj.responseBody ='';
+		returnObj.responseStatus = '';
+		try{
+			var endpointObj = this.endpointObj();
+			var restMsgRequisitons = new sn_ws.RESTMessageV2("Coupa Invoice","Approve_Approval_Request");
+			
+			restMsgRequisitons.setStringParameterNoEscape('coupa_endpoint', endpointObj.url);
+			restMsgRequisitons.setStringParameterNoEscape('id', id);
+			restMsgRequisitons.setStringParameterNoEscape('apiKey', endpointObj.apliKey);
+
+			var response = restMsgRequisitons.execute();
+			var responseBody = response.getBody();
+			//gs.info('responseBody :' + responseBody);
+			returnObj.responseBody = responseBody;
+			returnObj.responseStatus = response.getStatusCode();
+			
+			var comments = '';
+			var state;
+			gs.info('run...');
+			if(returnObj.responseStatus  == '200'){
+				gs.info('approved');
+				comments = 'Coupa上で承認済み';
+				state = 10;//Approved in coupa
+			}
+			else if(returnObj.responseStatus  != '200'){
+				if(responseBody){
+					comments = 'Coupaで既に承認/否認/取り下げされているため、ServiceNowの承認/否認がエラーとなりました。:' + responseBody;
+				}
+				else{
+					comments = 'Coupaで既に承認/否認/取り下げされているため、ServiceNowの承認/否認がエラーとなりました。';
+				}
+				state = 4;//エラー in coupa
+				gs.info('rejected');
+			}
+			var req_GR = new GlideRecord('x_nriws_coupa_req_coupa_invoice'); 
+			req_GR.addQuery('sys_id',sys_id);
+			gs.info(sys_id);
+			//req_GR.addQuery('status','pending_approval');
+			//req_GR.addQuery('coupa_approval_id',reqObj.approval);
+			req_GR.query();
+			//req_GR.setValue('status',  'canceled');
+			//req_GR.setValue('state',  '-5');
+			//req_GR.updateMultiple();
+
+			while(req_GR.next()){
+				gs.info('updated');
+				req_GR.state = state;
+				req_GR.comments = comments;
+				req_GR.update();
+			}	
+		}
+		catch(ex){
+			returnObj.errorMsg += ex;
+		}
+		
+		return returnObj;
+	},
+	
+	approveApprovalRequest : function(sys_id,id){
+		
+		var returnObj = {};
+		returnObj.errorMsg = '';
+		returnObj.responseBody ='';
+		returnObj.responseStatus = '';
+
+		try{
+			var endpointObj = this.endpointObj();
+			var restMsgRequisitons = new sn_ws.RESTMessageV2("Coupa","Approve_Approval_Request");
+			
+			restMsgRequisitons.setStringParameterNoEscape('coupa_endpoint', endpointObj.url);
+			restMsgRequisitons.setStringParameterNoEscape('id', id);
+			restMsgRequisitons.setStringParameterNoEscape('apiKey', endpointObj.apliKey);
+
+			var response = restMsgRequisitons.execute();
+			var responseBody = response.getBody();
+			//gs.info('responseBody :' + responseBody);
+			returnObj.responseBody = responseBody;
+			returnObj.responseStatus = response.getStatusCode();
+			var state;
+		
+			if(returnObj.responseStatus  == '200'){
+				comments = 'Coupa上で承認済み';
+				state = 10;//Approved in coupa
+			}
+			else if(returnObj.responseStatus  != '200'){
+				if(responseBody){
+					comments = 'Coupaで既に承認/否認/取り下げされているため、ServiceNowの承認/否認がエラーとなりました。:' + responseBody;
+				}
+				else{
+					comments = 'Coupaで既に承認/否認/取り下げされているため、ServiceNowの承認/否認がエラーとなりました。';
+				}
+				state = 4;//エラー in coupa
+			}
+
+			var req_GR = new GlideRecord('x_nriws_coupa_req_coupa_requisition'); 
+			req_GR.addQuery('sys_id',sys_id);
+			gs.info(sys_id + ' - sys_id');
+			//req_GR.addQuery('status','pending_approval');
+			//req_GR.addQuery('coupa_approval_id',reqObj.approval);
+			req_GR.query();
+			//req_GR.setValue('status',  'canceled');
+			//req_GR.setValue('state',  '-5');
+			//req_GR.updateMultiple();
+		
+			while(req_GR.next()){
+				gs.info('updated approval state')
+				req_GR.state = state;
+				req_GR.comments = comments;
+				req_GR.update();
+			}	
+		}
+		catch(ex){
+			gs.error('Can not update record with sys_id', sys_id);
+			returnObj.errorMsg += ex;
+		}
+		
+		return returnObj;
+	},
+	
+	rejectInvoiceApprovalRequest : function(sys_id,id){
+		var returnObj = {};
+		returnObj.errorMsg = '';
+		returnObj.responseStatus = '';
+		returnObj.responseBody ='';
+		gs.info('coupa invoice reject in coupa');
+		
+		try{
+			var endpointObj = this.endpointObj();
+			var restMsgRequisitons = new sn_ws.RESTMessageV2("Coupa Invoice","Reject_Approval_Request");
+			restMsgRequisitons.setStringParameterNoEscape('id', id);
+			restMsgRequisitons.setStringParameterNoEscape('apiKey', endpointObj.apliKey);
+			restMsgRequisitons.setStringParameterNoEscape('coupa_endpoint', endpointObj.url);
+			
+			var response = restMsgRequisitons.execute();
+			var responseBody = response.getBody();
+			//gs.info('responseBody :' + responseBody);
+			returnObj.responseBody = responseBody;
+			returnObj.responseStatus = response.getStatusCode();
+			
+			//gs.info(id + ' returnObj.responseBody : ' + returnObj.responseBody );
+			//gs.info(id + ' returnObj.responseBody : ' + returnObj.responseBody );
+			//gs.info(id + ' returnObj.response : ' + JSON.stringify(response));
+			var comments = '';
+			var state;
+			
+			if(returnObj.responseStatus  == '200'){
+				comments = 'Coupa上で否認済み';
+				state = 11;//Rejected in coupa
+			}
+			else if(returnObj.responseStatus  != '200'){
+				if(responseBody){
+					comments = 'Coupaで既に承認/否認/取り下げされているため、ServiceNowの承認/否認がエラーとなりました。:' + responseBody;
+				}
+				else{
+					comments = 'Coupaで既に承認/否認/取り下げされているため、ServiceNowの承認/否認がエラーとなりました。';
+				}
+				state = 4;//エラー in coupa
+			}
+			
+
+			var req_GR = new GlideRecord('x_nriws_coupa_req_coupa_invoice'); 
+			req_GR.addQuery('sys_id',sys_id);
+			//req_GR.addQuery('status','pending_approval');
+			//req_GR.addQuery('coupa_approval_id',reqObj.approval);
+			req_GR.query();
+			//req_GR.setValue('status',  'canceled');
+			//req_GR.setValue('state',  '-5');
+			//req_GR.updateMultiple();
+
+			while(req_GR.next()){
+				req_GR.state = state;
+				req_GR.comments = comments;
+				req_GR.update();
+			}
+			
+			
+			
+			
+		}
+		catch(ex){
+			returnObj.errorMsg += ex;
+			
+			gs.info(id + ' returnObj.errorMsg : ' + returnObj.errorMsg );
+		}
+		
+		return returnObj;
+		
+	},
+	rejectApprovalRequest : function(sys_id,id){
+		var returnObj = {};
+		returnObj.errorMsg = '';
+		returnObj.responseStatus = '';
+		returnObj.responseBody ='';
+		
+		
+		try{
+			var endpointObj = this.endpointObj();
+			var restMsgRequisitons = new sn_ws.RESTMessageV2("Coupa","Reject_Approval_Request");
+			restMsgRequisitons.setStringParameterNoEscape('id', id);
+			restMsgRequisitons.setStringParameterNoEscape('apiKey', endpointObj.apliKey);
+			restMsgRequisitons.setStringParameterNoEscape('coupa_endpoint', endpointObj.url);
+			
+			var response = restMsgRequisitons.execute();
+			var responseBody = response.getBody();
+			//gs.info('responseBody :' + responseBody);
+			returnObj.responseBody = responseBody;
+			returnObj.responseStatus = response.getStatusCode();
+			
+			//gs.info(id + ' returnObj.responseBody : ' + returnObj.responseBody );
+			//gs.info(id + ' returnObj.responseBody : ' + returnObj.responseBody );
+			//gs.info(id + ' returnObj.response : ' + JSON.stringify(response));
+			var comments = '';
+			var state;
+			
+			if(returnObj.responseStatus  == '200'){
+				comments = 'Coupa上で否認済み';
+				state = 11;//Rejected in coupa
+			}
+			else if(returnObj.responseStatus  != '200'){
+				if(responseBody){
+					comments = 'Coupaで既に承認/否認/取り下げされているため、ServiceNowの承認/否認がエラーとなりました。:' + responseBody;
+				}
+				else{
+					comments = 'Coupaで既に承認/否認/取り下げされているため、ServiceNowの承認/否認がエラーとなりました。';
+				}
+				state = 4;//エラー in coupa
+			}
+			
+
+			var req_GR = new GlideRecord('x_nriws_coupa_req_coupa_requisition'); 
+			req_GR.addQuery('sys_id',sys_id);
+			//req_GR.addQuery('status','pending_approval');
+			//req_GR.addQuery('coupa_approval_id',reqObj.approval);
+			req_GR.query();
+			//req_GR.setValue('status',  'canceled');
+			//req_GR.setValue('state',  '-5');
+			//req_GR.updateMultiple();
+
+			while(req_GR.next()){
+				req_GR.state = state;
+				req_GR.comments = comments;
+				req_GR.update();
+			}
+			
+			
+			
+			
+		}
+		catch(ex){
+			returnObj.errorMsg += ex;
+			
+			gs.info(id + ' returnObj.errorMsg : ' + returnObj.errorMsg );
+		}
+		
+		return returnObj;
+		
+	},
+	
+	updateRequisitonStatus : function(id,status){
+						
+			var returnObj = {};
+			returnObj.errorMsg = '';
+			returnObj.responseStatus = '';
+		
+		try{		
+			// #1 Create playload
+			var reqJson = {}; //final payload object
+			reqJson.status = status;
+			reqJson['reject-reason-comment'] = 'test from snow';
+			
+			var requester = {};
+			//requester["id"] = 'noriyuki.katsumi@firstqa.com';
+			//requester["login"] = inputs.requester_login;
+			requester["email"] = 'noriyuki.katsumi@firstqa.com';
+			reqJson["requester"] = requester;
+			
+			//this is the final stringified payload
+			var reqbody = JSON.stringify(reqJson);
+			gs.info('reqbody: ' +  reqbody);
+			
+			// #2 Update Requisition
+			var endpointObj = this.endpointObj();
+			var restMsgRequisitons = new sn_ws.RESTMessageV2("Coupa","Update_Requisition_Status");
+			
+			restMsgRequisitons.setStringParameterNoEscape('reqid', id);
+			restMsgRequisitons.setStringParameterNoEscape('reqbody', reqbody);
+			restMsgRequisitons.setStringParameterNoEscape('apiKey', endpointObj.apliKey);
+			restMsgRequisitons.setStringParameterNoEscape('coupa_endpoint', endpointObj.url);
+			
+			var response = restMsgRequisitons.execute();
+			var responseBody = response.getBody();
+			gs.info('responseBody :' + responseBody);
+			returnObj.responseStatus = response.getStatusCode();
+			
+		}
+		catch(ex){
+			returnObj.errorMsg += ex;
+		}
+		
+		//gs.info('returnObj: ' +  JSON.stringify(returnObj));
+		
+	},
+	
+	getRequisitionsByID : function(id){
+		
+		var returnObj = {};
+		returnObj.errorMsg = '';
+		returnObj.responseStatus = '';
+		
+		var endpointObj = this.endpointObj();
+		var restMsgRequisitons = new sn_ws.RESTMessageV2("Coupa","Get_Requisitions_By_ID");
+		
+		var endpoint = endpointObj.requisiton_url + '/' + id;
+		restMsgRequisitons.setEndpoint(endpoint);
+		restMsgRequisitons.setStringParameterNoEscape('apiKey', endpointObj.apliKey);
+		restMsgRequisitons.setStringParameterNoEscape('coupa_endpoint', endpointObj.url);
+		var response = restMsgRequisitons.execute();
+		
+		var responseBody = response.getBody();
+		var status = response.getStatusCode();
+		
+		returnObj.responseStatus = response.getStatusCode();
+	
+		if(returnObj.responseStatus =='200'){
+			var xmlDoc = new XMLDocument2();
+			xmlDoc.parseXML(responseBody.toString());	
+			var response_id= xmlDoc.getNodeText("//requisition-header/id");		
+		}
+		else{
+			returnObj.errorMsg = 'Error!!';
+		}
+		
+		return returnObj;	
+	},
+
+	getInvoiceLastID : function() {
+		var max_id = 0;
+		var invoice_agg = new GlideAggregate('x_nriws_coupa_req_coupa_invoice');
+		invoice_agg.addAggregate('MAX', 'id');
+		invoice_agg.query();
+		while(invoice_agg.next()) {
+			max_id = invoice_agg.getAggregate('MAX', 'id');
+		}
+		return max_id;
+	},
+	saveInvoice : function(object) {
+		var gr =new GlideRecord('x_nriws_coupa_req_coupa_invoice');
+		gr.addQuery('id', object['id']);
+		gr.addQuery('status', 'pending_approval');
+		gr.query();
+		if(gr.next()) {
+			gs.info('da co invoice');
+		}
+		else {
+			
+			 var objPO=this.getPurChaseOrder(object['invoice_PO_line']);
+			gr.initialize();
+			gr.id = object['id'];
+			gr.invoice_no = object['invoice_number'];
+			gr.invoice_date = object['invoice_date'];
+			gr.status = object['invoice_status'];
+			gr.po_line = object['invoice_PO_line'];
+			gr.tax_amount = object['invoice_tax_amount'];
+			
+			gr.currency = object['invoice_currency'];
+			gr.payment_due_date = object['invoice_payment_due_date'];
+			gr.representation_contract_number = object['representation_contract_number'];
+			gr.tax_amount = object['invoice_tax_amount'];
+			gr.amount_include_tax = object['amount_include_tax'];
+			gr.amount_exclude_tax = object['amount_exclude_tax'];
+			gr.start_date = objPO.start_date;
+			gr.end_date=objPO.end_date;
+			gr.requisition_no = objPO.id;
+			gr.coupa_approval_id=object['coupa_approval_id'];
+			gr.requested_by_fullname = object['requested_by_fullname'];
+			gr.requested_by_id = object['requested_by_id'];
+			//gr.created_at = object['created_at'];
+			var dateFormat = object['created_at'].slice(0,10)+' '+object['created_at'].slice(11,19);
+			//2021-07-01 20:02:37 , id=948
+			gr.created_at = new GlideDateTime(dateFormat).getValue();
+			
+			//
+			gr.account_id=object['account_id'];
+			gr.account_name=object['account_name'];
+			gr.account_code=object['account_code'];
+			gr.segment_1=object['segment_1'];
+			gr.segment_2=object['segment_2'];
+			gr.segment_3=object['segment_3'];
+			gr.segment_4=object['segment_4'];
+			gr.segment_5=object['segment_5'];
+			gr.account_type=object['account_type'];
+			gr.account_type_currency=object['account_type_currency'];		
+			gr.period=object['period'];
+			gr.created_by_fullname=object['created_by_fullname'];
+			gr.created_by = object['created_by_email'];
+			gr.contract_name = object['contract_name'];
+			
+			
+			gr.insert();
+			gs.info('da tao duoc invoice');
+			return gr.getUniqueValue();
+		}
+		
+	},
+	getPurChaseOrder: function(purchase_order_id) {
+		returnObj={};
+		var endpointObj =this.endpointObj();
+		var restMsg = new sn_ws.RESTMessageV2('Coupa Purchase Orders' , 'Get_Purchase_Orders_By_Id');
+		restMsg.setStringParameterNoEscape('apiKey', endpointObj.apliKey);
+		restMsg.setStringParameterNoEscape('id', purchase_order_id);
+		restMsg.setStringParameterNoEscape('coupa_endpoint', endpointObj.url);
+		var response = restMsg.execute();
+		var statusCode = response.getStatusCode();
+		var body = response.getBody();
+		if (statusCode == 200) {
+			returnObj.id = JSON.parse(body)['requisition-header']['id'];
+			returnObj.start_date=JSON.parse(body)['requisition-header']['requisition-lines'][0]['extra-line-attribute'] ? JSON.parse(body)['requisition-header']['requisition-lines'][0]['extra-line-attribute']['start-date']: '';
+			returnObj.end_date=JSON.parse(body)['requisition-header']['requisition-lines'][0]['extra-line-attribute'] ? JSON.parse(body)['requisition-header']['requisition-lines'][0]['extra-line-attribute']['end-date']: '';
+		}
+		else {
+			returnObj.responseStatus='false';
+		}
+		return returnObj;
+	},
+	getRequisitionNO : function(purchase_order_id) {
+		var endpointObj = this.endpointObj();
+		var restMsg = new sn_ws.RESTMessageV2('Coupa Purchase Orders' , 'Get_Purchase_Orders_By_Id');
+		restMsg.setStringParameterNoEscape('apiKey', endpointObj.apliKey);
+		restMsg.setStringParameterNoEscape('id', purchase_order_id);
+		restMsg.setStringParameterNoEscape('coupa_endpoint', endpointObj.url);
+		var response = restMsg.execute();
+		var statusCode = response.getStatusCode();
+		var body = response.getBody();
+		if (statusCode == 200) {
+			var requisition_no = JSON.parse(body)['requisition-header']['id'];
+			return requisition_no;
+		}
+		else {
+			return false;
+		}
+	},
+	getInvoicesByIdAndStatus : function() {
+		var job_sysid = this.startJob('Sync Coupa Invoice');
+		var returnObj = {};
+		returnObj.errorMsg = '';
+		returnObj.responseStatus = '';
+
+		var endpointObj = this.endpointObj();
+		var restMsgRequisitons;
+		var response;
+		var responseBody ;
+//		var fields='%5B%22id%22%2C%22invoice-date%22%2C%22invoice-number%22%2C%22status%22%2C%22payment-date%22%2C%22tax-amount%22%2C%22gross-total%22%2C%22created-at%22%2C%7B%22attachments%22%3A%20%5B%22id%22%2C%22created-at%22%2C%22updated-at%22%2C%22type%22%2C%22file%22%2C%22file-url%22%5D%7D%2C%7B%22account_type%22%20%3A%20%5B%22name%22%2C%7B%22currency%22%20%3A%20%5B%22code%22%5D%7D%5D%7D%2C%7B%22custom_fields%22%20%3A%20%5B%22optional-field%22%5D%7D%2C%7B%22approvals%22%20%3A%20%5B%22id%22%5D%7D%2C%7B%22requested_by%22%20%3A%20%5B%22fullname%22%2C%20%22id%22%5D%7D%2C%7B%22invoice_lines%22%3A%5B%22accounting-total%22%2C%22order-header-num%22%2C%7B%22period%22%20%3A%20%5B%22name%22%5D%7D%2C%20%7B%22account%22%20%3A%20%5B%22id%22%2C%22name%22%2C%22code%22%2C%22segment-1%22%2C%22segment-2%22%2C%22segment-3%22%2C%22segment-4%22%2C%22segment-5%22%2C%7B%22account_type%22%20%3A%20%5B%7B%22currency%22%20%3A%20%5B%22code%22%5D%7D%2C%7B%22created_by%22%20%3A%20%5B%22fullname%22%5D%7D%5D%7D%5D%7D%5D%7D%5D';		
+		var fields= '%5B%22id%22%2C%22invoice-date%22%2C%22invoice-number%22%2C%22status%22%2C%22payment-date%22%2C%22tax-amount%22%2C%22gross-total%22%2C%22created-at%22%2C%7B%22created_by%22%20%3A%20%5B%22id%22%2C%22fullname%22%2C%22lastname%22%2C%22email%22%5D%7D%2C%7B%22attachments%22%3A%20%5B%22id%22%2C%22created-at%22%2C%22updated-at%22%2C%22type%22%2C%22file%22%2C%22file-url%22%5D%7D%2C%7B%22account_type%22%20%3A%20%5B%22name%22%2C%7B%22currency%22%20%3A%20%5B%22code%22%5D%7D%5D%7D%2C%7B%22custom_fields%22%20%3A%20%5B%22optional-field%22%5D%7D%2C%7B%22approvals%22%20%3A%20%5B%22id%22%5D%7D%2C%7B%22requested_by%22%20%3A%20%5B%22fullname%22%2C%20%22id%22%2C%22email%22%5D%7D%2C%7B%22invoice_lines%22%3A%5B%22accounting-total%22%2C%22order-header-num%22%2C%7B%22account_allocations%22%20%3A%20%5B%22id%22%2C%22amount%22%2C%22pct%22%2C%7B%22period%22%3A%20%5B%22name%22%5D%7D%2C%7B%22account%22%3A%20%5B%22id%22%2C%22name%22%2C%22code%22%2C%22segment-1%22%2C%22segment-2%22%2C%22segment-3%22%2C%22segment-4%22%2C%22segment-5%22%2C%7B%22account_type%22%3A%20%5B%22name%22%2C%7B%22currency%22%3A%20%5B%22code%22%5D%7D%5D%7D%5D%7D%5D%7D%2C%7B%22period%22%20%3A%20%5B%22name%22%5D%7D%2C%7B%22contract%22%20%3A%20%5B%22name%22%5D%7D%2C%7B%22account%22%20%3A%20%5B%22id%22%2C%22name%22%2C%22code%22%2C%22segment-1%22%2C%22segment-2%22%2C%22segment-3%22%2C%22segment-4%22%2C%22segment-5%22%2C%7B%22account_type%22%20%3A%20%5B%7B%22currency%22%20%3A%20%5B%22code%22%5D%7D%2C%7B%22created_by%22%20%3A%20%5B%22fullname%22%5D%7D%5D%7D%5D%7D%5D%7D%5D';
+		var runTimeCount = 0;
+		var lastProcessedID = 0;
+		var continueFlag = true;
+		while(continueFlag) {
+			try{
+				gs.info('last process id: -----' + lastProcessedID);
+				restMsgRequisitons = new sn_ws.RESTMessageV2("Coupa Invoice","Get_Invoice_Greater_than_option_2");
+				restMsgRequisitons.setStringParameterNoEscape('apiKey', endpointObj.apliKey);
+				restMsgRequisitons.setStringParameterNoEscape('id', lastProcessedID);
+				restMsgRequisitons.setStringParameterNoEscape('coupa_endpoint', endpointObj.url);
+				restMsgRequisitons.setStringParameterNoEscape('fields', fields);				
+				response = restMsgRequisitons.execute();
+				responseBody = response.getBody();
+				returnObj.responseStatus = response.getStatusCode();
+				var invoice_data = JSON.parse(responseBody);
+				if(returnObj.responseStatus =='200' && invoice_data.length > 0){
+					
+				
+					var invoice_obj = {};
+					var that = this;
+					invoice_data.forEach( function(item) {
+						//Save coupa invoice					
+						lastProcessedID = item['id'] ;
+						invoice_obj.id = item['id'];
+						 invoice_obj.invoice_date = item['invoice-date'];
+						 invoice_obj.invoice_number= item['invoice-number'];
+						invoice_obj.invoice_currency= item['account-type'] ? item['account-type']['currency']['code'] : '';
+						invoice_obj.invoice_status= item['status'];
+						invoice_obj.invoice_payment_due_date=item['payment-date'];
+						invoice_obj.representation_contract_number = item['custom-fields'] ? item['custom-fields']['optional-field'] : '';
+						invoice_obj.invoice_PO_line=item['invoice-lines'][0]['order-header-num'];
+						invoice_obj.invoice_tax_amount = item['tax-amount'];
+						invoice_obj.amount_include_tax = item['gross-total'];
+						invoice_obj.amount_exclude_tax = item['invoice-lines'][0] ? item['invoice-lines'][0]['accounting-total'] : '';
+						
+						invoice_obj.coupa_approval_id =item['approvals'][0] ? item['approvals'][0]['id'] : '';
+						invoice_obj.requested_by_fullname = item['requested-by'] ? item['requested-by']['fullname'] : '';
+						invoice_obj.requested_by_id = item['requested-by'] ? item['requested-by']['id'] : null;
+						invoice_obj.created_at = item['created-at'];
+						
+						/////////////////////////////////////////////////////////////////
+						// invoice_obj.account_id=item['invoice-lines'][0]['account']['id'];
+						// invoice_obj.account_name=item['invoice-lines'][0]['account']['name'];
+						// invoice_obj.account_code=item['invoice-lines'][0]['account']['code'];
+						// invoice_obj.segment_1=item['invoice-lines'][0]['account']['segment-1'];
+						// invoice_obj.segment_2=item['invoice-lines'][0]['account']['segment-2'];
+						// invoice_obj.segment_3=item['invoice-lines'][0]['account']['segment-3'];
+						// invoice_obj.segment_4=item['invoice-lines'][0]['account']['segment-4'];
+						// invoice_obj.segment_5=item['invoice-lines'][0]['account']['segment-5'];
+						// invoice_obj.account_type=item['account-type']['name'];
+						//invoice_obj.account_type=item['invoice-lines'][0]['account']['account-type']['name'];
+						// invoice_obj.account_type_currency = item['invoice-lines'][0]['account']['account-type']['currency']['code'];
+						////////////////////////////////////////////////////////////////////////////
+
+						invoice_obj.created_by_fullname = item['created-by'] ? item['created-by']['fullname'] : '';
+						invoice_obj.created_by_email = item['created-by'] ? item['created-by']['email'] : '';
+						invoice_obj.period=item['invoice-lines'][0]['period']? item['invoice-lines'][0]['period']['name'] : '';		
+						invoice_obj.contract_name= item['invoice-lines'][0]['contract'] ? item['invoice-lines'][0]['contract']['name'] : '';
+						
+						var invoice_sys_id = that.saveInvoice(invoice_obj);
+						//End save coupa invoice
+
+						//Save attachment track
+						item.attachments.forEach(function(attach_item) {
+							var indexOf = attach_item['file-url'].indexOf('/' + attach_item['id'] + '/');
+							var file_name = attach_item['file-url'].substring(indexOf + 1);
+
+							if (attach_item['type'] == 'AttachmentFile' && invoice_sys_id) {
+								var attachObj = {
+									parent_table : 'x_nriws_coupa_req_coupa_invoice',
+									parent_type:  'Invoice',
+									parent : invoice_sys_id,
+									parent_id : item['id'],
+									file_name : file_name,
+									file_endpoint : endpointObj.url + 'invoices/' + item['id'] + '/attachments/' + attach_item['id'],
+									created_in_coupa : attach_item['created-at'],
+									updated_in_coupa : attach_item['updated-at'],
+									file_id : attach_item['id'],
+									file_type : attach_item['type'],
+									file_intent : attach_item['intent'],
+									file_path : attach_item['file-url'],
+									sync_status : 'ready'
+								};
+								that.saveAttachment(attachObj);
+							}
+						})
+						//End save attachment track
+
+
+						//Save Invoice account
+						var accountTempId = item['invoice-lines'][0]['account'] ? item['invoice-lines'][0]['account']['id'] : null;
+						var tempAccountAllocation = {};
+
+						tempAccountAllocation.parent = invoice_sys_id;
+						if (invoice_sys_id) {
+							if(accountTempId){							
+								tempAccountAllocation.type = 'Account';
+								tempAccountAllocation.consignment_contract_number = invoice_obj.representation_contract_number;
+								tempAccountAllocation.account_id = item['invoice-lines'][0]['account']['id'];
+								tempAccountAllocation.account_name = item['invoice-lines'][0]['account']['name'];
+								tempAccountAllocation.account_code = item['invoice-lines'][0]['account']['code'];
+	
+								tempAccountAllocation.segment_1 = item['invoice-lines'][0]['account']['segment-1'];
+								tempAccountAllocation.segment_2 = item['invoice-lines'][0]['account']['segment-2'];
+								tempAccountAllocation.segment_3 = item['invoice-lines'][0]['account']['segment-3'];
+								tempAccountAllocation.segment_4 = item['invoice-lines'][0]['account']['segment-4'];
+								tempAccountAllocation.segment_5 = item['invoice-lines'][0]['account']['segment-5'];
+	
+								tempAccountAllocation.account_type = item['invoice-lines'][0]['account']['account-type'] ? item['invoice-lines'][0]['account']['account-type']['name'] : '';
+								tempAccountAllocation.account_type_currency = item['invoice-lines'][0]['account']['account-type']['currency'] ? item['invoice-lines'][0]['account']['account-type']['currency']['code'] : '';
+								tempAccountAllocation.period = invoice_obj.period;
+	
+								that.saveInvoiceAccount(tempAccountAllocation);
+	
+							}
+							else{
+						
+								item['invoice-lines'][0]['account-allocations'].forEach(function (account_allocation_item) {
+								tempAccountAllocation.type = 'AccountAllocation';
+								tempAccountAllocation.consignment_contract_number = invoice_obj.representation_contract_number;
+								tempAccountAllocation.account_allocation_id = account_allocation_item['id'];
+								tempAccountAllocation.account_allocation_amount = account_allocation_item['amount']
+								tempAccountAllocation.account_allocation_percent = account_allocation_item['pct'];
+	
+								if (account_allocation_item['account']) {
+									tempAccountAllocation.account_id = account_allocation_item['account']['id'];
+									tempAccountAllocation.account_name = account_allocation_item['account']['name'];
+									tempAccountAllocation.account_code = account_allocation_item['account']['code'];;
+							
+									tempAccountAllocation.segment_1 = account_allocation_item['account']['segment-1'];
+									tempAccountAllocation.segment_2 = account_allocation_item['account']['segment-2'];
+									tempAccountAllocation.segment_3 = account_allocation_item['account']['segment-3'];
+									tempAccountAllocation.segment_4 = account_allocation_item['account']['segment-4'];
+									tempAccountAllocation.segment_5 = account_allocation_item['account']['segment-5'];
+		
+									tempAccountAllocation.account_type = account_allocation_item['account']['account-type']['name'];
+									tempAccountAllocation.account_type_currency = account_allocation_item['account']['account-type']['currency'] ? account_allocation_item['account']['account-type']['currency']['code'] : '';
+									tempAccountAllocation.period = account_allocation_item['period'] ? account_allocation_item['period']['name'] : ''; 
+								}
+								
+								that.saveInvoiceAccount(tempAccountAllocation);
+								})
+							}
+						}
+						//End save Invoice account
+						
+					});
+				}
+				else{
+					returnObj.errorMsg = responseBody;
+					continueFlag = false;
+					gs.info('#10 returnObj.errorMsg invoice: ' + returnObj.errorMsg);
+					break;
+					//gs.info('returnObj.errorMsg : ' + returnObj.errorMsg);
+				}
+			}catch(ex){
+				returnObj.errorMsg += ex;
+				continueFlag = false;
+				gs.info('#11 returnObj.errorMsg invoice: ' + returnObj.errorMsg);
+				break;
+			}
+		}
+
+		//--->--->--->--->--->--->--->--->--->
+		// Fetch file from Coupa
+		//--->--->--->--->--->--->--->--->--->
+		this.processAttachment();
+
+		//--->--->--->--->--->--->--->--->--->
+		// End Job
+		//--->--->--->--->--->--->--->--->--->
+		this.endJob(job_sysid,returnObj.responseStatus,returnObj.errorMsg);
+		gs.warn('end job' + job_sysid);
+		//return returnObj;
+
+	},
+
+	
+	getRequisitionsByIDAndStatus : function(){
+		//--->--->--->--->--->--->--->--->--->
+		// Start Job
+		//--->--->--->--->--->--->--->--->--->
+		var job_sysid = this.startJob('Sync Coupa Requisition');
+		var returnObj = {};
+		returnObj.errorMsg = '';
+		returnObj.responseStatus = '';
+		
+		//--->--->--->--->--->--->--->--->--->
+		// Change refresh flag to false
+		//--->--->--->--->--->--->--->--->--->
+		this.updateCoupaReqRefreshFlag();
+		
+		//gs.info('-----------1-------------');
+
+		
+		var endpointObj = this.endpointObj();
+		var restMsgRequisitons;
+		var response;
+		var responseBody ;
+		//var endpoint = endpointObj.requisiton_url + '?status=' + status;
+		//gs.info('sma #1 endpointObj : ' + JSON.stringify(endpointObj));
+		
+		var runTimeCount = 0;
+		var lastProcessedID = '0';
+		var continueFlag = true;
+		
+		while(continueFlag){
+			runTimeCount ++;
+			
+			gs.info('--------------------------');
+			gs.info('getRequisitionsByIDAndStatus runTimeCount :' + runTimeCount);
+			gs.info('getRequisitionsByIDAndStatus lastProcessedID :' + lastProcessedID);
+			
+			try{
+				
+				restMsgRequisitons = new sn_ws.RESTMessageV2("Coupa","Get_Requisitions_Great_Than");
+				//restMsgRequisitons = new sn_ws.RESTMessageV2("Coupa","Get_Requisitions_By_Status_Requester");
+				restMsgRequisitons.setStringParameterNoEscape('apiKey', endpointObj.apliKey);
+				restMsgRequisitons.setStringParameterNoEscape('id', lastProcessedID);
+				restMsgRequisitons.setStringParameterNoEscape('coupa_endpoint', endpointObj.url);
+
+				response = restMsgRequisitons.execute();
+				responseBody = response.getBody();
+				returnObj.responseStatus = response.getStatusCode();
+
+				//gs.info('responseBody : ' + responseBody);
+				if(returnObj.responseStatus =='200'){
+					var xmlDoc = new XMLDocument2();
+					xmlDoc.parseXML(responseBody.toString());
+
+					var requisitionHeaders = xmlDoc.getNode("//requisition-headers");
+					var iter = requisitionHeaders.getChildNodeIterator();
+					var node = '';
+					var requisition = {};	
+					var tempInt = 0;
+
+					while(iter.hasNext()){
+						node = iter.next();
+
+						if(node == null || node =='' ||node.toString().trim()==''||node.getTextContent().trim()==''){
+							continue;
+						}
+
+						tempInt++;
+
+						xmlDoc = new XMLDocument2();
+						xmlDoc.parseXML(node.toString());
+
+						requisition.req_id = xmlDoc.getNodeText("//requisition-header/id");	
+						
+						//gs.info('#1 requisition.req_id :' + requisition.req_id );
+						
+						lastProcessedID = requisition.req_id;
+						requisition.created_at = xmlDoc.getNodeText("//requisition-header/created-at");
+						requisition.updated_at = xmlDoc.getNodeText("//requisition-header/updated-at");
+						requisition.status = xmlDoc.getNodeText("//requisition-header/status");
+						requisition.line_count = xmlDoc.getNodeText("//requisition-header/line-count");
+						requisition.total = xmlDoc.getNodeText("//requisition-header/total");
+
+						//gs.info('#2 requisition.total :' + requisition.req_id + ":" + requisition.total );
+						
+						requisition.justification= xmlDoc.getNodeText("//requisition-header/justification");
+						requisition.department= xmlDoc.getNodeText("//requisition-header/department/name");
+
+						// custom fields
+						requisition.project_title = xmlDoc.getNodeText("//requisition-header/custom-fields/project-title");
+						requisition.contractor_leader = xmlDoc.getNodeText("//requisition-header/custom-fields/contractor-leader");
+						requisition.contractor_subleader = xmlDoc.getNodeText("//requisition-header/custom-fields/contractor-subleader");
+						requisition.subcontractor = xmlDoc.getNodeText("//requisition-header/custom-fields/subcontractor");
+						requisition.optional_field = xmlDoc.getNodeText("//requisition-header/custom-fields/optional-field");
+						requisition.consignment_start_request = xmlDoc.getNodeText("//requisition-header/custom-fields/consignment-start-request");
+						requisition.reason_for_submittting_request = xmlDoc.getNodeText("//requisition-header/custom-fields/reason-for-submitting-request");
+						requisition.scheduled_issue_date = xmlDoc.getNodeText("//requisition-header/custom-fields/scheduled-issue-date");
+						requisition.contract_by_docusign = xmlDoc.getNodeText("//requisition-header/custom-fields/contract-by-docusign");
+						requisition.personal_info = xmlDoc.getNodeText("//requisition-header/custom-fields/personal-info");
+						requisition.export_property = xmlDoc.getNodeText("//requisition-header/custom-fields/export-property");
+						requisition.basic_contract = xmlDoc.getNodeText("//requisition-header/custom-fields/basic-contract");
+						requisition.usage_field = xmlDoc.getNodeText("//requisition-header/custom-fields/usage-field");
+						requisition.resale_company = xmlDoc.getNodeText("//requisition-header/custom-fields/resale-company");
+
+						requisition.currency = xmlDoc.getNodeText("//requisition-header/currency/code");
+
+						//gs.info('#3 requisition.currency :' +  requisition.req_id + ":" +requisition.currency );
+						// requested-by
+						requisition.requested_by = xmlDoc.getNodeText("//requisition-header/requested-by/email");
+						requisition.requested_by_fullname = xmlDoc.getNodeText("//requisition-header/requested-by/fullname");
+						requisition.requested_by_id = xmlDoc.getNodeText("//requisition-header/requested-by/id");
+
+						// created-by
+						requisition.created_by = xmlDoc.getNodeText("//requisition-header/created-by/email");
+						requisition.created_by_fullname = xmlDoc.getNodeText("//requisition-header/created-by/fullname");
+						requisition.created_by_id = xmlDoc.getNodeText("//requisition-header/created-by/id");
+
+						// ship to
+						requisition.ship_to_attention = xmlDoc.getNodeText("//requisition-header/ship-to-attention");
+						requisition.postal_code = xmlDoc.getNodeText("//requisition-header/ship-to-address/postal-code");
+						requisition.state = xmlDoc.getNodeText("//requisition-header/ship-to-address/state");
+						requisition.city = xmlDoc.getNodeText("//requisition-header/ship-to-address/city");
+						requisition.street_2 = xmlDoc.getNodeText("//requisition-header/ship-to-address/street2");
+						requisition.street_1 = xmlDoc.getNodeText("//requisition-header/ship-to-address/street1");
+						requisition.location_code = xmlDoc.getNodeText("//requisition-header/ship-to-address/location-code");
+						requisition.location_name = xmlDoc.getNodeText("//requisition-header/ship-to-address/name");
+						requisition.country_id = xmlDoc.getNodeText("//requisition-header/ship-to-address/country/id");
+						requisition.country_name = xmlDoc.getNodeText("//requisition-header/ship-to-address/country/code");
+						requisition.country_code = xmlDoc.getNodeText("//requisition-header/ship-to-address/country/name");
+						//gs.info('#4 requisition.country_code :' +  requisition.req_id + ":" +requisition.country_code );
+						
+						// approval
+						requisition.approval = xmlDoc.getNodeText("//requisition-header/current-approval/id");
+
+						//requisition.requisiton_url = endpointObj.requisiton_url;
+						//requisition.parent_table = 'x_nriws_coupa_req_coupa_requisition';
+						//requisition.parent_type = 'Requisition';
+
+						var reqReturnObj = this.saveRequisition(requisition);
+
+						//gs.info('#5 ---saveRequisition--- ' + requisition.req_id);
+						
+						//gs.info('#6 ---reqReturnObj.ignoreFlag --- ' +  requisition.req_id + ":" +reqReturnObj.ignoreFlag );
+						// Go to next
+						if(reqReturnObj.ignoreFlag == true || reqReturnObj.sys_id =='')continue;
+
+						
+						
+						//--->--->--->--->--->--->--->--->--->--->--->--->--->--->--->--->
+						// Requisition Header Attachment
+						//--->--->--->--->--->--->--->--->--->--->--->--->--->--->--->--->
+						var attachNodes = xmlDoc.getNode("//requisition-header/attachments");
+						this.parseAttachmentNode(attachNodes,endpointObj.requisiton_url,requisition.req_id,'x_nriws_coupa_req_coupa_requisition','Requisition',reqReturnObj.sys_id,reqReturnObj.id);
+
+						//gs.info('#7 ---parseAttachmentNode--- ' +  requisition.req_id);
+						
+						//<---<---<---<---<---<---<---<---<---<---<---<---<---<---<---<---
+						// Requisition Header Attachment
+						//<---<---<---<---<---<---<---<---<---<---<---<---<---<---<---<---			
+						var requisitionLineList = [];
+						var tempReqItem = {};
+
+						var requisitionLines =  xmlDoc.getNode("//requisition-header/requisition-lines");
+						var iterSub = requisitionLines.getChildNodeIterator();
+						var reqLineNode = '';
+						var xmlDocSub = '';
+
+						//gs.info('#8 ---requisition-lines--- '  + requisition.req_id);
+						
+						while(iterSub.hasNext()){
+							tempReqItem = {};
+							reqLineNode = iterSub.next();
+
+							if(reqLineNode == null || reqLineNode =='' ||reqLineNode.toString().trim()==''||reqLineNode.getTextContent().trim()==''){
+								continue;
+							}
+
+							xmlDocSub = new XMLDocument2();
+							xmlDocSub.parseXML(reqLineNode.toString());
+
+							tempReqItem.parent = reqReturnObj.sys_id;
+							tempReqItem.id = xmlDocSub.getNodeText("//requisition-line/id");
+							tempReqItem.line_number = xmlDocSub.getNodeText("//requisition-line/line-num");
+							tempReqItem.description = xmlDocSub.getNodeText("//requisition-line/description");
+							tempReqItem.quantity = xmlDocSub.getNodeText("//requisition-line/quantity");
+							tempReqItem.unit_price = xmlDocSub.getNodeText("//requisition-line/unit-price");
+							tempReqItem.total = xmlDocSub.getNodeText("//requisition-line/total");
+							tempReqItem.source_type = xmlDocSub.getNodeText("//requisition-line/source-type");
+							tempReqItem.line_type = xmlDocSub.getNodeText("//requisition-line/line-type");
+							tempReqItem.service_type = xmlDocSub.getNodeText("//requisition-line/service-type");
+							tempReqItem.need_by_date = xmlDocSub.getNodeText("//requisition-line/need-by-date");
+							tempReqItem.manufacturer_name = xmlDocSub.getNodeText("//requisition-line/manufacturer-name");
+							tempReqItem.manufacturer_part_number = xmlDocSub.getNodeText("//requisition-line/manufacturer-part-number");
+
+							tempReqItem.currency = xmlDocSub.getNodeText("//requisition-line/currency/code");
+							tempReqItem.commodity_name = xmlDocSub.getNodeText("//requisition-line/commodity/name");
+							tempReqItem.payment_term = xmlDocSub.getNodeText("//requisition-line/payment-term/code");
+							tempReqItem.start_date = xmlDocSub.getNodeText("//requisition-line/extra-line-attribute/start-date");
+							tempReqItem.end_date = xmlDocSub.getNodeText("//requisition-line/extra-line-attribute/end-date");
+
+							tempReqItem.personal_info = xmlDocSub.getNodeText("//requisition-line/custom-fields/personal-info");
+							tempReqItem.export_property = xmlDocSub.getNodeText("//requisition-line/custom-fields/export-property");
+							tempReqItem.basic_contract = xmlDocSub.getNodeText("//requisition-line/custom-fields/basic-contract");
+							tempReqItem.outsourcing_info = xmlDocSub.getNodeText("//requisition-line/custom-fields/outsourcing-info");
+							tempReqItem.basic_contracted_corp = xmlDocSub.getNodeText("//requisition-line/custom-fields/basic-contracted-corp");
+							tempReqItem.subcontract_personal_info = xmlDocSub.getNodeText("//requisition-line/custom-fields/subcontract-personal-info-");
+							tempReqItem.cost_allocation_flag = xmlDocSub.getNodeText("//requisition-line/custom-fields/cost-allocation-flag");
+							
+							// 会計基準
+							tempReqItem.accounting_standards = xmlDocSub.getNodeText("//requisition-line/custom-fields/accounting-standards");
+							
+							tempReqItem.cistec_date = xmlDocSub.getNodeText("//requisition-line/custom-fields/cistec-date");
+							tempReqItem.has_contract =  false;
+
+							var contractId = xmlDocSub.getNodeText("//requisition-line/contract/id");
+							if(contractId){tempReqItem.has_contract = true;}
+
+							// uom
+							tempReqItem.uom_code= xmlDocSub.getNodeText("//requisition-line/uom/code");
+							tempReqItem.uom_name= xmlDocSub.getNodeText("//requisition-line/uom/name");
+
+							// サプライヤー supplier
+							tempReqItem.supplier_id= xmlDocSub.getNodeText("//requisition-line/supplier/id");
+							tempReqItem.supplier_display_name= xmlDocSub.getNodeText("//requisition-line/supplier/display-name");
+							tempReqItem.supplier_name= xmlDocSub.getNodeText("//requisition-line/supplier/name");
+
+							// 請負基本契約締結会社
+							tempReqItem.contracting_company  = '';
+							//var corpNodes = xmlDocSub.getNode("//requisition-line/custom-fields/basic-contracted-corp");
+							var corpNodes = xmlDocSub.getNode("//requisition-line/custom-fields/basic-contracted-corporation");
+							
+							//gs.info('#9 ---tempReqItem.contracting_company--- '+  requisition.req_id + ":" + tempReqItem.contracting_company);
+							
+							//gs.info('#9.0.1 ---corpNode--- '+  corpNode);
+							
+							if(corpNode && !(corpNodes == null || corpNodes.getTextContent() == '' ||corpNodes.toString().trim()=='')){
+								
+								//gs.info('#9.0.2');
+								
+								var iterCorp = corpNodes.getChildNodeIterator();
+								var corpNode = '';
+								while(iterCorp.hasNext()){
+
+									corpNode = iterCorp.next();
+
+									
+									
+									if(corpNode == null || corpNode =='' ||corpNode.toString().trim()==''||corpNode.getTextContent().trim()==''){
+										continue;
+									}
+
+									var xmlDocCorp = new XMLDocument2();
+									xmlDocCorp.parseXML(corpNode.toString());
+
+									if(tempReqItem.contracting_company != ''){
+										tempReqItem.contracting_company += ',';
+									}
+									// <external-ref-code>
+									//gs.info('xmlDocCorp : ' + xmlDocCorp.getNode("//basic-contracted-corp/external-ref-code"));
+
+									tempReqItem.contracting_company +=  xmlDocCorp.getNodeText("//basic-contracted-corp/external-ref-code");
+									//tempReqItem.contracting_company +=  corpNode.getLastChild().getTextContent();
+
+									//gs.info('#9.0.3 ---tempReqItem.contracting_company --- '+  tempReqItem.contracting_company );
+									
+								}
+							}
+
+							//gs.info('#9.1 ---tempReqItem.corpNodes--- '+  requisition.req_id + ":" + tempReqItem.corpNodes);
+							
+							// 費用按分方法
+							tempReqItem.cost_allocation_method = xmlDocSub.getNodeText("//requisition-line/custom-fields/cost-allocation-flag");
+
+							//gs.info('#9.2 ---tempReqItem.cost_allocation_method--- '+  requisition.req_id + ":" + tempReqItem.cost_allocation_method);
+							
+							// 会計基準
+							//tempReqItem.accounting_standards = xmlDocSub.getNodeText("//requisition-line/custom-fields/accounting-standards");
+
+							// 備考
+							tempReqItem.comments = xmlDocSub.getNodeText("//requisition-line/custom-fields/comments");
+
+							//gs.info('#10 ---tempReqItem.comments--- '+  requisition.req_id + ":" +tempReqItem.comments);
+							
+							var reqItemReturnObj = this.saveRequisitionItem(tempReqItem);
+
+							// Go to next
+							if(reqItemReturnObj.ignoreFlag == true || reqItemReturnObj.sys_id == '')continue;
+
+							var attachItemNodes = xmlDocSub.getNode("//requisition-line/attachments");
+							this.parseAttachmentNode(attachItemNodes,endpointObj.requisiton_url,requisition.req_id,'x_nriws_coupa_req_coupa_items','RequisitionItem',reqItemReturnObj.sys_id,reqItemReturnObj.id);
+
+
+							var accountTempId = xmlDocSub.getNodeText("//requisition-line/account/id");
+
+							var tempAccountAllocation = {};
+
+							tempAccountAllocation.parent = reqItemReturnObj.sys_id;
+
+							//gs.info('#11 ---accountTempId--- '+  requisition.req_id + ":" +accountTempId);
+							
+							if(accountTempId){							
+								tempAccountAllocation.type = 'Account';
+								tempAccountAllocation.consignment_contract_number = requisition.optional_field;
+
+								tempAccountAllocation.account_id = xmlDocSub.getNodeText("//requisition-line/account/id");
+								tempAccountAllocation.account_name = xmlDocSub.getNodeText("//requisition-line/account/name");
+								tempAccountAllocation.account_code = xmlDocSub.getNodeText("//requisition-line/account/account_code");
+								//tempAccountAllocation.account_year = xmlDocSub.getNodeText("//requisition-line/account/segment-1");
+								//tempAccountAllocation.account_company = xmlDocSub.getNodeText("//requisition-line/account/segment-2");
+								//tempAccountAllocation.account_deployment = xmlDocSub.getNodeText("//requisition-line/account/segment-3");
+								//tempAccountAllocation.account_unit = xmlDocSub.getNodeText("//requisition-line/account/segment-4");
+								tempAccountAllocation.segment_1 = xmlDocSub.getNodeText("//requisition-line/account/segment-1");
+								tempAccountAllocation.segment_2 = xmlDocSub.getNodeText("//requisition-line/account/segment-2");
+								tempAccountAllocation.segment_3 = xmlDocSub.getNodeText("//requisition-line/account/segment-3");
+								tempAccountAllocation.segment_4 = xmlDocSub.getNodeText("//requisition-line/account/segment-4");
+								tempAccountAllocation.segment_5 = xmlDocSub.getNodeText("//requisition-line/account/segment-5");
+								tempAccountAllocation.account_type = xmlDocSub.getNodeText("//requisition-line/account/account-type/name");
+								tempAccountAllocation.account_type_currency = xmlDocSub.getNodeText("//requisition-line/account/account-type/currency/code");
+								tempAccountAllocation.period = xmlDocSub.getNodeText("//requisition-line/period/name");
+
+								this.saveAccount(tempAccountAllocation);
+
+							}
+							else{
+								var accountAllocationNodes = xmlDocSub.getNode("//requisition-line/account-allocations");
+								var iterAccountAllocations  = accountAllocationNodes.getChildNodeIterator();
+
+								var accountAllocationList = [];
+								var accountAllocationNode = '';
+								var xmlDocAccount = '';
+
+								while(iterAccountAllocations.hasNext()){
+
+									accountAllocationNode = iterAccountAllocations.next();
+
+									if(accountAllocationNode == null || accountAllocationNode =='' ||accountAllocationNode.toString().trim()==''||accountAllocationNode.getTextContent().trim()==''){
+										continue;
+									}
+
+									xmlDocAccount = new XMLDocument2();
+									xmlDocAccount.parseXML(accountAllocationNode.toString());
+
+									tempAccountAllocation.type = 'AccountAllocation';
+									tempAccountAllocation.consignment_contract_number = requisition.optional_field;
+									tempAccountAllocation.account_allocation_id = xmlDocAccount.getNodeText("//account-allocation/id");
+									tempAccountAllocation.account_allocation_amount = xmlDocAccount.getNodeText("//account-allocation/amount");
+									tempAccountAllocation.account_allocation_percent = xmlDocAccount.getNodeText("//account-allocation/pct");
+									tempAccountAllocation.account_id = xmlDocAccount.getNodeText("//account-allocation/account/id");
+									tempAccountAllocation.account_name = xmlDocAccount.getNodeText("//account-allocation/account/name");
+									tempAccountAllocation.account_code = xmlDocAccount.getNodeText("//account-allocation/account/account_code");
+									//tempAccountAllocation.account_year = xmlDocAccount.getNodeText("//account-allocation/account/segment-1");
+									//tempAccountAllocation.account_company = xmlDocAccount.getNodeText("//account-allocation/account/segment-2");
+									//tempAccountAllocation.account_deployment = xmlDocAccount.getNodeText("//account-allocation/account/segment-3");
+									//tempAccountAllocation.account_unit = xmlDocAccount.getNodeText("//account-allocation/account/segment-4");
+									tempAccountAllocation.segment_1 = xmlDocAccount.getNodeText("//account-allocation/account/segment-1");
+									tempAccountAllocation.segment_2 = xmlDocAccount.getNodeText("//account-allocation/account/segment-2");
+									tempAccountAllocation.segment_3 = xmlDocAccount.getNodeText("//account-allocation/account/segment-3");
+									tempAccountAllocation.segment_4 = xmlDocAccount.getNodeText("//account-allocation/account/segment-4");
+									tempAccountAllocation.segment_5 = xmlDocAccount.getNodeText("//account-allocation/account/segment-5");
+
+									tempAccountAllocation.account_type = xmlDocAccount.getNodeText("//account-allocation/account/account-type/name");
+									tempAccountAllocation.account_type_currency = xmlDocAccount.getNodeText("//account-allocation/account/account-type/currency/code");
+									tempAccountAllocation.period = xmlDocAccount.getNodeText("//account-allocation/period/name");
+
+									this.saveAccount(tempAccountAllocation);
+								}
+
+							}
+
+
+							//gs.info('#12 ---aftert accountTempId--- ' + requisition.req_id);
+							
+						}
+						
+						//gs.info('#13 --last---- ' +  requisition.req_id);
+					}
+
+				}
+				else{
+					returnObj.errorMsg = responseBody;
+					continueFlag = false;
+					gs.info('#10 returnObj.errorMsg : ' + returnObj.errorMsg);
+					break;
+					//gs.info('returnObj.errorMsg : ' + returnObj.errorMsg);
+				}
+			}catch(ex){
+				returnObj.errorMsg += ex;
+				continueFlag = false;
+				gs.info('#11 returnObj.errorMsg : ' + returnObj.errorMsg);
+				break;
+			}
+	
+		}
+
+		//--->--->--->--->--->--->--->--->--->
+		// Fetch file from Coupa
+		//--->--->--->--->--->--->--->--->--->
+		this.processAttachment();
+
+		//--->--->--->--->--->--->--->--->--->
+		// End Job
+		//--->--->--->--->--->--->--->--->--->
+		this.endJob(job_sysid,returnObj.responseStatus,returnObj.errorMsg);
+		//return returnObj;
+		
+	},
+	
+	getRequisitionsByStatus : function(status){
+		
+		// change refresh flag to false
+		this.updateCoupaReqRefreshFlag();
+		
+		var job_sysid = this.startJob('Sync Coupa Requisition');
+		var returnObj = {};
+		returnObj.errorMsg = '';
+		returnObj.responseStatus = '';
+		
+		var lastProcessID = '';
+		
+		try{
+			var endpointObj = this.endpointObj();
+			var restMsgRequisitons = new sn_ws.RESTMessageV2("Coupa","Get_Requisitions_By_Status");
+			var endpoint = endpointObj.requisiton_url + '?status=' + status;
+
+			restMsgRequisitons.setEndpoint(endpoint);		
+			restMsgRequisitons.setStringParameterNoEscape('apiKey', endpointObj.apliKey);
+			restMsgRequisitons.setStringParameterNoEscape('coupa_endpoint', endpointObj.url);
+			
+			var response = restMsgRequisitons.execute();
+			var responseBody = response.getBody();
+			returnObj.responseStatus = response.getStatusCode();
+
+			//gs.info('responseBody : ' + responseBody);
+			if(returnObj.responseStatus =='200'){
+				var xmlDoc = new XMLDocument2();
+				xmlDoc.parseXML(responseBody.toString());
+
+				var requisitionHeaders = xmlDoc.getNode("//requisition-headers");
+				var iter = requisitionHeaders.getChildNodeIterator();
+				var node = '';
+				var requisition = {};	
+				var tempInt = 0;
+
+				while(iter.hasNext()){
+					node = iter.next();
+
+					if(node == null || node =='' ||node.toString().trim()==''||node.getTextContent().trim()==''){
+						continue;
+					}
+
+					tempInt++;
+
+					xmlDoc = new XMLDocument2();
+					xmlDoc.parseXML(node.toString());
+
+					requisition.req_id = xmlDoc.getNodeText("//requisition-header/id");	
+					requisition.created_at = xmlDoc.getNodeText("//requisition-header/created-at");
+					requisition.updated_at = xmlDoc.getNodeText("//requisition-header/updated-at");
+					requisition.status = xmlDoc.getNodeText("//requisition-header/status");
+					requisition.line_count = xmlDoc.getNodeText("//requisition-header/line-count");
+					requisition.total = xmlDoc.getNodeText("//requisition-header/total");
+
+					requisition.justification= xmlDoc.getNodeText("//requisition-header/justification");
+					requisition.department= xmlDoc.getNodeText("//requisition-header/department/name");
+
+					// custom fields
+					requisition.project_title = xmlDoc.getNodeText("//requisition-header/custom-fields/project-title");
+					requisition.contractor_leader = xmlDoc.getNodeText("//requisition-header/custom-fields/contractor-leader");
+					requisition.contractor_subleader = xmlDoc.getNodeText("//requisition-header/custom-fields/contractor-subleader");
+					requisition.subcontractor = xmlDoc.getNodeText("//requisition-header/custom-fields/subcontractor");
+					requisition.optional_field = xmlDoc.getNodeText("//requisition-header/custom-fields/optional-field");
+					requisition.consignment_start_request = xmlDoc.getNodeText("//requisition-header/custom-fields/consignment-start-request");
+					requisition.reason_for_submittting_request = xmlDoc.getNodeText("//requisition-header/custom-fields/reason-for-submitting-request");
+					requisition.scheduled_issue_date = xmlDoc.getNodeText("//requisition-header/custom-fields/scheduled-issue-date");
+					requisition.contract_by_docusign = xmlDoc.getNodeText("//requisition-header/custom-fields/contract-by-docusign");
+					requisition.personal_info = xmlDoc.getNodeText("//requisition-header/custom-fields/personal-info");
+					requisition.export_property = xmlDoc.getNodeText("//requisition-header/custom-fields/export-property");
+					requisition.basic_contract = xmlDoc.getNodeText("//requisition-header/custom-fields/basic-contract");
+					requisition.usage_field = xmlDoc.getNodeText("//requisition-header/custom-fields/usage-field");
+					requisition.resale_company = xmlDoc.getNodeText("//requisition-header/custom-fields/resale-company");
+
+					requisition.currency = xmlDoc.getNodeText("//requisition-header/currency/code");
+
+					// requested-by
+					requisition.requested_by = xmlDoc.getNodeText("//requisition-header/requested-by/email");
+					requisition.requested_by_fullname = xmlDoc.getNodeText("//requisition-header/requested-by/fullname");
+					requisition.requested_by_id = xmlDoc.getNodeText("//requisition-header/requested-by/id");
+
+					// created-by
+					requisition.created_by = xmlDoc.getNodeText("//requisition-header/created-by/email");
+					requisition.created_by_fullname = xmlDoc.getNodeText("//requisition-header/created-by/fullname");
+					requisition.created_by_id = xmlDoc.getNodeText("//requisition-header/created-by/id");
+
+					// ship to
+					requisition.ship_to_attention = xmlDoc.getNodeText("//requisition-header/ship-to-attention");
+					requisition.postal_code = xmlDoc.getNodeText("//requisition-header/ship-to-address/postal-code");
+					requisition.state = xmlDoc.getNodeText("//requisition-header/ship-to-address/state");
+					requisition.city = xmlDoc.getNodeText("//requisition-header/ship-to-address/city");
+					requisition.street_2 = xmlDoc.getNodeText("//requisition-header/ship-to-address/street2");
+					requisition.street_1 = xmlDoc.getNodeText("//requisition-header/ship-to-address/street1");
+					requisition.location_code = xmlDoc.getNodeText("//requisition-header/ship-to-address/location-code");
+					requisition.location_name = xmlDoc.getNodeText("//requisition-header/ship-to-address/name");
+					requisition.country_id = xmlDoc.getNodeText("//requisition-header/ship-to-address/country/id");
+					requisition.country_name = xmlDoc.getNodeText("//requisition-header/ship-to-address/country/code");
+					requisition.country_code = xmlDoc.getNodeText("//requisition-header/ship-to-address/country/name");
+
+					// approval
+					requisition.approval = xmlDoc.getNodeText("//requisition-header/current-approval/id");
+					
+					//requisition.requisiton_url = endpointObj.requisiton_url;
+					//requisition.parent_table = 'x_nriws_coupa_req_coupa_requisition';
+					//requisition.parent_type = 'Requisition';
+
+					var reqReturnObj = this.saveRequisition(requisition);
+
+					// Go to next
+					if(reqReturnObj.ignoreFlag == true || reqReturnObj.sys_id =='')continue;
+					
+					//--->--->--->--->--->--->--->--->--->--->--->--->--->--->--->--->
+					// Requisition Header Attachment
+					//--->--->--->--->--->--->--->--->--->--->--->--->--->--->--->--->
+					var attachNodes = xmlDoc.getNode("//requisition-header/attachments");
+					this.parseAttachmentNode(attachNodes,endpointObj.requisiton_url,requisition.req_id,'x_nriws_coupa_req_coupa_requisition','Requisition',reqReturnObj.sys_id,reqReturnObj.id);
+
+					//<---<---<---<---<---<---<---<---<---<---<---<---<---<---<---<---
+					// Requisition Header Attachment
+					//<---<---<---<---<---<---<---<---<---<---<---<---<---<---<---<---			
+					var requisitionLineList = [];
+					var tempReqItem = {};
+
+					var requisitionLines =  xmlDoc.getNode("//requisition-header/requisition-lines");
+					var iterSub = requisitionLines.getChildNodeIterator();
+					var reqLineNode = '';
+					var xmlDocSub = '';
+
+					while(iterSub.hasNext()){
+						tempReqItem = {};
+						reqLineNode = iterSub.next();
+
+						if(reqLineNode == null || reqLineNode =='' ||reqLineNode.toString().trim()==''||reqLineNode.getTextContent().trim()==''){
+							continue;
+						}
+
+						xmlDocSub = new XMLDocument2();
+						xmlDocSub.parseXML(reqLineNode.toString());
+
+						tempReqItem.parent = reqReturnObj.sys_id;
+						tempReqItem.id = xmlDocSub.getNodeText("//requisition-line/id");
+						tempReqItem.line_number = xmlDocSub.getNodeText("//requisition-line/line-num");
+						tempReqItem.description = xmlDocSub.getNodeText("//requisition-line/description");
+						tempReqItem.quantity = xmlDocSub.getNodeText("//requisition-line/quantity");
+						tempReqItem.unit_price = xmlDocSub.getNodeText("//requisition-line/unit-price");
+						tempReqItem.total = xmlDocSub.getNodeText("//requisition-line/total");
+						tempReqItem.source_type = xmlDocSub.getNodeText("//requisition-line/source-type");
+						tempReqItem.line_type = xmlDocSub.getNodeText("//requisition-line/line-type");
+						tempReqItem.service_type = xmlDocSub.getNodeText("//requisition-line/service-type");
+						tempReqItem.need_by_date = xmlDocSub.getNodeText("//requisition-line/need-by-date");
+						tempReqItem.manufacturer_name = xmlDocSub.getNodeText("//requisition-line/manufacturer-name");
+						tempReqItem.manufacturer_part_number = xmlDocSub.getNodeText("//requisition-line/manufacturer-part-number");
+
+						tempReqItem.currency = xmlDocSub.getNodeText("//requisition-line/currency/code");
+						tempReqItem.commodity_name = xmlDocSub.getNodeText("//requisition-line/commodity/name");
+						tempReqItem.payment_term = xmlDocSub.getNodeText("//requisition-line/payment-term/code");
+						tempReqItem.start_date = xmlDocSub.getNodeText("//requisition-line/extra-line-attribute/start-date");
+						tempReqItem.end_date = xmlDocSub.getNodeText("//requisition-line/extra-line-attribute/end-date");
+
+						tempReqItem.personal_info = xmlDocSub.getNodeText("//requisition-line/custom-fields/subcontract-personal-info-");
+						tempReqItem.export_property = xmlDocSub.getNodeText("//requisition-line/custom-fields/export-property");
+						tempReqItem.basic_contract = xmlDocSub.getNodeText("//requisition-line/custom-fields/basic-contract");
+						tempReqItem.outsourcing_info = xmlDocSub.getNodeText("//requisition-line/custom-fields/outsourcing-info");
+						tempReqItem.basic_contracted_corp = xmlDocSub.getNodeText("//requisition-line/custom-fields/basic-contracted-corp");
+						tempReqItem.subcontract_personal_info = xmlDocSub.getNodeText("//requisition-line/custom-fields/subcontract-personal-info-");
+						tempReqItem.cost_allocation_flag = xmlDocSub.getNodeText("//requisition-line/custom-fields/cost-allocation-flag");
+
+						// 会計基準
+						//tempReqItem.accounting_standards = xmlDocSub.getNodeText("//requisition-line/custom-fields/accounting-standards");
+
+						tempReqItem.cistec_date = xmlDocSub.getNodeText("//requisition-line/custom-fields/cistec-date");
+						
+						var contractId = xmlDocSub.getNodeText("//requisition-line/contract/id");
+						if(contractId){tempReqItem.has_contract = true;}
+
+						// uom
+						tempReqItem.uom_code= xmlDocSub.getNodeText("//requisition-line/uom/code");
+						tempReqItem.uom_name= xmlDocSub.getNodeText("//requisition-line/uom/name");
+
+						// サプライヤー supplier
+						tempReqItem.supplier_id= xmlDocSub.getNodeText("//requisition-line/supplier/id");
+						tempReqItem.supplier_display_name= xmlDocSub.getNodeText("//requisition-line/supplier/display-name");
+						tempReqItem.supplier_name= xmlDocSub.getNodeText("//requisition-line/supplier/name");
+
+						// 請負基本契約締結会社
+						tempReqItem.contracting_company  = '';
+						var corpNodes = xmlDocSub.getNode("//requisition-line/custom-fields/basic-contracted-corp");
+
+						if(!(corpNodes == null || corpNodes.getTextContent() == '' ||corpNodes.toString().trim()=='')){
+							var iterCorp = corpNodes.getChildNodeIterator();
+							var corpNode = '';
+							while(iterCorp.hasNext()){
+
+								corpNode = iterCorp.next();
+
+								if(corpNode == null || corpNode =='' ||corpNode.toString().trim()==''||corpNode.getTextContent().trim()==''){
+									continue;
+								}
+
+								var xmlDocCorp = new XMLDocument2();
+								xmlDocCorp.parseXML(corpNode.toString());
+
+								if(tempReqItem.contracting_company != ''){
+									tempReqItem.contracting_company += ',';
+								}
+								// <external-ref-code>
+								//gs.info('xmlDocCorp : ' + xmlDocCorp.getNode("//basic-contracted-corp/external-ref-code"));
+
+								tempReqItem.contracting_company +=  xmlDocCorp.getNodeText("//basic-contracted-corp/external-ref-code");
+								//tempReqItem.contracting_company +=  corpNode.getLastChild().getTextContent();
+
+							}
+						}
+
+						// 費用按分方法
+						tempReqItem.cost_allocation_method = xmlDocSub.getNodeText("//requisition-line/custom-fields/cost-allocation-flag");
+
+						// 会計基準
+						//tempReqItem.accounting_standards = xmlDocSub.getNodeText("//requisition-line/custom-fields/accounting-standards");
+
+						// 備考
+						tempReqItem.comments = xmlDocSub.getNodeText("//requisition-line/custom-fields/comments");
+
+						var reqItemReturnObj = this.saveRequisitionItem(tempReqItem);
+
+						// Go to next
+						if(reqItemReturnObj.ignoreFlag == true || reqItemReturnObj.sys_id == '')continue;
+						
+						var attachItemNodes = xmlDocSub.getNode("//requisition-line/attachments");
+						this.parseAttachmentNode(attachItemNodes,endpointObj.requisiton_url,requisition.req_id,'x_nriws_coupa_req_coupa_items','RequisitionItem',reqItemReturnObj.sys_id,reqItemReturnObj.id);
+
+						
+						var accountTempId = xmlDocSub.getNodeText("//requisition-line/account/id");
+						
+						var tempAccountAllocation = {};
+
+						tempAccountAllocation.parent = reqItemReturnObj.sys_id;
+						
+						if(accountTempId){							
+							tempAccountAllocation.type = 'Account';
+							tempAccountAllocation.consignment_contract_number = requisition.optional_field;
+							
+							tempAccountAllocation.account_id = xmlDocSub.getNodeText("//requisition-line/account/id");
+							tempAccountAllocation.account_name = xmlDocSub.getNodeText("//requisition-line/account/name");
+							tempAccountAllocation.account_code = xmlDocSub.getNodeText("//requisition-line/account/account_code");
+							//tempAccountAllocation.account_year = xmlDocSub.getNodeText("//requisition-line/account/segment-1");
+							//tempAccountAllocation.account_company = xmlDocSub.getNodeText("//requisition-line/account/segment-2");
+							//tempAccountAllocation.account_deployment = xmlDocSub.getNodeText("//requisition-line/account/segment-3");
+							//tempAccountAllocation.account_unit = xmlDocSub.getNodeText("//requisition-line/account/segment-4");
+							tempAccountAllocation.segment_1 = xmlDocSub.getNodeText("//requisition-line/account/segment-1");
+							tempAccountAllocation.segment_2 = xmlDocSub.getNodeText("//requisition-line/account/segment-2");
+							tempAccountAllocation.segment_3 = xmlDocSub.getNodeText("//requisition-line/account/segment-3");
+							tempAccountAllocation.segment_4 = xmlDocSub.getNodeText("//requisition-line/account/segment-4");
+							tempAccountAllocation.segment_5 = xmlDocSub.getNodeText("//requisition-line/account/segment-5");
+							tempAccountAllocation.account_type = xmlDocSub.getNodeText("//requisition-line/account/account-type/name");
+							tempAccountAllocation.account_type_currency = xmlDocSub.getNodeText("//requisition-line/account/account-type/currency/code");
+							tempAccountAllocation.period = xmlDocSub.getNodeText("//requisition-line/period/name");
+
+							this.saveAccount(tempAccountAllocation);
+
+						}else{
+							var accountAllocationNodes = xmlDocSub.getNode("//requisition-line/account-allocations");
+							var iterAccountAllocations  = accountAllocationNodes.getChildNodeIterator();
+
+							var accountAllocationList = [];
+							var accountAllocationNode = '';
+							var xmlDocAccount = '';
+
+							while(iterAccountAllocations.hasNext()){
+
+								accountAllocationNode = iterAccountAllocations.next();
+
+								if(accountAllocationNode == null || accountAllocationNode =='' ||accountAllocationNode.toString().trim()==''||accountAllocationNode.getTextContent().trim()==''){
+									continue;
+								}
+								
+								xmlDocAccount = new XMLDocument2();
+								xmlDocAccount.parseXML(accountAllocationNode.toString());
+
+								tempAccountAllocation.type = 'AccountAllocation';
+								tempAccountAllocation.consignment_contract_number = requisition.optional_field;
+								tempAccountAllocation.account_allocation_id = xmlDocAccount.getNodeText("//account-allocation/id");
+								tempAccountAllocation.account_allocation_amount = xmlDocAccount.getNodeText("//account-allocation/amount");
+								tempAccountAllocation.account_allocation_percent = xmlDocAccount.getNodeText("//account-allocation/pct");
+								tempAccountAllocation.account_id = xmlDocAccount.getNodeText("//account-allocation/account/id");
+								tempAccountAllocation.account_name = xmlDocAccount.getNodeText("//account-allocation/account/name");
+								tempAccountAllocation.account_code = xmlDocAccount.getNodeText("//account-allocation/account/account_code");
+								//tempAccountAllocation.account_year = xmlDocAccount.getNodeText("//account-allocation/account/segment-1");
+								//tempAccountAllocation.account_company = xmlDocAccount.getNodeText("//account-allocation/account/segment-2");
+								//tempAccountAllocation.account_deployment = xmlDocAccount.getNodeText("//account-allocation/account/segment-3");
+								//tempAccountAllocation.account_unit = xmlDocAccount.getNodeText("//account-allocation/account/segment-4");
+								tempAccountAllocation.segment_1 = xmlDocAccount.getNodeText("//account-allocation/account/segment-1");
+								tempAccountAllocation.segment_2 = xmlDocAccount.getNodeText("//account-allocation/account/segment-2");
+								tempAccountAllocation.segment_3 = xmlDocAccount.getNodeText("//account-allocation/account/segment-3");
+								tempAccountAllocation.segment_4 = xmlDocAccount.getNodeText("//account-allocation/account/segment-4");
+								tempAccountAllocation.segment_5 = xmlDocAccount.getNodeText("//account-allocation/account/segment-5");
+
+								tempAccountAllocation.account_type = xmlDocAccount.getNodeText("//account-allocation/account/account-type/name");
+								tempAccountAllocation.account_type_currency = xmlDocAccount.getNodeText("//account-allocation/account/account-type/currency/code");
+								tempAccountAllocation.period = xmlDocAccount.getNodeText("//account-allocation/period/name");
+
+								this.saveAccount(tempAccountAllocation);
+							}
+
+						}
+
+
+					}
+				}
+
+			}
+			else{
+				returnObj.errorMsg = responseBody;
+				//gs.info('returnObj.errorMsg : ' + returnObj.errorMsg);
+			}
+		}
+		catch(ex){
+			returnObj.errorMsg += ex;
+		}
+		
+		// Fetch file from Coupa
+		 this.processAttachment();
+		
+		this.endJob(job_sysid,returnObj.responseStatus,returnObj.errorMsg);
+		//return returnObj;
+	},
+	
+	processAttachment : function(){
+		var attach_GR = new GlideRecord('x_nriws_coupa_req_coupa_attachment_track'); 
+		attach_GR.addQuery('sync_status','IN','ready,error' );
+		attach_GR.query();
+		
+		while(attach_GR.next()){
+			var table = attach_GR.getValue('parent_table');
+			var sys_id = attach_GR.getValue('parent');
+			var fileName = attach_GR.getValue('file_name');
+			var fileUrl = attach_GR.getValue('file_endpoint');
+			
+			var result = this.attachFile(table,sys_id,fileName,fileUrl);
+			
+			if(result== ''){
+				attach_GR.sync_status = 'error';
+			}
+			else{
+				attach_GR.sync_status = 'success';
+			}
+			
+			attach_GR.update();
+		}
+		
+	},
+	
+	
+	attachFile: function(table,sys_id,fileName,fileUrl){
+		var endpointObj =this.endpointObj();
+		var result = '';
+		try{
+			
+			//fileUrl.replaceAll(" ","%20");
+			
+			var rm = new sn_ws.RESTMessageV2("Coupa","Get_Attachment");
+			//rm.setHttpMethod('GET');
+			//var url = gs.getProperty('glide.servlet.uri') + table + '.do?PDF&sys_id=' + sys_id;
+			rm.setEndpoint(fileUrl);
+			rm.setStringParameterNoEscape('apiKey', endpointObj.apliKey);
+			//rm.setBasicAuth(gs.getProperty('glide.user.userid'), gs.getProperty('glide.user.password'));
+			//rm.setBasicAuth('Sansiro.Ma', 'Long12345');
+			rm.saveResponseBodyAsAttachment(table ,sys_id,fileName);
+			var response = rm.execute();
+
+			result = 'success';
+			//gs.info("attachPDF response :" + JSON.stringify(response));
+		}
+		catch(ex){
+			//gs.info('attachPDF ex :' + ex);
+		}
+		
+		return result;
+	},
+	
+	saveRequisition : function(reqObj){
+		
+		//gs.info('Requisition : ' + JSON.stringify(reqObj));
+		var returnObj = {
+			sys_id : "",
+			id:"",
+			inserted : 0,
+			canceled : 0,
+			ignoreFlag : false
+		};
+
+		var req_GR = new GlideRecord('x_nriws_coupa_req_coupa_requisition'); 
+		req_GR.addQuery('id',parseInt(reqObj.req_id));
+		req_GR.addQuery('status','pending_approval');
+		//req_GR.addQuery('coupa_approval_id',reqObj.approval);
+		req_GR.query();
+		//req_GR.setValue('status',  'canceled');
+		//req_GR.setValue('state',  '-5');
+		//req_GR.updateMultiple();
+
+		while(req_GR.next()){
+			if(reqObj.approval !==req_GR.getValue('coupa_approval_id')){
+				req_GR.status = 'canceled';
+				req_GR.cancel_reason = 'cancelled_by_coupa';
+				req_GR.state = -5;
+				req_GR.comments = 'Coupaで再申請されたため、この申請をキャンセルしました。';
+				req_GR.update();
+				
+				returnObj.canceled++;
+			}
+			else{
+				returnObj.ignoreFlag = true;
+			}
+		}
+			/*
+		if(req_GR.getRowCount() > 0){
+			// Skip Modify for Now
+		
+			returnObj.ignoreFlag = true;
+			
+		
+			req_GR.next();
+			if(reqObj.updated_at){req_GR.updated_at = new GlideDateTime(reqObj.updated_at).getValue();}
+			if(reqObj.status)req_GR.status = reqObj.status;
+			if(reqObj.line_count){req_GR.line_count = parseInt(reqObj.line_count);}
+			if(reqObj.total){req_GR.total = parseFloat(reqObj.total);}
+			
+			if(reqObj.justification)req_GR.justification = reqObj.justification;
+			if(reqObj.department)req_GR.department = reqObj.department;
+			// custom fields
+			if(reqObj.project_title)req_GR.project_title = reqObj.project_title;
+			if(reqObj.contractor_leader)req_GR.contractor_leader = reqObj.contractor_leader;
+			if(reqObj.contractor_subleader)req_GR.contractor_subleader = reqObj.contractor_subleader;
+			if(reqObj.subcontractor)req_GR.subcontractor = reqObj.subcontractor;
+			if(reqObj.optional_field)req_GR.optional_field = reqObj.optional_field;
+			if(reqObj.consignment_start_request)req_GR.consignment_start_request = reqObj.consignment_start_request;
+			if(reqObj.reason_for_submittting_request)req_GR.reason_for_submittting_request = reqObj.reason_for_submittting_request;
+			if(reqObj.scheduled_issue_date){req_GR.scheduled_issue_date = new GlideDateTime(reqObj.scheduled_issue_date).getValue();}
+			if(reqObj.contract_by_docusign)req_GR.contract_by_docusign = reqObj.contract_by_docusign;
+			if(reqObj.personal_info)req_GR.personal_info = reqObj.personal_info;
+			if(reqObj.export_property)req_GR.export_property = reqObj.export_property;
+			if(reqObj.basic_contract)req_GR.basic_contract = reqObj.basic_contract;
+			if(reqObj.usage_field)req_GR.usage_field = reqObj.usage_field;
+			if(reqObj.resale_company)req_GR.resale_company = reqObj.resale_company;
+			
+			if(reqObj.currency)req_GR.currency = reqObj.currency;
+			
+			// requested-by
+			if(reqObj.requested_by)req_GR.requested_by = reqObj.requested_by;
+			if(reqObj.requested_by_fullname)req_GR.requested_by_fullname = reqObj.requested_by_fullname;
+			if(reqObj.requested_by_id){req_GR.requested_by_id = parseInt(reqObj.requested_by_id);}
+			
+			// created-by
+			if(reqObj.created_by)req_GR.created_by = reqObj.created_by;
+			if(reqObj.created_by_fullname)req_GR.created_by_fullname = reqObj.created_by_fullname;
+			if(reqObj.created_by_id){req_GR.created_by_id = parseInt(reqObj.created_by_id);}
+				
+			// ship to
+			if(reqObj.ship_to_attention)req_GR.ship_to_attention = reqObj.ship_to_attention;
+			if(reqObj.postal_code)req_GR.postal_code = reqObj.postal_code;
+			if(reqObj.address_state)req_GR.address_state = reqObj.state;
+			if(reqObj.city)req_GR.city = reqObj.city;
+			if(reqObj.street_2)req_GR.street_2 = reqObj.street_2;
+			if(reqObj.street_1)req_GR.street_1 = reqObj.street_1;
+			if(reqObj.location_code)req_GR.location_code = reqObj.location_code;
+			if(reqObj.location_name)req_GR.location_name = reqObj.location_name;
+			if(reqObj.country_id){req_GR.country_id= parseInt(reqObj.country_id);}
+			
+			if(reqObj.country_name)req_GR.country_name = reqObj.country_name;
+			if(reqObj.country_code)req_GR.country_code = reqObj.country_code;
+			
+			if(reqObj.approval)req_GR.coupa_approval_id = reqObj.approval;
+			
+			req_GR.refreshed =true;
+			req_GR.refresh_time =new GlideDateTime().getDisplayValue();
+			
+			req_GR.update();
+			
+			returnObj.sys_id = req_GR.getUniqueValue();
+			returnObj.id = req_GR.getValue("id");
+			
+		}
+		*/
+		
+		if(returnObj.ignoreFlag ==false){
+			//insert
+			req_GR.initialize();
+			req_GR.id = reqObj.req_id;
+			
+			if(reqObj.created_at){
+				var dateFormat = reqObj.created_at.slice(0,10)+' '+reqObj.created_at.slice(11,19);
+				req_GR.created_at = new GlideDateTime(dateFormat).getValue();
+			}
+			if(reqObj.updated_at){req_GR.updated_at = new GlideDateTime(reqObj.updated_at).getValue();}
+			if(reqObj.status)req_GR.status = reqObj.status;
+			if(reqObj.line_count){req_GR.line_count = parseInt(reqObj.line_count);}
+			if(reqObj.total){req_GR.total = parseFloat(reqObj.total);}
+			
+			if(reqObj.justification)req_GR.justification = reqObj.justification;
+			if(reqObj.department)req_GR.department = reqObj.department;
+			// custom fields
+			if(reqObj.project_title)req_GR.project_title = reqObj.project_title;
+			if(reqObj.contractor_leader)req_GR.contractor_leader = reqObj.contractor_leader;
+			if(reqObj.contractor_subleader)req_GR.contractor_subleader = reqObj.contractor_subleader;
+			if(reqObj.subcontractor)req_GR.subcontractor = reqObj.subcontractor;
+			if(reqObj.optional_field)req_GR.optional_field = reqObj.optional_field;
+			if(reqObj.consignment_start_request)req_GR.consignment_start_request = reqObj.consignment_start_request;
+			if(reqObj.reason_for_submittting_request)req_GR.reason_for_submittting_request = reqObj.reason_for_submittting_request;
+			if(reqObj.scheduled_issue_date){req_GR.scheduled_issue_date = new GlideDateTime(reqObj.scheduled_issue_date).getValue();}
+			if(reqObj.contract_by_docusign)req_GR.contract_by_docusign = reqObj.contract_by_docusign;
+			if(reqObj.personal_info)req_GR.personal_info = reqObj.personal_info;
+			if(reqObj.export_property)req_GR.export_property = reqObj.export_property;
+			if(reqObj.basic_contract)req_GR.basic_contract = reqObj.basic_contract;
+			if(reqObj.usage_field)req_GR.usage_field = reqObj.usage_field;
+			if(reqObj.resale_company)req_GR.resale_company = reqObj.resale_company;
+			
+			if(reqObj.currency)req_GR.currency = reqObj.currency;
+			
+			// requested-by
+			if(reqObj.requested_by)req_GR.requested_by = reqObj.requested_by;
+			if(reqObj.requested_by_fullname)req_GR.requested_by_fullname = reqObj.requested_by_fullname;
+			if(reqObj.requested_by_id){req_GR.requested_by_id = parseInt(reqObj.requested_by_id);}
+			
+			// created-by
+			if(reqObj.created_by)req_GR.created_by = reqObj.created_by;
+			if(reqObj.created_by_fullname)req_GR.created_by_fullname = reqObj.created_by_fullname;
+			if(reqObj.created_by_id){req_GR.created_by_id = parseInt(reqObj.created_by_id);}
+				
+			// ship to
+			if(reqObj.ship_to_attention)req_GR.ship_to_attention = reqObj.ship_to_attention;
+			if(reqObj.postal_code)req_GR.postal_code = reqObj.postal_code;
+			if(reqObj.address_state)req_GR.address_state = reqObj.state;
+			if(reqObj.city)req_GR.city = reqObj.city;
+			if(reqObj.street_2)req_GR.street_2 = reqObj.street_2;
+			if(reqObj.street_1)req_GR.street_1 = reqObj.street_1;
+			if(reqObj.location_code)req_GR.location_code = reqObj.location_code;
+			if(reqObj.location_name)req_GR.location_name = reqObj.location_name;
+			if(reqObj.country_id){req_GR.country_id= parseInt(reqObj.country_id);}
+			
+			if(reqObj.country_name)req_GR.country_name = reqObj.country_name;
+			if(reqObj.country_code)req_GR.country_code = reqObj.country_code;
+			
+			if(reqObj.approval)req_GR.coupa_approval_id = reqObj.approval;
+			
+			req_GR.refreshed =true;
+			req_GR.refresh_time =new GlideDateTime().getDisplayValue();
+			
+			req_GR.insert();
+			
+			returnObj.inserted++;
+			
+			returnObj.sys_id = req_GR.getUniqueValue();
+			returnObj.id = req_GR.getValue("id");
+		}
+		return returnObj;
+	},
+	
+	saveRequisitionItem : function(reqItemObj){
+		//gs.info('Item : ' + JSON.stringify(reqItemObj));
+		
+		var returnObj = {sys_id : "",id:"",ignoreFlag : false};
+		var reqItem_GR = new GlideRecord('x_nriws_coupa_req_coupa_items'); 
+		//reqItem_GR.addQuery('id',parseInt(reqItemObj.id));
+		//reqItem_GR.query();
+		//
+		//if(reqItem_GR.getRowCount() > 0){
+		//	// Skip for now
+		//	returnObj.ignoreFlag = true;
+		//}
+		//else{
+			reqItem_GR.initialize();
+			
+			reqItem_GR.parent = reqItemObj.parent;
+			if(reqItemObj.id)reqItem_GR.id = parseInt(reqItemObj.id);
+			if(reqItemObj.line_number)reqItem_GR.line_number = parseInt(reqItemObj.line_number);
+			if(reqItemObj.description)reqItem_GR.description = reqItemObj.description;
+			if(reqItemObj.quantity){reqItem_GR.quantity =parseInt(reqItemObj.quantity);}
+			if(reqItemObj.unit_price)reqItem_GR.unit_price = parseFloat(reqItemObj.unit_price);
+			if(reqItemObj.total)reqItem_GR.total = parseFloat(reqItemObj.total);
+			if(reqItemObj.source_type)reqItem_GR.source_type = reqItemObj.source_type;
+			if(reqItemObj.line_type)reqItem_GR.line_type = reqItemObj.line_type;
+			if(reqItemObj.service_type)reqItem_GR.service_type = reqItemObj.service_type;
+			
+			if(reqItemObj.need_by_date)reqItem_GR.need_by_date = new GlideDateTime(reqItemObj.need_by_date).getValue();
+			if(reqItemObj.manufacturer_name)reqItem_GR.manufacturer_name = reqItemObj.manufacturer_name;
+			if(reqItemObj.manufacturer_part_number)reqItem_GR.manufacturer_part_number = reqItemObj.manufacturer_part_number;
+			if(reqItemObj.currency)reqItem_GR.currency = reqItemObj.currency;
+			if(reqItemObj.commodity_name)reqItem_GR.commodity_name = reqItemObj.commodity_name;
+			if(reqItemObj.payment_term)reqItem_GR.payment_term = reqItemObj.payment_term;
+			if(reqItemObj.start_date)reqItem_GR.start_date  = new GlideDateTime(reqItemObj.start_date).getValue();
+			if(reqItemObj.end_date)reqItem_GR.end_date  = new GlideDateTime(reqItemObj.end_date).getValue();
+			
+			if(reqItemObj.personal_info)reqItem_GR.personal_info = reqItemObj.personal_info;
+			if(reqItemObj.export_property)reqItem_GR.export_property = reqItemObj.export_property;
+			if(reqItemObj.basic_contract)reqItem_GR.basic_contract = reqItemObj.basic_contract;
+			if(reqItemObj.outsourcing_info)reqItem_GR.outsourcing_info = reqItemObj.outsourcing_info;
+			if(reqItemObj.basic_contracted_corp)reqItem_GR.basic_contracted_corp = reqItemObj.basic_contracted_corp;
+			if(reqItemObj.subcontract_personal_info)reqItem_GR.subcontract_personal_info = reqItemObj.subcontract_personal_info;
+			//if(reqItemObj.cost_allocation_flag)reqItem_GR.personal_info = reqItemObj.cost_allocation_flag;
+			if(reqItemObj.cistec_date)reqItem_GR.cistec_date  = new GlideDateTime(reqItemObj.cistec_date).getValue();
+			
+			reqItem_GR.has_contract = reqItemObj.has_contract;
+		
+			// uom
+			if(reqItemObj.uom_code)reqItem_GR.uom_code = reqItemObj.uom_code;
+			if(reqItemObj.uom_name)reqItem_GR.uom_name = reqItemObj.uom_name;
+
+			// サプライヤー supplier
+			if(reqItemObj.supplier_id)reqItem_GR.supplier_id = reqItemObj.supplier_id;
+			if(reqItemObj.supplier_display_name)reqItem_GR.supplier_display_name = reqItemObj.supplier_display_name;
+			if(reqItemObj.supplier_name)reqItem_GR.supplier_name = reqItemObj.supplier_name;
+			// 請負基本契約締結会社
+			if(reqItemObj.contracting_company)reqItem_GR.contracting_company = reqItemObj.contracting_company;
+			// 費用按分方法
+			if(reqItemObj.cost_allocation_flag)reqItem_GR.cost_allocation_method = reqItemObj.cost_allocation_flag;
+			if(reqItemObj.accounting_standards)reqItem_GR.accounting_standards = reqItemObj.accounting_standards;
+			if(reqItemObj.comments)reqItem_GR.comments = reqItemObj.comments;
+			
+			reqItem_GR.insert();
+			
+			returnObj.sys_id = reqItem_GR.getUniqueValue();
+			returnObj.id = reqItem_GR.getValue('id');
+			
+		//}
+		
+		return returnObj;
+	},
+	
+	saveAccount : function(accountObj){
+		//gs.info('Account : ' + JSON.stringify(accountObj));
+		var returnObj = {sys_id : "",id:""};
+		var account_GR = new GlideRecord('x_nriws_coupa_req_account'); 
+		//account_GR.addQuery('parent',accountObj.parent);
+		//account_GR.addQuery('account_id',parseInt(accountObj.account_id));
+		//account_GR.query();
+		
+		account_GR.initialize();
+		account_GR.parent = accountObj.parent;
+		account_GR.type = accountObj.type;
+
+		if(accountObj.account_allocation_id)account_GR.account_allocation_id = parseInt(accountObj.account_allocation_id);
+		if(accountObj.account_allocation_amount)account_GR.account_allocation_amount = parseFloat(accountObj.account_allocation_amount);
+		if(accountObj.account_allocation_percent)account_GR.account_allocation_percent = parseFloat(accountObj.account_allocation_percent);
+
+		if(accountObj.account_id)account_GR.account_id = parseInt(accountObj.account_id);
+		if(accountObj.account_name)account_GR.account_name = accountObj.account_name;
+		if(accountObj.account_code)account_GR.account_code = accountObj.account_code;
+
+		if(accountObj.segment_1)account_GR.segment_1 = accountObj.segment_1;
+		if(accountObj.segment_2)account_GR.segment_2 = accountObj.segment_2;
+		if(accountObj.segment_3)account_GR.segment_3 = accountObj.segment_3;
+		if(accountObj.segment_4)account_GR.segment_4 = accountObj.segment_4;
+		if(accountObj.segment_5)account_GR.segment_5 = accountObj.segment_5;
+
+		if(accountObj.account_type)account_GR.account_type = accountObj.account_type;
+		if(accountObj.account_type_currency)account_GR.account_type_currency = accountObj.account_type_currency;
+		if(accountObj.period)account_GR.period = accountObj.period;
+
+		if(accountObj.consignment_contract_number)account_GR.consignment_contract_number = accountObj.consignment_contract_number;
+		
+		account_GR.insert();
+		returnObj.sys_id = account_GR.getUniqueValue();
+		returnObj.id = account_GR.getValue('account_id');
+		
+		return returnObj;
+	},
+
+	saveInvoiceAccount : function(accountObj){
+		//gs.info('Account : ' + JSON.stringify(accountObj));
+		var returnObj = {sys_id : "",id:""};
+		var account_GR = new GlideRecord('x_nriws_coupa_req_invoice_account'); 
+		//account_GR.addQuery('parent',accountObj.parent);
+		//account_GR.addQuery('account_id',parseInt(accountObj.account_id));
+		//account_GR.query();
+		account_GR.initialize();
+		account_GR.parent = accountObj.parent;
+		account_GR.type = accountObj.type;
+
+		if(accountObj.account_allocation_id)account_GR.account_allocation_id = parseInt(accountObj.account_allocation_id);
+		if(accountObj.account_allocation_amount)account_GR.account_allocation_amount = parseFloat(accountObj.account_allocation_amount);
+		if(accountObj.account_allocation_percent)account_GR.account_allocation_percent = parseFloat(accountObj.account_allocation_percent);
+
+		if(accountObj.account_id)account_GR.account_id = parseInt(accountObj.account_id);
+		if(accountObj.account_name)account_GR.account_name = accountObj.account_name;
+		if(accountObj.account_code)account_GR.account_code = accountObj.account_code;
+
+		if(accountObj.segment_1)account_GR.segment_1 = accountObj.segment_1;
+		if(accountObj.segment_2)account_GR.segment_2 = accountObj.segment_2;
+		if(accountObj.segment_3)account_GR.segment_3 = accountObj.segment_3;
+		if(accountObj.segment_4)account_GR.segment_4 = accountObj.segment_4;
+		if(accountObj.segment_5)account_GR.segment_5 = accountObj.segment_5;
+
+		if(accountObj.account_type)account_GR.account_type = accountObj.account_type;
+		if(accountObj.account_type_currency)account_GR.account_type_currency = accountObj.account_type_currency;
+		if(accountObj.period)account_GR.period = accountObj.period;
+
+		if(accountObj.consignment_contract_number)account_GR.consignment_contract_number = accountObj.consignment_contract_number;
+		
+		account_GR.insert();
+		returnObj.sys_id = account_GR.getUniqueValue();
+		returnObj.id = account_GR.getValue('account_id');
+		
+		return returnObj;
+	},
+	
+	saveAttachment : function(attachObj){
+		var attach_GR = new GlideRecord('x_nriws_coupa_req_coupa_attachment_track'); 
+		attach_GR.addQuery('file_id',attachObj.file_id);
+		attach_GR.addQuery('parent',attachObj.parent);
+		attach_GR.query();
+		
+		if(attach_GR.getRowCount() > 0){
+			// Skip for now
+		}else{
+			//
+			
+			attach_GR.initialize();
+			attach_GR.parent_table = attachObj.parent_table;
+			attach_GR.parent_type = attachObj.parent_type;
+			attach_GR.parent_id= attachObj.parent_id;
+			attach_GR.parent = attachObj.parent;
+			attach_GR.file_name = attachObj.file_name;
+			attach_GR.file_endpoint = attachObj.file_endpoint;
+			if(attachObj.created_in_coupa)attach_GR.created_in_coupa = new GlideDateTime(attachObj.created_in_coupa).getValue();
+			if(attachObj.updated_in_coupa)attach_GR.updated_in_coupa = new GlideDateTime(attachObj.updated_in_coupa).getValue();
+			
+			attach_GR.file_id = attachObj.file_id;
+			attach_GR.file_type = attachObj.file_type;
+			attach_GR.file_intent = attachObj.file_intent;
+			attach_GR.file_path = attachObj.file_path;
+			attach_GR.sync_status = attachObj.sync_status;
+			
+			attach_GR.insert();
+			
+		}
+	},
+	
+	parseAttachmentNode : function(attachNodes,requisiton_url,req_id,parent_table,parent_type,parent_sysid,parent_id){
+
+		var attachObj = {};
+		var attachComments = '';
+		
+		var iterAttach = attachNodes.getChildNodeIterator();
+		var xmlDocAttach = '';
+		while(iterAttach.hasNext()){
+			var attachNode = iterAttach.next();
+
+			if(attachNode == null || attachNode =='' ||attachNode.toString().trim()==''||attachNode.getTextContent().trim()==''){
+				continue;
+			}
+
+			xmlDocAttach = new XMLDocument2();
+			xmlDocAttach.parseXML(attachNode.toString());
+
+			var fileID = xmlDocAttach.getNodeText("//attachment/id");
+			var fileType = xmlDocAttach.getNodeText("//attachment/type");
+			var fileIntent = xmlDocAttach.getNodeText("//attachment/intent");
+			var createdAt = xmlDocAttach.getNodeText("//attachment/created-at");
+			var updatedAt = xmlDocAttach.getNodeText("//attachment/updated-at");
+
+			if(fileType == 'AttachmentFile'){
+				
+				var fileNameWithPath = xmlDocAttach.getNodeText("//attachment/file-url");
+				var fileName = '';
+				if(fileNameWithPath.lastIndexOf('/') > -1){
+					fileName= fileNameWithPath.substring(fileNameWithPath.lastIndexOf('/')+1);
+				}
+
+				var fileUrl = requisiton_url + '/' + req_id + '/attachments/' + fileID;
+
+				attachObj = {
+					parent_table : parent_table,
+					parent_type:  parent_type,
+					parent : parent_sysid,
+					parent_id : parent_id,
+					file_name : fileName,
+					file_endpoint : fileUrl,
+					created_in_coupa : createdAt,
+					updated_in_coupa : updatedAt,
+					file_id : fileID,
+					file_type : fileType,
+					file_intent : fileIntent,
+					file_path : fileNameWithPath,
+					sync_status : 'ready'
+				};
+				
+				this.saveAttachment(attachObj);
+				//gs.info('attachment : ' + JSON.stringify(attachObj));
+				// Save attachObj to table
+			}
+			else{
+				
+				var tempAttachmentComment =  xmlDocAttach.getNodeText("//attachment/text");
+				
+				if(tempAttachmentComment != null && tempAttachmentComment !='' && tempAttachmentComment.trim() !=''){
+					if(attachComments == ""){
+						attachComments = tempAttachmentComment.trim();
+					}
+					else{
+						attachComments += "\n" + xmlDocAttach.getNodeText("//attachment/text");
+					}
+				}
+				
+			}
+
+		}	
+		
+		if(attachComments != ''){
+			gs.info('attachComments : ' + attachComments);
+		}
+		// Save attach comments
+		
+		//return attachObj;
+	},
+	
+	updateCoupaReqRefreshFlag : function(){
+		
+		// change all pending approval record refresh flag to false
+		var coupa_GR = new GlideRecord('x_nriws_coupa_req_coupa_requisition'); 
+		coupa_GR.addQuery('status','pending_approval');
+		coupa_GR.refreshed = false;
+		coupa_GR.query();
+		coupa_GR.updateMultiple();	
+	},
+	
+	startJob : function(jobName){
+		
+		var dateTimeNow = new GlideDateTime().getDisplayValue();
+		
+		var now_GR = new GlideRecord('x_nriws_coupa_req_schedule_job'); 
+		now_GR.addQuery('name',jobName);
+		now_GR.query();
+		
+		var job_sys_id = '';
+		if(now_GR.getRowCount()>0){
+			if(now_GR.next()){
+				now_GR.status = 'running';
+				now_GR.start_time = dateTimeNow;
+				now_GR.end_time = '';
+				now_GR.duration = '';
+				now_GR.update();
+				job_sys_id = now_GR.getUniqueValue();
+			}
+		}
+		else{
+			now_GR.initialize(); 
+			now_GR.name = jobName;
+			now_GR.status = 'running';
+			now_GR.start_time = dateTimeNow;
+			now_GR.end_time = '';
+			now_GR.duration = '';
+			
+			job_sys_id = now_GR.insert();
+		}
+		//now_GR.initialize(); 
+		//now_GR.name = jobName;
+			
+		return job_sys_id;
+	},
+	
+	endJob :  function(sys_id,statusCode,message){
+		gs.info('end job : ' + sys_id);
+		var now_GR = new GlideRecord('x_nriws_coupa_req_schedule_job'); 
+		now_GR.addQuery('sys_id',sys_id);
+		now_GR.query();
+		
+		while(now_GR.next()){
+			
+			var duration = new GlideDateTime.subtract(new GlideDateTime(now_GR.start_time), new GlideDateTime()).getDisplayValue();
+			//var duration = gs.dateDiff(now_GR.start_time, new GlideDateTime(), false); 
+			//gs.info('duration : ' + duration );
+			
+			var dateTimeNow = new GlideDateTime().getDisplayValue();
+			now_GR.status_code = statusCode;
+			//now_GR.comments = message;
+			now_GR.end_time = dateTimeNow;
+			now_GR.duration = duration;
+			now_GR.status = 'success';
+			now_GR.comments = message;
+			
+			
+			//if(statusCode=='200'){
+			//	now_GR.status = 'success';
+			//}
+			//else{
+			//	now_GR.status = 'error';
+			//}
+			
+			now_GR.update();
+			
+			
+		}
+		
+		
+	},
+	
+    type: 'CoupaAPIUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-05 02:23:43</sys_created_on>
+        <sys_id>f2e55f991b94e410e05f43b2cc4bcb6a</sys_id>
+        <sys_mod_count>425</sys_mod_count>
+        <sys_name>CoupaAPIUtils</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_script_include_f2e55f991b94e410e05f43b2cc4bcb6a</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-07-28 04:03:53</sys_updated_on>
+    </sys_script_include>
+</record_update>

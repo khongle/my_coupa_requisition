@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="export_task_status" table="x_nriws_coupa_req_account" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>export_task_status</element>
+            <name>x_nriws_coupa_req_account</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-27 04:19:02</sys_created_on>
+            <sys_id>3953cda01bb4ac1059943265cc4bcbbc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>export_task_status</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_choice_x_nriws_coupa_req_account_export_task_status</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-27 04:19:02</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>export_task_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Fail</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_account</name>
+            <sequence/>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-27 04:19:34</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>466345e01bb4ac1059943265cc4bcbc8</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-27 04:19:42</sys_updated_on>
+            <value>fail</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>export_task_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Processing</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_account</name>
+            <sequence/>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-27 04:19:02</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7a4305e01bb4ac1059943265cc4bcb91</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-27 04:19:11</sys_updated_on>
+            <value>processing</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>export_task_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Success</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_account</name>
+            <sequence/>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-27 04:19:19</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>bd5305e01bb4ac1059943265cc4bcbf4</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-27 04:19:27</sys_updated_on>
+            <value>success</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

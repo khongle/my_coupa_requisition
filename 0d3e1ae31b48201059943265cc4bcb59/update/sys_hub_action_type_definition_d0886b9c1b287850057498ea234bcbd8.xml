@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>59bb843e1bb06450e05f43b2cc4bcba7</copied_from>
+        <copied_from_name>Generate CSV File(Schedule Job)</copied_from_name>
+        <description>This action will generate upload file and save to current record</description>
+        <ih_action>false</ih_action>
+        <internal_name>copy_of_generate_csv_fileschedule_job</internal_name>
+        <label_cache>[{"name":"{{action.variable}}","label":"action➛variable","type":"action","ref":"x_nriws_coupa_req_account"},{"name":"{{action.account_record}}","label":"action➛Account Record","type":"action","ref":"x_nriws_coupa_req_account"},{"name":"{{action.account_record.sys_id}}","label":"action➛Account Record➛Sys ID","type":"action","ref":""},{"name":"{{action.account_record.consignment_contract_number}}","label":"action➛Account Record➛Consignment Contract Number","type":"action","ref":""},{"name":"{{action.schedule_job_record}}","label":"action➛Schedule Job Record","type":"action","ref":""},{"name":"{{action.schedule_job_record.number}}","label":"action➛Schedule Job Record➛Number","type":"action","ref":""},{"name":"{{action.schedule_job_record.sys_id}}","label":"action➛Schedule Job Record➛Sys ID","type":"action","ref":""},{"name":"{{step[7fbce552-aa9c-4f29-a586-3daf2a36fcf7].variable}}","label":"step➛Script step➛variable","type":"step","ref":""},{"name":"{{step[7fbce552-aa9c-4f29-a586-3daf2a36fcf7].newattachmentsysid}}","label":"step➛Script step➛newattachmentsysid","type":"step","ref":""}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <name>Copy of Generate CSV File(Schedule Job)</name>
+        <natlang/>
+        <outputs/>
+        <state>draft</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-06-01 07:37:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d0886b9c1b287850057498ea234bcbd8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Generate CSV File(Schedule Job)</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_d0886b9c1b287850057498ea234bcbd8</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-06-01 07:37:37</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=d0886b9c1b287850057498ea234bcbd8"/>
+    <sys_variable_value action="delete_multiple" query="document_key=d0886b9c1b287850057498ea234bcbd8"/>
+</record_update>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_headers">
+    <sys_rest_message_headers action="INSERT_OR_UPDATE">
+        <name>ACCEPT</name>
+        <rest_message display_value="Coupa">fa34d7591b94e410e05f43b2cc4bcb23</rest_message>
+        <sys_class_name>sys_rest_message_headers</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-05 02:17:47</sys_created_on>
+        <sys_id>62849b591b94e410e05f43b2cc4bcb08</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>ACCEPT</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_headers_62849b591b94e410e05f43b2cc4bcb08</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-05-18 04:32:12</sys_updated_on>
+        <value>application/xml</value>
+    </sys_rest_message_headers>
+</record_update>

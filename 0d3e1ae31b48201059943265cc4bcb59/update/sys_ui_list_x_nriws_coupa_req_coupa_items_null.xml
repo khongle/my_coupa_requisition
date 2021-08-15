@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_nriws_coupa_req_coupa_items" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>line_number</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>4bec9c161bd82010e05f43b2cc4bcbdf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>id</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>cbec9c161bd82010e05f43b2cc4bcbdf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>total</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>4fec9c161bd82010e05f43b2cc4bcbdf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>outsourcing_info</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>cfec9c161bd82010e05f43b2cc4bcbdf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>end_date</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>43ec9c161bd82010e05f43b2cc4bcbe0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>start_date</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>c3ec9c161bd82010e05f43b2cc4bcbe0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>accounting_standards</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>47ec9c161bd82010e05f43b2cc4bcbe0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>basic_contract</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>cbec14561bd82010e05f43b2cc4bcbe6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>cistec_date</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>4fec14561bd82010e05f43b2cc4bcbe6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>comments</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>cfec14561bd82010e05f43b2cc4bcbe6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>commodity_name</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>10</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>43ec14561bd82010e05f43b2cc4bcbe7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>contracting_company</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>11</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>c3ec14561bd82010e05f43b2cc4bcbe7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>cost_allocation_method</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>12</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>47ec14561bd82010e05f43b2cc4bcbe7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_created_on</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>13</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>c7ec14561bd82010e05f43b2cc4bcbe7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_created_by</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>14</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>4bec14561bd82010e05f43b2cc4bcbe7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>currency</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>15</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>cbec14561bd82010e05f43b2cc4bcbe7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>description</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>16</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>4fec14561bd82010e05f43b2cc4bcbe7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>export_property</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>17</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>cfec14561bd82010e05f43b2cc4bcbe7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>has_contract</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>18</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>43ec14561bd82010e05f43b2cc4bcbe8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>line_type</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>19</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>c3ec14561bd82010e05f43b2cc4bcbe8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>manufacturer_name</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>20</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>47ec14561bd82010e05f43b2cc4bcbe8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>manufacturer_part_number</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>21</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>c7ec14561bd82010e05f43b2cc4bcbe8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>need_by_date</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>22</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>4bec14561bd82010e05f43b2cc4bcbe8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>parent</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>23</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>cbec14561bd82010e05f43b2cc4bcbe8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>payment_term</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>24</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>4fec14561bd82010e05f43b2cc4bcbe8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>period</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>25</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>cfec14561bd82010e05f43b2cc4bcbe8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>personal_info</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>26</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>43ec14561bd82010e05f43b2cc4bcbe9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>quality</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>27</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>c3ec14561bd82010e05f43b2cc4bcbe9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>quantity</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>28</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>47ec14561bd82010e05f43b2cc4bcbe9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>service_type</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>29</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>c7ec14561bd82010e05f43b2cc4bcbe9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>source_type</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>30</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>4bec14561bd82010e05f43b2cc4bcbe9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>subcontract_for_personal_info</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>31</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>cbec14561bd82010e05f43b2cc4bcbe9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>supplier_display_name</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>32</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>4fec14561bd82010e05f43b2cc4bcbe9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>supplier_id</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>33</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>cfec14561bd82010e05f43b2cc4bcbe9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>supplier_name</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>34</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>43ec14561bd82010e05f43b2cc4bcbea</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_tags</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>35</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>c3ec14561bd82010e05f43b2cc4bcbea</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>unit</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>36</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>47ec14561bd82010e05f43b2cc4bcbea</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>unit_price</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>37</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>c7ec14561bd82010e05f43b2cc4bcbea</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>uom_code</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>38</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>4bec14561bd82010e05f43b2cc4bcbea</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>uom_name</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>39</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>cbec14561bd82010e05f43b2cc4bcbea</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_updated_on</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>40</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>4fec14561bd82010e05f43b2cc4bcbea</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_updated_by</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>41</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>cfec14561bd82010e05f43b2cc4bcbea</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_mod_count</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>42</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>43ec14561bd82010e05f43b2cc4bcbeb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>attachment_comments</element>
+            <list_id display_value="x_nriws_coupa_req_coupa_items" element="NULL" name="x_nriws_coupa_req_coupa_items" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">8fec9c161bd82010e05f43b2cc4bcbde</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>43</position>
+            <sum>false</sum>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_id>c3ec14561bd82010e05f43b2cc4bcbeb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_nriws_coupa_req_coupa_items</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-07 15:29:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8fec9c161bd82010e05f43b2cc4bcbde</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_nriws_coupa_req_coupa_items</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_ui_list_x_nriws_coupa_req_coupa_items_null</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-07 15:29:09</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

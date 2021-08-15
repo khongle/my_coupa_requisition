@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_nriws_coupa_req.CoupaCommonUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CoupaCommonUtils</name>
+        <script><![CDATA[var CoupaCommonUtils = Class.create();
+CoupaCommonUtils.prototype = {
+    initialize: function() {
+    },
+	
+	getEndpoint: function(){
+		
+		var endpointObj = {};
+		var instance_Name = gs.getProperty("instance_name");
+		
+		var url = '';
+		var apliKey = '';
+		
+		if(instance_Name == 'nrigdev1'){
+			url =  gs.getProperty('x_nriws_coupa_req.coupa.api.url.dev');
+			apliKey =  gs.getProperty('x_nriws_coupa_req.coupa.api.key.dev');
+		}
+		else if(instance_Name == 'nriguat1'){
+			url =  gs.getProperty('x_nriws_coupa_req.coupa.api.url.uat');
+			apliKey =  gs.getProperty('x_nriws_coupa_req.coupa.api.key.uat');
+		}
+		else if(instance_Name == 'nrigprod'){
+			url =  gs.getProperty('x_nriws_coupa_req.coupa.api.url.prd');
+			apliKey =  gs.getProperty('x_nriws_coupa_req.coupa.api.key.prd');
+		}
+		
+		endpointObj.url = url;
+		endpointObj.apliKey = apliKey;
+		endpointObj.requisiton_url = url + 'requisitions';
+		
+		return endpointObj;
+	},
+	
+	isDelegateApprover: function(user_sys_id,approval_sys_id){
+		
+		var isDelegated = false;		
+		var approver_sys_id = '';		
+		var ApprovalGR = new GlideRecord('sysapproval_approver'); 
+		ApprovalGR.addQuery('sys_id',approval_sys_id);
+		ApprovalGR.addQuery('state','requested');
+		ApprovalGR.query();
+		if(ApprovalGR.next()){
+			approver_sys_id =ApprovalGR.getValue('approver');
+						
+			var current_dr_tm = new GlideRecord('sys_user_delegate');
+			current_dr_tm.addQuery('delegate',user_sys_id);
+			current_dr_tm.addQuery('user',approver_sys_id);
+			current_dr_tm.addQuery('approvals',true);
+			current_dr_tm.addQuery('ends','>=',new GlideDateTime().getDisplayValue());
+			current_dr_tm.addQuery('starts','<=',new GlideDateTime().getDisplayValue());
+			current_dr_tm.orderByDesc('ends');
+			current_dr_tm.query();
+						
+			if(current_dr_tm.next()){isDelegated = true;}
+		}		
+		return isDelegated;
+	},
+
+    type: 'CoupaCommonUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-05 02:32:41</sys_created_on>
+        <sys_id>48f7d3d91b94e410e05f43b2cc4bcb93</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>CoupaCommonUtils</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_script_include_48f7d3d91b94e410e05f43b2cc4bcb93</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-06-14 07:42:00</sys_updated_on>
+    </sys_script_include>
+</record_update>

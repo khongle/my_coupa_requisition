@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="upload_result" label="Upload Result" language="en" table="var__m_sys_hub_action_output_fe72dfbf1b286c10e05f43b2cc4bcb09">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>upload_result</element>
+            <help/>
+            <hint/>
+            <label>Upload Result</label>
+            <language>en</language>
+            <name>var__m_sys_hub_action_output_fe72dfbf1b286c10e05f43b2cc4bcb09</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-26 00:21:21</sys_created_on>
+            <sys_id>1e538b481b70ac10e05f43b2cc4bcb12</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Upload Result</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_documentation_var__m_sys_hub_action_output_fe72dfbf1b286c10e05f43b2cc4bcb09_upload_result_en</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-26 00:21:21</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

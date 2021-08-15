@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="anaplan_connection_status" table="x_nriws_coupa_req_account" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>anaplan_connection_status</element>
+            <name>x_nriws_coupa_req_account</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-25 00:43:12</sys_created_on>
+            <sys_id>30cefd7f1b646c10e05f43b2cc4bcbca</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>anaplan_connection_status</sys_name>
+            <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+            <sys_update_name>sys_choice_x_nriws_coupa_req_account_anaplan_connection_status</sys_update_name>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-25 00:43:12</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>anaplan_connection_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Start</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_account</name>
+            <sequence>1</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-25 00:43:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4dbe35bf1b646c10e05f43b2cc4bcb42</sys_id>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-25 00:52:24</sys_updated_on>
+            <value>start</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>anaplan_connection_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Import File Created</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_account</name>
+            <sequence>2</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-25 00:46:05</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7ceef1bf1b646c10e05f43b2cc4bcbae</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-25 00:52:28</sys_updated_on>
+            <value>import_file_created</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>anaplan_connection_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Uploading File</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_account</name>
+            <sequence>3</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-25 00:46:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>436f75bf1b646c10e05f43b2cc4bcbf4</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-25 00:52:33</sys_updated_on>
+            <value>uploading_file</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>anaplan_connection_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Upload File Completed</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_account</name>
+            <sequence>4</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-25 00:47:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d69f35bf1b646c10e05f43b2cc4bcbff</sys_id>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-25 00:52:38</sys_updated_on>
+            <value>upload_file_completed</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>anaplan_connection_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Run Import</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_account</name>
+            <sequence>5</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-25 00:48:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>9acfb5bf1b646c10e05f43b2cc4bcbcd</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-25 00:52:41</sys_updated_on>
+            <value>run_import</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>anaplan_connection_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Import Task Completed</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_account</name>
+            <sequence>6</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-25 00:49:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>940002ff1b646c10e05f43b2cc4bcbad</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-25 00:52:44</sys_updated_on>
+            <value>import_task_completed</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>anaplan_connection_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Downloading</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_account</name>
+            <sequence>7</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-25 00:51:01</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7c4002ff1b646c10e05f43b2cc4bcba9</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-25 00:52:51</sys_updated_on>
+            <value>downloading</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>anaplan_connection_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Download Success</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_account</name>
+            <sequence>8</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-25 00:51:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1f800a7f1b646c10e05f43b2cc4bcbf2</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-25 00:52:59</sys_updated_on>
+            <value>download_success</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>anaplan_connection_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Run Transform Map</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_account</name>
+            <sequence>9</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-25 00:56:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ccb006bf1b646c10e05f43b2cc4bcbd7</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-25 00:56:33</sys_updated_on>
+            <value>run_tranform_map</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>anaplan_connection_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Success</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_account</name>
+            <sequence>10</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-25 00:43:32</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>30cebd7f1b646c10e05f43b2cc4bcb71</sys_id>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-25 00:56:41</sys_updated_on>
+            <value>success</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>anaplan_connection_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Fail</label>
+            <language>en</language>
+            <name>x_nriws_coupa_req_account</name>
+            <sequence>11</sequence>
+            <sys_created_by>Sansiro.Ma</sys_created_by>
+            <sys_created_on>2020-11-25 00:43:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a1de31bf1b646c10e05f43b2cc4bcbe2</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>Sansiro.Ma</sys_updated_by>
+            <sys_updated_on>2020-11-25 00:56:48</sys_updated_on>
+            <value>fail</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

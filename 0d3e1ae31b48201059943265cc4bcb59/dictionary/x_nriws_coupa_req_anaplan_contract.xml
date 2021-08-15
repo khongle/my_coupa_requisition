@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Anaplan Contract" max_length="40" name="x_nriws_coupa_req_anaplan_contract" sizeclass="0" type="collection">
+        <element label="勘定科目" max_length="200" name="accounting_item" type="string"/>
+        <element label="計上基準" max_length="100" name="accounting_standard" type="string"/>
+        <element label="会計ユニット" max_length="200" name="accounting_unit" type="string"/>
+        <element label="確度" max_length="50" name="accuracy" type="string"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Approver" max_length="32" name="approver" reference="sys_user" type="reference"/>
+        <element label="承認者メールアドレス" max_length="200" name="approver_email" type="string"/>
+        <element label="承認者" max_length="200" name="approver_name" type="string"/>
+        <element label="attachment" max_length="1000000" name="attachment" type="string"/>
+        <element label="決裁者" max_length="200" name="authorizer" type="string"/>
+        <element label="基準利益" max_length="100" name="base_profit" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="契約時金額" max_length="20" name="common_contract_amount" type="decimal"/>
+        <element label="統合契約条件" max_length="100" name="common_contract_condition" type="string"/>
+        <element label="統合契約部署名" max_length="100" name="common_contract_dept" type="string"/>
+        <element label="統合契約終了日" max_length="40" name="common_contract_end_date" type="glide_date"/>
+        <element label="統合契約名" max_length="100" name="common_contract_name" type="string"/>
+        <element label="統合契約番号" max_length="100" name="common_contract_number" type="string"/>
+        <element label="統合契約期間" max_length="100" name="common_contract_period" type="string"/>
+        <element label="統合契約担当者" max_length="100" name="common_contract_pic" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="検収金額" max_length="20" name="common_contract_receive_amount" type="decimal"/>
+        <element label="統合契約開始日" max_length="40" name="common_contract_start_date" type="glide_date"/>
+        <element label="統合ステータス" max_length="100" name="common_contract_status" type="string"/>
+        <element label="代表サブテーマ" max_length="100" name="common_contract_sub_theme" type="string"/>
+        <element label="統合契約取引先" max_length="100" name="common_contract_supplier" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="暫定合計金額" max_length="20" name="common_contract_temp_amount" type="decimal"/>
+        <element attributes="edge_encryption_enabled=true" label="全社分担金" max_length="20" name="company_wide_contribution" type="decimal"/>
+        <element label="条件" max_length="200" name="conditions" type="string"/>
+        <element label="契約担当者" max_length="100" name="contractor" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="契約金額" max_length="20" name="contract_amount" type="decimal"/>
+        <element label="契約終了日" max_length="40" name="contract_end_date" type="glide_date"/>
+        <element label="契約名" max_length="100" name="contract_name" type="string"/>
+        <element label="契約番号" max_length="100" name="contract_number" type="string"/>
+        <element label="契約開始日" max_length="40" name="contract_start_date" type="glide_date"/>
+        <element label="契約ステータス" max_length="100" name="contract_status" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Contract Type" max_length="40" name="contract_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Common Contract" sequence="1" value="common_contract"/>
+                <element inactive_on_update="false" label="Sub Contract" sequence="2" value="sub_contract"/>
+            </choice>
+        </element>
+        <element label="部署名" max_length="100" name="department_name" type="string"/>
+        <element label="最終顧客" max_length="100" name="end_customer" type="string"/>
+        <element label="終了日" max_length="40" name="end_date" type="glide_date"/>
+        <element label="実行責任者" max_length="200" name="execution_pic" type="string"/>
+        <element label="受注想定月" max_length="40" name="expected_order_month" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="外部調達" max_length="20" name="external_procurement" type="decimal"/>
+        <element label="name" max_length="100" name="name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="ステータスx以外" max_length="40" name="not_status_x" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="受注金額" max_length="20" name="order_amount" type="decimal"/>
+        <element label="期間" max_length="10" name="period" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="人件費課金" max_length="20" name="personnel_charges" type="decimal"/>
+        <element label="担当者" max_length="100" name="person_in_charge" type="string"/>
+        <element label="プロセス" max_length="10" name="process" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="利益" max_length="20" name="profit" type="decimal"/>
+        <element label="利益率" max_length="20" name="profit_rate" type="string"/>
+        <element label="案件コード" max_length="50" name="project_code" type="string"/>
+        <element label="案件名" max_length="100" name="project_name" type="string"/>
+        <element label="備考" max_length="500" name="remarks" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="家賃課金" max_length="20" name="rent_billing" type="decimal"/>
+        <element label="Representation Contract Number" max_length="20" name="representation_contract_number" type="string"/>
+        <element label="Representation Contract Status" max_length="100" name="representation_contract_status" type="string"/>
+        <element label="収益計上基準" max_length="50" name="revenue_recording_standard" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="売上計" max_length="20" name="sales_total" type="decimal"/>
+        <element label="開始日" max_length="40" name="start_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="部店管理費分担金" max_length="20" name="store_management_fee" type="decimal"/>
+        <element label="サブテーマ" max_length="100" name="sub_theme" type="string"/>
+        <element label="取引先" max_length="200" name="suppliers" type="string"/>
+        <element label="テーマ分類1" max_length="50" name="theme_classification_1" type="string"/>
+        <element label="テーマ分類2" max_length="50" name="theme_classification_2" type="string"/>
+        <element label="テーマ分類3" max_length="50" name="theme_classification_3" type="string"/>
+        <element label="取引区分" max_length="100" name="transaction_classification" type="string"/>
+        <index name="index">
+            <element name="approver"/>
+        </index>
+        <index name="index2">
+            <element name="contract_number"/>
+            <element name="common_contract_number"/>
+        </index>
+    </element>
+</database>

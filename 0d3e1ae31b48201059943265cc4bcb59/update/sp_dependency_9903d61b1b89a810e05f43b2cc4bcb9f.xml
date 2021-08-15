@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_dependency">
+    <sp_dependency action="INSERT_OR_UPDATE">
+        <module/>
+        <name>angular filter</name>
+        <page_load>true</page_load>
+        <sp_portals>0b20e2671b48201059943265cc4bcb76</sp_portals>
+        <sys_class_name>sp_dependency</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-12-18 09:26:28</sys_created_on>
+        <sys_id>9903d61b1b89a810e05f43b2cc4bcb9f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>angular filter</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_dependency_9903d61b1b89a810e05f43b2cc4bcb9f</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-18 09:26:28</sys_updated_on>
+    </sp_dependency>
+</record_update>

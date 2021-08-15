@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_headers">
+    <sys_rest_message_fn_headers action="INSERT_OR_UPDATE">
+        <name>Authorization</name>
+        <rest_message_function display_value="Get_File_Chunk">f8e3f9921bec6810e05f43b2cc4bcb50</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_headers</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-20 08:05:26</sys_created_on>
+        <sys_id>1de371921bec6810e05f43b2cc4bcb22</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Authorization</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sys_rest_message_fn_headers_1de371921bec6810e05f43b2cc4bcb22</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-11-24 00:18:31</sys_updated_on>
+        <value>AnaplanAuthToken w2NE0UhF20DCpqyRDFJUDQ==.mBMGfh/khta6laDH06/AZJjMrhxFxBIk2Q/vjgsZtlX4aTfiajSpV9DdZ4PVbHc3y8Hu9OmiSW3kEHzjNmfOZB26tC92kgTw/vN2sR7X2WQQP2svpHQkPuTADQlgM8pvr8czpnpDYnPGqEf1IbiTvvWoLKfghsKAU0XmkCuDsIlBMTPF6IvFDDJKodCAHopyXxOjTwhSFPWYKZ15uFjLXMLCrSIoiQ/YMZhP3wnnyqrIEEWJy/KBIcnkq1bmSUcM35kEF9xbOS3UIO5Jg1bp4FuJw7Sg/XfsAZ7Kn/A5lGqQF7sOnhYysoUVN26NDERBqK+sV8PVPutDGd4ykCJnUO/kVq2deM2ONpeJXJ5QZ8mNxT77jhujnMNEBiFOknz72E8ouU/Hbv/yR/C4Vb1t8N6/XtdtvbMBtBx2fs8KERSS2PMCjGqzRUfashiFIsgg4c1pmg4bUJKGCDQpnBg92o7Wlmb07yVaFkZ4Inq5hvudOOGTc/Lhi6WpKQTbqpL5.+B7+4903D42IB+lAtAj1hdq2aEJ1PuntcWLTwwUn2Dc=</value>
+    </sys_rest_message_fn_headers>
+</record_update>

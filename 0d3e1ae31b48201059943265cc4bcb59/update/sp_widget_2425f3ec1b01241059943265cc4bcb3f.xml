@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope ,spUtil) {
+  /* widget controller */
+  var c = this;
+	
+	spUtil.recordWatch($scope, c.data.approval_table, c.data.recordWatchQuery, function(name, data) {
+		c.server.refresh();
+	});
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>
+/* Gradient transparent - color - transparent */
+
+hr.style-two {
+    border: 0;
+ 		//border-color: #428bca;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(66, 139, 202, 0.55), rgba(0, 0, 0, 0));
+}
+
+/* Flaired edges */
+
+hr.style-seven {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr.style-seven:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+.project-list {
+    background-color: transparent;
+    margin-bottom: 29px;
+}
+
+.project-list-title {
+    font-size: 1.38462rem;
+    margin-bottom: 28px;
+}
+.project-item-header {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  //background-color: #f2f4f9;
+  padding: 5px;
+  margin-bottom: .923077rem;
+  border-radius: .35rem;
+  border: 1px solid transparent;
+}
+.project-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  //background-color: #f2f4f9;
+  padding: 5px;
+  margin-bottom: .923077rem;
+  border-radius: .35rem;
+  border: 1px solid transparent;
+}
+
+.btn-outline-primary {
+    color: #06794f;
+    border-color: #06794f;
+}
+
+.btn-outline-success {
+    color: #3ac97c;
+    border-color: #3ac97c;
+}
+
+.btn-outline-danger {
+    color: #d73f30;
+    border-color: #d73f30;
+}
+
+.project-item-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 20%;
+    flex: 0 1 20%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-right: 5px;
+}
+
+.project-item-user {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 25%;
+    flex: 0 1 25%;
+  -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+    padding-right: 5px;
+}
+
+.project-item-user .user-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.project-item-state {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 20%;
+    flex: 0 1 20%;
+    padding-right: 5px;
+}
+
+.description {
+    font-size: 1rem;
+    color: #999;
+}
+
+.project-item-date {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 15%;
+    flex: 0 1 15%;
+    padding-right: 5px;
+}
+
+.project-item-progress {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 15%;
+    flex: 0 1 15%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.project-item-actions {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 5%;
+    flex: 0 1 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  	padding-left: 20px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>approval_history</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Approval History</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+	data.table = $sp.getParameter("table");
+	data.sys_id = $sp.getParameter("sys_id");
+	data.approval_table = "sysapproval_approver";
+	data.recordWatchQuery = 'sysapproval.sys_id='+ data.sys_id;
+
+	data.dataApprovalArray = [];
+	
+	if(data.sys_id){
+		
+		//--------------- Get Approval Requests Start -------------------
+
+		var app = new GlideRecord("sysapproval_approver");
+		//app.addQuery('sysapproval.ref_x_ndhr_workday_int_approval_task',ticket_sysId);
+		app.addQuery('sysapproval.sys_id',data.sys_id);
+		app.orderByDesc('sys_created_on')
+		app.query();
+		while(app.next()){
+			data.dataApprovalArray.push({
+				//sys_id: app.getUniqueValue(),
+				state: app.getDisplayValue("state"),
+				approver: app.getDisplayValue("approver"),
+				approver_sys_id:app.approver.toString(),
+				job_title:app.approver.title.getDisplayValue(),
+				lastUpdated:app.sys_updated_on.getDisplayValue(),
+				createdOn:app.sys_created_on.getDisplayValue(),
+				comments:  app.comments.getJournalEntry(1)
+
+			});
+		}
+		//--------------- Get Approval Requests End-------------------
+
+	}
+
+
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-12-10 03:31:31</sys_created_on>
+        <sys_id>2425f3ec1b01241059943265cc4bcb3f</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>Approval History</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_widget_2425f3ec1b01241059943265cc4bcb3f</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-22 15:42:22</sys_updated_on>
+        <template><![CDATA[<div>
+  <div class="hpanel card">
+    <div class="card body">
+      <div class="panel-body">     
+        <div  class="row">
+          <div class="col-md-12"> 
+            <div class="project-item">
+              <table   class="table table-hover ">
+                <th>ステータス</th>                  
+                <th>承認者</th>
+                <th class="hidden-xs">作成日</th>
+                <th class="hidden-xs">更新日</th>
+                <th>コメント</th>
+                <tbody>
+                  <tr ng-repeat="req in c.data.dataApprovalArray">
+                    <td>{{req.state}} </td>
+                    <td>
+                      <div class = "project-item-user">
+                        <div class="user-avatar">
+                          <sn-avatar class="avatar-small-medium" primary="req.approver_sys_id" />
+                        </div>
+                        <div class="user-info">
+                          <span class="name">{{req.approver}}</span>
+                          <span class="position description">{{req.job_title}}</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="hidden-xs">
+                      <div class="project-item-date">
+                        <span class="date">{{req.createdOn}} </span>
+                        <span class="time"> 
+                          <span class="label label-primary" > 
+                            <sn-time-ago timestamp="::req.createdOn" class="ng-isolate-scope"></sn-time-ago> 
+                          </span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="hidden-xs">
+                      <div class="project-item-date">
+                        <span class="date">{{req.lastUpdated}} </span>
+                        <span class="time"> 
+                          <span class="label label-primary" > 
+                            <sn-time-ago timestamp="::req.lastUpdated" class="ng-isolate-scope"></sn-time-ago> 
+                          </span>
+                        </span>
+                      </div>
+                    </td>
+                    <td>{{req.comments}} </td>
+                  </tr>
+                </tbody>
+              </table> 
+            </div>
+          </div>
+        </div>
+        <div class="alert alert-info" ng-if="c.data.dataApprovalArray.length === 0">
+          No Data Found!
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

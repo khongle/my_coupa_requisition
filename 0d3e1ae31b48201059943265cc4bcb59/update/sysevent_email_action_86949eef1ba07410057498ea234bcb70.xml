@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_email_action">
+    <sysevent_email_action action="INSERT_OR_UPDATE">
+        <action_insert>true</action_insert>
+        <action_update>true</action_update>
+        <active>true</active>
+        <advanced_condition/>
+        <affected_field_on_event/>
+        <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
+        <collection>sysapproval_approver</collection>
+        <condition table="sysapproval_approver">sysapproval.sys_class_name=x_nriws_coupa_req_coupa_requisition^stateCHANGESTOrequested^EQ<item display_value="x_nriws_coupa_req_coupa_requisition" endquery="false" field="sysapproval.sys_class_name" goto="false" newquery="false" operator="=" or="false" value="x_nriws_coupa_req_coupa_requisition"/>
+            <item display_value="Requested" endquery="false" field="state" goto="false" newquery="false" operator="CHANGESTO" or="false" value="requested"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <content_type>text/html</content_type>
+        <default_interval/>
+        <description/>
+        <digest_from/>
+        <digest_html/>
+        <digest_reply_to/>
+        <digest_separator_html><![CDATA[<p><br /></p>
+<hr />
+<p><br /></p>]]></digest_separator_html>
+        <digest_separator_text><![CDATA[\n--------------------------------------------------------------------------------\n]]></digest_separator_text>
+        <digest_subject/>
+        <digest_template/>
+        <digest_text/>
+        <digestable>false</digestable>
+        <event_name>alm_transfer_order_line_subtask.escalati</event_name>
+        <event_parm_1>false</event_parm_1>
+        <event_parm_2>false</event_parm_2>
+        <exclude_delegates>false</exclude_delegates>
+        <force_delivery>false</force_delivery>
+        <from/>
+        <generation_type>engine</generation_type>
+        <importance/>
+        <include_attachments>false</include_attachments>
+        <item>event.parm1</item>
+        <item_table/>
+        <mandatory>false</mandatory>
+        <message/>
+        <message_html><![CDATA[<style>
+ .mailintro {
+      width:100%;
+      padding: auto;
+      background-color: white;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: grid;
+      grid-template-columns: 30% 70%
+    }
+ .icon{
+      margin-left : 40px;
+      padding
+    }
+    
+.mailintro > div {
+         background: white;
+         padding:1em;
+}
+.mailintro > div:nth-child(odd) {
+         background: white;
+}
+
+.footer {
+      background: red; 
+}
+    
+  </style>
+<div class="mailintro">
+<div class="logo"><img src="NRI_LOGO_latest.png" width="235" height="93" /> <!--<img src="Servicenowlogo.png" width="295" height="113"/>--></div>
+<div class="icon"><img src="mail.png" width="72" height="72" /></div>
+</div>
+<table role="presentation" border="1" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="padding: 20px 0 30px 0;">
+<div><code>${mail_script:Approval_details}</code></div>
+<p><br /></p>
+</td>
+</tr>
+</tbody>
+</table>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>Approval </name>
+        <omit_watermark>false</omit_watermark>
+        <order>100</order>
+        <push_message_only>false</push_message_only>
+        <recipient_fields>approver</recipient_fields>
+        <recipient_groups/>
+        <recipient_users/>
+        <reply_to/>
+        <send_self>true</send_self>
+        <sms_alternate/>
+        <style/>
+        <subject>ServiceNow ${document_id}  - ${state}</subject>
+        <subscribable>false</subscribable>
+        <sys_class_name>sysevent_email_action</sys_class_name>
+        <sys_created_by>NRIWPS_kuranari</sys_created_by>
+        <sys_created_on>2021-06-11 03:51:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>86949eef1ba07410057498ea234bcb70</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Approval </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sysevent_email_action_86949eef1ba07410057498ea234bcb70</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-06-17 02:43:32</sys_updated_on>
+        <sys_version>2</sys_version>
+        <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
+        <type>email</type>
+        <weight>11</weight>
+    </sysevent_email_action>
+</record_update>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">3f076eea1ba4b01036a1206a234bcbaa</sp_column>
+        <sp_widget display_value="Coupa Invoice Pending Approval List">ca649f111bac7c5036a1206a234bcb57</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>NRIWPS_mizoshiri</sys_created_by>
+        <sys_created_on>2021-06-08 02:38:21</sys_created_on>
+        <sys_id>7427aeea1ba4b01036a1206a234bcb95</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Coupa invoice with PO</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_instance_7427aeea1ba4b01036a1206a234bcb95</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-06-08 02:46:30</sys_updated_on>
+        <title>Coupa invoice with PO</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+"coupa_invocie_with_po" : true
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=7427aeea1ba4b01036a1206a234bcb95"/>
+</record_update>

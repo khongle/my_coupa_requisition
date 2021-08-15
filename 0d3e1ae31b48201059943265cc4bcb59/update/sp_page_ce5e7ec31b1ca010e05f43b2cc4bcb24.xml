@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css>.myHeight{
+  margin-top:15px;
+  margin-bottom:15px;
+  //padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+section.page {
+  //background-image: url(....jpg);
+  background-colour: #ebeafc;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  opacity: 1.0;
+}</css>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <id>pending_approvals</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>false</public>
+        <roles/>
+        <seo_script/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>christen.mitchell</sys_created_by>
+        <sys_created_on>2020-11-10 11:09:52</sys_created_on>
+        <sys_id>ce5e7ec31b1ca010e05f43b2cc4bcb24</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>pending_approvals</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_page_ce5e7ec31b1ca010e05f43b2cc4bcb24</sys_update_name>
+        <sys_updated_by>tanmyi.m</sys_updated_by>
+        <sys_updated_on>2020-11-17 05:00:34</sys_updated_on>
+        <title>Pending Approvals</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=ce5e7ec31b1ca010e05f43b2cc4bcb24"/>
+</record_update>

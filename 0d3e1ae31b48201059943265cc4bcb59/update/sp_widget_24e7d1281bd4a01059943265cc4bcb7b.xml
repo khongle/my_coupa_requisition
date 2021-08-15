@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, spUtil) {
+  /* widget controller */
+  var c = this;
+	
+	spUtil.recordWatch($scope, c.data.approval_table, c.data.recordWatchQuery, function(name, data) {
+		c.server.refresh();
+		c.bellNotify();
+	});
+	
+	c.bellNotify = function(){
+		var bell = document.getElementById('notification');
+		//bell.classList.add('notify');
+		bell.classList.remove('notify');
+		bell.offsetWidth = bell.offsetWidth;
+		bell.classList.add('notify');
+	}
+		
+	c.bellNotify();
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.notification_menu.label {
+    text-shadow: none;
+    padding: 1px 4px;
+    position: absolute;
+    top: 8px;
+    left: 6px;
+}
+
+.menu-custom{
+  	width: 190px;
+}
+
+
+/* Notifications */
+
+.notification {
+    display: inline-block;
+    position: relative;
+    padding: 0.6em;
+    //background: #3498db;
+    border-radius: 0.2em;
+    font-size: 1.3em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.notification::before, 
+.notification::after {
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.notification::before {
+    display: block;
+    content: "\f0f3";
+    font-family: "FontAwesome";
+    transform-origin: top center;
+}
+
+.notification::after {
+    font-family: Arial;
+    font-size: 0.7em;
+    font-weight: 700;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    padding: 5px 8px;
+    line-height: 100%;
+    border: 2px #fff solid;
+    border-radius: 60px;
+    background: #3498db;
+    opacity: 0;
+    content: attr(data-count);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: transform, opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.notification.notify::before {
+    animation: ring 1.5s ease;
+}
+
+.notification.show-count::after {
+    transform: scale(1);
+    opacity: 1;
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(35deg);
+    }
+    12.5% {
+        transform: rotate(-30deg);
+    }
+    25% {
+        transform: rotate(25deg);
+    }
+    37.5% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(15deg);
+    }
+    62.5% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>coupa_approval_menu</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Coupa Approval Menu</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	//var is_Approver = gs.hasRole("");
+
+	//gs.addInfoMessage("create_job_notification_menu");
+
+	data.userId = gs.getUserID();
+	data.showNot = true;
+
+	data.approval_table = "sysapproval_approver";
+	data.table = 'x_nriws_coupa_req_coupa_requisition';
+	data.detailPage = "coupa_details";
+	data.approvalPage = 'pending_approvals';
+
+	data.approvalPageWithStatus = 'id=pending_approvals&status=requested';
+	data.total_count = 0;
+
+	data.request_list = [];
+
+
+	//data.recordWatchQuery = 'approver='+ data.userId + '^sysapproval.sys_class_name=x_nriws_coupa_req_coupa_requisition^state=requested'
+	
+	
+	var wkdaygr;
+
+	wkdaygr = new GlideRecord(data.approval_table);
+	wkdaygr.addQuery('approver',data.userId);
+	wkdaygr.addQuery('sysapproval.sys_class_name',data.table);
+	//wkdaygr.addQuery('sysapproval.ref_x_ndhr_workday_int_approval_task.approval_task_type','Create Job Requisition');
+
+	wkdaygr.orderByDesc("sysapproval.sys_created_on");
+	wkdaygr.addQuery('approver',gs.getUserID());
+	wkdaygr.addQuery('state','requested');
+	wkdaygr.query();
+
+
+	while(wkdaygr.next()){
+
+		data.request_list.push(
+			{
+				app_sys_id: wkdaygr.getUniqueValue(),
+				approval_state: wkdaygr.getDisplayValue("state"),
+				approval_state_value: wkdaygr.getValue("state"),
+				approval_opened_at: wkdaygr.getValue("sys_created_on"),
+				nubmer: wkdaygr.sysapproval.getRefRecord().getDisplayValue("number"),
+				id: wkdaygr.sysapproval.getRefRecord().id.toString(),
+				total : wkdaygr.sysapproval.getRefRecord().getDisplayValue("total") + ' JPY',
+				//master_record_number: wkdaygr.sysapproval.getRefRecord().getDisplayValue("master_parent_table"),
+				state: wkdaygr.sysapproval.getRefRecord().getDisplayValue("state"),
+				opened_at: wkdaygr.sysapproval.getRefRecord().getValue("sys_created_on"),
+				opened_by:  wkdaygr.sysapproval.getRefRecord().getDisplayValue("sys_created_by"),
+				updated_at: wkdaygr.sysapproval.getRefRecord().getValue("sys_updated_on"),
+				//approver: app.getDisplayValue("approver"),
+				sys_id: wkdaygr.getValue("sysapproval")
+				//comments: app.getValue("comments")
+			}
+		);
+		
+	}
+
+	
+	var delegateToMeUsers = '';
+	data.delegate_request_list = [];
+	var current_dr_tm = new GlideRecord('sys_user_delegate');
+	current_dr_tm.addQuery('delegate',data.userId);
+	current_dr_tm.addQuery('user','!=',data.userId);
+	current_dr_tm.addQuery('approvals',true);
+	current_dr_tm.addQuery('ends','>=',new GlideDateTime().getDisplayValue());
+	current_dr_tm.addQuery('starts','<=',new GlideDateTime().getDisplayValue());
+	current_dr_tm.orderByDesc('ends');
+	current_dr_tm.query();
+	
+	//gs.addInfoMessage(current_dr_tm.getRowCount())
+	
+	while(current_dr_tm.next()){
+		//gs.addInfoMessage("--test--" + current_dr_tm.user.getDisplayValue())
+		if(delegateToMeUsers ==''){
+			delegateToMeUsers = current_dr_tm.getValue("user");
+		}
+		else{
+				delegateToMeUsers += ','+current_dr_tm.getValue("user");
+		}
+	}
+	
+	//gs.addInfoMessage(delegateToMeUsers);
+	
+	data.recordWatchQuery = 'approverIN'+ data.userId +','+ delegateToMeUsers + '^sysapproval.sys_class_name=x_nriws_coupa_req_coupa_requisition^state=requested'
+
+	//gs.addInfoMessage(data.recordWatchQuery);
+	
+	
+	if(delegateToMeUsers!= ''){
+		var delegategr;
+
+		var encodeQuery = 'sys_idIN' + delegateToMeUsers;
+		
+		delegategr = new GlideRecord(data.approval_table);
+		//delegategr.addQuery('approver',data.userId);
+		delegategr.addQuery('sysapproval.sys_class_name',data.table);
+		//wkdaygr.addQuery('sysapproval.ref_x_ndhr_workday_int_approval_task.approval_task_type','Create Job Requisition');
+		delegategr.addQuery('approver','IN',delegateToMeUsers);
+		delegategr.orderByDesc("sys_created_on");
+		//delegategr.addQuery('approver',gs.getUserID());
+		delegategr.addQuery('state','requested');
+		delegategr.query();
+		
+		//gs.addInfoMessage(delegategr.getRowCount())
+		while(delegategr.next()){
+			
+			//gs.addInfoMessage(delegategr.sysapproval.getRefRecord().getDisplayValue("id"));
+			//gs.addInfoMessage(delegategr.sysapproval.getRefRecord().getDisplayValue("total") + ' JPY');
+			data.delegate_request_list.push(
+				{
+					app_sys_id: delegategr.getUniqueValue(),
+					approval_state: delegategr.getDisplayValue("state"),
+					approval_state_value: delegategr.getValue("state"),
+					approval_opened_at: delegategr.getValue("sys_created_on"),
+					nubmer: delegategr.sysapproval.getRefRecord().getDisplayValue("number"),
+					id: delegategr.sysapproval.getRefRecord().id.toString(),
+					total : delegategr.sysapproval.getRefRecord().getDisplayValue("total") + ' JPY',
+					//master_record_number: delegategr.sysapproval.getRefRecord().getDisplayValue("master_parent_table"),
+					state: delegategr.sysapproval.getRefRecord().getDisplayValue("state"),
+					
+					opened_at: delegategr.sysapproval.getRefRecord().getValue("sys_created_on"),
+					opened_by:  delegategr.sysapproval.getRefRecord().getDisplayValue("sys_created_by"),
+					updated_at: delegategr.sysapproval.getRefRecord().getValue("sys_updated_on"),
+					approver: delegategr.getDisplayValue("approver"),
+					sys_id: delegategr.getValue("sysapproval")
+					//comments: app.getValue("comments")
+				}
+			);
+		}
+	}
+	
+	
+	data.total_count = data.request_list.length +data.delegate_request_list.length ;
+
+	//gs.addInfoMessage('sma data.total_count ' + data.total_count)
+
+	
+	if(data.total_count == 0){
+		data.showNot = false;
+	}
+	//gs.addInfoMessage("count:" + data.create_job_request_list.length)
+
+
+	/*
+	wkdaygr = new GlideAggregate(data.approval_table)
+	wkdaygr.addAggregate('COUNT');
+	wkdaygr.addQuery('approver',data.userId);
+	wkdaygr.addQuery('sysapproval.sys_class_name',data.table);
+	wkdaygr.addQuery('state','requested');
+	wkdaygr.query();
+
+	while(wkdaygr.next()){
+		data.total_count = wkdaygr.getAggregate("COUNT");
+	}
+*/
+	//gs.addInfoMessage('total count' + ": " + data.total_count);
+
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>dinesh.k.a</sys_created_by>
+        <sys_created_on>2020-11-02 09:17:23</sys_created_on>
+        <sys_id>24e7d1281bd4a01059943265cc4bcb7b</sys_id>
+        <sys_mod_count>155</sys_mod_count>
+        <sys_name>Coupa Approval Menu</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_widget_24e7d1281bd4a01059943265cc4bcb7b</sys_update_name>
+        <sys_updated_by>Sansiro.Ma</sys_updated_by>
+        <sys_updated_on>2020-12-22 15:36:27</sys_updated_on>
+        <template><![CDATA[
+
+ <nav ng-show="c.data.showNot" style='margin-left:10px'>
+  <div class = "row">
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown"><span id='notification' class="notification notification_menu label label-danger pull-left">{{c.data.total_count}}</span><i id='notification' class="fa fa-bell fa-lg" style="color:#154d8d"></i></a>
+            <ul class="dropdown-menu dropdown-menu-right alerts-dropdown menu-custom" style = "min-width:300px" ng-if='data.request_list.length>0'>
+              <li><a href="?{{c.data.approvalPageWithStatus}}">自分の承認待ち一覧</a></li>                        
+              <li class="divider"></li> 
+              <li   ng-repeat-start = "request in c.data.request_list">
+                <a href="?id={{c.data.detailPage}}&table={{c.data.table}}&sys_id={{request.sys_id}}&approval_sys_id={{request.app_sys_id}}">                
+                  <span> 
+                    <span class="label label-primary pull-right"> 
+                      <sn-time-ago timestamp="::request.approval_opened_at" class="ng-isolate-scope"></sn-time-ago> 
+                    </span>
+                    #{{request.id}}&nbsp;&nbsp;&nbsp; &nbsp; <b>{{request.total}}</b>&nbsp; &nbsp; 
+                  </span>
+                </a>
+              </li>
+              <li ng-repeat-end class="divider"></li>
+            </ul>
+            
+            <ul class="dropdown-menu dropdown-menu-right alerts-dropdown menu-custom" style = "min-width:300px" ng-if='data.delegate_request_list.length>0'>
+              <li><a>代理の承認待ち一覧</a></li>                        
+              <li class="divider"></li> 
+              <li   ng-repeat-start = "delegateRequest in c.data.delegate_request_list">
+                <a href="?id={{c.data.detailPage}}&table={{c.data.table}}&sys_id={{delegateRequest.sys_id}}&approval_sys_id={{delegateRequest.app_sys_id}}">                
+                  <span> 
+                    <span class="label label-primary pull-right"> 
+                      <sn-time-ago timestamp="::delegateRequest.approval_opened_at" class="ng-isolate-scope"></sn-time-ago> 
+                    </span>
+                    #{{delegateRequest.id}}({{delegateRequest.approver}})&nbsp;&nbsp;&nbsp; &nbsp; <b>{{delegateRequest.total}}</b>&nbsp; &nbsp; 
+                  </span>
+                </a>
+              </li>
+              <li ng-repeat-end class="divider"></li>
+            </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--
+<script>
+var el = document.querySelector('.notification');
+
+document.querySelector('button').addEventListener('click', function(){
+    var count = Number(el.getAttribute('data-count')) || 0;
+    el.setAttribute('data-count', count + 1);
+    el.classList.remove('notify');
+    el.offsetWidth = el.offsetWidth;
+    el.classList.add('notify');
+    if(count === 0){
+        el.classList.add('show-count');
+    }
+}, false);
+</script>
+
+
+<nav >
+  <div >
+    <div class="" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown"><span class="notification_menu label label-danger pull-left">{{c.data.total_count}}</span><i class="fa fa-bell fa-lg"></i></a>
+          <ul class="dropdown-menu dropdown-menu-right alerts-dropdown menu-custom">                        
+            <li class="dropdown-header">Job Requisition</li>
+            <li><a href="?id={{c.data.approvalPage}}"><span class="label label-danger pull-right">{{c.data.job_requisition_count}}</span>Pending Approval</a></li>                        
+            <li class="divider"></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+-->
+
+ ]]></template>
+    </sp_widget>
+</record_update>

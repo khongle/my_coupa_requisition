@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope,$window,$uibModal) {
+	/* widget controller */
+	var c = this;
+
+	c.pageSize = 1;
+	c.curPage = 0;
+	c.itemsPerPageOptions = [10,20,30,40,50,100];
+	c.itemsPerPage = c.itemsPerPageOptions[0];
+	c.sortedOn = 'id';
+	c.sortReverse = true;
+	c.isId = false;
+	c.state = false;
+	c.isProj = false;
+	c.isReq = false;
+	c.isCreated = false;
+	c.isStatus = false;
+	c.isItem = false;
+	c.isApprovals = false;
+	c.isTotal = false;
+	$scope.breadcrumbs='';
+	c.selectAllFlag = false;
+	console.log(c.data.details);
+	c.checkStatusBreadcrumbs=function(status)
+	{
+		
+		if(status=='requested')
+		{
+			$scope.breadcrumbs='発注申請承認待ち';
+		}
+		else if(status=='approved') {
+			$scope.breadcrumbs='発注申請承認済み';
+		}
+		else if(status== 'rejected') {
+			$scope.breadcrumbs ='発注申請否認済み';
+		}
+		else if(status == 'not_required') {
+			$scope.breadcrumbs ='発注申請承認不要';
+		}
+		else if(status == 'all') {
+			$scope.breadcrumbs= ' 発注申請承認一覧';
+		}
+		return true;
+	}
+
+	c.checkDetails=function(req) {		
+		$window.location.href = '?id=' + c.data.detail_page_id + '&table=' + c.data.table + '&sys_id=' + req.sys_id + '&approval_sys_id=' + req.approval_sys_id +'&status=' +c.data.status;
+	}
+
+
+	c.goHome = function(){
+		$window.location.href="?id=" + c.data.home_page_id2;
+	}
+
+
+	c.sortClick = function(name){ 
+		console.log(name);
+		c.sortedOn = name;
+		c.sortReverse=!c.sortReverse;
+		
+		if(name== 'id'){
+			c.isId= !c.isId; }
+		
+		if(name== 'state'){
+			c.state= !c.state; }		
+		
+		if(name== 'total'){
+			c.isTotal = !c.isTotal;  }
+
+		if(name== 'proj_title'){
+			c.isProj = !c.isProj;  }
+
+		if(name== 'requested_by_fullname'){
+			c.isReq = !c.isReq;  }
+
+		if(name== 'created_at'){
+			c.isCreated= !c.isCreated;  }
+
+		if(name== 'status'){		
+			c.isStatus = !c.isStatus;  }
+
+		if(name== 'item'){
+			c.isItem = !c.isItem;  }  
+
+			if(name== 'approvals'){
+				c.isApprovals = !c.isApprovals;  }
+		
+	}
+
+	c.redirect = function(status){
+		//var tem = 'pending_approvals'
+
+		if(status){
+			$window.location.href = '?id=pending_approvals&status=' + status;
+		}
+		else{
+			$window.location.href = '?id=pending_approvals';
+		}
+
+	}
+
+	c.selectAll= function(){
+		//c.selectAllFlag  =!c.selectAllFlag;
+
+		for(var tempInt=0;tempInt<c.data.details.length; tempInt++){
+			c.data.details[tempInt].checked = c.selectAllFlag ;
+		}
+	}
+
+	/*c.pageSize = 1;
+	c.curPage = 0;
+	c.itemsPerPageOptions = [5,10,20,30,40,50,100];
+	c.itemsPerPage = c.itemsPerPageOptions[0];
+	c.sortedOn = 'number';
+	c.sortReverse = true;
+ */
+
+	//--->>>--->>>--->>>--->>>--->>>--->>>--->>>--->>>--->>>--->>>
+	// Modal start
+	//--->>>--->>>--->>>--->>>--->>>--->>>--->>>--->>>--->>>--->>>
+	c.openModal = function(action) {
+		c.action = action;
+		console.log("client script modal action"+action)
+		c.modalInstance = $uibModal.open({
+			templateUrl: 'modalTemplate',
+			//size: 'lg',
+			scope: $scope
+		});
+	}
+
+	c.closeModal = function() {
+		c.modalInstance.close();
+	}
+	//<<<---<<<---<<<---<<<---<<<---<<<---<<<---<<<---<<<---<<<---
+	// Modal end
+	//<<<---<<<---<<<---<<<---<<<---<<<---<<<---<<<---<<<---<<<---
+
+
+		/*$scope.data.bulkApprovalId= [];
+		$scope.data.bulkCoupaId= [];
+		$scope.selectedList = function (approval_sys_id,coupa_sys_id) {
+			//console.log(y);
+			//console.log("Length"+$scope.data.selection.length);	
+			if (approval_sys_id && coupa_sys_id ) {
+				var index = $scope.data.bulkApprovalId.indexOf(approval_sys_id);
+				if (index === -1) {
+					$scope.data.bulkApprovalId.push(approval_sys_id);
+					$scope.data.bulkCoupaId.push(coupa_sys_id);					
+					}else{
+				$scope.data.bulkApprovalId.splice(index, 1);
+				}
+			}
+	}*/
+	
+	//get the list of multiple approvers id
+	
+	
+	//For bulk approval
+	c.bulkApprove = function(){
+
+		c.closeModal()
+
+		c.bulkList = _.filter(c.data.details, 'checked');
+		c.approvalSysIDStr = _.map(c.bulkList, 'approval_sys_id').join(',');
+		c.sysIDStr = _.map(c.bulkList, 'sys_id').join(',');
+		c.server.get({
+			action: 'Approval_Action',
+			state: c.action=='Approve'?'approved':'rejected',
+			sysIDStr: c.sysIDStr,
+			approvalSysIDStr:c.approvalSysIDStr,
+			actionComment : c.approveCmmt			
+
+		}).then(function(r){
+			$window.location.reload();
+		});	
+
+	}
+	
+	/*
+		//For bulk reject
+		c.bulkReject = function(){
+		c.bulkList = _.filter(c.data.details, 'checked');
+		c.approvalSysIDStr = _.map(c.bulkList, 'approval_sys_id').join(',');
+		c.sysIDStr = _.map(c.bulkList, 'sys_id').join(',');
+		c.server.get({
+			action: 'reject',
+			sysIDStr: c.sysIDStr,
+			approvalSysIDStr:c.approvalSysIDStr,
+			actionComment : c.rejectCmmt			
+
+		}).then(function(r){
+			//$window.location.reload();
+
+		});	
+
+	}
+	
+	*/
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.approval-list-layout{
+	height:auto;
+  width:auto;
+  border-radius:10px;
+  box-shadow:0 0 5px #154d8d;
+  padding:10px;
+  //margin:auto;
+  margin-bottom:20px;
+  margin-left:-50px;
+  margin-right:-50px;
+  background-color:white;
+}
+hr.style-two {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, #fbdfdf, #e52a2a, #fbdfdf);
+}
+
+
+.space{
+  height:50px;
+}
+
+.right {
+  align: right;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.li-class{
+  display:inline-block;
+  margin-right:20px;
+  list-style-type:none;
+}
+.layout{
+  padding:0 5px;
+  display:flex;
+  //border:2px solid black;
+  border-radius:5px;
+  width:180px;
+  background-color:white;
+  box-shadow:0 0 10px gray;
+}
+
+.active-layout{
+  padding-top:10px;
+  padding-bottom:10px;
+  display:flex;
+  //border:2px solid gray;
+  border-radius:5px;
+  width:180px;
+  background-color:white;
+  box-shadow:0 0 10px #428bca;
+  //margin-top: -28px;
+  //margin-bottom: -28px;
+  //margin-left:-25px;
+}
+
+.left-side,.right-side{
+  //flex: 50%;
+  padding: 0px 5px;
+  font-size:16px;
+}
+.left-side &gt; b{
+	font-size:40px;
+}
+.right-side{
+  font-size:40px;
+  margin:auto;
+  text-align:center;
+  //color:#eae3f0;
+}
+.SumCount-layout{
+	padding:10px;
+  border-radius:10px;
+  //border:2px solid gray;
+}
+
+
+
+//ul li{
+//  list-style-type:none;
+//  display:inline-block;
+//  margin-left:25px;
+//}
+.butn-layout{
+  padding:15px;
+  background-color: #f8f7f7;
+  text-align:center;
+  width:300px;
+  border-radius:10px;
+  box-shadow:0 0 10px gray;
+}
+.butn-layout:hover{
+  opacity:.6;
+}
+.butn-icon{
+  //height:75px;
+  //width:75px;
+  font-size:50px;
+  margin:auto;
+}
+.butn-layout h3{
+  font-size:20px;
+}
+.butn-layout p{
+  color:gray;
+  font-size:16px;
+}
+.green{
+  color:#90ce70;
+}
+.red{
+  color:#dd5d3d;
+}
+.grey{
+  color:#5e9cd4;
+}
+
+//table {
+//  width: 100%;
+//}
+//
+//table, td {
+//  /*border-collapse: collapse;*/
+//  /*border: 1px solid #000;*/
+//}
+//
+//thead {
+//  display: table; /* to take the same width as tr */
+//  width: calc(100% - 17px); /* - 17px because of the scrollbar width */
+//}
+//
+//tbody {
+//  display: block; /* to enable vertical scrolling */
+//  max-height: 500px; /* e.g. */
+//  //overflow-y: scroll; /* keeps the scrollbar even if it doesn't need it; display purpose */
+//}
+
+//th, td {
+//  width: 10%; /* to enable "word-break: break-all" */
+//  padding: 5px;
+//  word-break: break-all; /* 4. */
+//}
+//
+//tr {
+//  display: table; /* display purpose; th's border */
+//  width: 100%;
+//  box-sizing: border-box; /* because of the border (Chrome needs this line, but not FF) */
+//}
+//
+//td {
+//  text-align: center;
+//  border-bottom: none;
+//  border-left: none;
+//  border-right: none;
+//}
+
+//th{
+//  text-align: center;
+//}
+
+.right{
+  text-align: right;
+  right-padding: 10px;
+  ]
+
+.project-list {
+    background-color: transparent;
+    margin-bottom: 29px;
+}
+
+.project-list-title {
+    font-size: 1.38462rem;
+    margin-bottom: 28px;
+}
+.project-item-header {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  //background-color: #f2f4f9;
+  //padding: 5px;
+  margin-bottom: .923077rem;
+  border-radius: .35rem;
+  border: 1px solid transparent;
+}
+.project-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  //background-color: #f2f4f9;
+  padding: 23px;
+  margin-bottom: .923077rem;
+  border-radius: .35rem;
+  border: 1px solid transparent;
+}
+
+.btn-outline-primary {
+    color: #06794f;
+    border-color: #06794f;
+}
+
+.btn-outline-success {
+    color: #3ac97c;
+    border-color: #3ac97c;
+}
+
+.btn-outline-danger {
+    color: #d73f30;
+    border-color: #d73f30;
+}
+
+.project-item-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 20%;
+    flex: 0 1 20%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-right: 5px;
+}
+
+.project-item-user {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 25%;
+    flex: 0 1 25%;
+  -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+    padding-right: 5px;
+}
+
+.project-item-user .user-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.project-item-state {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 20%;
+    flex: 0 1 20%;
+    padding-right: 5px;
+}
+
+.description {
+    font-size: 1rem;
+    color: black;
+}
+
+.project-item-date {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 15%;
+    flex: 0 1 15%;
+    padding-right: 5px;
+}
+
+.project-item-progress {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 15%;
+    flex: 0 1 15%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+  .project-item-actions {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 5%;
+    flex: 0 1 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding-left: 20px;
+  }
+  
+  .card {
+    box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+    border-width: 0;
+    transition: all .2s;
+    position: relative;
+    //display: -ms-flexbox;
+    display: flex;
+    //-ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(26, 54, 126, 0.125);
+    border-radius: 0.25rem;
+
+  }
+  
+ 
+/* ---------------------------------------------------
+
+Project : CSS Checkbox Switch
+Author : Partha Kar (https://www.facebook.com/partha.creativemind)
+Version : 1.0
+Release Dtae : 15 November, 2017
+
+---------------------------------------------------- */
+
+
+  .checkbox.checbox-switch {
+    padding-left: 0;
+  }
+
+  .checkbox.checbox-switch label,
+  .checkbox-inline.checbox-switch {
+    display: inline-block;
+    position: relative;
+    padding-left: 0;
+  }
+  .checkbox.checbox-switch label input,
+  .checkbox-inline.checbox-switch input {
+    display: none;
+  }
+  .checkbox.checbox-switch label span,
+  .checkbox-inline.checbox-switch span {
+    width: 35px;
+    border-radius: 20px;
+    height: 18px;
+    border: 1px solid #dbdbdb;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(223, 223, 223);
+    box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  .checkbox.checbox-switch label span:before,
+  .checkbox-inline.checbox-switch span:before {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgb(255,255,255);
+    content: " ";
+    top: 0;
+    position: relative;
+    left: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  }
+  .checkbox.checbox-switch label &gt; input:checked + span:before,
+  .checkbox-inline.checbox-switch &gt; input:checked + span:before {
+    left: 17px;
+  }
+
+
+  /* Switch Default */
+  .checkbox.checbox-switch label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch &gt; input:checked + span {
+    background-color: rgb(180, 182, 183);
+    border-color: rgb(180, 182, 183);
+    box-shadow: rgb(180, 182, 183) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch label &gt; input:checked:disabled + span,
+  .checkbox-inline.checbox-switch &gt; input:checked:disabled + span {
+    background-color: rgb(220, 220, 220);
+    border-color: rgb(220, 220, 220);
+    box-shadow: rgb(220, 220, 220) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch label &gt; input:disabled + span,
+  .checkbox-inline.checbox-switch &gt; input:disabled + span {
+    background-color: rgb(232,235,238);
+    border-color: rgb(255,255,255);
+  }
+  .checkbox.checbox-switch label &gt; input:disabled + span:before,
+  .checkbox-inline.checbox-switch &gt; input:disabled + span:before {
+    background-color: rgb(248,249,250);
+    border-color: rgb(243, 243, 243);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+
+  /* Switch Light */
+  .checkbox.checbox-switch.switch-light label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch.switch-light &gt; input:checked + span {
+    background-color: rgb(248,249,250);
+    border-color: rgb(248,249,250);
+    box-shadow: rgb(248,249,250) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+
+  /* Switch Dark */
+  .checkbox.checbox-switch.switch-dark label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch.switch-dark &gt; input:checked + span {
+    background-color: rgb(52,58,64);
+    border-color: rgb(52,58,64);
+    box-shadow: rgb(52,58,64) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch.switch-dark label &gt; input:checked:disabled + span,
+  .checkbox-inline.checbox-switch.switch-dark &gt; input:checked:disabled + span {
+    background-color: rgb(100, 102, 104);
+    border-color: rgb(100, 102, 104);
+    box-shadow: rgb(100, 102, 104) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+
+  /* Switch Success */
+  .checkbox.checbox-switch.switch-success label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch.switch-success &gt; input:checked + span {
+    background-color: rgb(40, 167, 69);
+    border-color: rgb(40, 167, 69);
+    box-shadow: rgb(40, 167, 69) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch.switch-success label &gt; input:checked:disabled + span,
+  .checkbox-inline.checbox-switch.switch-success &gt; input:checked:disabled + span {
+    background-color: rgb(153, 217, 168);
+    border-color: rgb(153, 217, 168);
+    box-shadow: rgb(153, 217, 168) 0px 0px 0px 8px inset;
+  }
+
+  /* Switch Danger */
+  .checkbox.checbox-switch.switch-danger label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch.switch-danger &gt; input:checked + span {
+    background-color: rgb(200, 35, 51);
+    border-color: rgb(200, 35, 51);
+    box-shadow: rgb(200, 35, 51) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch.switch-danger label &gt; input:checked:disabled + span,
+  .checkbox-inline.checbox-switch.switch-danger &gt; input:checked:disabled + span {
+    background-color: rgb(216, 119, 129);
+    border-color: rgb(216, 119, 129);
+    box-shadow: rgb(216, 119, 129) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+
+  /* Switch Primary */
+  .checkbox.checbox-switch.switch-primary label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch.switch-primary &gt; input:checked + span {
+    background-color: rgb(0, 105, 217);
+    border-color: rgb(0, 105, 217);
+    box-shadow: rgb(0, 105, 217) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch.switch-primary label &gt; input:checked:disabled + span,
+  .checkbox-inline.checbox-switch.switch-primary &gt; input:checked:disabled + span {
+    background-color: rgb(109, 163, 221);
+    border-color: rgb(109, 163, 221);
+    box-shadow: rgb(109, 163, 221) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+
+  /* Switch Info */
+  .checkbox.checbox-switch.switch-info label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch.switch-info &gt; input:checked + span {
+    background-color: rgb(23, 162, 184);
+    border-color: rgb(23, 162, 184);
+    box-shadow: rgb(23, 162, 184) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch.switch-info label &gt; input:checked:disabled + span,
+  .checkbox-inline.checbox-switch.switch-info &gt; input:checked:disabled + span {
+    background-color: rgb(102, 192, 206);
+    border-color: rgb(102, 192, 206);
+    box-shadow: rgb(102, 192, 206) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+
+  /* Switch Warning */
+  .checkbox.checbox-switch.switch-warning label &gt; input:checked + span,
+  .checkbox-inline.checbox-switch.switch-warning &gt; input:checked + span {
+    background-color: rgb(255, 193, 7);
+    border-color: rgb(255, 193, 7);
+    box-shadow: rgb(255, 193, 7) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }
+  .checkbox.checbox-switch.switch-warning label &gt; input:checked:disabled + span,
+  .checkbox-inline.checbox-switch.switch-warning &gt; input:checked:disabled + span {
+    background-color: rgb(226, 195, 102);
+    border-color: rgb(226, 195, 102);
+    box-shadow: rgb(226, 195, 102) 0px 0px 0px 8px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+  }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>pending_approval_list</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Pending Approval List</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+	data.approval_table = "sysapproval_approver";
+	data.table = "x_nriws_coupa_req_coupa_requisition";
+	data.userId = gs.getUserID();
+	data.status = $sp.getParameter("status");
+	data.details = [];
+	data.approvals = [];
+	data.showCheckBox = false;
+	data.table1 = "x_nriws_coupa_req_coupa_items";
+	if(data.status=='requested'){
+		data.showCheckBox = true;
+	}
+	
+	data.userIds = getRequesterIds(gs.getUserID());
+	data.userIds.push(gs.getUserID());
+	//var isCoupaAppUser = gs.hasRole('x_nriws_coupa_req.requisition.user')
+	//gs.addInfoMessage(isCoupaAppUser);
+	data.home_page_id2='nrid_approval';
+	data.home_page_id='nrid_homepage';
+	data.detail_page_id = "coupa_details";
+	
+	//---------------------------------------------
+	// Get my approval request
+	//---------------------------------------------
+	
+	data.requested_count = 0;
+	data.approved_count = 0;
+	data.rejected_count = 0;
+	data.total_count = 0;
+	data.not_required_count =0;
+	
+	var arApproval;
+	arApproval = new GlideAggregate(data.approval_table);
+	arApproval.addQuery('approver', 'IN', data.userIds.join(','));
+	//arApproval.addQuery('source_table',data.table);
+	arApproval.addQuery('sysapproval.sys_class_name',data.table);
+	arApproval.groupBy('state');
+	arApproval.addAggregate("COUNT");
+	arApproval.query();
+	while(arApproval.next()){
+		var count =  Number( arApproval.getAggregate("COUNT"));
+		data.total_count +=count;
+		var state = arApproval.getValue('state');
+
+		//gs.addInfoMessage(state);
+		//gs.addInfoMessage(count);
+		//gs.addInfoMessage("--------------------");
+		switch(state){
+			case 'requested':
+				data.requested_count = count;
+				break;
+			case 'approved':
+				data.approved_count = count;
+				break;
+			case 'rejected':
+				data.rejected_count = count;
+				break;
+			case 'not_required':
+				data.not_required_count = count;
+				break;
+			default:
+				break;
+				
+		}
+		
+	}	
+	var ApprovalGR = new GlideRecord('sysapproval_approver');	
+	var grApproval;
+	grApproval = new GlideRecord(data.approval_table)
+	grApproval.addQuery('approver', 'IN', data.userIds.join(','));
+	//grApproval.addQuery('source_table',data.table);
+	grApproval.addQuery('sysapproval.sys_class_name',data.table);
+	if(data.status && data.status !="all")
+	{
+		grApproval.addQuery('state',data.status);	
+	}
+
+	grApproval.orderBy('sysapproval.number');
+	grApproval.query();
+	while(grApproval.next()){
+		
+		var tempObj = (
+			{					
+			// Approval Request
+				
+			approval_sys_id: grApproval.getUniqueValue(),
+			approval_state: grApproval.getDisplayValue("state"),
+			approval_state_value: grApproval.getValue("state"),
+				
+				// Requisition Detail
+			sys_id : grApproval.sysapproval.toString(),
+			id :parseInt(grApproval.sysapproval.id.toString()),
+			status: grApproval.sysapproval.status.getDisplayValue(),		
+			proj_title: grApproval.sysapproval.project_title.getDisplayValue(),	
+			state: grApproval.sysapproval.state.getDisplayValue(),	
+			req_by: grApproval.sysapproval.requested_by_fullname.getDisplayValue(),
+			requested_by_id :grApproval.sysapproval.requested_by_id.getDisplayValue(),
+
+			total :grApproval.sysapproval.total.getDisplayValue(),
+			currency: grApproval.sysapproval.currency.getDisplayValue(),
+			created_at: grApproval.sysapproval.created_at.getDisplayValue().split(" ")[0],
+			created_at2: grApproval.sysapproval.created_at.toString(),
+			line_count : parseInt(grApproval.sysapproval.line_count.getDisplayValue()),
+			checked : false,
+				approvals : ''
+			
+			});
+			
+	if(tempObj.approval_state_value=='requested')
+					tempObj.approval_state_value='承認待ち';
+			else if(tempObj.approval_state_value=='approved')
+					tempObj.approval_state_value='承認済み';
+			else if(tempObj.approval_state_value=='rejected')
+					tempObj.approval_state_value='否認済み';
+			else if(tempObj.approval_state_value=='not_required')
+					tempObj.approval_state_value='承認不要';
+			else if(tempObj.approval_state_value=='cancelled')
+					tempObj.approval_state_value='キャンセル済み';
+
+		//to get multiple approvers when status is pending approval
+		if(data.status=='requested')
+	{
+			ApprovalGR.initialize();
+			ApprovalGR.addQuery('sysapproval',grApproval.sysapproval.toString());
+			ApprovalGR.query();
+			while(ApprovalGR.next())
+			{
+				obj_appr = {						
+					approver : ApprovalGR.getDisplayValue('approver'),
+					state :  ApprovalGR.getValue('state'),
+					sid : ApprovalGR.getValue('sysapproval'),
+					updated : ApprovalGR.getValue('sys_updated_on').split(" ")[0]
+				};
+
+				data.approvals.push(obj_appr);
+
+		}	
+
+			tempObj.approvals = data.approvals;
+		}
+		data.details.push(tempObj);
+
+		//
+		//data.details.push(
+		//	{approvals:data.approvals});
+		//str = JSON.stringify(data.details, null, 4); // (Optional) beautiful indented output.
+		//console.log("hello"+str); // Logs output to dev tools console.
+	}
+	
+	// //For Bulk Approval/Reject
+	data.details.forEach(function(item,index){
+		//gs.addInfoMessage(JSON.stringify(item));
+		//gs.addInfoMessage(item.sys_id);
+		data.details[index]['attach'] = [];
+		var gr =new GlideRecord('x_nriws_coupa_req_coupa_items');
+		gr.addQuery('parent',item.sys_id);
+		gr.query();
+		while(gr.next())
+		{
+			var obj = {};
+			obj.it_sys_id = gr.getValue('sys_id');
+			var attach = getRequistionAttachment(obj.it_sys_id);
+			
+			attach.forEach(function(attach_item) {
+				data.details[index]['attach'].push(attach_item);
+			})
+		}		
+	})
+	
+	
+	function getRequistionAttachment(sys_id){
+		var attach=[];
+		var SysAttach_GR = new GlideRecord('sys_attachment');
+			SysAttach_GR.addQuery('table_sys_id',sys_id);
+			SysAttach_GR.query();
+			while(SysAttach_GR.next()){
+				att_obj = {
+					sys_id : SysAttach_GR.getDisplayValue('sys_id'),
+					file_name : SysAttach_GR.getValue('file_name')
+				};
+				attach.push(att_obj);
+			}
+			return attach;
+	}
+	if(input){
+		if(input.action=="Approval_Action")
+		{	
+			//-->-->-->-->-->-->-->-->-->-->-->-->-->-->
+			//coupa table
+			//<--<--<--<--<--<--<--<--<--<--<--<--<--<--
+			var coupaQuery = 'sys_idIN'+input.sysIDStr;				
+			var coupaGR= new GlideRecord('x_nriws_coupa_req_coupa_requisition');
+			coupaGR.addEncodedQuery(coupaQuery);
+			coupaGR.query();
+			while(coupaGR.next()){
+				coupaGR.comments = input.actionComment;
+				coupaGR.update();
+			}
+
+			//approval table
+			var approvalQuery = 'sys_idIN'+input.approvalSysIDStr;
+			var approvalGR= new GlideRecord('sysapproval_approver');
+			approvalGR.addEncodedQuery(approvalQuery);
+			approvalGR.query();
+
+			while(approvalGR.next()){
+				approvalGR.state = input.state
+				approvalGR.comments = input.actionComment;
+				approvalGR.update();
+			}
+
+			
+		}
+	
+	}
+	
+	//Get Requesters for delegate
+	function getRequesterIds(id) {
+		var today =new GlideDateTime().getDisplayValue();
+		var requester_ids = [];
+		var gr = new GlideRecord('sys_user_delegate');
+		gr.addQuery('delegate', id);
+		gr.addQuery('approvals',true);
+		 gr.addQuery('ends','>=',new GlideDateTime().getDisplayValue());
+		 gr.addQuery('starts','<=',new GlideDateTime().getDisplayValue());
+		gr.query();
+		while(gr.next()) {
+			requester_ids.push(gr.user.toString());
+			// if (gr.ends.getDisplayValue() >= today && gr.starts.getDisplayValue()<=today)
+			// {
+			// 	requester_ids.push(gr.user.toString());
+			// }
+		}
+		return requester_ids;
+	}
+
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Sansiro.Ma</sys_created_by>
+        <sys_created_on>2020-11-18 16:36:50</sys_created_on>
+        <sys_id>69e515751be82810e05f43b2cc4bcb31</sys_id>
+        <sys_mod_count>922</sys_mod_count>
+        <sys_name>Pending Approval List</sys_name>
+        <sys_package display_value="Coupa Requisition" source="x_nriws_coupa_req">0d3e1ae31b48201059943265cc4bcb59</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coupa Requisition">0d3e1ae31b48201059943265cc4bcb59</sys_scope>
+        <sys_update_name>sp_widget_69e515751be82810e05f43b2cc4bcb31</sys_update_name>
+        <sys_updated_by>NRIWPS_mizoshiri</sys_updated_by>
+        <sys_updated_on>2021-07-07 15:06:40</sys_updated_on>
+        <template><![CDATA[<h2>
+  <span style="font-size: 18px;" ng-if="c.checkStatusBreadcrumbs(c.data.status)">
+    <a href="/nrid_approval_portal">ホーム</a> 
+    <i style="font-size: 18px;" class="fa fa-angle-right">&nbsp;</i>
+    {{breadcrumbs}}
+  </span>
+  <p class="pull-right">
+    <button class="btn btn-danger" ng-click="c.goHome()"><i class="fa fa-home" style="font-size:18px;">&nbsp;</i>
+      ${ホームページへ戻る}
+    </button>
+  </p>
+</h2>
+<hr class = "style-two">
+<div class="approval-list-layout">
+  <div class="SumCount-layout">
+    <ul>
+      <li class="li-class text-warning" ng-click="c.redirect('requested')">
+        <div ng-class="{'active-layout': c.data.status=='requested','layout': c.data.status!='requested'} ">
+          <div class="left-side">
+            <b>{{c.data.requested_count}}</b>
+            <p>承認待ち</p>
+          </div>
+          <div class="right-side">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+          </div>
+        </div>
+      </li>
+      <li class="li-class text-success" ng-click="c.redirect('approved')">
+        <div ng-class="{'active-layout': c.data.status=='approved','layout': c.data.status!='approved'} ">
+          <div class="left-side">
+            <b>{{c.data.approved_count}}</b>
+            <p>承認済み</p>
+          </div>
+          <div class="right-side">
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
+          </div>
+        </div>
+      </li>
+      <li class="li-class text-danger" ng-click="c.redirect('rejected')">
+        <div ng-class="{'active-layout': c.data.status=='rejected','layout': c.data.status!='rejected'} ">
+          <div class="left-side">
+            <b>{{c.data.rejected_count}}</b>
+            <p>否認済み</p>
+          </div>
+          <div class="right-side">
+            <i class="fa fa-times-circle" aria-hidden="true"></i>
+          </div>
+        </div>
+      </li>
+      <li class="li-class text-muted" ng-click="c.redirect('not_required')">
+        <div ng-class="{'active-layout': c.data.status=='not_required','layout': c.data.status!='not_required'} ">
+          <div class="left-side">
+            <b>{{c.data.not_required_count}}</b>
+            <p>承認不要</p>
+          </div>
+          <div class="right-side">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </div>
+        </div>
+      </li>
+      <li class="li-class text-primary" ng-click="c.redirect('all')">
+        <div  ng-class="{'active-layout': c.data.status=='all' || c.data.status== null ,'layout': c.data.status!='all' && data.status!=null } ">
+          <div class="left-side">
+            <b>{{c.data.total_count}}</b>
+            <p>全て</p>
+          </div>
+          <div class="right-side">
+            <i class="fa fa-list" aria-hidden="true"></i>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!--<div class="card"></div>-->
+  <div class="row" ng-if = "c.data.details.length > c.itemsPerPageOptions[0]">
+    <div class = "col-xs-10 vcenter">
+      <dir-pagination-controls pagination-id="paginate2"></dir-pagination-controls>
+    </div>
+    <div class = "col-xs-2 vcenter text-right align-middle" style = "width: 175px;" ng-hide = "c.data.details.length < c.itemsPerPageOptions[0]">
+      <label>${ページ内件数:}</label>
+      <select ng-model="c.itemsPerPage" ng-options="x for x in c.itemsPerPageOptions">
+      </select>
+    </div>
+  </div>
+  <div class=" cus-container" >
+    <table class="table table-hover "  ng-if="c.data.details.length > 0">
+      <tr>
+        <th ng-if= "c.data.showCheckBox" class="col-xs-1">
+          <div class="checkbox checbox-switch switch-success" style="margin: 0px;">
+            <label>
+              <input type="checkbox" name=""  ng-model="c.selectAllFlag" ng-click="c.selectAll()"/>
+              <span></span>
+            </label>
+          </div>
+        </th>
+        <th class="col-xs-1" ng-click="c.sortClick('id')">申請書 #  &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.isId,'fa fa-angle-double-up' : c.isId }"></i></th>
+        <th class="col-xs-1" ng-click="c.sortClick('state')">状態 &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.state,'fa fa-angle-double-up' : c.state }"></i></th>
+        <th class="col-xs-2 hidden-xs" ng-click="c.sortClick('proj_title')">委託契約名(アイテム)  &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.isProj,'fa fa-angle-double-up' : c.isProj }"></i></th>
+        <th class="col-xs-1 hidden-xs" ng-click="c.sortClick('requested_by_fullname')">申請者  &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.isReq,'fa fa-angle-double-up' : c.isReq }"></i></th>
+        <th class="col-xs-1 hidden-xs" ng-click="c.sortClick('created_at')">承認依頼日  &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.isCreated,'fa fa-angle-double-up' : c.isCreated }"></i></th>
+        <th class="col-xs-1 hidden-xs" ng-click="c.sortClick('status')" >ステータス  &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.isStatus,'fa fa-angle-double-up' : c.isStatus }"></i></th>
+        <th class="col-xs-1 hidden-xs" ng-click="c.sortClick('item')" >アイテム  &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.isItem,'fa fa-angle-double-up' : c.isItem }"></i></th>
+        <th class="col-xs-2" ng-click="c.sortClick('approvals')" ng-if="c.data.status=='requested'">承認者 &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.isApprovals,'fa fa-angle-double-up' : c.isApprovals }"></i></th>
+        <th class="col-xs-1" ng-click="c.sortClick('total')" >合計  &nbsp;<i ng-class="{'fa fa-angle-double-down' : !c.isTotal,'fa fa-angle-double-up' : c.isTotal }"></i></th>
+        <td class="col-xs-1">添付</td>
+      </tr>
+      <tbody>
+        <tr dir-paginate="req in c.data.details |  orderBy: c.sortedOn : c.sortReverse| itemsPerPage: c.itemsPerPage" pagination-id="paginate2">
+          <td ng-if= "c.data.showCheckBox">
+            <div class="checkbox checbox-switch switch-success">
+              <label>
+                <input type="checkbox" name=""  ng-model="req.checked"/>
+                <span></span>
+              </label>
+            </div>
+          </td>
+          <td>
+            <div class="project-item-title">
+              <span class="name" style="color: black"><a href="javascript:void(0)" ng-click="c.checkDetails(req)"><b>{{req.id}}</b></a></span>
+            </div>
+          </td>
+          <td>
+            <div class="project-item-title"><span class="name" style="color: black">{{req.state}}</span>
+            </div>
+          </td>
+          <td class="hidden-xs">
+            <div class="project-item-title"><span class="name" style="color: black">{{req.proj_title}}</span>
+            </div>
+          </td>
+          <td class="hidden-xs">
+            <div class="project-item-user">
+             
+              <div class="user-info">
+                <span class="name">{{req.req_by}}</span>
+                
+              </div>
+            </div>
+          </td>
+          <td class="hidden-xs">
+            <div class="project-item-date">
+              <span class="date">{{req.created_at}} </span>
+              <span class="time">
+                <span class="label label-primary" >
+                  <sn-time-ago timestamp="::req.created_at2" class="ng-isolate-scope"></sn-time-ago>
+                </span>
+              </span>
+            </div>
+          </td>
+          <td class="hidden-xs">{{req.approval_state_value}}</td>
+          <td class="hidden-xs">{{req.line_count}}</td>
+          <td ng-if="c.data.status=='requested'">
+            <div class="row">
+              <div class="col-xs-12" ng-repeat="j in req.approvals" ng-if="j.sid==req.sys_id">
+                <div ng-if="j.state=='approved'"><a href="javascript:void(0)" data-toggle="tooltip" title="Approved"><i class="fa fa-check-circle" style="color:#9ACD32"></i></a> {{j.approver}} &nbsp;{{j.updated}}</div>
+                <div ng-if="j.state=='rejected'"><a href="javascript:void(0)" data-toggle="tooltip" title="Rejected"><i class="fa fa-times-circle" style="color:#ff4000"></i></a> {{j.approver}} &nbsp;{{j.updated}}</div>
+                <div ng-if="j.state=='requested'"><a href="javascript:void(0)" data-toggle="tooltip" title="Requested"><i class="glyphicon glyphicon-time" style="color:#7091b9"></i></a> {{j.approver}}</div>
+                <div ng-if="j.state=='not_required'"><a href="javascript:void(0)" data-toggle="tooltip" title="Not Required"> <i class="fa fa-circle" style="color:#eaebec"></i></a> {{j.approver}}</div>
+                <div ng-if="j.state=='cancelled'"><a href="javascript:void(0)" data-toggle="tooltip" title="Cancelled"><i class="fa fa-minus-circle " style="color:black"></i></a> {{j.approver}} {{j.updated}}</div>
+              </div>
+            </div>
+          </td>
+          <td>{{req.total}} {{req.currency}}</td>
+          <td>
+            <div ng-repeat="k in req.attach" >
+              <div ng-if="k.sys_id"> <a style="display: flex;" href="/sys_attachment.do?sys_id={{k.sys_id}}" data-toggle="tooltip" title="{{k.file_name}}"><i class="fa fa-paperclip">&nbsp;</i>{{k.file_name.substr(0, 15)}}...</a> </div>                              
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="alert alert-info approval-list-layout" ng-if="c.data.details.length === 0">
+  No Data Found!
+</div>
+<div ng-if="(c.data.details|filter: {checked: true}).length > 0">
+  <hr class = "style-two">
+  <p class="pull-right">
+    <button class="btn btn-success" ng-click="c.openModal('Approve')">
+      ${一括承認}
+    </button>
+    <button class="btn btn-danger" ng-click="c.openModal('Reject')">
+      ${一括否認}
+    </button>
+  </p>
+</div>
+<script type="text/ng-template" id="modalTemplate">
+      <div class="overview"> 
+        <div class="panel panel-default">
+            <div class="panel-heading">
+            	<h4 class="panel-title">Are your sure?</h4>
+  </div>
+            <div class="panel-body wrapper-xl">
+            	<div class="container-fluid">
+              <table class="table table-hover ">
+              	<thead>
+               	 	<th ">申請書 #</th>
+                 	<th ">申請者</th>
+        					<th ">合計</th>
+  </thead>
+                <tbody>
+                	<tr ng-repeat="req in c.data.details|filter: {checked: true}: false">
+                  	<td>{{req.id}}</td>
+                    <td>{{req.req_by}} </td>
+                    <td>{{req.total}} {{req.currency}}</td>
+  </tr>
+  </tbody>
+  </table>
+  </div>            
+  </div>
+            <div class="panel-footer text-right">
+                <button ng-if="c.action=='Approve'"
+                class="btn btn-success" 
+                data-toggle="modal" data-target="#Modal-approve" ng-click="c.closeModal()"
+                >${一括承認}</button>
+                <button ng-if="c.action=='Reject'"
+                class="btn btn-danger" 
+                data-toggle="modal" data-target="#Modal-approve" ng-click="c.closeModal()"
+                >${一括否認}</button>
+                <button 
+                class="btn btn-warning" 
+                ng-click="c.closeModal()"
+                >${キャンセル}</button>
+  </div>
+  </div>
+  </div>
+</script>
+<!-- For giving comment in bulk approval -->
+<div class="modal fade" id="Modal-approve" role="dialog" data-backdrop="false" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">コメント</h4>
+      </div>
+      <div class="modal-body col-sm-12">
+        <textarea ng-model="c.approveCmmt" id="approveCmmt" placeholder="ここにコメントを記載してください。" style="width:80%;padding:10px;resize:vertical;" ></textarea>
+      </div>
+      <div class="modal-footer">
+        <button ng-if="c.action=='Reject'" type="button" class="btn btn-danger" ng-click="c.bulkApprove()" data-dismiss="modal">否認コメントを追加</button>
+        <button  ng-if="c.action=='Approve'" type="button" class="btn btn-success" ng-click="c.bulkApprove()" data-dismiss="modal">承認コメントを追加</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal">キャンセル</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- For giving comment in bulk approval
+<div class="modal fade" id="Modal-reject" role="dialog" data-backdrop="false">
+<div class="modal-dialog modal-lg">
+
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">Comment</h4>
+</div>
+<div class="modal-body col-sm-12">
+<textarea ng-model="c.rejectCmmt" id="rejectCmmt" placeholder="add comment here" style="width: 100%;padding:10px; ;resize:vertical;" ></textarea>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-danger" ng-click="c.bulkReject()" data-dismiss="modal">Add rejection comment</button>
+<button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+</div>
+</div>
+
+</div>
+</div>
+-->]]></template>
+    </sp_widget>
+</record_update>
